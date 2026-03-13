@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* N.S.-LIN Industrial Brand Colors */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Steel Blue — primary brand color */
+  --color-steel-50: #f0f5fa;
+  --color-steel-100: #dae5f2;
+  --color-steel-200: #b8cde6;
+  --color-steel-300: #8badd4;
+  --color-steel-400: #5e8bc0;
+  --color-steel-500: #3d6ea8;
+  --color-steel-600: #2d5a8e;
+  --color-steel-700: #264a74;
+  --color-steel-800: #233e60;
+  --color-steel-900: #1e3450;
+  --color-steel-950: #142236;
+
+  /* Metal Gray — neutral / industrial */
+  --color-metal-50: #f6f7f8;
+  --color-metal-100: #ebedef;
+  --color-metal-200: #d5d9de;
+  --color-metal-300: #b3bac3;
+  --color-metal-400: #8b95a2;
+  --color-metal-500: #6d7887;
+  --color-metal-600: #57616f;
+  --color-metal-700: #474f5b;
+  --color-metal-800: #3d444d;
+  --color-metal-900: #363b43;
+  --color-metal-950: #22262c;
+
+  /* Brass — accent / highlight */
+  --color-brass-50: #faf8f0;
+  --color-brass-100: #f2edd8;
+  --color-brass-200: #e4d9ae;
+  --color-brass-300: #d4c07c;
+  --color-brass-400: #c7ab57;
+  --color-brass-500: #b8964a;
+  --color-brass-600: #9e773d;
+  --color-brass-700: #835a34;
+  --color-brass-800: #6d4a30;
+  --color-brass-900: #5e3f2c;
+  --color-brass-950: #352016;
+
+  /* Safety Orange — CTA / alerts */
+  --color-safety-500: #f97316;
+  --color-safety-600: #ea580c;
+  --color-safety-700: #c2410c;
+
+  /* Certification Green */
+  --color-cert-500: #16a34a;
+  --color-cert-600: #15803d;
+
+  /* Fonts */
+  --font-sans: var(--font-inter), var(--font-noto-sans-tc), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-metal-900);
 }

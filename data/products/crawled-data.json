@@ -1,0 +1,837 @@
+{
+  "company": {
+    "name": "N.S.-LIN INDUSTRIAL CO., LTD.",
+    "location": "Tainan City, Taiwan",
+    "website": "https://www.nslin.com.tw",
+    "contact_email": "nslin@nslin.com.tw",
+    "phone": "+886-6-256-2097",
+    "description": "Tire valve manufacturer specializing in bicycle, motorcycle, automotive, and industrial valves"
+  },
+  "categories": {
+    "01_bicycle_tubeless_valve": {
+      "category_name": "Bicycle TUBELESS Valve",
+      "category_url": "https://www.nslin.com.tw/category-Bicycle-01.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Bicycle_Valve/FVT.jpg",
+      "subcategories": {
+        "01_1_presta_french_valve": {
+          "subcategory_name": "Presta / French Valve",
+          "subcategory_url": "https://www.nslin.com.tw/category-Tubeless-Presta-French-Valve-01-1.html",
+          "sub_subcategories": {
+            "01_1_1_fix_oblong_rubber_base": {
+              "name": "Fix Oblong Rubber Base (FVR)",
+              "url": "https://www.nslin.com.tw/category-Fix-Oblong-Rubber-Base-01-1-1.html",
+              "products": [
+                {
+                  "model": "FVRa (BASIC)",
+                  "product_name": "FVRa - Tubeless Presta Valve with Fixed Oblong Rubber Base",
+                  "url": "https://www.nslin.com.tw/product-FVRa-FVRa.html",
+                  "description": "40mm tubeless Presta valve designed as OEM replacement for tubeless-ready rims. Fixed oblong rubber base prevents valve rotation during installation. Better seals than conical rubber base due to larger surface contact area.",
+                  "specifications": {
+                    "valve_type": "Tubeless Presta/French",
+                    "base_type": "Fixed oblong rubber base",
+                    "rim_hole_diameter": "6.5-7.5mm",
+                    "rim_compatibility": "Up to 25mm rim height",
+                    "valve_core": "Removable",
+                    "length": "40mm"
+                  },
+                  "variants": [
+                    {"part_number": "FVRa-40Cu", "length_mm": 40, "material": "Brass", "surface": "Original (Bronze)"},
+                    {"part_number": "FVRa-40Ni", "length_mm": 40, "material": "Brass", "surface": "Nickel (Silver)"},
+                    {"part_number": "FVRa-40Cr", "length_mm": 40, "material": "Brass", "surface": "Chrome (Black)"}
+                  ],
+                  "features": [
+                    "No valve rotating & pulling-through rim during installation",
+                    "Better seals than conical rubber base",
+                    "Compatible with DT Swiss and Giant Bicycles rims"
+                  ],
+                  "standards": ["OE replacement for tubeless-ready rims"],
+                  "images": [
+                    "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/FVRa.jpg",
+                    "https://www.nslin.com.tw/proimages/ps/Bicycle_Valve/FVRa.jpg"
+                  ]
+                },
+                {
+                  "model": "FVRb (ADVANCED)",
+                  "product_name": "FVRb - Advanced Tubeless Presta Valve with Fixed Oblong Rubber Base",
+                  "url": "https://www.nslin.com.tw/product-FVRb-FVRb.html",
+                  "description": "Advanced tubeless bicycle presta valve with improved flow characteristics and enhanced sealing. Fixed modified oblong rubber base prevents valve rotation. Larger internal diameter than FVRa for improved sealant flow. Solid extruded stem construction (50-200% stronger than competitors).",
+                  "specifications": {
+                    "valve_type": "Tubeless Presta/French",
+                    "base_type": "Fixed oblong rubber base (modified/advanced)",
+                    "rim_hole_diameter": "6.5-7.5mm",
+                    "valve_core": "Removable",
+                    "valve_stem": "Solid extruded rod (50-200% stronger)",
+                    "lengths_available": "40-100mm"
+                  },
+                  "variants": [
+                    {"part_number": "FVRb-40CU", "length_mm": 40, "material": "Brass", "surface": "Original (Bronze)"},
+                    {"part_number": "FVRb-40NI", "length_mm": 40, "material": "Brass", "surface": "Nickel (Silver)"},
+                    {"part_number": "FVRb-40CR", "length_mm": 40, "material": "Brass", "surface": "Chrome (Black)"},
+                    {"part_number": "FVRb-40AL", "length_mm": 40, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-50AL", "length_mm": 50, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-60AL", "length_mm": 60, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-70AL", "length_mm": 70, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-80AL", "length_mm": 80, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-90AL", "length_mm": 90, "material": "Aluminum", "surface": "Anodized"},
+                    {"part_number": "FVRb-100AL", "length_mm": 100, "material": "Aluminum", "surface": "Anodized"}
+                  ],
+                  "features": [
+                    "Larger internal diameter than FVRa for improved flow",
+                    "Better sealant compatibility (reduces clog issues)",
+                    "Superior corrosion resistance",
+                    "Fixed oblong rubber base prevents installation issues",
+                    "Accommodates various rim heights",
+                    "Solid extruded rod stem (50-200% stronger than hollow tube)"
+                  ],
+                  "standards_testing": ["NSS 336 (Neutral Salt Spray) - passed (equiv. 1,680 days beach / 14 years natural environment)"],
+                  "images": [
+                    "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/FVRb(法式-黏).png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb(法式-黏).png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/20180105_152820.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-40Cu.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-40Cr.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-40Ni.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-50AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-60AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-70AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-80AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-90AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FVRb-100AL.png"
+                  ]
+                }
+              ]
+            },
+            "01_1_2_removable_round_conical_base": {
+              "name": "Removable Round Conical Base (FV / Universal)",
+              "url": "https://www.nslin.com.tw/category-Removable-Round-Conical-Base-01-1-2.html",
+              "products": [
+                {
+                  "model": "FV (Basic Universal)",
+                  "product_name": "FV - Universal Tubeless Presta Valve with Removable Round Conical Base",
+                  "url": "https://www.nslin.com.tw/product-FVa-FVa.html",
+                  "description": "Universal tubeless presta valve with patented double tapered round rubber base design. Compatible with both tubeless-ready and conversion rims.",
+                  "specifications": {
+                    "valve_type": "Tubeless Presta/French",
+                    "base_type": "Patented double tapered round rubber (removable)",
+                    "rim_hole_diameter": "6-7.5mm",
+                    "valve_core": "Removable",
+                    "valve_stem": "Solid extruded rod (50-200% stronger)",
+                    "lengths_available": "40-120mm"
+                  },
+                  "variants": [
+                    {"part_number": "FV-40AL", "length_mm": 40, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-50AL", "length_mm": 50, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-60AL", "length_mm": 60, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-70AL", "length_mm": 70, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-80AL", "length_mm": 80, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-90AL", "length_mm": 90, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-100AL", "length_mm": 100, "material": "Anodized Aluminum"},
+                    {"part_number": "FV-120AL", "length_mm": 120, "material": "Anodized Aluminum"}
+                  ],
+                  "features": [
+                    "Patented double tapered round rubber base",
+                    "Universal compatibility (tubeless-ready and conversion rims)",
+                    "50-200% stronger valve stem (solid extruded rod)"
+                  ],
+                  "standards_testing": ["NSS 336 (Neutral Salt Spray) - passed (1680 days beach equiv.)"],
+                  "images": [
+                    "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/FV(法式-套).png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FV(法式-套).png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FV-40AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FV-50AL.png",
+                    "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/FV-80AL.png"
+                  ]
+                },
+                {
+                  "model": "FVTH (Tire Insert Compatible)",
+                  "product_name": "FVTH - Tire Insert Compatible Tubeless Presta Valve",
+                  "url": "https://www.nslin.com.tw/product-FVb-FVb.html",
+                  "description": "Tubeless presta valve specifically designed for tire insert compatibility. Features T-shaped 3-hole high flow air passageway and 2-stairs surrounded gap for enhanced sealant flow with tire inserts.",
+                  "specifications": {
+                    "valve_type": "Tubeless Presta/French",
+                    "base_type": "Round conical rubber (removable)",
+                    "rim_hole_diameter": "6-7.5mm",
+                    "valve_core": "Removable",
+                    "valve_stem": "Solid extruded rod (50-200% stronger)",
+                    "air_passageway": "T-shaped (3 holes) high flow",
+                    "installation": "Patented 4mm hex (Allen) key slot",
+                    "lengths_available": "40-100mm"
+                  },
+                  "variants": [
+                    {"part_number": "FVTH-40AL", "length_mm": 40, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-50AL", "length_mm": 50, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-60AL", "length_mm": 60, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-70AL", "length_mm": 70, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-80AL", "length_mm": 80, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-90AL", "length_mm": 90, "material": "Anodized Aluminum"},
+                    {"part_number": "FVTH-100AL", "length_mm": 100, "material": "Anodized Aluminum"}
+                  ],
+                  "color_options": ["Ti (Titanium)", "Standard", "BK (Black)", "RD (Red)", "OR (Orange)", "GD (Gold)", "GR (Green)", "BL (Blue)", "PP (Purple)"],
+                  "features": [
+                    "T-shaped (3 holes) high flow air passageway",
+                    "2-stairs surrounded gap for tire insert compatibility",
+                    "Patented 4mm hex (Allen) key slot for installation",
+                    "Solid extruded rod (50-200% stronger than hollow tube)"
+                  ],
+                  "standards_testing": ["NSS 336 (Neutral Salt Spray) - passed (1,680 days beach equiv.)"],
+                  "images": [
+                    "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/FVTH-Ti.jpg",
+                    "https://www.nslin.com.tw/proimages/ps/Bicycle_Valve/FVT.jpg"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "01_8_schrader_american_valve": {
+          "subcategory_name": "Schrader / American Valve",
+          "subcategory_url": "https://www.nslin.com.tw/category-Tubeless-Schrader-American-Valve--01-8.html",
+          "sub_subcategories": {
+            "removable_round_conical_rubber_base": {
+              "name": "Removable Round Conical Rubber Base",
+              "url": "https://www.nslin.com.tw/category-Removable-Round-Conical-Rubber-Base-VA.html",
+              "products": [
+                {
+                  "model": "VA",
+                  "product_name": "VA - Tubeless Schrader/American Bicycle Valve",
+                  "url": "https://www.nslin.com.tw/product-VA-VA.html",
+                  "description": "Tubeless Schrader valve with removable round conical rubber base design. Universal compatibility with tubeless-ready and conversion rims.",
+                  "specifications": {
+                    "valve_type": "Tubeless Schrader/American",
+                    "base_type": "Removable round conical rubber",
+                    "rim_hole_diameter": "8-9mm (0.315-0.355 inch)",
+                    "total_stem_length": "34mm (1.338 inch)",
+                    "valve_core": "Removable"
+                  },
+                  "variants": [
+                    {"part_number": "VA-43Cu", "length_mm": 43, "material": "Brass", "surface": "Original (Bronze)"},
+                    {"part_number": "VA-43Ni", "length_mm": 43, "material": "Brass", "surface": "Nickel (Silver)"},
+                    {"part_number": "VA-43Cr", "length_mm": 43, "material": "Brass", "surface": "Chrome (Black)"},
+                    {"part_number": "VA-43Al", "length_mm": 43, "material": "Aluminum", "surface": "Anodized (Any colors)"}
+                  ],
+                  "features": [
+                    "Universal - works with Tubeless-Ready Rim and Conversion Rim",
+                    "Removable valve core",
+                    "Removable round conical rubber base"
+                  ],
+                  "images": [
+                    "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/VA-43AL.png",
+                    "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/VA-43AL.png"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "01_1_caps": {
+          "subcategory_name": "Alloy Cap",
+          "subcategory_url": "https://www.nslin.com.tw/category-Cap-01-1.html",
+          "products": [
+            {
+              "model": "W-CAP1",
+              "product_name": "3-in-1 Wrenching Cap",
+              "url": "https://www.nslin.com.tw/product-3-in-1-WRENCHING-CAP-W-CAP1.html",
+              "description": "Patented 3-in-1 wrenching cap: dust-proof cap + valve core tool + valve extender tool. Aluminum alloy construction.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "functions": ["Dust-proof cap", "Valve core installation/removal", "Valve extender installation/removal"]
+              },
+              "features": ["Patented 3-in-1 design", "Dust-proof alloy construction"],
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/W-CAP1a.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/W-CAP1a.jpg",
+                "https://www.nslin.com.tw/proimages/Bicycle_Valve/W-CAP1.jpg"
+              ]
+            },
+            {
+              "model": "W-CAP2",
+              "product_name": "Wrenching Cap (Round-nut type)",
+              "url": "https://www.nslin.com.tw/product-W-CAP2-W-CAP2.html",
+              "description": "Patented 3-in-1 wrenching cap with round-nut function for valve core installation/removal. Aluminum alloy construction.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "functions": ["Dust-proof cap", "Round-nut valve core tool", "Valve core installation/removal"]
+              },
+              "features": ["Patented 3-in-1 design", "Round-nut function"],
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/W-CAP2a.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/W-CAP2a.jpg",
+                "https://www.nslin.com.tw/proimages/Bicycle_Valve/W-CAP2.jpg"
+              ]
+            },
+            {
+              "model": "EAF-C1",
+              "product_name": "Aluminum Alloy Cap (Sharp Tip)",
+              "url": "https://www.nslin.com.tw/product-Cap-Cap.html",
+              "description": "Aluminum alloy dust cap for Presta valves with sharp-pointed tip design. Available in multiple anodized colors.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "tip_design": "Sharp tip",
+                "compatibility": "Presta valves",
+                "finish": "Anodized (various colors)"
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/EAF-C1.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/EAF-C1.jpg"
+              ]
+            },
+            {
+              "model": "EAF-C2",
+              "product_name": "Aluminum Alloy Cap (Round Tip)",
+              "url": "https://www.nslin.com.tw/product-cap-EAF-C2.html",
+              "description": "Aluminum alloy dust cap for Presta valves with round tip design. Available in multiple anodized colors.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "tip_design": "Round tip",
+                "compatibility": "Presta valves",
+                "finish": "Anodized (various colors)"
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/EAF-C1_C2.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/EAF-C1_C2.jpg"
+              ]
+            }
+          ]
+        },
+        "01_4_extender": {
+          "subcategory_name": "Presta Valve Extender",
+          "subcategory_url": "https://www.nslin.com.tw/category-Eextender-01-4.html",
+          "products": [
+            {
+              "model": "Thread Brass(Cu)-40mm",
+              "product_name": "Thread Brass Extender 40mm (unable laser logo)",
+              "url": "https://www.nslin.com.tw/product-Thread-(unable-laser-logo)-Thread.html",
+              "description": "Brass extender for presta valves with threaded design. 40mm length. Cannot accept laser logo due to thread surface.",
+              "specifications": {
+                "material": "Brass (Cu)",
+                "length_mm": 40,
+                "design": "Thread-on",
+                "plating_options": ["Nickel (Ni)", "Chromium (Cr)"],
+                "laser_logo": false
+              },
+              "features": ["Thread-on design", "Customizable length per customer requirements"],
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/Thread_(unable_laser_logo).jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/Thread_(unable_laser_logo).jpg"
+              ]
+            },
+            {
+              "model": "Non-thread Brass(Cu)-40mm",
+              "product_name": "Non-thread Brass Extender 40mm (laser logo capable)",
+              "url": "https://www.nslin.com.tw/product-Non-thread-(able-laser-logo)-Non-thread.html",
+              "description": "Brass extender for presta valves with non-threaded design allowing laser logo customization. 40mm length.",
+              "specifications": {
+                "material": "Brass (Cu)",
+                "length_mm": 40,
+                "design": "Non-thread (press-fit)",
+                "plating_options": ["Nickel (Ni)", "Chrome (Cr)"],
+                "laser_logo": true
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/40mm_Brass_(Cu).jpg",
+                "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/40mm_Brass_(Cu).jpg",
+                "https://www.nslin.com.tw/proimages/ct/Bicycle_Valve/Non-thread_(able_laser_logo).jpg"
+              ]
+            },
+            {
+              "model": "Non-thread Aluminum(Al)-30mm",
+              "product_name": "Non-thread Aluminum Extender 30mm (laser logo capable)",
+              "url": "https://www.nslin.com.tw/product-Non-thread-(able-laser-logo)-30mm-Aluminum-(Al).html",
+              "description": "Aluminum extender for presta valves. 30mm length, anodizable in multiple colors, laser logo capable.",
+              "specifications": {
+                "material": "Aluminum (Al)",
+                "length_mm": 30,
+                "design": "Non-thread",
+                "finish": "Anodized (multiple colors)",
+                "laser_logo": true
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/30mm_Aluminum_(Al).jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/30mm_Aluminum_(Al).jpg"
+              ]
+            },
+            {
+              "model": "Non-thread Aluminum(Al)-40mm",
+              "product_name": "Non-thread Aluminum Extender 40mm (laser logo capable)",
+              "url": "https://www.nslin.com.tw/product-Non-thread-(able-laser-logo)-40mm-Aluminum-(Al).html",
+              "description": "Aluminum extender for presta valves. 40mm length, anodizable in multiple colors, laser logo capable.",
+              "specifications": {
+                "material": "Aluminum (Al)",
+                "length_mm": 40,
+                "design": "Non-thread",
+                "finish": "Anodized (multiple colors)",
+                "laser_logo": true
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/40mm_Aluminum_(Al).jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/40mm_Aluminum_(Al).jpg"
+              ]
+            },
+            {
+              "model": "Non-thread Aluminum(Al)-60mm",
+              "product_name": "Non-thread Aluminum Extender 60mm (laser logo capable)",
+              "url": "https://www.nslin.com.tw/product-Non-thread-(able-laser-logo)-60mm-Aluminum-(Al).html",
+              "description": "Aluminum extender for presta valves. 60mm length, anodizable in multiple colors, laser logo capable.",
+              "specifications": {
+                "material": "Aluminum (Al)",
+                "length_mm": 60,
+                "design": "Non-thread",
+                "finish": "Anodized (multiple colors)",
+                "laser_logo": true
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/60mm_Aluminum_(Al).jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/60mm_Aluminum_(Al).jpg"
+              ]
+            }
+          ]
+        },
+        "01_2_adapter": {
+          "subcategory_name": "Adapter",
+          "subcategory_url": "https://www.nslin.com.tw/category-Adapter-01-2.html",
+          "products": [
+            {
+              "model": "Adapter",
+              "product_name": "Presta to Schrader Adapter",
+              "url": "https://www.nslin.com.tw/product-Adapter-Adapter.html",
+              "description": "Converts a Presta valve into a Schrader valve for use with standard air pumps. Aluminum alloy, anodizable in various colors.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "function": "Presta to Schrader conversion",
+                "finish": "Anodized (various colors)"
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/Adapter.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/Adapter.jpg"
+              ]
+            }
+          ]
+        },
+        "01_5_wrench": {
+          "subcategory_name": "Wrench",
+          "subcategory_url": "https://www.nslin.com.tw/category-Wrench-01-5.html",
+          "products": [
+            {
+              "model": "Wrench",
+              "product_name": "Aluminum Alloy Valve Wrench",
+              "url": "https://www.nslin.com.tw/product-Wrench-Wrench.html",
+              "description": "Tool for screwing extenders or valve cores. Aluminum alloy with sand-blasted surface finish, more sophisticated than traditional plastic wrench.",
+              "specifications": {
+                "material": "Aluminum alloy",
+                "surface_treatment": "Sand blasting",
+                "finish": "Anodized (multiple colors)",
+                "function": "Screw/unscrew valve extenders and valve cores"
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/wrench1.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/wrench1.jpg"
+              ]
+            }
+          ]
+        },
+        "01_7_valve_hole_reducer": {
+          "subcategory_name": "Valve Hole Reducer",
+          "subcategory_url": "https://www.nslin.com.tw/category-Schrader-Presta-valve-hole-reducer-01-7.html",
+          "products": [
+            {
+              "model": "VHR",
+              "product_name": "Rubber Valve Hole Reducer (Schrader to Presta)",
+              "url": "https://www.nslin.com.tw/product-Rubber-valve-hole-reducer-VHR.html",
+              "description": "Rubber reducer to convert Schrader-drilled rims to accept Presta valves. Allows using a Presta rim strip in a Schrader drilled rim.",
+              "specifications": {
+                "material": "Rubber",
+                "conversion": "Schrader hole => Presta valve",
+                "function": "Reduces valve hole diameter from Schrader to Presta specifications"
+              },
+              "images": [
+                "https://www.nslin.com.tw/proimages/pb/Bicycle_Valve/VHR.jpg",
+                "https://www.nslin.com.tw/proimages/sr/Bicycle_Valve/VHR.jpg"
+              ]
+            }
+          ]
+        }
+      },
+      "total_bicycle_products": 18,
+      "total_bicycle_variants": "50+ (including all length/material combinations)"
+    },
+    "02_motorcycle_valve": {
+      "category_name": "Motorcycle Valve",
+      "category_url": "https://www.nslin.com.tw/category-Motorcycle-02.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Motorcycle_Valve/SL-01-Orange.jpg",
+      "products": [
+        {"model": "PVR-70", "url": "https://www.nslin.com.tw/product-PVR-70-PVR-70.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/PVR-70.jpg"},
+        {"model": "SE-453-30L", "url": "https://www.nslin.com.tw/product-SE-453-30L-SE-453-30L.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/SE-453-30L-RED.jpg"},
+        {"model": "SE-471-AL", "url": "https://www.nslin.com.tw/product-SE-471-AL-SE-471-AL.html", "image": "https://www.nslin.com.tw/proimages/ps/Passenger_and_Light_Truck_Valve/SE-471-AL.jpg"},
+        {"model": "SE-471-Cu", "url": "https://www.nslin.com.tw/product-SE-471-SE-471.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/SE-471-Cu.jpg"},
+        {"model": "SL-01", "url": "https://www.nslin.com.tw/product-SL-01-SL-01-3.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/SL-01-Orange.jpg"},
+        {"model": "SL-01a", "url": "https://www.nslin.com.tw/product-SL-01a-SL-01a.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/SL-01a.jpg"},
+        {"model": "SL-902", "url": "https://www.nslin.com.tw/product-SL-902-SL-902.html", "image": "https://www.nslin.com.tw/proimages/ps/Motorcycle_Valve/SL-902.jpg"}
+      ]
+    },
+    "03_passenger_light_truck_valve": {
+      "category_name": "Passenger & Light Truck Valve",
+      "category_url": "https://www.nslin.com.tw/category-Passenger---Light-Truck-Valve-03.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Passenger_and_Light_Truck_Valve/Car_Light_Truck_Valve.jpg",
+      "subcategories": {
+        "SE-271": {"model": "SE-271", "specs": "Rim hole: 6mm, Length: 40mm, Material: Al alloy or Brass", "url": "https://www.nslin.com.tw/product-SE-271-SE-271.html"},
+        "SE-272": {"model": "SE-272", "specs": "Rim hole: 6mm, Length: 46mm", "url": "https://www.nslin.com.tw/product-SE-272-SE-272.html"},
+        "SE-413_series": {
+          "name": "SE-413 series (Snap-in tubeless tire valves)",
+          "products": [
+            {"model": "TR-413C", "description": "Snap-in tubeless, chrome straight sleeve, 11.5mm rim hole", "url": "https://www.nslin.com.tw/product-TR-413C-TR-413C.html"},
+            {"model": "TR-413FC(AL)", "description": "Snap-in tubeless, aluminum alloy sleeve/cap, anodized, 11.5mm rim hole", "url": "https://www.nslin.com.tw/product-TR-413FC(AL)-TR-413FC(AL).html"},
+            {"model": "TR-413FC(Cu)", "description": "Snap-in tubeless, brass chrome loudhailer sleeve/cap, 11.5mm rim hole", "url": "https://www.nslin.com.tw/product-TR-413FC(Cu)-TR-413FC(Cu).html"}
+          ]
+        },
+        "SE-453_series": {
+          "name": "SE-453 series (Aluminum alloy for aluminum wheels)",
+          "products": [
+            {"model": "SE-453-37L", "specs": "37mm length, rim hole 8 & 11.5mm", "url": "https://www.nslin.com.tw/product-SE-453-37L-SE-453-37L-5.html"},
+            {"model": "SE-453-47L", "specs": "47mm length, rim hole 8 & 11.5mm", "url": "https://www.nslin.com.tw/product-SE-453-47L-SE-453-47L.html"},
+            {"model": "SE-453a-37L", "specs": "37mm length, different lug nut/rubber shape", "url": "https://www.nslin.com.tw/product-SE-453a-37L-SE-453a-37L.html"}
+          ]
+        },
+        "SE-454": {"model": "SE-454", "specs": "37mm length, rim hole 8 & 11.5mm, aluminum alloy", "url": "https://www.nslin.com.tw/product-SE-454-SE-454.html"},
+        "SE-456": {"model": "SE-456", "specs": "6mm rim hole, bent stem 20 degree, aluminum alloy", "url": "https://www.nslin.com.tw/product-SE-456-SE-456.html"},
+        "SE-457": {"model": "SE-457", "specs": "Color tire valve, clamp-in, 11.5mm rim hole, 39mm, anodized", "url": "https://www.nslin.com.tw/product-SE-457-SE-457.html"},
+        "SE-461_series": {
+          "name": "SE-461 series (Bent valve stems for tubeless tires)",
+          "products": [
+            {"model": "SE-461B (SE-461-51)", "specs": "Double bent 21 & 90 degree", "url": "https://www.nslin.com.tw/product-SE-461B-SE-461B.html"},
+            {"model": "SE-461-26.5L", "specs": "26.5mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-26-5L-SE-461-26.5L.html"},
+            {"model": "SE-461-32L-75", "specs": "32mm, 75 degree", "url": "https://www.nslin.com.tw/product-SE-461-32L-75-SE-461-32L-75.html"},
+            {"model": "SE-461-41L", "specs": "41mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-41L-SE-461-41L.html"},
+            {"model": "SE-461-41L-45", "specs": "41mm, 45 degree", "url": "https://www.nslin.com.tw/product-SE-461-41L-45-SE-461-41L-45.html"},
+            {"model": "SE-461-41L-80", "specs": "41mm, 80 degree", "url": "https://www.nslin.com.tw/product-SE-461-41L-80-SE-461-41L-80.html"},
+            {"model": "SE-461-46L", "specs": "46mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-46L-SE-461-46L.html"},
+            {"model": "SE-461-51L", "specs": "51mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-51L-SE-461-51L.html"},
+            {"model": "SE-461-56L", "specs": "56mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-56L-SE-461-56L.html"},
+            {"model": "SE-461-66L", "specs": "66mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-66L-SE-461-66L.html"},
+            {"model": "SE-461-71L", "specs": "71mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-71L-SE-461-71L.html"},
+            {"model": "SE-461-82L", "specs": "82mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-461-82L-SE-461-82L.html"}
+          ]
+        },
+        "SE-463_series": {
+          "name": "SE-463 series (90-degree bent valve stems, Brass Cr plated)",
+          "products": [
+            {"model": "SE-463-36L", "specs": "36mm, 90 degree, 11.5mm rim hole", "url": "https://www.nslin.com.tw/product-SE-463-36L-SE-463-36L.html"},
+            {"model": "SE-463-46L", "specs": "46mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-463-46L-SE-463-46L.html"},
+            {"model": "SE-463-56L", "specs": "56mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-463-56L-SE-463-56L.html"},
+            {"model": "SE-463-60L", "specs": "60mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-463-60L-SE-463-60L.html"},
+            {"model": "SE-463-75L", "specs": "75mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-463-75L-SE-463-75L.html"},
+            {"model": "SE-463-80L", "specs": "80mm, 90 degree", "url": "https://www.nslin.com.tw/product-SE-463-80L-SE-463-80L.html"}
+          ]
+        },
+        "SE-471_series": {
+          "name": "SE-471 series (90-degree metal stems)",
+          "products": [
+            {"model": "SE-471-AL", "specs": "60mm, aluminum alloy, 90 degree", "url": "https://www.nslin.com.tw/product-SE-471-AL-SE-471-AL.html"},
+            {"model": "SE-471-Cu", "specs": "60mm, nickel plated brass, 90 degree", "url": "https://www.nslin.com.tw/product-SE-471-SE-471.html"},
+            {"model": "SE-471-52L", "specs": "52mm, brass Ni/Cr plated, 90 degree", "url": "https://www.nslin.com.tw/product-SE-471-52L-SE-471-52L.html"},
+            {"model": "SE-471-60L", "specs": "60mm, brass Ni/Cr plated, 90 degree", "url": "https://www.nslin.com.tw/product-SE-471-60L-SE-471-60L.html"}
+          ]
+        },
+        "SE-482": {"model": "SE-482", "specs": "42mm, 11.5mm rim hole, aluminum alloy", "url": "https://www.nslin.com.tw/product-SE-482-SE-482-2.html"},
+        "SE-484": {"model": "SE-484", "specs": "44mm, 11.5mm rim hole, aluminum alloy or brass", "url": "https://www.nslin.com.tw/product-SE-484-SE-484.html"},
+        "SV_series": {
+          "name": "SV series (Bent valve stems, various angles)",
+          "products": [
+            {"model": "SV-03", "specs": "A=21mm, B=40mm, angle=55 degree", "url": "https://www.nslin.com.tw/product-SV-03-SV-03.html"},
+            {"model": "SV-04", "specs": "A=26mm, B=55.5mm, angle=90 degree"},
+            {"model": "SV-05", "specs": "A=30mm, B=36mm, angle=75 degree"},
+            {"model": "SV-06", "specs": "A=27mm, B=23mm, angle=75 degree"},
+            {"model": "SV-07", "specs": "A=21mm, B=59mm, angle=60 degree"}
+          ]
+        }
+      },
+      "total_products_approx": 40
+    },
+    "04_trucks_buses_valve": {
+      "category_name": "Truck & Bus Valve",
+      "category_url": "https://www.nslin.com.tw/category-Trucks---Buses-04.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Trucks_and_Buses/Truck_Bus_Valve.jpg",
+      "subcategories": {
+        "straight_type": {
+          "name": "Straight Type",
+          "url": "https://www.nslin.com.tw/category-straight-type-04-1.html",
+          "product_lines": [
+            {
+              "series": "TR500 & TR570",
+              "url": "https://www.nslin.com.tw/product-TR-500,570-series-series.html",
+              "models": ["TR500 (50.8mm)", "TR501 (38mm)", "TR570 (79.4mm)", "TR571 (85.5mm)", "TR572 (95.2mm)", "TR573 (111.2mm)", "TR574 (127mm)", "TR575 (28.6mm)"]
+            },
+            {
+              "series": "TR540",
+              "url": "https://www.nslin.com.tw/product-TR-540-series-TR-540.html",
+              "models": ["TR542 (32mm)", "TR543 (58.5mm)", "TR544 (72.5mm)", "TR544E (58.5mm)", "TR545 (89mm)"]
+            },
+            {
+              "series": "V3-20 (Straight)",
+              "url": "https://www.nslin.com.tw/product-V3-20-series-V3-20.html",
+              "models": ["V3-20-1 (36mm)", "V3-20-41 (41mm)", "V3-20-2 (90mm)", "V3-20-3 (82mm)"]
+            }
+          ]
+        },
+        "bent_type": {
+          "name": "Bent Type",
+          "url": "https://www.nslin.com.tw/category-Bent-type-04-2.html",
+          "product_lines": [
+            {
+              "series": "TR500 & TR570 Bent",
+              "url": "https://www.nslin.com.tw/product-TR-500,570-series-series-2.html",
+              "models": ["TR570C", "TR571C", "TR572C", "TR573C"]
+            },
+            {
+              "series": "TR550 (Bent)",
+              "url": "https://www.nslin.com.tw/product-TR550-series-(Straight-type)-TR550-series-Straight.html",
+              "models": ["TR553C", "TR553D", "TR553E", "TR554D", "TR555D", "TR555E", "TR556B", "TR556D", "TR556E", "TR556G", "TR557D"]
+            },
+            {
+              "series": "TR540 Bent",
+              "url": "https://www.nslin.com.tw/product-TR-540-series-TR-540-2.html",
+              "models": ["TR543C", "TR543D", "TR543E", "TR544D", "TR545D", "TR545E", "TR546B", "TR546D", "TR546E", "TR546G", "TR547D"]
+            },
+            {
+              "series": "V3-20 (Bent)",
+              "url": "https://www.nslin.com.tw/product-V3-20-5-V3-20-5.html",
+              "models": ["V3-20-2", "V3-20-4", "V3-20-5", "V3-20-6", "V3-20-7", "V3-20-10", "V3-20-11", "V3-20-12"]
+            }
+          ]
+        },
+        "MS_series": {
+          "name": "MS Series",
+          "url": "https://www.nslin.com.tw/category-MS-series-aaaaaaaa.html",
+          "products": [
+            {"model": "40MS-00", "specs": "40mm, 10mm rim hole", "url": "https://www.nslin.com.tw/product-40MS-00-40MS-00.html"},
+            {"model": "54MS-00", "specs": "54mm, 10mm rim hole", "url": "https://www.nslin.com.tw/product-54MS-00-54MS-00.html"},
+            {"model": "60MS-27", "specs": "60mm, 27-degree bent", "url": "https://www.nslin.com.tw/product-60MS-27-60MS-27.html"},
+            {"model": "65MS-20", "specs": "65mm, 20-degree bent", "url": "https://www.nslin.com.tw/product-65MS-20-65MS-20.html"},
+            {"model": "70MS-00", "specs": "70mm, straight", "url": "https://www.nslin.com.tw/product-70MS-00-70MS-00.html"},
+            {"model": "70MS-07", "specs": "70mm, 7-degree bent", "url": "https://www.nslin.com.tw/product-70MS-07-70MS-07.html"},
+            {"model": "83MS-00", "specs": "83mm, straight", "url": "https://www.nslin.com.tw/product-83MS-00-83MS-00.html"}
+          ]
+        }
+      },
+      "total_models_approx": 55
+    },
+    "05_sensor_valve_tpms": {
+      "category_name": "Sensor Valve of TPMS",
+      "category_url": "https://www.nslin.com.tw/category-Sensor-Valve-of-TPMS-05.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Sensor_Valve_of_TPMS/Sensor_valve.jpg",
+      "description": "TPMS tire pressure monitoring system valves, aluminum alloy construction with EPDM rubber grommets",
+      "products": [
+        {"model": "SD-01", "url": "https://www.nslin.com.tw/product-SD-01-SD-01.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-01.jpg"},
+        {"model": "SD-02", "url": "https://www.nslin.com.tw/product-SD-02-SD-02.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-02.jpg"},
+        {"model": "SD-03d", "url": "https://www.nslin.com.tw/product-SD-03d-SD-03d.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-03d.jpg"},
+        {"model": "SD-03e", "url": "https://www.nslin.com.tw/product-SD-03e-SD-03e.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-03e.jpg"},
+        {"model": "SD-04S", "url": "https://www.nslin.com.tw/product-SD-04S-SD-04S-Silver-Fog.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-04S-Silver_Fog.jpg"},
+        {"model": "SD-04R", "url": "https://www.nslin.com.tw/product-SD-04R-SD-04R.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-04R.jpg"},
+        {"model": "SD-05", "url": "https://www.nslin.com.tw/product-SD-05-SD-05.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-05.jpg"},
+        {"model": "SD-06", "url": "https://www.nslin.com.tw/product-SD-06-SD-06.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-06.jpg"},
+        {"model": "SD-07", "url": "https://www.nslin.com.tw/product-SD-07-SD-07.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-07.jpg"},
+        {"model": "SD-08a", "url": "https://www.nslin.com.tw/product-SD-08a-SD-08a.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-08a.jpg"},
+        {"model": "SD-10", "url": "https://www.nslin.com.tw/product-SD-10-SD-10.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-10.jpg"},
+        {"model": "SD-11", "url": "https://www.nslin.com.tw/product-SD-11-SD-11.html", "image": "https://www.nslin.com.tw/proimages/ps/Sensor_Valve_of_TPMS/SD-11.jpg"},
+        {"model": "SD-12", "url": "https://www.nslin.com.tw/product-SD-12-SD-12.html", "image": "https://www.nslin.com.tw/proimages/pb/Sensor_Valve_of_TPMS/SD-12.jpg"},
+        {"model": "TPC", "url": "https://www.nslin.com.tw/product-TPC-TPC.html"},
+        {"model": "V3-20-4a", "url": "https://www.nslin.com.tw/product-V3-20-4a-V3-20-4a.html"}
+      ]
+    },
+    "06_large_bore_tractor_valve": {
+      "category_name": "Large Bore Tractor Valve / Off-the-Road / Air-Liquid Valve",
+      "category_url": "https://www.nslin.com.tw/category-Large-bore-Tractor-Valve-off-the-road,-Air-liquid-Valve-06.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Large_bore_Tractor_Valve/Large_bore_Tractor_Valve.jpg",
+      "subcategories": {
+        "TR-618A": {
+          "name": "TR-618A",
+          "url": "https://www.nslin.com.tw/category-TR-618A-aaaa.html",
+          "products": [
+            {"model": "TR-618A", "description": "Lawn/Garden-Tractor Wheels, Agricultural/Air-Liquid clamp-in valve", "url": "https://www.nslin.com.tw/product-TR-618A-TR-618A.html"}
+          ]
+        },
+        "TR-620_series": {
+          "name": "TR-620 series",
+          "url": "https://www.nslin.com.tw/category-TR-620-series-aaaaa.html",
+          "products": [
+            {"model": "TR-621A", "specs": "1.53x38.9mm / 2.97x75.4mm, 65 degree"},
+            {"model": "TR-622A", "specs": "1.97x44.5mm / 4.53x115mm, 90 degree, bent type, brass", "url": "https://www.nslin.com.tw/product-TR-622A-TR-622A.html"},
+            {"model": "TR-623A", "specs": "1.53x38.9mm / 2.25x57.2mm, 65 degree"}
+          ]
+        },
+        "J-650_series": {
+          "name": "J-650 series",
+          "url": "https://www.nslin.com.tw/category-J-650-series-aaaaaa.html",
+          "products": [
+            {"model": "J-650", "url": "https://www.nslin.com.tw/product-J-650-J-650.html"},
+            {
+              "model": "J-650 series (full range)",
+              "url": "https://www.nslin.com.tw/product-J-650-series-J-650-series.html",
+              "variants": ["J650-03", "J651-03", "J652-03", "J653-03", "J654-03", "J655-03", "J656-03", "J657-03", "J658-03", "J659-03", "J660-03", "J661-03"]
+            }
+          ]
+        }
+      }
+    },
+    "07_rim_hole_plug": {
+      "category_name": "Rim Hole Plug",
+      "category_url": "https://www.nslin.com.tw/category-Rim-hole-Plug-07.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Rim_hole_Plug/RPV-02.jpg",
+      "products": [
+        {
+          "model": "RPV-01",
+          "description": "Seals 8 or 11.5mm rim hole when relocating valve. Aluminum alloy, anodized.",
+          "url": "https://www.nslin.com.tw/product-RPV-01-RPV-01.html",
+          "image": "https://www.nslin.com.tw/proimages/ps/Rim_hole_Plug/RPV-01.jpg"
+        },
+        {
+          "model": "RPV-02",
+          "description": "Seals 8 or 11.5mm rim hole. Aluminum alloy, anodized. Can be equipped with TPMS sensor housing.",
+          "url": "https://www.nslin.com.tw/product-RPV-02-RPV-02.html",
+          "image": "https://www.nslin.com.tw/proimages/ps/Rim_hole_Plug/RPV-02.jpg"
+        }
+      ]
+    },
+    "08_industrial_valve": {
+      "category_name": "Industrial Valve",
+      "category_url": "https://www.nslin.com.tw/category-Industrial-Valve-08.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Industrial_Valve/TV-01.jpg",
+      "description": "Valves for shock absorbers, industrial air tanks, air bags, cylinders for inflation/deflation control",
+      "products": [
+        {"model": "HHC-01", "url": "https://www.nslin.com.tw/product-HHC-01-HHC-01.html", "image": "https://www.nslin.com.tw/proimages/ps/Industrial_Valve/HHC-01.jpg"},
+        {"model": "HHC-02", "url": "https://www.nslin.com.tw/product-HHC-02-HHC-02.html", "image": "https://www.nslin.com.tw/proimages/ps/Industrial_Valve/HHC-02.jpg"},
+        {"model": "HHC-05", "url": "https://www.nslin.com.tw/product-HHC-03-HHC-03.html", "image": "https://www.nslin.com.tw/proimages/ps/Industrial_Valve/HHC-05.jpg"},
+        {"model": "TV-01", "description": "1/8\"-27 NPT standard thread, nickel plated solid brass", "url": "https://www.nslin.com.tw/product-TV-01-TV-01.html", "image": "https://www.nslin.com.tw/proimages/ps/Industrial_Valve/TV-01.jpg"}
+      ]
+    },
+    "09_extension_motorcycle_car": {
+      "category_name": "Extension for Motorcycles & Passenger Cars",
+      "category_url": "https://www.nslin.com.tw/category-Extension-for-Motorcycles---passengers-09.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Extension_for_Motorcycles_and_passenger_cars/EXS-120.jpg",
+      "description": "Metallic extensions (EXS & EXL system) that endure high pressure. Customizable sizes, lengths, and bending angles.",
+      "products": [
+        {"model": "EXS-90", "description": "90-degree angled extension", "url": "https://www.nslin.com.tw/product-EXS-90-EXS-90.html", "image": "https://www.nslin.com.tw/proimages/ps/Extension_for_Motorcycles_and_passenger_cars/EXS-90.jpg"},
+        {"model": "EXS-105", "description": "105-degree angled extension", "url": "https://www.nslin.com.tw/product-EXS-105-EXS-105.html", "image": "https://www.nslin.com.tw/proimages/ps/Extension_for_Motorcycles_and_passenger_cars/EXS-105.jpg"},
+        {"model": "EXS-120", "description": "120-degree angled extension", "url": "https://www.nslin.com.tw/product-EXS-120-EXS-120.html", "image": "https://www.nslin.com.tw/proimages/ps/Extension_for_Motorcycles_and_passenger_cars/EXS-120.jpg"},
+        {"model": "LEX-0-2", "description": "Straight type extension", "url": "https://www.nslin.com.tw/product-LEX-0-2-LEX-0-2.html", "image": "https://www.nslin.com.tw/proimages/ps/Extension_for_Motorcycles_and_passenger_cars/EXS-0-2.jpg"}
+      ]
+    },
+    "10_extension_trucks": {
+      "category_name": "Extension for Trucks",
+      "category_url": "https://www.nslin.com.tw/category-Extension-for-Trucks-10.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Extension_for_Trucks/Extension_for_Truck.jpg",
+      "description": "Metallic extensions for trucks, rigid, endure high pressure",
+      "subcategories": {
+        "EXL_series": {
+          "name": "EXL Series (Rigid metallic truck extensions)",
+          "url": "https://www.nslin.com.tw/category-EXL-series-aaaaa.html",
+          "products": [
+            {"model": "EXL-0-4", "url": "https://www.nslin.com.tw/product-EXL-0-4-EXL-0-4.html"},
+            {"model": "EXL-0-5", "url": "https://www.nslin.com.tw/product-EXL-0-5-EXL-0-5.html"},
+            {"model": "EXL-0-7", "url": "https://www.nslin.com.tw/product-EXL-0-7-EXL-0-7.html"},
+            {"model": "EXL-135-5", "url": "https://www.nslin.com.tw/product-EXL-135-5-EXL-135-5.html"},
+            {"model": "EXL-180-3", "url": "https://www.nslin.com.tw/product-EXL-180-3-EXL-180-3.html"}
+          ]
+        },
+        "FEI_series": {
+          "name": "FEI Series (Braided S/S Flexible Extension Hose with Teflon inner tube)",
+          "url": "https://www.nslin.com.tw/category-FEI-series-aaaaaa.html",
+          "description": "High pressure, high temperature tolerance",
+          "products": [
+            {"model": "FEI-0-7", "specs": "7 inch, straight", "url": "https://www.nslin.com.tw/product-FEI-0-7-FEI-0-7.html"},
+            {"model": "FEI-0-10", "specs": "10 inch, straight", "url": "https://www.nslin.com.tw/product-FEI-0-10-FEI-0-10.html"},
+            {"model": "FEI-0-12", "specs": "12 inch, straight", "url": "https://www.nslin.com.tw/product-FEI-0-12-FEI-0-12.html"},
+            {"model": "FEI-0-24", "specs": "24 inch, straight", "url": "https://www.nslin.com.tw/product-FEI-0-24-FEI-0-24.html"},
+            {"model": "FEI-135-10", "specs": "10 inch, 135-degree bent adapter", "url": "https://www.nslin.com.tw/product-FEI-135-10-FEI-135-10.html"},
+            {"model": "FEI-135-15", "specs": "15 inch, 135-degree bent adapter", "url": "https://www.nslin.com.tw/product-FEI-135-15-FEI-135-15.html"}
+          ]
+        },
+        "LEX": {
+          "name": "LEX (Straight type truck extension)",
+          "url": "https://www.nslin.com.tw/category-LEX-aaaaaaa.html",
+          "products": [
+            {"model": "LEX", "description": "Straight type rigid metallic extension for trucks", "url": "https://www.nslin.com.tw/product-LEX-LEX.html", "image": "https://www.nslin.com.tw/proimages/ps/Extension_for_Trucks/LEX.jpg"}
+          ]
+        }
+      }
+    },
+    "11_alloy_lug_nuts": {
+      "category_name": "Alloy Lug Nuts for Wheels",
+      "category_url": "https://www.nslin.com.tw/category-Alloy-Lug-Nuts-for-Wheels-11.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Alloy_Lug_Nuts_for_Wheels/DNO.jpg",
+      "description": "7075-T6 Aluminum Alloy, tensile strength 83,000 psi, 60 degree tapered seating, anodizable",
+      "products": [
+        {"model": "ANC", "specs": "19mm hex, 34mm length, closed-ended", "url": "https://www.nslin.com.tw/product-ANC-ANC.html", "image": "https://www.nslin.com.tw/proimages/ps/Alloy_Lug_Nuts_for_Wheels/ANC.jpg"},
+        {"model": "ANO", "specs": "19mm hex, 34mm length, open-ended", "url": "https://www.nslin.com.tw/product-ANO-ANO.html", "image": "https://www.nslin.com.tw/proimages/ps/Alloy_Lug_Nuts_for_Wheels/ANO.jpg"},
+        {"model": "BNO", "specs": "12.2mm hex, 42mm length, open-ended", "url": "https://www.nslin.com.tw/product-BNO-BNO.html", "image": "https://www.nslin.com.tw/proimages/ps/Alloy_Lug_Nuts_for_Wheels/BNO.jpg"},
+        {"model": "CNO", "specs": "Open-ended configuration", "url": "https://www.nslin.com.tw/product-CNO-CNO.html", "image": "https://www.nslin.com.tw/proimages/ps/Alloy_Lug_Nuts_for_Wheels/CNO.jpg"},
+        {"model": "DNO", "specs": "Open-ended configuration", "url": "https://www.nslin.com.tw/product-DNO-DNO.html", "image": "https://www.nslin.com.tw/proimages/ps/Alloy_Lug_Nuts_for_Wheels/DNO.jpg"}
+      ]
+    },
+    "12_special_valve_cap": {
+      "category_name": "Special Valve & Cap",
+      "category_url": "https://www.nslin.com.tw/category-Special-valve-12.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Special_valve/TPC-1.jpg",
+      "subcategories": {
+        "rubber_raft_valve": {
+          "name": "Rubber Raft Valve",
+          "url": "https://www.nslin.com.tw/category-Rubber-Raft-valve-aaaaa.html",
+          "description": "Crimped onto flange, urethane flange welds to most urethane coated inflation chambers",
+          "products": [
+            {"model": "830-AOV", "description": "Brass stem, polyether urethane/neoprene flange, plastic cap nut", "url": "https://www.nslin.com.tw/product-830-AOV-830-AOV.html"},
+            {"model": "830-AOC", "description": "Brass stem, polyether urethane/neoprene flange, brass cap nut", "url": "https://www.nslin.com.tw/product-830-AOC-830-AOC.html"}
+          ]
+        },
+        "dual_seal_valve_cap": {
+          "name": "Dual Seal Valve Cap",
+          "url": "https://www.nslin.com.tw/category-Dual-seal-valve-cap-12-3.html",
+          "description": "Enables direct tire inflation without cap removal. Functions as Schrader valve extender. Air-tight, dust-free, water-free.",
+          "products": [
+            {"model": "DSC-1", "url": "https://www.nslin.com.tw/product-DSC-1-DSC-1.html"},
+            {"model": "DSC-2", "url": "https://www.nslin.com.tw/product-DSC-2-DSC-2.html"},
+            {"model": "DSC-3", "url": "https://www.nslin.com.tw/product-DSC-3-DSC-3.html"},
+            {"model": "DSC-4", "url": "https://www.nslin.com.tw/product-DSC-4-DSC-4.html"}
+          ]
+        },
+        "thief_proof_valve_cap": {
+          "name": "Thief-proof Valve Cap",
+          "url": "https://www.nslin.com.tw/category-Thief-proof-valve-cap-12-4.html",
+          "description": "When locked with provided tool, cap spins freely making removal virtually impossible",
+          "products": [
+            {"model": "TPC-1", "description": "Nickel plated brass with anodised aluminium spinning sleeve", "url": "https://www.nslin.com.tw/product-TPC-1-TPC-1.html"},
+            {"model": "Tool for TPC-1", "description": "Installation/removal tool for TPC-1", "url": "https://www.nslin.com.tw/product-Tool-for-TPC-1-Tool-for-TPC-1.html"},
+            {"model": "TPC-2", "description": "Nickel plated brass with anodised brass spinning sleeve", "url": "https://www.nslin.com.tw/product-TPC-2-TPC-2.html"},
+            {"model": "Tool for TPC-2", "description": "Installation/removal tool for TPC-2", "url": "https://www.nslin.com.tw/product-Tool-of-TPC-2-Tool-of-TPC-2.html"}
+          ]
+        }
+      }
+    },
+    "13_invisible_valve": {
+      "category_name": "Invisible Valve",
+      "category_url": "https://www.nslin.com.tw/category-Invisible-Valve-13.html",
+      "category_image": "https://www.nslin.com.tw/proimages/ci/Invisible_Valve/Invisible_Valve.jpg",
+      "description": "Concealed valve systems with dust-free caps and removable extenders, 11.5mm rim hole fit",
+      "products": [
+        {"model": "SE-452-1-AL & Exb-2-AL", "description": "Aluminum alloy, lightweight type", "url": "https://www.nslin.com.tw/product-SE-452-1-AL---Exb-2-AL-SE-452-1-AL.html", "image": "https://www.nslin.com.tw/proimages/ps/Passenger_and_Light_Truck_Valve/SE-452-1-AL_Exb-2-AL-Red.jpg"},
+        {"model": "SE-452-1-Cu & Exb-1-Cu", "description": "Brass construction, basic type", "url": "https://www.nslin.com.tw/product-SE-452-1-Cu---Exb-1-Cu-SE-452-1-Cu.html", "image": "https://www.nslin.com.tw/proimages/ps/Passenger_and_Light_Truck_Valve/SE-452-1-Cu.jpg"},
+        {"model": "SE-452-5-AL & Exb-5-AL", "description": "Security type: pentagonal-holed cap requires pentagonal extender for removal", "url": "https://www.nslin.com.tw/product-SE-452-5-AL---Exb-5-AL-SE-452-5-AL.html", "image": "https://www.nslin.com.tw/proimages/ps/Passenger_and_Light_Truck_Valve/SE-452-5-AL_Exb-5-AL.jpg"},
+        {"model": "SE-452-A-Cu & Exb-3-Cu", "description": "All-in-one extender for cap removal and inflation", "url": "https://www.nslin.com.tw/product-SE-452-A-Cu---Exb-3-Cu-SE-452-A-Cu.html", "image": "https://www.nslin.com.tw/proimages/Passenger_and_Light_Truck_Valve/SE-452-A-Cu.gif"}
+      ]
+    }
+  },
+  "summary": {
+    "total_categories": 13,
+    "total_unique_product_pages": 95,
+    "total_model_variants_approx": "150+",
+    "bicycle_valve_products_detailed": 18,
+    "bicycle_valve_variants": "50+",
+    "image_base_url": "https://www.nslin.com.tw/proimages/",
+    "image_directories": {
+      "pb": "Product big images",
+      "ps": "Product small/thumbnail images",
+      "sr": "Super resolution / enlarged images",
+      "ct": "Content/gallery images",
+      "ci": "Category index images",
+      "cs": "Category small images"
+    }
+  }
+}

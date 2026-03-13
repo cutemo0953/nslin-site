@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "首頁",
+    "products": "產品",
+    "guides": "知識中心",
+    "about": "關於我們",
+    "contact": "聯繫 / 詢價",
+    "blog": "技術文章"
+  },
+  "home": {
+    "hero": {
+      "title": "精密輪胎氣嘴閥",
+      "subtitle": "超過 40 年的製造專業",
+      "description": "ISO 9001:2015 認證。符合 TRA、ETRTO 及 JATMA 國際標準，行銷全球。",
+      "cta_products": "瀏覽產品",
+      "cta_rfq": "索取報價"
+    },
+    "features": {
+      "title": "為什麼選擇南新林",
+      "iso": "ISO 9001:2015 認證",
+      "iso_desc": "通過 AFAQ 品質管理系統認證，確保產品品質一致。",
+      "standards": "符合國際標準",
+      "standards_desc": "產品符合 TRA（美國）、ETRTO（歐洲）及 JATMA（日本）規範。",
+      "oem": "OEM/ODM 客製服務",
+      "oem_desc": "依客戶需求設計製造，從打樣到量產一站完成。",
+      "experience": "超過 40 年經驗",
+      "experience_desc": "四十年以上的氣嘴閥研發與製造實績。"
+    },
+    "categories": {
+      "title": "產品線",
+      "bicycle": "自行車無內胎氣嘴閥",
+      "bicycle_desc": "法式與美式氣嘴、氣嘴帽、延長管及轉接頭，適用於無內胎自行車輪圈。",
+      "tpms": "TPMS 感測器氣嘴閥",
+      "tpms_desc": "15 款售後市場型號，適用於胎壓偵測系統。",
+      "automotive": "小客車與輕型卡車氣嘴閥",
+      "automotive_desc": "13 款型號，含插入式與夾入式配置。",
+      "view_all": "瀏覽全部 13 類產品"
+    }
+  },
+  "about": {
+    "title": "關於南新林",
+    "history": "公司沿革",
+    "certifications": "品質認證",
+    "capabilities": "製造能力"
+  },
+  "contact": {
+    "title": "聯繫我們",
+    "rfq": "索取報價",
+    "sample": "樣品申請",
+    "custom": "客製設計需求",
+    "form": {
+      "company": "公司名稱",
+      "name": "聯絡人",
+      "email": "電子郵件",
+      "country": "國家",
+      "inquiry_type": "詢問類型",
+      "product_category": "產品類別",
+      "volume": "預估年用量",
+      "message": "需求說明 / 規格",
+      "attachment": "附件（圖面或規格書，選填）",
+      "submit": "送出詢問"
+    }
+  },
+  "products": {
+    "title": "產品",
+    "all_categories": "所有類別",
+    "specs": "規格",
+    "material": "材質",
+    "rim_hole": "輪圈孔徑",
+    "standard": "適用標準",
+    "related": "相關產品",
+    "request_quote": "詢問此產品報價"
+  },
+  "footer": {
+    "company": "南新林工業股份有限公司",
+    "address": "709-47 台南市安南區長和路四段65號",
+    "phone": "+886-6-256-2097",
+    "email": "nslin@nslin.com.tw",
+    "iso": "ISO 9001:2015 認證",
+    "copyright": "版權所有。"
+  },
+  "common": {
+    "learn_more": "了解更多",
+    "back": "返回",
+    "language": "語言"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "guides": "Knowledge Hub",
+    "about": "About",
+    "contact": "Contact / RFQ",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "title": "Precision Tire Valves",
+      "subtitle": "40+ Years of Manufacturing Excellence",
+      "description": "ISO 9001:2015 certified. Meeting TRA, ETRTO, and JATMA standards for global markets.",
+      "cta_products": "View Products",
+      "cta_rfq": "Request a Quote"
+    },
+    "features": {
+      "title": "Why N.S.-LIN",
+      "iso": "ISO 9001:2015 Certified",
+      "iso_desc": "Quality management system certified by AFAQ, ensuring consistent product quality.",
+      "standards": "Global Standards",
+      "standards_desc": "Products meet TRA (US), ETRTO (EU), and JATMA (Japan) specifications.",
+      "oem": "OEM/ODM Services",
+      "oem_desc": "Custom valve design and manufacturing to your exact specifications.",
+      "experience": "40+ Years Experience",
+      "experience_desc": "Four decades of tire valve R&D and manufacturing expertise."
+    },
+    "categories": {
+      "title": "Product Lines",
+      "bicycle": "Bicycle Tubeless Valves",
+      "bicycle_desc": "Presta & Schrader valves, caps, extenders, and adapters for tubeless bicycle rims.",
+      "tpms": "TPMS Sensor Valves",
+      "tpms_desc": "15 aftermarket models for tire pressure monitoring systems.",
+      "automotive": "Car & Light Truck Valves",
+      "automotive_desc": "13 models in snap-in and clamp-in configurations.",
+      "view_all": "View All 13 Categories"
+    }
+  },
+  "about": {
+    "title": "About N.S.-LIN",
+    "history": "Company History",
+    "certifications": "Certifications",
+    "capabilities": "Manufacturing Capabilities"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "rfq": "Request for Quote",
+    "sample": "Sample Request",
+    "custom": "Custom Design Inquiry",
+    "form": {
+      "company": "Company Name",
+      "name": "Contact Name",
+      "email": "Email",
+      "country": "Country",
+      "inquiry_type": "Inquiry Type",
+      "product_category": "Product Category",
+      "volume": "Estimated Annual Volume",
+      "message": "Message / Specifications",
+      "attachment": "Attach Drawing/Spec (optional)",
+      "submit": "Submit Inquiry"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "all_categories": "All Categories",
+    "specs": "Specifications",
+    "material": "Material",
+    "rim_hole": "Rim Hole",
+    "standard": "Standards",
+    "related": "Related Products",
+    "request_quote": "Request Quote for This Product"
+  },
+  "footer": {
+    "company": "N.S.-LIN Industrial Co., Ltd.",
+    "address": "NO.65, Sec.4, Changhe Rd., Annan Dist., Tainan City 709-47, Taiwan",
+    "phone": "+886-6-256-2097",
+    "email": "nslin@nslin.com.tw",
+    "iso": "ISO 9001:2015 Certified",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "back": "Back",
+    "language": "Language"
+  }
+}
