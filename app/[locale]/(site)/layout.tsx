@@ -34,7 +34,7 @@ function Header() {
           <Link href="/products" className="hover:text-white transition-colors">
             {t('products')}
           </Link>
-          <Link href="/guides/valve-standards" className="hover:text-white transition-colors">
+          <Link href="/guides" className="hover:text-white transition-colors">
             {t('guides')}
           </Link>
           <Link href="/blog" className="hover:text-white transition-colors">

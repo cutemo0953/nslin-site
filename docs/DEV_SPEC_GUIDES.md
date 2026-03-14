@@ -1,6 +1,6 @@
 # DEV_SPEC: 知識中心 (Guides)
 
-> Status: SPEC v3 — 等簽收（v2 + Gemini/ChatGPT round 2 feedback）
+> Status: Phase 1 DONE, Phase 2 pending
 > Last Updated: 2026-03-14
 > Strategy: 9.0 | Architecture: 8.8 | Implementation: 8.4 → target 9.0+
 
@@ -24,9 +24,9 @@
 
 | Guide | 路由 | 狀態 |
 |-------|------|------|
-| valve-standards | `/guides/valve-standards` | 骨架完成（Quick Summary + TODO placeholder） |
-| valve-materials | `/guides/valve-materials` | ~~已宣告但 404~~ → **Phase 0 已從 sitemap/llms.txt 移除** |
-| tubeless-basics | `/guides/tubeless-basics` | ~~已宣告但 404~~ → **Phase 0 已從 sitemap/llms.txt 移除** |
+| valve-standards | `/guides/valve-standards` | **Phase 1 DONE** — MDX pipeline 上線，hardcoded TSX 已刪除 |
+| valve-materials | `/guides/valve-materials` | Phase 2 待寫 MDX 內容 + registry entry |
+| tubeless-basics | `/guides/tubeless-basics` | Phase 2 待寫 MDX 內容 + registry entry |
 
 ## 架構決策
 
@@ -94,7 +94,7 @@ prebuild pipeline 的產出是**純 HTML string**，runtime 用 `dangerouslySetI
 - [x] 修正 `llms.txt` BASE_URL（vercel → workers.dev）
 - [x] 確認 `valve-standards` 繼續可存取
 
-### Phase 1: Core Guide System（中事）
+### Phase 1: Core Guide System（中事）— DONE
 
 #### 1a. Content Model + Pipeline
 
@@ -157,25 +157,25 @@ prebuild pipeline 的產出是**純 HTML string**，runtime 用 `dangerouslySetI
 
 | # | Slug | 主題 | 目標關鍵字 | 狀態 |
 |---|------|------|-----------|------|
-| 1 | valve-standards | TRA vs ETRTO vs JATMA 標準對照 | tire valve standards, valve specifications | 遷移（TSX → MDX） |
-| 2 | valve-materials | 氣嘴閥材質科學：EPDM/NBR/Brass/Aluminum | tire valve rubber material, brass vs aluminum valve | 全新 |
-| 3 | tubeless-basics | 無內胎系統入門 | tubeless tire system, how tubeless works | 全新 |
+| 1 | valve-standards | TRA vs ETRTO vs JATMA 標準對照 | tire valve standards, valve specifications | **DONE** — TSX → MDX 遷移完成 |
+| 2 | valve-materials | 氣嘴閥材質科學：EPDM/NBR/Brass/Aluminum | tire valve rubber material, brass vs aluminum valve | 待寫 |
+| 3 | tubeless-basics | 無內胎系統入門 | tubeless tire system, how tubeless works | 待寫 |
 
 每篇 MDX 只包含主體內容（H2 sections）。以下區塊由 page.tsx 自動渲染，不寫在 MDX 裡：
 - Direct Answer Block（從 `directAnswer` frontmatter）
 - FAQ section（從 `faq` frontmatter）
 - Related Products / Related Blog（從 `relatedProductSlugs` + tag matching）
 
-#### valve-standards Migration Acceptance Criteria
+#### valve-standards Migration Acceptance Criteria — ALL PASSED
 
-- [ ] URL 不變：`/guides/valve-standards` (en) 和 `/zh-TW/guides/valve-standards`
-- [ ] Metadata parity：title、description 保留或改善
-- [ ] 不可少任何主要 section（Quick Summary → directAnswer、FAQ、Related Products CTA）
-- [ ] FAQ JSON-LD schema output 驗證通過
-- [ ] 內部連結不可壞
-- [ ] 中英文內容語意對等
-- [ ] 舊 hardcoded `page.tsx` 刪除後無殘留 import
-- [ ] Visual regression：頁面外觀與舊版無明顯退化
+- [x] URL 不變：`/guides/valve-standards` (en) 和 `/zh-TW/guides/valve-standards`
+- [x] Metadata parity：title、description 保留或改善
+- [x] 不可少任何主要 section（Quick Summary → directAnswer、FAQ、Related Products CTA）
+- [x] FAQ JSON-LD schema output 驗證通過
+- [x] 內部連結不可壞
+- [x] 中英文內容語意對等
+- [x] 舊 hardcoded `page.tsx` 刪除後無殘留 import
+- [x] Visual regression：頁面外觀與舊版無明顯退化
 
 ### Phase 3: Guide 列表頁 + Enrichment
 

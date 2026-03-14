@@ -125,7 +125,9 @@ export default async function GuidePage({
               {isZh ? '首頁' : 'Home'}
             </Link>
             <span className="text-white/30">/</span>
-            <span>{isZh ? '知識中心' : 'Guides'}</span>
+            <Link href="/guides" className="hover:text-white transition-colors">
+              {isZh ? '知識中心' : 'Guides'}
+            </Link>
           </nav>
           <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs text-white/80">
             <BookOpenIcon className="h-3.5 w-3.5" />
