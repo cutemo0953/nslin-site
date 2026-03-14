@@ -10,9 +10,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const isZh = locale === 'zh-TW';
   return {
-    title: isZh ? '關於南新林' : 'About N.S.-LIN',
+    title: isZh ? '關於奕道' : 'About N.S.-LIN',
     description: isZh
-      ? '南新林工業 — 超過40年氣嘴閥製造經驗，ISO 9001:2015認證，台南工廠，CNC精密加工、硫化製程、鋁合金陽極處理。'
+      ? '奕道工業 — 超過40年氣嘴閥製造經驗，ISO 9001:2015認證，台南工廠，CNC精密加工、硫化製程、鋁合金陽極處理。'
       : 'N.S.-LIN Industrial — 40+ years of tire valve manufacturing. ISO 9001:2015 certified. CNC precision machining, rubber vulcanization, aluminum anodizing.',
     alternates: seoAlternates('/about', locale),
   };
@@ -36,7 +36,7 @@ export default async function AboutPage({
       <section className="mb-12">
         <p className="text-lg text-metal-700 leading-relaxed">
           {isZh
-            ? 'N.S.-LIN 南新林工業股份有限公司成立於台南市安南區，擁有超過四十年的輪胎氣嘴閥研發與製造經驗。我們的產品行銷全球，符合TRA（美國）、ETRTO（歐洲）及JATMA（日本）國際標準，並通過ISO 9001:2015品質管理系統認證。'
+            ? 'N.S.-LIN 奕道實業有限公司成立於台南市安南區，擁有超過四十年的輪胎氣嘴閥研發與製造經驗。我們的產品行銷全球，符合TRA（美國）、ETRTO（歐洲）及JATMA（日本）國際標準，並通過ISO 9001:2015品質管理系統認證。'
             : 'N.S.-LIN Industrial Co., Ltd., headquartered in Tainan, Taiwan, brings over four decades of tire valve R&D and manufacturing expertise. Our products serve global markets and comply with TRA (US), ETRTO (EU), and JATMA (Japan) international standards, backed by ISO 9001:2015 quality management certification.'}
         </p>
       </section>

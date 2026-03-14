@@ -1,0 +1,118 @@
+{
+  "entities": [
+    {
+      "id": "bbb-corecap",
+      "brand": "BBB Cycling",
+      "product": "CoreCap",
+      "tier": 0,
+      "official_url": "https://bfriendbike.com/en/products/bti-165-corecap",
+      "patent_ids": [],
+      "notes": "Reference product (N.S.-LIN manufactured)"
+    },
+    {
+      "id": "reserve-fillmore",
+      "brand": "Reserve",
+      "product": "Fillmore Valve",
+      "tier": 1,
+      "official_url": "https://reservewheels.com/products/fillmore-tubeless-valves",
+      "patent_ids": ["US 10,926,591 B2"]
+    },
+    {
+      "id": "mucoff-big-bore",
+      "brand": "Muc-Off",
+      "product": "Big Bore Tubeless Valve",
+      "tier": 1,
+      "official_url": "https://muc-off.com/collections/tubeless-valves",
+      "patent_ids": []
+    },
+    {
+      "id": "legion-vmax",
+      "brand": "Legion",
+      "product": "VMAX / TROJAN Vmax",
+      "tier": 1,
+      "official_url": "https://www.legionbikeparts.com/product-page/legion-v-max-valve",
+      "patent_ids": []
+    },
+    {
+      "id": "stans-exo-core",
+      "brand": "Stan's NoTubes",
+      "product": "Exo-Core Valve",
+      "tier": 1,
+      "official_url": "https://www.notubes.com/valves",
+      "patent_ids": []
+    },
+    {
+      "id": "76-projects-hi-flow",
+      "brand": "76 Projects",
+      "product": "Hi Flow Valve",
+      "tier": 1,
+      "official_url": "https://76projects.com/collections/tubeless-valves",
+      "patent_ids": []
+    },
+    {
+      "id": "schwalbe-clik",
+      "brand": "Schwalbe",
+      "product": "Clik Valve System",
+      "tier": 2,
+      "official_url": "https://www.schwalbe.com/en/clik",
+      "patent_ids": [],
+      "notes": "Eurobike 2024 Award. Open-license standard."
+    },
+    {
+      "id": "topeak-turboflow",
+      "brand": "Topeak",
+      "product": "TurboFlow Valve",
+      "tier": 2,
+      "official_url": "https://www.topeak.com",
+      "patent_ids": []
+    },
+    {
+      "id": "wtb-max-flow",
+      "brand": "WTB",
+      "product": "Max-Flow Valve",
+      "tier": 2,
+      "official_url": "https://www.wtb.com",
+      "patent_ids": []
+    },
+    {
+      "id": "cushcore-hi-flo",
+      "brand": "CushCore",
+      "product": "Hi-Flo Valve",
+      "tier": 2,
+      "official_url": "https://www.cushcore.com",
+      "patent_ids": []
+    },
+    {
+      "id": "industry-nine",
+      "brand": "Industry Nine",
+      "product": "Tubeless Valve",
+      "tier": 2,
+      "official_url": "https://industrynine.com",
+      "patent_ids": []
+    },
+    {
+      "id": "peatys-mk2",
+      "brand": "Peaty's x Chris King",
+      "product": "MK2 Tubeless Valve",
+      "tier": 3,
+      "official_url": "https://pfriendbike.com",
+      "patent_ids": []
+    },
+    {
+      "id": "dt-swiss",
+      "brand": "DT Swiss",
+      "product": "Tubeless Valve (Aluminum)",
+      "tier": 3,
+      "official_url": "https://www.dtswiss.com",
+      "patent_ids": []
+    },
+    {
+      "id": "prime-tubeless",
+      "brand": "Prime",
+      "product": "Tubeless Valve",
+      "tier": 4,
+      "official_url": "https://www.wiggle.com",
+      "patent_ids": []
+    }
+  ]
+}

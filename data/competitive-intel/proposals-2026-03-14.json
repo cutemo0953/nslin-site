@@ -1,0 +1,287 @@
+[
+  {
+    "entity_id": "reserve-fillmore",
+    "change_type": "award",
+    "field": "awards",
+    "old_value": "Multiple best-of-year selections",
+    "new_value": "Design & Innovation and MTBR Editor's Choice awards",
+    "evidence": {
+      "source_url": "https://uk.reservewheels.com/collections/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:14:43.488Z",
+      "snippet": "Winner of Design & Innovation and MTBR Editor's Choice awards, the Reserve Fillmore Valve is a patented leap forward in tubeless tech."
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "mucoff-big-bore",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "48.99",
+    "new_value": "50.00",
+    "evidence": {
+      "source_url": "https://www.performancebike.com/mucoff-big-bore-lite-tubeless-valves-black-pair-small-30mm-21117/p1573095?v=1560227&srsltid=AfmBOooECUtMY5DR1PLmXNjR5ZwhDPG6h1tAXdRs2P7QagZVXGCAd0Pn",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:14:55.444Z",
+      "snippet": "Part#: 21117 ; Price: $50.00 ; Muc-Off Big Bore Lite Tubeless Valves Description: Engineered with precision and leading technology, the Big Bore"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "legion-vmax",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"55mm\", \"70mm\", \"80mm\"]",
+    "new_value": "[\"44mm\", \"55mm\", \"65mm\", \"70mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.1bike.co.uk/legion-vmax-high-volume-tubeless-valve-set-65mm.html",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:15:08.556Z",
+      "snippet": "Legion VMax High Volume Tubeless Valve Set 65mm. Legion. €26.90. Availability: N/"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "stans-exo-core",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "54.99",
+    "new_value": "59.00",
+    "evidence": {
+      "source_url": "https://notubes.com/",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:15:20.009Z",
+      "snippet": "Stan's Tubeless Exo-Core Valves. from $59.00 ; Stan's Original DART Tool. $27.00 ; Stan's ForkBoost. $13.00 ; Stan's Incredible DART Tubeless Repair Tool. $75.00."
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "29",
+    "new_value": "34.50",
+    "evidence": {
+      "source_url": "https://us.76projects.com/products/hi-flow-no-clog-tubeless-valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:15:31.419Z",
+      "snippet": "size 0 valves. HI FLOW 'NO CLOG' TUBELESS VALVES. Regular Price: $34.50. Sale Price: $34.50; Regular Price: $0.00. Save $-26.50. Out of Stock. Unit Price: /per."
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"60mm\"]",
+    "new_value": "[\"40mm\", \"60mm\", \"80mm\", \"100mm\"]",
+    "evidence": {
+      "source_url": "https://www.schwalbe.com/en/TUBELESS-VALVE-3470?srsltid=AfmBOopd5Di9pjlM6z7w81mEtvlTYU1QHrFU17ANFBR8KAUsMk9YCoZf",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:15:41.301Z",
+      "snippet": "The Schwalbe tubeless valves are available in shank lengths of 40 mm, 60 mm, 80 mm and 100 mm and are extremely easy to handle."
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": null,
+    "new_value": "13-16g (varies by length)",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/SCHWALBE-CLIK-VALVE-TUBELESS-VENTIL-3532?srsltid=AfmBOopeCgW8X07VMdaq-111r72MfHZKP8AGFobsA1Uh-ukY3LRPrH8z",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:15:42.619Z",
+      "snippet": "80 mm, 16 g, 3532, 4026495951982, US$35.89. Buy. 60 mm, 13 g"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "28",
+    "new_value": "29.87",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/clik-valve/?srsltid=AfmBOorH9qjq6SDu7mFWdIZCorpdsv3eFarfJqqwhcaFFMKImXboFmHZ",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:15:42.619Z",
+      "snippet": "Contents: 2x Schwalbe Clik Valve tubeless valve. from US$29.87* RRP."
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"50mm\", \"60mm\"]",
+    "new_value": "[\"45mm\", \"60mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:15:56.170Z",
+      "snippet": "45 mm recommend for MTB / Gravel, 60 mm recommend for Road / Gravel, 80 mm recommend for Road / Triathlon. | Size | 45 mm: 1.3 x 1.3 x 7.4 cm   60 mm: 1.3 x 1.3 x 8.8 cm   80 mm: 1.3 x 1.3 x 10.8 cm"
+    },
+    "confidence": 0.95,
+    "change_class": 2
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": null,
+    "new_value": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm)",
+    "evidence": {
+      "source_url": "https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:15:56.170Z",
+      "snippet": "Weight | 45 mm : 12.8 g (1 pair)   60 mm : 13.8 g (1 pair)   80 mm : 15.8 g (1 pair)"
+    },
+    "confidence": 0.95,
+    "change_class": 2
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "24.95",
+    "evidence": {
+      "source_url": "https://www.wtb.com/products/max-flow-tubeless-valves?srsltid=AfmBOoqD7EoHYwI1ydUzHhcLum6cEz6TjKz_OXOkIb7BooOxijDks4jj",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:08.158Z",
+      "snippet": "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95."
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"34mm\", \"46mm\", \"56mm\"]",
+    "new_value": "[\"34mm\", \"44mm\", \"46mm\"]",
+    "evidence": {
+      "source_url": "https://www.benscycle.com/wtb-tcs-max-flow-tubeless-valves---44mm--black--pair-c1234-wtb-j2591-tu0012/p?srsltid=AfmBOoouIbSEm3Fo6zU2WUvmlrrGNOZfjo1IKDUufSmhY3SJcgyLaXUj",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:08.158Z",
+      "snippet": "WTB TCS Max-Flow Tubeless Valves - 44mm, Black, Pair. SKU: TU0012. Price:$21.95. Quantity. 10+ Available. NOTICE - Sourced From Manufacturer - Ships or Pick Up"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"55mm\"]",
+    "new_value": "[\"44mm\", \"55mm\", \"66mm\"]",
+    "evidence": {
+      "source_url": "https://siteground.cushcore.com/product/yeti-fox-factory-team-44mm-turquoise-presta-valve-set/",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:16:16.238Z",
+      "snippet": "66mm alloy valves with quality nitrile rubber seal. Valve core tool included. All prices in USD. [jgm-preview-badge]. $25.00. CushCore 66mm Tubeless Presta"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopL1KRJ13ubZni4lgya6qYKqzpM9aiDo9S27sdULe5hlLlFvoHr",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:17.646Z",
+      "snippet": "Now with 13 color options! Tubeless Presta Valves with CushCore's pateneted Hi-FLo ... HI-FLO Valves. Sale price$30.00. Pay over time for orders over $35.00"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"60mm\", \"80mm\"]",
+    "new_value": "[\"40mm\", \"52mm\", \"67mm\"]",
+    "evidence": {
+      "source_url": "https://www.ap.industrynine.com/parts/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-14T02:16:29.396Z",
+      "snippet": "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves) ; TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves)."
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "21.99",
+    "evidence": {
+      "source_url": "https://worldwidecyclery.com/products/industry-nine-no-clog-aluminum-tubeless-valve-stems-39mm-lime-pair?srsltid=AfmBOooZt1L2M9nwNYMf_sM6rkvojNTo_Gg1MrRbACfrsSieUPbniGUe",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:30.866Z",
+      "snippet": "Industry Nine Tubeless Valves - 40mm, Lime, Pair ; List Price · $21.99 ; Sale Price · $21.99 ; Savings · $-21.99 (0%)"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "peatys-mk2",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "36",
+    "new_value": "34",
+    "evidence": {
+      "source_url": "https://www.edisoncycleco.com/products/peatys?srsltid=AfmBOoqDqBfctjc52s31eN-I2wWre9Xk-NY2uiRJdCoeM6GlzTFgCsP9",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:40.252Z",
+      "snippet": "Peaty's x Chris King (MK2) Tubeless Valves- 42 MM/PUNCH. $34.00. Decrease quantity. Increase quantity. Add to cart."
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "22.5",
+    "new_value": "22.3",
+    "evidence": {
+      "source_url": "https://www.performancebike.com/dt-swiss-aluminum-tubeless-presta-valve-black-single-80mm-tvvxa72s25871s/p1626678?v=1489890&srsltid=AfmBOop0AVbZ8iC8ZoUD1lZ4yTeE29mB-yo-yrP4MRd7WHhVwrhZIhcY",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:48.566Z",
+      "snippet": "In Stock Online. Estimated ship date: Tomorrow ; Estimated ship date · Tomorrow ; Price: $22.30 ; DT Swiss Aluminum Tubeless Presta Valve"
+    },
+    "confidence": 0.6,
+    "change_class": 2
+  },
+  {
+    "entity_id": "prime-tubeless",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"60mm\"]",
+    "new_value": "[\"39mm\", \"45mm\", \"55mm\", \"75mm\", \"85mm\", \"100mm\"]",
+    "evidence": {
+      "source_url": "https://primebikecomponents.com/products/presta-tubeless-valves-pair",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-14T02:16:59.973Z",
+      "snippet": "Prime Presta Tubeless Valves (Pair) £10.99 Tax included. Features: Size 39mm 45mm 55mm 75mm 85mm 100mm Shop at Retail Partner"
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  }
+]

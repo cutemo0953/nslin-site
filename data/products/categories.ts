@@ -8,8 +8,9 @@ export const categories: CategoryData[] = [
       en: 'Presta & Schrader tubeless valves, valve caps, extenders, adapters, wrenches, and reducers for bicycle rims.',
       'zh-TW': '法式與美式無內胎氣嘴閥、氣嘴帽、延長管、轉接頭、拆卸工具，適用於自行車輪圈。',
     },
-    productCount: 7,
-    featuredProducts: [], // TODO: Fill after crawl
+    productCount: 6,
+    featuredProducts: [],
+    image: '/images/products/categories/bicycle_FVT.jpg',
     pillarPageLink: '/guides/tubeless-basics',
   },
   {
@@ -21,16 +22,18 @@ export const categories: CategoryData[] = [
     },
     productCount: 7,
     featuredProducts: [],
+    image: '/images/products/categories/motorcycle_SL-01-Orange.jpg',
   },
   {
     slug: 'car-light-truck-valve',
     name: { en: 'Car & Light Truck Valves', 'zh-TW': '小客車與輕型卡車氣嘴閥' },
     description: {
-      en: '13 models in snap-in and clamp-in configurations for passenger vehicles.',
-      'zh-TW': '13 款插入式與夾入式配置，適用於小客車。',
+      en: '16 models in snap-in and clamp-in configurations for passenger vehicles.',
+      'zh-TW': '16 款插入式與夾入式配置，適用於小客車與輕型卡車。',
     },
-    productCount: 13,
+    productCount: 16,
     featuredProducts: [],
+    image: '/images/products/categories/automotive_Car_Light_Truck_Valve.jpg',
   },
   {
     slug: 'truck-bus-valve',
@@ -39,18 +42,20 @@ export const categories: CategoryData[] = [
       en: 'Heavy-duty valve solutions for trucks and buses.',
       'zh-TW': '適用於大客車與貨車的重型氣嘴閥。',
     },
-    productCount: 3,
+    productCount: 5,
     featuredProducts: [],
+    image: '/images/products/categories/truck-bus_Truck_Bus_Valve.jpg',
   },
   {
     slug: 'tpms-sensor-valve',
     name: { en: 'TPMS Sensor Valves', 'zh-TW': 'TPMS 感測器氣嘴閥' },
     description: {
-      en: '15 aftermarket TPMS sensor valve models for tire pressure monitoring systems.',
-      'zh-TW': '15 款售後市場 TPMS 感測器氣嘴閥，適用於胎壓偵測系統。',
+      en: '13 aftermarket TPMS sensor valve models for tire pressure monitoring systems.',
+      'zh-TW': '13 款售後市場 TPMS 感測器氣嘴閥，適用於胎壓偵測系統。',
     },
-    productCount: 15,
+    productCount: 13,
     featuredProducts: [],
+    image: '/images/products/categories/tpms_Sensor_valve.jpg',
   },
   {
     slug: 'invisible-valve',
@@ -61,6 +66,7 @@ export const categories: CategoryData[] = [
     },
     productCount: 4,
     featuredProducts: [],
+    image: '/images/products/categories/invisible_Invisible_Valve.jpg',
   },
   {
     slug: 'tractor-valve',
@@ -69,8 +75,9 @@ export const categories: CategoryData[] = [
       en: 'Valves for agricultural tractors and industrial equipment.',
       'zh-TW': '適用於農業拖拉機與工業設備的氣嘴閥。',
     },
-    productCount: 3,
+    productCount: 5,
     featuredProducts: [],
+    image: '/images/products/categories/tractor_Large_bore_Tractor_Valve.jpg',
   },
   {
     slug: 'truck-valve-extension',
@@ -79,8 +86,9 @@ export const categories: CategoryData[] = [
       en: 'Extension solutions for dual-wheel truck configurations.',
       'zh-TW': '適用於雙輪貨車配置的延長管解決方案。',
     },
-    productCount: 3,
+    productCount: 12,
     featuredProducts: [],
+    image: '/images/products/categories/truck-extension_Extension_for_Truck.jpg',
   },
   {
     slug: 'industrial-valve',
@@ -91,6 +99,7 @@ export const categories: CategoryData[] = [
     },
     productCount: 4,
     featuredProducts: [],
+    image: '/images/products/categories/industrial_TV-01.jpg',
   },
   {
     slug: 'special-valve-cap',
@@ -99,8 +108,9 @@ export const categories: CategoryData[] = [
       en: 'Security caps, pentagonal designs, and specialty valve accessories.',
       'zh-TW': '防盜氣嘴帽、五角設計及特殊氣嘴配件。',
     },
-    productCount: 3,
+    productCount: 10,
     featuredProducts: [],
+    image: '/images/products/categories/special-cap_TPC-1.jpg',
   },
   {
     slug: 'alloy-lug-nuts',
@@ -111,6 +121,7 @@ export const categories: CategoryData[] = [
     },
     productCount: 5,
     featuredProducts: [],
+    image: '/images/products/categories/lug-nuts_DNO.jpg',
   },
   {
     slug: 'rim-hole-plug',
@@ -121,6 +132,7 @@ export const categories: CategoryData[] = [
     },
     productCount: 2,
     featuredProducts: [],
+    image: '/images/products/categories/rim-plug_RPV-02.jpg',
   },
   {
     slug: 'motorcycle-valve-extension',
@@ -129,7 +141,8 @@ export const categories: CategoryData[] = [
       en: 'Extension adapters for motorcycle valve stems.',
       'zh-TW': '機車氣嘴桿延長轉接頭。',
     },
-    productCount: 2,
+    productCount: 4,
     featuredProducts: [],
+    image: '/images/products/categories/moto-extension_EXS-120.jpg',
   },
 ];

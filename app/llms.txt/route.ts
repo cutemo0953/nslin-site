@@ -1,6 +1,6 @@
 const BASE_URL = 'https://nslin-site.vercel.app'; // TODO: Replace with actual domain
 
-const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (南新林工業股份有限公司)
+const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
 
 > Taiwan-based tire valve manufacturer with 40+ years of expertise.
 > ISO 9001:2015 certified. Products meet TRA (US), ETRTO (EU), JATMA (Japan) standards.

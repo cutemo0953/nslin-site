@@ -44,17 +44,29 @@ export default async function ProductsPage({
           <Link
             key={cat.slug}
             href={`/products/${cat.slug}`}
-            className="group rounded-xl border border-metal-200 p-6 hover:border-steel-300 hover:shadow-lg transition-all"
+            className="group overflow-hidden rounded-xl border border-metal-200 hover:border-steel-300 hover:shadow-lg transition-all"
           >
-            <h2 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
-              {isZh ? cat.name['zh-TW'] : cat.name.en}
-            </h2>
-            <p className="mb-4 text-sm text-metal-600">
-              {isZh ? cat.description['zh-TW'] : cat.description.en}
-            </p>
-            <span className="text-xs text-metal-400">
-              {cat.productCount} {isZh ? '款產品' : 'products'} →
-            </span>
+            {cat.image && (
+              <div className="aspect-[4/3] overflow-hidden bg-metal-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={cat.image}
+                  alt={isZh ? cat.name['zh-TW'] : cat.name.en}
+                  className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            )}
+            <div className="p-6">
+              <h2 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
+                {isZh ? cat.name['zh-TW'] : cat.name.en}
+              </h2>
+              <p className="mb-4 text-sm text-metal-600">
+                {isZh ? cat.description['zh-TW'] : cat.description.en}
+              </p>
+              <span className="text-xs text-metal-400">
+                {cat.productCount} {isZh ? '款產品' : 'products'} →
+              </span>
+            </div>
           </Link>
         ))}
       </div>

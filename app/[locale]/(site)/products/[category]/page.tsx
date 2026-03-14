@@ -66,20 +66,32 @@ export default async function CategoryPage({
             <Link
               key={product.sku}
               href={`/products/${category}/${product.sku.toLowerCase()}`}
-              className="group rounded-xl border border-metal-200 p-6 hover:border-steel-300 hover:shadow-lg transition-all"
+              className="group overflow-hidden rounded-xl border border-metal-200 hover:border-steel-300 hover:shadow-lg transition-all"
             >
-              <div className="mb-2 text-xs font-mono text-metal-400">{product.sku}</div>
-              <h2 className="mb-2 font-semibold text-steel-800 group-hover:text-steel-600">
-                {isZh ? product.name['zh-TW'] : product.name.en}
-              </h2>
-              <p className="text-sm text-metal-600 line-clamp-3">
-                {isZh ? product.description['zh-TW'] : product.description.en}
-              </p>
-              {product.material && (
-                <div className="mt-3 text-xs text-metal-400">
-                  {product.material}
+              {product.images?.[0] && (
+                <div className="aspect-[4/3] overflow-hidden bg-metal-50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={product.images[0]}
+                    alt={product.sku}
+                    className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               )}
+              <div className="p-6">
+                <div className="mb-2 text-xs font-mono text-metal-400">{product.sku}</div>
+                <h2 className="mb-2 font-semibold text-steel-800 group-hover:text-steel-600">
+                  {isZh ? product.name['zh-TW'] : product.name.en}
+                </h2>
+                <p className="text-sm text-metal-600 line-clamp-3">
+                  {isZh ? product.description['zh-TW'] : product.description.en}
+                </p>
+                {product.material && (
+                  <div className="mt-3 text-xs text-metal-400">
+                    {product.material}
+                  </div>
+                )}
+              </div>
             </Link>
           ))}
         </div>

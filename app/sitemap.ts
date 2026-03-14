@@ -1,20 +1,18 @@
 import type { MetadataRoute } from 'next';
+import { categories } from '@/data/products/categories';
+import { getAllSlugs as getAllBlogSlugs } from '@/lib/blog';
 
-const BASE_URL = 'https://nslin-site.vercel.app'; // TODO: Replace with actual domain
+const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
 
 const staticRoutes = [
   '/',
   '/about',
   '/contact',
   '/products',
+  '/blog',
   '/guides/valve-standards',
   '/guides/valve-materials',
   '/guides/tubeless-basics',
-];
-
-// Product categories — expand as we add more
-const productCategories = [
-  'bicycle-tubeless-valve',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -47,9 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Product category pages
-  productCategories.forEach((cat) => {
-    const enUrl = `${BASE_URL}/products/${cat}`;
-    const zhUrl = `${BASE_URL}/zh-TW/products/${cat}`;
+  categories.forEach((cat) => {
+    const enUrl = `${BASE_URL}/products/${cat.slug}`;
+    const zhUrl = `${BASE_URL}/zh-TW/products/${cat.slug}`;
     entries.push({
       url: enUrl,
       lastModified: new Date(),
@@ -70,8 +68,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // TODO: Add blog article pages (from getAllSlugs)
-  // TODO: Add individual product SKU pages
+  // Blog article pages
+  const blogSlugs = getAllBlogSlugs();
+  const slugSet = new Set(blogSlugs.map((b) => b.slug));
+  slugSet.forEach((slug) => {
+    const enUrl = `${BASE_URL}/blog/${slug}`;
+    const zhUrl = `${BASE_URL}/zh-TW/blog/${slug}`;
+    entries.push({
+      url: enUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: {
+        languages: { en: enUrl, 'zh-TW': zhUrl, 'x-default': enUrl },
+      },
+    });
+    entries.push({
+      url: zhUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: {
+        languages: { en: enUrl, 'zh-TW': zhUrl, 'x-default': enUrl },
+      },
+    });
+  });
 
   return entries;
 }

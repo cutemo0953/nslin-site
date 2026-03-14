@@ -1,0 +1,342 @@
+{
+  "states": [
+    {
+      "entity_id": "reserve-fillmore",
+      "specs": {
+        "material": "7000-series aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "3x",
+        "lengths": [
+          "50mm",
+          "70mm",
+          "90mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "poppet design (excellent)",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": false,
+        "pump_compatibility": "Presta"
+      },
+      "awards": [
+        "Multiple best-of-year selections",
+        "Design & Innovation and MTBR Editor's Choice awards"
+      ],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "awards": "2026-03-14",
+        "pricing": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "mucoff-big-bore",
+      "specs": {
+        "material": "7075 aluminum",
+        "valve_type": "Presta (Lite) / Schrader (Hybrid)",
+        "airflow_claim": "245-264%",
+        "lengths": [
+          "44mm",
+          "60mm",
+          "75mm",
+          "90mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "ball valve (excellent)",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "rocker lever",
+        "pump_compatibility": "Presta (Lite) / Schrader (Hybrid)"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "awards": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "legion-vmax",
+      "specs": {
+        "material": "aluminum alloy",
+        "valve_type": "Presta",
+        "airflow_claim": "300%",
+        "lengths": "[\"44mm\", \"55mm\", \"65mm\", \"70mm\", \"80mm\"]",
+        "weight_per_valve_g": null,
+        "anti_clog": "guide tube anti-clog",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": false,
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "stans-exo-core",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "4-5x",
+        "lengths": [
+          "35mm",
+          "44mm",
+          "55mm",
+          "70mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "external seal (excellent)",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "TAP cap",
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "76-projects-hi-flow",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "4x",
+        "lengths": [
+          "42mm",
+          "52mm",
+          "62mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "hollow core (excellent)",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": false,
+        "pump_compatibility": "Presta (lever pump only)"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "schwalbe-clik",
+      "specs": {
+        "material": "aluminum / composite",
+        "valve_type": "Clik (proprietary)",
+        "airflow_claim": "1.5x",
+        "lengths": "[\"40mm\", \"60mm\", \"80mm\", \"100mm\"]",
+        "weight_per_valve_g": "13-16g (varies by length)",
+        "anti_clog": "spring core",
+        "insert_compatible": false,
+        "retrofit": true,
+        "integrated_tool": false,
+        "pump_compatibility": "Clik only (proprietary)"
+      },
+      "awards": [
+        "Eurobike 2024 Award"
+      ],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "awards": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14",
+        "weight_per_valve_g": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "topeak-turboflow",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "300%",
+        "lengths": "[\"45mm\", \"60mm\", \"80mm\"]",
+        "weight_per_valve_g": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm)",
+        "anti_clog": "wide bore",
+        "insert_compatible": true,
+        "retrofit": true,
+        "integrated_tool": "core removal tool included",
+        "pump_compatibility": "Presta (RapidHead compatible)"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14",
+        "weight_per_valve_g": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "wtb-max-flow",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "84%",
+        "lengths": "[\"34mm\", \"44mm\", \"46mm\"]",
+        "weight_per_valve_g": null,
+        "anti_clog": "large bore",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "core removal cap",
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14",
+        "lengths": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "cushcore-hi-flo",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "moderate",
+        "lengths": "[\"44mm\", \"55mm\", \"66mm\"]",
+        "weight_per_valve_g": null,
+        "anti_clog": "triple-port design",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "core tool included",
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "industry-nine",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "moderate",
+        "lengths": "[\"40mm\", \"52mm\", \"67mm\"]",
+        "weight_per_valve_g": null,
+        "anti_clog": "enlarged bore",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": false,
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "peatys-mk2",
+      "specs": {
+        "material": "aluminum (Chris King collab)",
+        "valve_type": "Presta",
+        "airflow_claim": "standard",
+        "lengths": [
+          "42mm",
+          "60mm",
+          "80mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "X-base design",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "spoke wrench + core removal cap",
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "dt-swiss",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "standard",
+        "lengths": [
+          "44mm",
+          "60mm",
+          "80mm"
+        ],
+        "weight_per_valve_g": null,
+        "anti_clog": "standard",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": "core removal cap",
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "price": "2026-03-14"
+      }
+    },
+    {
+      "entity_id": "prime-tubeless",
+      "specs": {
+        "material": "aluminum",
+        "valve_type": "Presta",
+        "airflow_claim": "standard",
+        "lengths": "[\"39mm\", \"45mm\", \"55mm\", \"75mm\", \"85mm\", \"100mm\"]",
+        "weight_per_valve_g": null,
+        "anti_clog": "standard",
+        "insert_compatible": true,
+        "retrofit": false,
+        "integrated_tool": false,
+        "pump_compatibility": "Presta"
+      },
+      "awards": [],
+      "verification_status": "verified",
+      "last_updated": "2026-03-14",
+      "field_freshness": {
+        "specs": "2026-03-14",
+        "pricing": "2026-03-14",
+        "lengths": "2026-03-14"
+      }
+    }
+  ]
+}

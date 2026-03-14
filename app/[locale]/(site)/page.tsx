@@ -1,7 +1,15 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates } from '@/lib/seo';
+import BannerCarousel from '@/components/BannerCarousel';
+import {
+  ShieldCheckIcon,
+  GlobeAltIcon,
+  WrenchScrewdriverIcon,
+  ClockIcon,
+} from '@heroicons/react/24/outline';
 import type { Metadata } from 'next';
+import type { ComponentType, SVGProps } from 'react';
 
 export async function generateMetadata({
   params,
@@ -13,21 +21,28 @@ export async function generateMetadata({
   return { alternates };
 }
 
+const featureIcons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+  iso: ShieldCheckIcon,
+  standards: GlobeAltIcon,
+  oem: WrenchScrewdriverIcon,
+  experience: ClockIcon,
+};
+
 const categories = [
   {
     key: 'bicycle',
     href: '/products/bicycle-tubeless-valve',
-    icon: '🚲',
+    image: '/images/products/bicycle/FVRa.jpg',
   },
   {
     key: 'tpms',
     href: '/products/tpms-sensor-valve',
-    icon: '📡',
+    image: '/images/products/categories/tpms_Sensor_valve.jpg',
   },
   {
     key: 'automotive',
     href: '/products/car-light-truck-valve',
-    icon: '🚗',
+    image: '/images/products/categories/automotive_Car_Light_Truck_Valve.jpg',
   },
 ] as const;
 
@@ -43,34 +58,32 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-steel-900 via-steel-800 to-steel-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-brass-300">
-            {t('hero.subtitle')}
-          </p>
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            {t('hero.title')}
-          </h1>
-          <p className="mb-8 max-w-2xl text-lg text-steel-200">
-            {t('hero.description')}
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="/products"
-              className="rounded-lg bg-white px-6 py-3 font-semibold text-steel-900 hover:bg-steel-50 transition-colors"
-            >
-              {t('hero.cta_products')}
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-lg border-2 border-brass-400 px-6 py-3 font-semibold text-brass-300 hover:bg-brass-400/10 transition-colors"
-            >
-              {t('hero.cta_rfq')}
-            </Link>
-          </div>
+      {/* Hero Banner Carousel */}
+      <BannerCarousel>
+        <p className="mb-2 text-sm font-medium uppercase tracking-widest text-brass-300">
+          {t('hero.subtitle')}
+        </p>
+        <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
+          {t('hero.title')}
+        </h1>
+        <p className="mb-8 max-w-2xl text-lg text-steel-200">
+          {t('hero.description')}
+        </p>
+        <div className="flex gap-4">
+          <Link
+            href="/products"
+            className="rounded-lg bg-white px-6 py-3 font-semibold text-steel-900 hover:bg-steel-50 transition-colors"
+          >
+            {t('hero.cta_products')}
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-lg border-2 border-brass-400 px-6 py-3 font-semibold text-brass-300 hover:bg-brass-400/10 transition-colors"
+          >
+            {t('hero.cta_rfq')}
+          </Link>
         </div>
-      </section>
+      </BannerCarousel>
 
       {/* Features / Why N.S.-LIN */}
       <section className="py-16 md:py-24">
@@ -79,16 +92,20 @@ export default async function HomePage({
             {t('features.title')}
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {(['iso', 'standards', 'oem', 'experience'] as const).map((key) => (
-              <div key={key} className="rounded-xl border border-metal-200 p-6 hover:shadow-md transition-shadow">
-                <h3 className="mb-2 font-semibold text-steel-800">
-                  {t(`features.${key}`)}
-                </h3>
-                <p className="text-sm text-metal-600">
-                  {t(`features.${key}_desc`)}
-                </p>
-              </div>
-            ))}
+            {(['iso', 'standards', 'oem', 'experience'] as const).map((key) => {
+              const Icon = featureIcons[key];
+              return (
+                <div key={key} className="rounded-xl border border-metal-200 p-6 hover:shadow-md transition-shadow">
+                  <Icon className="mb-3 h-8 w-8 text-steel-600" />
+                  <h3 className="mb-2 font-semibold text-steel-800">
+                    {t(`features.${key}`)}
+                  </h3>
+                  <p className="text-sm text-metal-600">
+                    {t(`features.${key}_desc`)}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -100,19 +117,28 @@ export default async function HomePage({
             {t('categories.title')}
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {categories.map(({ key, href, icon }) => (
+            {categories.map(({ key, href, image }) => (
               <Link
                 key={key}
                 href={href}
-                className="group rounded-xl border border-metal-200 bg-white p-8 hover:border-steel-300 hover:shadow-lg transition-all"
+                className="group overflow-hidden rounded-xl border border-metal-200 bg-white hover:border-steel-300 hover:shadow-lg transition-all"
               >
-                <div className="mb-4 text-4xl">{icon}</div>
-                <h3 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
-                  {t(`categories.${key}`)}
-                </h3>
-                <p className="text-sm text-metal-600">
-                  {t(`categories.${key}_desc`)}
-                </p>
+                <div className="aspect-[4/3] overflow-hidden bg-metal-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={image}
+                    alt={key}
+                    className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
+                    {t(`categories.${key}`)}
+                  </h3>
+                  <p className="text-sm text-metal-600">
+                    {t(`categories.${key}_desc`)}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>

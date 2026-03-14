@@ -1,5 +1,5 @@
 // TODO: Replace with actual domain once registered
-const BASE_URL = 'https://nslin-site.vercel.app';
+const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
 
 /**
  * Generate canonical + hreflang alternates (including x-default)

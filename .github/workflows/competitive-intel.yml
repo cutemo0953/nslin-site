@@ -1,0 +1,87 @@
+name: Competitive Intel Collection
+
+on:
+  schedule:
+    - cron: '0 22 * * 0' # Sunday 22:00 UTC = Monday 06:00 Taiwan time
+  workflow_dispatch: # Manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Collect intelligence & generate proposals
+        run: node scripts/collect-competitive-intel.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+
+      - name: Check for non-empty proposals
+        id: check
+        run: |
+          FILE=$(ls data/competitive-intel/proposals-*.json 2>/dev/null | head -1)
+          if [ -n "$FILE" ] && node -e "const p=JSON.parse(require('fs').readFileSync('$FILE','utf-8')); process.exit(p.length > 0 ? 0 : 1)"; then
+            echo "has_proposals=true" >> $GITHUB_OUTPUT
+            echo "proposals_file=$FILE" >> $GITHUB_OUTPUT
+          else
+            echo "has_proposals=false" >> $GITHUB_OUTPUT
+            echo "No proposals found or empty. Skipping."
+          fi
+
+      - name: Generate reviewer artifacts
+        if: steps.check.outputs.has_proposals == 'true'
+        run: |
+          node scripts/generate-proposal-summary.mjs
+          node scripts/generate-proposal-email.mjs
+
+      - name: Send email report via Resend
+        if: steps.check.outputs.has_proposals == 'true'
+        run: |
+          curl -s https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$(node -e "
+              const fs = require('fs');
+              const html = fs.readFileSync('data/competitive-intel/proposal-email.html', 'utf-8');
+              const date = new Date().toISOString().slice(0, 10);
+              console.log(JSON.stringify({
+                from: 'N.S.-LIN Competitive Intel <intel@denovortho.com>',
+                to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
+                subject: '競品情報週報 — ' + date,
+                html: html
+              }));
+            ")"
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
+      - name: Create PR with proposals
+        if: steps.check.outputs.has_proposals == 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          BRANCH="intel-update-${DATE}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add data/competitive-intel/
+          git commit -m "chore: competitive intel proposals ${DATE}"
+          git push -u origin "$BRANCH"
+
+          gh pr create \
+            --title "Competitive Intel Update ${DATE}" \
+            --body-file data/competitive-intel/proposal-summary.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

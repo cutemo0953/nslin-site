@@ -20,7 +20,7 @@ export async function GET(
   const { locale } = await params;
 
   const siteTitle =
-    locale === 'zh-TW' ? '南新林工業 N.S.-LIN' : 'N.S.-LIN Industrial';
+    locale === 'zh-TW' ? '奕道實業 N.S.-LIN' : 'N.S.-LIN Industrial';
   const siteDescription =
     locale === 'zh-TW'
       ? '氣嘴閥製造專業知識與產業趨勢'

@@ -1,6 +1,12 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { seoAlternates } from '@/lib/seo';
+import {
+  DocumentTextIcon,
+  CubeIcon,
+  CogIcon,
+} from '@heroicons/react/24/outline';
 import type { Metadata } from 'next';
+import type { ComponentType, SVGProps } from 'react';
 
 export async function generateMetadata({
   params,
@@ -12,7 +18,7 @@ export async function generateMetadata({
   return {
     title: isZh ? '聯繫 / 詢價' : 'Contact / RFQ',
     description: isZh
-      ? '聯繫南新林工業索取報價、申請樣品或提交客製化設計需求。'
+      ? '聯繫奕道實業索取報價、申請樣品或提交客製化設計需求。'
       : 'Contact N.S.-LIN for quotes, sample requests, or custom design inquiries.',
     alternates: seoAlternates('/contact', locale),
   };
@@ -40,13 +46,13 @@ export default async function ContactPage({
       <div className="grid gap-8 md:grid-cols-3">
         {/* Inquiry Type Cards */}
         <div className="md:col-span-1 space-y-4">
-          {[
-            { key: 'rfq', icon: '📋' },
-            { key: 'sample', icon: '📦' },
-            { key: 'custom', icon: '⚙️' },
-          ].map(({ key, icon }) => (
+          {([
+            { key: 'rfq', Icon: DocumentTextIcon },
+            { key: 'sample', Icon: CubeIcon },
+            { key: 'custom', Icon: CogIcon },
+          ] as { key: string; Icon: ComponentType<SVGProps<SVGSVGElement>> }[]).map(({ key, Icon }) => (
             <div key={key} className="rounded-lg border border-metal-200 p-4">
-              <div className="text-2xl mb-2">{icon}</div>
+              <Icon className="h-7 w-7 text-steel-600 mb-2" />
               <div className="font-semibold text-steel-800">
                 {t(key as 'rfq' | 'sample' | 'custom')}
               </div>

@@ -131,16 +131,31 @@ export default async function ProductPage({
         </nav>
 
         {/* Product Header */}
-        <div className="mb-8">
-          <div className="mb-2 inline-block rounded-full bg-steel-100 px-3 py-1 text-xs font-mono text-steel-700">
-            {product.sku}
+        <div className="mb-8 grid gap-8 md:grid-cols-2">
+          {/* Product Image */}
+          {product.images?.[0] && (
+            <div className="overflow-hidden rounded-xl border border-metal-200 bg-metal-50">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={product.images[0]}
+                alt={product.sku}
+                className="h-full w-full object-contain p-6"
+              />
+            </div>
+          )}
+
+          {/* Product Info */}
+          <div className={product.images?.[0] ? '' : 'md:col-span-2'}>
+            <div className="mb-2 inline-block rounded-full bg-steel-100 px-3 py-1 text-xs font-mono text-steel-700">
+              {product.sku}
+            </div>
+            <h1 className="mb-4 text-3xl font-bold text-steel-900">
+              {isZh ? product.name['zh-TW'] : product.name.en}
+            </h1>
+            <p className="text-lg text-metal-600">
+              {isZh ? product.description['zh-TW'] : product.description.en}
+            </p>
           </div>
-          <h1 className="mb-4 text-3xl font-bold text-steel-900">
-            {isZh ? product.name['zh-TW'] : product.name.en}
-          </h1>
-          <p className="text-lg text-metal-600">
-            {isZh ? product.description['zh-TW'] : product.description.en}
-          </p>
         </div>
 
         {/* Specifications Table */}
