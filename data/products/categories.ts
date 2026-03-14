@@ -56,6 +56,7 @@ export const categories: CategoryData[] = [
     productCount: 13,
     featuredProducts: [],
     image: '/images/products/categories/tpms_Sensor_valve.jpg',
+    pillarPageLink: '/guides/tpms-valve-guide',
   },
   {
     slug: 'invisible-valve',
