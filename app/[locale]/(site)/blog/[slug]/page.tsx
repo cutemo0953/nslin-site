@@ -45,6 +45,7 @@ export async function generateMetadata({
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
+      url: locale === 'en' ? enUrl : zhUrl,
       type: 'article',
       publishedTime: frontmatter.date,
       modifiedTime: frontmatter.updatedAt || frontmatter.date,
