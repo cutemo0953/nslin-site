@@ -49,6 +49,7 @@ export async function generateMetadata({
       type: 'article',
       modifiedTime: frontmatter.lastUpdated,
       tags: frontmatter.tags,
+      images: [{ url: `${BASE_URL}/images/logo-nsl.png` }],
     },
     alternates: {
       canonical: locale === 'en' ? enUrl : zhUrl,
