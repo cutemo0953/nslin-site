@@ -1,9 +1,10 @@
-# Dev Spec: 競品情報資料庫自動更新 (v2)
+# Dev Spec: 競品情報資料庫自動更新 (v2.1)
 
-> 狀態：APPROVED v2.1
+> 狀態：IMPLEMENTED (Phase 1-3 complete)
 > 作者：架構師
 > 日期：2026-03-14
-> 審核：Gemini + ChatGPT 兩輪架構審核已整合（v1 → v2 → v2.1）
+> 審核：Gemini + ChatGPT 三輪架構審核已整合（v1 → v2 → v2.1）
+> 首次 live run：2026-03-14（21 proposals collected, 19 applied, 2 rejected）
 
 ---
 
@@ -199,47 +200,57 @@
 
 ---
 
-## Phase 1: 頁面顯示更新時間（小事，直接做）
+## Phase 1: 頁面顯示更新時間 — DONE
 
-### 做法
-- `scripts/gen-report-content.mjs` 生成時寫入 `lastUpdated` 和 `evidenceLastCollected` 時間戳
-- `page.tsx` footer 顯示更新資訊
-
-### 改動
-1. `data/reports/content.generated.ts` — 新增 exports：
-   - `reportLastUpdated: Record<string, string>` (report 更新時間)
-   - `reportEvidenceCollected: Record<string, string>` (情報收集時間)
-2. `page.tsx` footer：
-   - 「報告最後更新：YYYY-MM-DD」
-   - 「情報最後收集：YYYY-MM-DD」
-   - 距上次更新 > 14 天 → 顯示「資料可能已過時」警告
+### 實作
+- `scripts/gen-report-content.mjs` 生成時寫入 `reportLastUpdated` 和 `reportEvidenceCollected`
+- `app/[locale]/(site)/reports/competitive-landscape/page.tsx` 底部 `ReportFooter` 元件
+- 距上次更新 > 14 天 → 顯示「資料可能已過時」警告（中英文 i18n）
 
 ---
 
-## Phase 2: 手動觸發情報收集 + AI 提案（中事）
+## Phase 2: 情報收集 + AI 提案 — DONE
 
-### 流程
+### 實作的腳本
+
+| 腳本 | 用途 |
+|------|------|
+| `scripts/collect-competitive-intel.mjs` | Tavily 抓取 + Claude API 產生 proposals |
+| `scripts/apply-competitive-intel.mjs` | 套用 accepted proposals 到 canonical data |
+| `scripts/generate-proposal-summary.mjs` | 產生 PR body markdown |
+| `scripts/generate-proposal-email.mjs` | 產生 HTML email（仿家庭資產負債表週報風格） |
+| `scripts/schemas/competitive-intel.mjs` | Zod schemas + Claude Tool Use 定義 |
+
+### 收集流程
 
 ```
-node scripts/collect-competitive-intel.mjs
+node scripts/collect-competitive-intel.mjs [--dry-run]
   │
-  ├─ 1. Fetch sources (Tavily API / Firecrawl / RSS)
-  ├─ 2. Normalize extracted facts
-  ├─ 3. Claude API → JSON change proposals
-  ├─ 4. Validate schema + source trust + confidence
-  ├─ 5. Write to data/competitive-intel/proposals-YYYY-MM-DD.json
-  └─ 6. Generate human-readable diff (terminal output)
+  ├─ 1. 讀取 competitor-entities.json（13 個競品，跳過 REF）
+  ├─ 2. 每個 entity: Tavily 官網 + 零售搜尋（2s rate limit）
+  ├─ 3. 每個 entity: Claude API (claude-sonnet-4-20250514) Tool Use → proposals
+  ├─ 4. Zod 驗證每筆 proposal
+  ├─ 5. 去重（per entity+field）
+  └─ 6. 寫入 proposals-YYYY-MM-DD.json + 更新 last-collected.json
 ```
 
-**不直接覆寫 docs/*.md。** 人工審核 proposals JSON 後，執行：
+### Apply 流程
+
 ```
-node scripts/apply-competitive-intel.mjs
+node scripts/apply-competitive-intel.mjs data/competitive-intel/proposals-YYYY-MM-DD.json
   │
-  ├─ 1. Read accepted proposals
-  ├─ 2. Update competitors.json + evidence-log.json
-  ├─ 3. Regenerate docs/*.md from structured data
-  └─ 4. Update lastUpdated timestamps
+  ├─ Class 1/2: 更新 competitor-current-state.json + price-snapshots.json
+  ├─ Class 3: 寫入 interpretive_notes_draft.json
+  ├─ Class 4: append 到 market-signals.json
+  └─ 更新 evidence-log.json + field_freshness
 ```
+
+### 首次 live run 結果（2026-03-14）
+
+- 13 個競品 entity 查詢，~70 evidence items
+- 21 proposals generated（全部 Class 2 factual）
+- 2 筆 DT Swiss 提案被人工剔除（material/lengths 混淆鋁/黃銅版本）
+- 19 筆成功 apply：9 價格 + 8 規格 + 1 獎項 + 1 重量
 
 ### 資料來源
 
@@ -347,67 +358,36 @@ Your job:
 
 ---
 
-## Phase 3: GitHub Actions 自動排程 + PR（中事）
+## Phase 3: GitHub Actions 自動排程 + Email + PR — DONE
 
 ### Workflow: `.github/workflows/competitive-intel.yml`
 
-```yaml
-name: Competitive Intel Collection
-on:
-  schedule:
-    - cron: '0 8 * * 1'  # 每週一 08:00 UTC
-  workflow_dispatch:
+- **排程**：`0 22 * * 0`（Sunday 22:00 UTC = 台灣週一 06:00）
+- **手動觸發**：`workflow_dispatch`（GitHub Actions → Run workflow）
 
-jobs:
-  collect:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
+### 流程
 
-      - name: Collect intelligence & generate proposals
-        run: node scripts/collect-competitive-intel.mjs
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
-
-      - name: Check for non-empty proposals
-        id: check
-        run: |
-          # 防空 PR：確認有 proposals 檔案 AND 內容 length > 0
-          FILE=$(ls data/competitive-intel/proposals-*.json 2>/dev/null | head -1)
-          if [ -n "$FILE" ] && node -e "const p=require('./$FILE'); process.exit(p.length > 0 ? 0 : 1)"; then
-            echo "has_proposals=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_proposals=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Generate reviewer artifacts
-        if: steps.check.outputs.has_proposals == 'true'
-        run: node scripts/generate-proposal-summary.mjs
-
-      - name: Create PR with proposals
-        if: steps.check.outputs.has_proposals == 'true'
-        run: |
-          BRANCH="intel-update-$(date +%Y-%m-%d)"
-          git checkout -b "$BRANCH"
-          git add data/competitive-intel/
-          git commit -m "chore: competitive intel proposals $(date +%Y-%m-%d)"
-          git push -u origin "$BRANCH"
-          # PR body 包含 proposal-summary.md 內容（reviewer artifact）
-          gh pr create \
-            --title "Competitive Intel Update $(date +%Y-%m-%d)" \
-            --body-file data/competitive-intel/proposal-summary.md
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+1. checkout + npm ci
+2. node scripts/collect-competitive-intel.mjs（收集 + Claude API）
+3. 檢查 proposals 是否非空
+4. node scripts/generate-proposal-summary.mjs（PR body）
+5. node scripts/generate-proposal-email.mjs（HTML email）
+6. Resend API 寄送 email（intel@denovortho.com → nslin + tom）
+7. 開 PR（branch: intel-update-YYYY-MM-DD）
+```
+
+### Email 報告
+
+- **發送方式**：Resend API（`intel@denovortho.com`）
+- **收件人**：nslin@nslin.com.tw, tom@denovortho.com
+- **風格**：仿家庭資產負債表週報（steel blue gradient header, glass cards）
+- **內容**：3-column summary cards → staleness alerts → 變更明細 per entity
+- **每筆變更顯示**：來源等級（S/A/B/C）+ AI 把握度（高/中/低）+ 中文標籤
 
 ### 關鍵設計：不自動 deploy
 
-- CI 只收集情報 + 開 PR
+- CI 只收集情報 + 寄信 + 開 PR
 - PR 附 evidence artifacts (proposals JSON) + reviewer summary
 - 人工 review → merge → 手動 apply + deploy
 - 未來穩定後，可加 post-merge hook 自動 apply + deploy（但 merge 本身永遠需要人工）
@@ -428,13 +408,14 @@ jobs:
 
 PR body 直接用 `--body-file` 載入此檔，reviewer 不需要翻 raw JSON。
 
-### 需要的 Secrets
+### 需要的 Secrets（全部已設定）
 
-| Secret | 用途 |
-|--------|------|
-| `ANTHROPIC_API_KEY` | Claude API |
-| `TAVILY_API_KEY` | 情報搜尋 |
-| `GITHUB_TOKEN` | 開 PR（內建） |
+| Secret | 用途 | 狀態 |
+|--------|------|------|
+| `ANTHROPIC_API_KEY` | Claude API (claude-sonnet-4-20250514) | set |
+| `TAVILY_API_KEY` | 情報搜尋 | set |
+| `RESEND_API_KEY` | Email 發送（denovortho.com domain） | set |
+| `GITHUB_TOKEN` | 開 PR（內建） | auto |
 
 注意：不需要 `CLOUDFLARE_*` secrets — CI 不負責 deploy。
 
@@ -502,10 +483,10 @@ page.tsx 顯示的文字
 
 ## 實作順序
 
-1. **Phase 1**（頁面顯示更新時間）→ 直接做
-2. **Phase 2**（手動情報收集 + AI proposals）→ 寫完後 demo 一次，手動跑幾週驗證品質
-3. **Phase 3**（GitHub Actions 排程 + PR）→ Phase 2 穩定後才開
-4. **Phase 4**（頁面狀態提示 + verification badge）→ 跟 Phase 3 一起
+1. **Phase 1**（頁面顯示更新時間）→ DONE
+2. **Phase 2**（情報收集 + AI proposals + apply）→ DONE（首次 live run 2026-03-14）
+3. **Phase 3**（GitHub Actions 排程 + Resend email + PR）→ DONE
+4. **Phase 4**（頁面狀態提示 + verification badge）→ TODO
 
 ### 初期自動化範圍（收窄）
 
@@ -563,6 +544,26 @@ Phase 2 第一版只處理：
 | 價格快照太薄 | 加 seller / pack_qty / tax / shipping / in_stock / raw_text / normalized |
 | 來源抓取直接綁 Tavily | Adapter layer 隔離 provider 實作 |
 | 報告只有一個全域 timestamp | Field-level freshness per entity |
+
+---
+
+## 實作筆記
+
+### 已知限制與人工判斷案例
+
+| 提案 | 問題 | 處理 |
+|------|------|------|
+| DT Swiss material: aluminum→brass | DT Swiss 同時生產鋁版和黃銅版，不是替換關係 | 人工剔除 |
+| DT Swiss lengths: [44,60,80]→[32,53,72] | AI 抓到的是黃銅版長度，非我們追蹤的鋁版 | 人工剔除 |
+| WTB lengths: 移除 56mm | 單一零售來源，可能只是該店缺貨 | 保留但標記 confidence 0.7 |
+| Industry Nine lengths: [40,60,80]→[40,52,67] | 官網資料，可能是產品線更新 | 接受（官網來源） |
+
+### Apply 腳本修正（2026-03-14）
+
+原始版本只處理 dotted field paths（`specs.xxx`, `pricing.xxx`），但 Claude API 產生的 proposals 使用裸欄位名（`price`, `lengths`）。已修正為依 `change_type` 路由：
+- `price_update` → 新增 price-snapshots 條目
+- `award` → push 到 state.awards
+- 其他 → 更新 state.specs[field]
 
 ---
 
