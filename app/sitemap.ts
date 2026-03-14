@@ -11,8 +11,6 @@ const staticRoutes = [
   '/products',
   '/blog',
   '/guides/valve-standards',
-  '/guides/valve-materials',
-  '/guides/tubeless-basics',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

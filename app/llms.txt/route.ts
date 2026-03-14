@@ -1,4 +1,4 @@
-const BASE_URL = 'https://nslin-site.vercel.app'; // TODO: Replace with actual domain
+const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
 
 const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
 
@@ -25,8 +25,6 @@ const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
 ## Knowledge Hub
 
 - [Valve Standards Guide](${BASE_URL}/guides/valve-standards): TRA vs ETRTO vs JATMA comparison
-- [Valve Materials Science](${BASE_URL}/guides/valve-materials): EPDM, NBR, Brass, Aluminum analysis
-- [Tubeless System Basics](${BASE_URL}/guides/tubeless-basics): How tubeless tire systems work
 
 ## Company
 
