@@ -23,6 +23,7 @@ export const blogEntries: BlogEntry[] = [
         date: '2026-03-13',
         tags: ['tubeless-valve', 'bicycle', 'oem', 'product-innovation'],
         author: 'N.S.-LIN Technical Team',
+        coverImage: '/images/blog/corecap-bbb-valve-innovation/cover.jpg',
         draft: false,
       },
       'zh-TW': {
@@ -32,6 +33,7 @@ export const blogEntries: BlogEntry[] = [
         date: '2026-03-13',
         tags: ['tubeless-valve', 'bicycle', 'oem', 'product-innovation'],
         author: '奕道實業技術團隊',
+        coverImage: '/images/blog/corecap-bbb-valve-innovation/cover.jpg',
         draft: false,
       },
     },
