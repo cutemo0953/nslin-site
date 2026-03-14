@@ -1,6 +1,15 @@
+import { getAllGuides } from '@/lib/guides';
+
 const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
 
-const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
+export async function GET() {
+  // Dynamic guide listing (excludes drafts)
+  const guides = getAllGuides('en');
+  const guideLines = guides
+    .map((g) => `- [${g.frontmatter.title}](${BASE_URL}/guides/${g.slug}): ${g.frontmatter.summary}`)
+    .join('\n');
+
+  const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
 
 > Taiwan-based tire valve manufacturer with 40+ years of expertise.
 > ISO 9001:2015 certified. Products meet TRA (US), ETRTO (EU), JATMA (Japan) standards.
@@ -24,7 +33,7 @@ const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
 
 ## Knowledge Hub
 
-- [Valve Standards Guide](${BASE_URL}/guides/valve-standards): TRA vs ETRTO vs JATMA comparison
+${guideLines}
 
 ## Company
 
@@ -46,7 +55,6 @@ const CONTENT = `# N.S.-LIN Industrial Co., Ltd. (奕道實業有限公司)
   A: EPDM rubber (Shore A 70+/-5), brass (plain or nickel-plated), and 7075-T6 aluminum alloy for specialty products.
 `;
 
-export async function GET() {
   return new Response(CONTENT, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
