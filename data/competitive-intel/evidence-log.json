@@ -341,6 +341,78 @@
       "change_class": 2,
       "requires_review": true,
       "status": "accepted"
+    },
+    {
+      "id": "ev-2026-03-14-020",
+      "entity_id": "bbb-corecap",
+      "change_type": "source_append",
+      "old_value": null,
+      "new_value": "Bike Cafe (FR) review: CoreCap chosen as preferred tubeless valve system, airflow superior to Presta and Schwalbe CLIK",
+      "field": "media_reviews",
+      "source": {
+        "type": "media_review",
+        "url": "https://bike-cafe.fr/2026/02/que-valent-les-nouvelles-valves-tubeless/",
+        "retrieved_at": "2026-03-14T04:00:00Z",
+        "snippet": "le flux d'air est clairement plus important qu'avec un système Presta, ou même CLIK VALVE... c'est le système qui aujourd'hui a ma préférence en matière de valve tubeless"
+      },
+      "confidence": 0.95,
+      "change_class": 2,
+      "requires_review": false,
+      "status": "accepted"
+    },
+    {
+      "id": "ev-2026-03-14-021",
+      "entity_id": "bbb-corecap",
+      "change_type": "price_update",
+      "old_value": null,
+      "new_value": "17 EUR (conversion kit, 2 valves)",
+      "field": "price_eu",
+      "source": {
+        "type": "media_review",
+        "url": "https://bike-cafe.fr/2026/02/que-valent-les-nouvelles-valves-tubeless/",
+        "retrieved_at": "2026-03-14T04:00:00Z",
+        "snippet": "Prix: environ 17€ le kit de conversion (2 valves)"
+      },
+      "confidence": 0.9,
+      "change_class": 2,
+      "requires_review": false,
+      "status": "accepted"
+    },
+    {
+      "id": "ev-2026-03-14-022",
+      "entity_id": "mucoff-big-bore",
+      "change_type": "spec_update",
+      "old_value": "245-264%",
+      "new_value": "230% (Lite) / 254% (Hybrid) vs Presta",
+      "field": "airflow_claim",
+      "source": {
+        "type": "official_site",
+        "url": "https://us.muc-off.com/collections/tubeless-valves",
+        "retrieved_at": "2026-03-14T04:00:00Z",
+        "snippet": "Big Bore Hybrid: 254% Airflow vs Presta Valves. Big Bore Lite: 230% Airflow vs Presta Valves."
+      },
+      "confidence": 0.95,
+      "change_class": 2,
+      "requires_review": false,
+      "status": "accepted"
+    },
+    {
+      "id": "ev-2026-03-14-023",
+      "entity_id": "mucoff-big-bore",
+      "change_type": "spec_update",
+      "old_value": "[\"44mm\",\"60mm\",\"75mm\",\"90mm\"]",
+      "new_value": "[\"30mm\",\"35mm\",\"45mm\",\"60mm\",\"70mm\",\"80mm\"]",
+      "field": "lengths",
+      "source": {
+        "type": "official_site",
+        "url": "https://www.performancebike.com/mucoff-big-bore-lite-tubeless-valves-black-pair-small-30mm-21117/p1573095",
+        "retrieved_at": "2026-03-14T04:00:00Z",
+        "snippet": "Small 30mm, Medium 35mm, Large 45mm, X-Large 60mm, 2X-Large 70mm, 3X-Large 80mm"
+      },
+      "confidence": 0.9,
+      "change_class": 2,
+      "requires_review": false,
+      "status": "accepted"
     }
   ]
 }

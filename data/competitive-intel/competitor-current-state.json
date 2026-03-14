@@ -35,19 +35,22 @@
       "specs": {
         "material": "7075 aluminum",
         "valve_type": "Presta (Lite) / Schrader (Hybrid)",
-        "airflow_claim": "245-264%",
+        "airflow_claim": "230% (Lite) / 254% (Hybrid) vs Presta",
         "lengths": [
-          "44mm",
+          "30mm",
+          "35mm",
+          "45mm",
           "60mm",
-          "75mm",
-          "90mm"
+          "70mm",
+          "80mm"
         ],
         "weight_per_valve_g": null,
         "anti_clog": "ball valve (excellent)",
         "insert_compatible": true,
         "retrofit": false,
         "integrated_tool": "rocker lever",
-        "pump_compatibility": "Presta (Lite) / Schrader (Hybrid)"
+        "pump_compatibility": "Presta (Lite) / Schrader (Hybrid)",
+        "product_variants": "Big Bore Lite (Presta, 230%) + Big Bore Hybrid (Schrader, 254%)"
       },
       "awards": [],
       "verification_status": "verified",
@@ -56,7 +59,8 @@
         "specs": "2026-03-14",
         "awards": "2026-03-14",
         "pricing": "2026-03-14",
-        "price": "2026-03-14"
+        "price": "2026-03-14",
+        "lengths": "2026-03-14"
       }
     },
     {

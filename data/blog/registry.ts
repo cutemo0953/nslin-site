@@ -36,4 +36,28 @@ export const blogEntries: BlogEntry[] = [
       },
     },
   },
+  {
+    slug: 'bike-cafe-tubeless-valve-review',
+    locales: ['en', 'zh-TW'],
+    frontmatter: {
+      en: {
+        title: 'French Media Review: CoreCap Wins the High-Flow Tubeless Valve Showdown',
+        description:
+          'Bike Cafe, a leading French cycling publication, tested three next-gen tubeless valves head-to-head. BBB CoreCap came out on top — here\'s what their review reveals about valve design trade-offs.',
+        date: '2026-03-14',
+        tags: ['tubeless-valve', 'bicycle', 'media-review', 'competitive-landscape'],
+        author: 'N.S.-LIN Technical Team',
+        draft: false,
+      },
+      'zh-TW': {
+        title: '法國媒體實測：CoreCap 在高流量氣嘴對決中勝出',
+        description:
+          '法國自行車媒體 Bike Cafe 實測三款新世代無內胎氣嘴 — BBB CoreCap、Schwalbe CLIK VALVE、Muc-Off Big Bore — CoreCap 以更大的內徑和更簡潔的設計贏得首選推薦。',
+        date: '2026-03-14',
+        tags: ['tubeless-valve', 'bicycle', 'media-review', 'competitive-landscape'],
+        author: '奕道實業技術團隊',
+        draft: false,
+      },
+    },
+  },
 ];
