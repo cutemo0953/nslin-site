@@ -52,6 +52,10 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
     },
+    icons: {
+      icon: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
     robots: {
       index: true,
       follow: true,
@@ -131,8 +135,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${notoSansTC.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/images/banner/logo4.png" />
         <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
       </head>
       <body className="min-h-screen bg-white font-sans text-metal-900">
