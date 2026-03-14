@@ -47,6 +47,7 @@ export const blogEntries: BlogEntry[] = [
         date: '2026-03-14',
         tags: ['tubeless-valve', 'bicycle', 'media-review', 'competitive-landscape'],
         author: 'N.S.-LIN Technical Team',
+        coverImage: '/images/blog/bike-cafe-tubeless-valve-review/cover.jpg',
         draft: false,
       },
       'zh-TW': {
@@ -56,6 +57,7 @@ export const blogEntries: BlogEntry[] = [
         date: '2026-03-14',
         tags: ['tubeless-valve', 'bicycle', 'media-review', 'competitive-landscape'],
         author: '奕道實業技術團隊',
+        coverImage: '/images/blog/bike-cafe-tubeless-valve-review/cover.jpg',
         draft: false,
       },
     },
