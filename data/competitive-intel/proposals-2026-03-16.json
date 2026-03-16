@@ -1,20 +1,5 @@
 [
   {
-    "entity_id": "reserve-fillmore",
-    "change_type": "spec_update",
-    "field": "warranty",
-    "old_value": null,
-    "new_value": "Lifetime Guarantee",
-    "evidence": {
-      "source_url": "https://uk.reservewheels.com/products/fillmore-tubeless-valves",
-      "source_type": "official_site",
-      "retrieved_at": "2026-03-16T00:37:52.071Z",
-      "snippet": "The ultimate high flow, no clog solution. 3X the airflow of standard Presta valves. Compatible with Presta pumps. Lifetime Guarantee."
-    },
-    "confidence": 0.9,
-    "change_class": 2
-  },
-  {
     "entity_id": "stans-exo-core",
     "change_type": "price_update",
     "field": "price",
@@ -23,25 +8,55 @@
     "evidence": {
       "source_url": "https://notubes.com/",
       "source_type": "official_site",
-      "retrieved_at": "2026-03-16T00:38:28.343Z",
+      "retrieved_at": "2026-03-16T06:26:06.734Z",
       "snippet": "Stan's Tubeless Exo-Core Valves. from $59.00 ; Stan's Original DART Tool. $27.00 ; Stan's ForkBoost. $13.00 ; Stan's Incredible DART Tubeless Repair Tool. $75.00."
     },
-    "confidence": 0.85,
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "28",
+    "new_value": "30",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/accessories/valves/?srsltid=AfmBOoqHZIDUdec_yWd52mIhgmRyjR5Q1sWjOUjjEmhCe9EENz-PDnrU",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-16T06:26:34.587Z",
+      "snippet": "Contents: 2x Schwalbe Clik Valve tubeless valve. Variants from US$29.87*. from US$35.89* RRP. TUBELESS VALVE. Valve length: 40 mm."
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "normalized_per_unit",
+    "old_value": "14",
+    "new_value": "15",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/accessories/valves/?srsltid=AfmBOoqHZIDUdec_yWd52mIhgmRyjR5Q1sWjOUjjEmhCe9EENz-PDnrU",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-16T06:26:34.587Z",
+      "snippet": "Contents: 2x Schwalbe Clik Valve tubeless valve. Variants from US$29.87*. from US$35.89* RRP."
+    },
+    "confidence": 0.7,
     "change_class": 2
   },
   {
     "entity_id": "topeak-turboflow",
-    "change_type": "price_update",
-    "field": "raw_price_text",
-    "old_value": "$35 per pair",
-    "new_value": "$34.95 per pair",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm)",
+    "new_value": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm) - pair weights: 12.8g (45mm), 13.8g (60mm), 15.8g (80mm)",
     "evidence": {
-      "source_url": "https://www.topeak.com/us/en/product/1818-TURBOFLOW-VALVE-ADAPTER",
-      "source_type": "retail",
-      "retrieved_at": "2026-03-16T00:39:08.125Z",
-      "snippet": "High-flow valve adapter for tubeless tires, sold as a pair. • Boosts airflow ... Regular price $34.95. Out of stock. find a store. Proposition 65 WARNING"
+      "source_url": "https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-16T06:26:43.905Z",
+      "snippet": "Weight | 45 mm : 12.8 g (1 pair)   60 mm : 13.8 g (1 pair)   80 mm : 15.8 g (1 pair)"
     },
-    "confidence": 0.9,
+    "confidence": 0.95,
     "change_class": 2
   },
   {
@@ -51,12 +66,12 @@
     "old_value": "24.99",
     "new_value": "30.00",
     "evidence": {
-      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOorBYcoRggQoa7Bsxm6nYxU-X2Rii6EKPpH--hSfN8GBaa05b8ae",
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopKCgjAMgGhU-SdV5QiGvTczCvi6vXJrpekoExozxq1OdSaOeoY",
       "source_type": "official_site",
-      "retrieved_at": "2026-03-16T00:39:28.819Z",
+      "retrieved_at": "2026-03-16T06:27:05.097Z",
       "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design."
     },
-    "confidence": 0.9,
+    "confidence": 0.95,
     "change_class": 2
   },
   {
@@ -68,55 +83,10 @@
     "evidence": {
       "source_url": "https://www.ap.industrynine.com/parts/valves",
       "source_type": "official_site",
-      "retrieved_at": "2026-03-16T00:39:38.654Z",
-      "snippet": "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves). TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). TKVABLK67 Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). TKVABLK80_ Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves)."
+      "retrieved_at": "2026-03-16T06:27:14.361Z",
+      "snippet": "TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). TKVABLK67 Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). TKVABLK80 Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves)."
     },
     "confidence": 0.9,
-    "change_class": 2
-  },
-  {
-    "entity_id": "peatys-mk2",
-    "change_type": "price_update",
-    "field": "price",
-    "old_value": "36",
-    "new_value": "38",
-    "evidence": {
-      "source_url": "https://neweracycle.com/products/peatys-x-chris-king-mk2-tubeless-presta-valves?srsltid=AfmBOopSj55Sfe9-Cg1HEneYomvqBZqtempRxq3k6qemS5IHUo_9F1KS",
-      "source_type": "retail",
-      "retrieved_at": "2026-03-16T00:39:50.866Z",
-      "snippet": "Peaty's x Chris King MK2 Tubeless Presta Valves Sale price$38.00 USD. With design, sustainability & quality running right to the core, there's only one company Peaty's could work with on the valve colours - Chris King!"
-    },
-    "confidence": 0.8,
-    "change_class": 2
-  },
-  {
-    "entity_id": "dt-swiss",
-    "change_type": "spec_update",
-    "field": "lengths",
-    "old_value": "[\"44mm\", \"60mm\", \"80mm\"]",
-    "new_value": "[\"18-25mm\", \"26-35mm\", \"36-48mm\", \"49-65mm\", \"66-80mm\"]",
-    "evidence": {
-      "source_url": "https://www.dtswiss.com/en/components/wheel-accessories/valve",
-      "source_type": "official_site",
-      "retrieved_at": "2026-03-16T00:40:02.452Z",
-      "snippet": "Tubeless valve alloy black for 18 - 25 mm profile height. ### Tubeless valve alloy black for 26 - 35 mm profile height. ### Tubeless valve alloy black for 36 - 48 mm profile height. ### Tubeless valve alloy black for 49 - 65 mm profile height. ### Tubeless valve alloy black for 66 - 80 mm profile height."
-    },
-    "confidence": 0.9,
-    "change_class": 2
-  },
-  {
-    "entity_id": "dt-swiss",
-    "change_type": "price_update",
-    "field": "price",
-    "old_value": "22.5",
-    "new_value": "12.20",
-    "evidence": {
-      "source_url": "https://www.freewheelbike.com/product/dt-swiss-aluminum-tubeless-valve-393138-1.htm?srsltid=AfmBOopTDLkCWiW5dGCQhi-EYuhUPKDBFi7hfrnja4HR1z54u28A53f_",
-      "source_type": "retail",
-      "retrieved_at": "2026-03-16T00:40:03.417Z",
-      "snippet": "DT Swiss Aluminum Tubeless Valve. DT Swiss Aluminum Tubeless Valve Black. Black. $12.20. Color: Black. Size: Select size. 18 – 25mm. 26 – 35mm."
-    },
-    "confidence": 0.7,
     "change_class": 2
   }
 ]
