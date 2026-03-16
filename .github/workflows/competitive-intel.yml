@@ -70,7 +70,8 @@ jobs:
         if: steps.check.outputs.has_proposals == 'true'
         run: |
           DATE=$(date +%Y-%m-%d)
-          BRANCH="intel-update-${DATE}"
+          RUN_ID=${{ github.run_number }}
+          BRANCH="intel-update-${DATE}-${RUN_ID}"
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
