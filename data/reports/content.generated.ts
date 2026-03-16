@@ -25,6 +25,7 @@ export const reportHtmlContent: Record<string, string> = {
 <li><a href="#oemodm-%E4%BE%9B%E6%87%89%E5%95%86%E8%AA%BF%E6%9F%A5">OEM/ODM 供應商調查</a></li>
 <li><a href="#%E5%B0%88%E5%88%A9%E4%BD%88%E5%B1%80">專利佈局</a></li>
 <li><a href="#%E5%AF%A6%E6%B8%AC%E6%95%B8%E6%93%9A">實測數據</a></li>
+<li><a href="#material-prices">原材料行情</a></li>
 <li><a href="#%E9%9B%B6%E5%94%AE%E5%AE%9A%E5%83%B9%E8%88%87%E8%A9%95%E5%83%B9">零售定價與評價</a></li>
 <li><a href="#%E5%B1%95%E6%9C%83%E6%96%B0%E5%93%812024-2026">展會新品（2024-2026）</a></li>
 <li><a href="#%E8%B3%87%E6%96%99%E4%BE%86%E6%BA%90">資料來源</a></li>
@@ -317,6 +318,17 @@ export const reportHtmlContent: Record<string, string> = {
 <h3>長期耐久性報告</h3>
 <table><thead><tr><th>產品</th><th>測試期間</th><th>發現</th><th>來源</th></tr></thead><tbody><tr><td><strong>Reserve Fillmore</strong></td><td>3+ 個月（ENDURO 雜誌）</td><td>零堵塞。內部殘留極少。提閥自清效果有效。</td><td>ENDURO Magazine</td></tr><tr><td><strong>Reserve Fillmore</strong></td><td>18+ 個月（論壇）</td><td>整體正面。一例失敗：內部腐蝕導致鋼桿斷裂。V1 有打氣筒相容問題。</td><td>Singletrack World</td></tr><tr><td><strong>76 Projects Hi Flow</strong></td><td>18 個月（論壇）</td><td>無問題。表現優於 Muc-Off、Peaty&#x27;s、CushCore、Nukeproof（後者都需要偶爾清理）。</td><td>Singletrack World</td></tr><tr><td><strong>Schwalbe Clik</strong></td><td>20,000 次循環（原廠）</td><td>打氣頭連接零漏氣。無橡膠密封 = 更少磨損。</td><td>Escape Collective</td></tr><tr><td><strong>標準 Presta</strong></td><td>典型 3-6 個月</td><td>需清潔或更換閥芯（補胎液堵塞）。</td><td>多來源</td></tr></tbody></table>
 <hr/>
+<h2 id="material-prices">原材料行情</h2>
+<h3>金屬（精確報價）</h3>
+<table><thead><tr><th>材料</th><th>台幣/公斤</th><th>美元/噸</th><th>週變化</th><th>匯率</th><th>資料日期</th></tr></thead><tbody><tr><td>銅</td><td>NT$ 407.6</td><td>$12,716.25</td><td>—</td><td>32.05 TWD/USD</td><td>2026-03-16</td></tr><tr><td>鋁</td><td>NT$ 111.0</td><td>$3,464</td><td>—</td><td>32.05 TWD/USD</td><td>2026-03-16</td></tr></tbody></table>
+<h3>石化衍生材料（共享石化上游指標）</h3>
+<p>影響材料：ABS 塑膠 / PC 聚碳酸酯 / EPDM 橡膠 / NBR 丁腈橡膠</p>
+<table><thead><tr><th>上游指標</th><th>報價</th><th>週變化</th><th>資料日期</th></tr></thead><tbody><tr><td>WTI 原油 (CL=F)</td><td>$98.73 / barrel</td><td></td><td>2026-03-16</td></tr></tbody></table>
+<p>ABS/PC 源自石腦油裂解，EPDM/NBR 源自丁二烯/丙烯，均與原油正相關但非線性。此為共享上游方向性指標，非個別材料精確報價。</p>
+<blockquote>
+<p>方向性上游指標。期貨價非採購成本，不含運輸、關稅、合金成分差異與加工損耗。黃銅≠純銅，鋁合金≠純鋁，合成橡膠≠天然橡膠。</p>
+</blockquote>
+<hr/>
 <h2>零售定價與評價</h2>
 <h3>跨通路價格對比</h3>
 <table><thead><tr><th>產品</th><th>美國價格/對</th><th>歐洲/英國</th><th>評分</th><th>評論量</th><th>評價趨勢</th></tr></thead><tbody><tr><td><strong>Reserve Fillmore</strong></td><td>$49.99</td><td>GBP 34.50</td><td>~4.5-4.7/5</td><td>高</td><td>非常正面；僅價格被批評</td></tr><tr><td><strong>Muc-Off Big Bore</strong></td><td>$50.00</td><td>EUR 33-45</td><td>~4.0-4.5/5</td><td>中等</td><td>正面；體積是隱憂</td></tr><tr><td><strong>Stan&#x27;s Exo-Core</strong></td><td>$50.00</td><td>--</td><td>~4.5/5</td><td>中低</td><td>早期評測非常正面</td></tr><tr><td><strong>Topeak TurboFlow</strong></td><td>~$35</td><td>EUR 22-40</td><td>~4.0+/5</td><td>極低（新品）</td><td>媒體正面，無使用者評論</td></tr><tr><td><strong>BBB CoreCap（帽組）</strong></td><td>~$19</td><td>GBP 14.99</td><td>~4.0/5</td><td>低（歐洲先行）</td><td>概念正面；市場接受度待觀察</td></tr><tr><td><strong>BBB CoreCap（AL 組）</strong></td><td>~$30-38</td><td>GBP 24.99-31.99</td><td>--</td><td>--</td><td>--</td></tr><tr><td><strong>76 Projects Hi Flow</strong></td><td>~$29-33</td><td>GBP 24.50</td><td>4.22/5（77 則）</td><td>中等</td><td>好，但打氣筒配合問題</td></tr><tr><td><strong>Schwalbe Clik（閥芯）</strong></td><td>$12.99</td><td>EUR 3.43-5.95</td><td>~4.5+/5</td><td>高</td><td>創新獲好評</td></tr><tr><td><strong>Industry Nine</strong></td><td>$21.00</td><td>--</td><td>~3.5-4.0/5</td><td>中低</td><td>最兩極化；「No-Clog」仍然堵</td></tr><tr><td><strong>Prime</strong></td><td>~$14</td><td>GBP 10.99</td><td>--</td><td>--</td><td>最佳性價比，無特殊功能</td></tr></tbody></table>
@@ -356,9 +368,9 @@ export const reportHtmlContent: Record<string, string> = {
 };
 
 export const reportLastUpdated: Record<string, string> = {
-  'competitive-landscape': '2026-03-14',
+  'competitive-landscape': '2026-03-16',
 };
 
 export const reportEvidenceCollected: Record<string, string> = {
-  'competitive-landscape': '2026-03-14',
+  'competitive-landscape': '2026-03-16',
 };

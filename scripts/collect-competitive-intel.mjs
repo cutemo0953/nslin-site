@@ -72,6 +72,55 @@ class TavilyAdapter {
   }
 }
 
+// ── URL Health Check ──
+
+async function timedFetch(url, method, headers, timeoutMs) {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const res = await fetch(url, {
+      method,
+      signal: controller.signal,
+      redirect: 'follow',
+      headers,
+    });
+    clearTimeout(timer);
+    return { status: res.status, ok: true };
+  } catch (e) {
+    const reason = e.name === 'AbortError' ? 'timeout' : 'network';
+    return { status: 0, ok: false, reason };
+  }
+}
+
+function classifyResult(result, method) {
+  if (result.status >= 200 && result.status < 400) {
+    return { url_status: 'alive', url_http_status: result.status, url_check_method: method };
+  }
+  if (result.status === 403) {
+    return { url_status: 'blocked', url_http_status: 403, url_check_method: method, url_status_reason: 'waf_block' };
+  }
+  if (result.status === 0) {
+    return { url_status: 'unreachable', url_http_status: 0, url_check_method: method, url_status_reason: result.reason || 'unknown' };
+  }
+  return { url_status: 'dead', url_http_status: result.status, url_check_method: method, url_status_reason: `http_${result.status}` };
+}
+
+async function checkUrlHealth(url, timeoutMs = 5000) {
+  const headers = {
+    'User-Agent': 'Mozilla/5.0 (compatible; NSLinBot/1.0)',
+    'Accept': 'text/html',
+  };
+
+  const headResult = await timedFetch(url, 'HEAD', headers, timeoutMs);
+
+  if (headResult.status === 403 || headResult.status === 405 || headResult.status === 406) {
+    const getResult = await timedFetch(url, 'GET', headers, timeoutMs);
+    return { ...classifyResult(getResult, 'get'), url_checked_at: new Date().toISOString() };
+  }
+
+  return { ...classifyResult(headResult, 'head'), url_checked_at: new Date().toISOString() };
+}
+
 // ── Collect evidence per entity ──
 
 async function collectEvidenceForEntity(entity, adapter) {
@@ -81,7 +130,8 @@ async function collectEvidenceForEntity(entity, adapter) {
     // Fetch from official site
     const official = await adapter.fetchOfficialPage(entity.official_url);
     for (const r of official) {
-      results.push({ ...r, source_type: 'official_site' });
+      const health = await checkUrlHealth(r.url);
+      results.push({ ...r, source_type: 'official_site', ...health });
     }
   } catch (e) {
     console.warn(`  Official page fetch failed for ${entity.id}: ${e.message}`);
@@ -91,7 +141,8 @@ async function collectEvidenceForEntity(entity, adapter) {
     // Fetch retail listings
     const retail = await adapter.fetchRetailListing(entity.brand, entity.product);
     for (const r of retail) {
-      results.push({ ...r, source_type: 'retail' });
+      const health = await checkUrlHealth(r.url);
+      results.push({ ...r, source_type: 'retail', ...health });
     }
   } catch (e) {
     console.warn(`  Retail fetch failed for ${entity.id}: ${e.message}`);
@@ -179,6 +230,113 @@ Compare the evidence against current state. Submit proposals for any changes fou
   }
 }
 
+// ── Material Price Tracking (Yahoo Finance) ──
+
+const DIRECT_MATERIALS = [
+  { id: 'copper',   zh: '銅',  symbol: 'HG=F',  unit: 'USD/lb',  toTwdPerKg: (price, fx) => price * 2.20462 * fx },
+  { id: 'aluminum', zh: '鋁',  symbol: 'ALI=F', unit: 'USD/ton', toTwdPerKg: (price, fx) => (price / 1000) * fx },
+];
+
+const PROXY_MATERIALS = [
+  { id: 'abs',  zh: 'ABS 塑膠',    usage: '閥帽、保護蓋' },
+  { id: 'pc',   zh: 'PC 聚碳酸酯',  usage: '透明件、結構件' },
+  { id: 'epdm', zh: 'EPDM 橡膠',   usage: 'O-ring、密封件' },
+  { id: 'nbr',  zh: 'NBR 丁腈橡膠', usage: '耐油 O-ring' },
+];
+const PROXY_SYMBOL = 'CL=F';
+
+async function fetchYahooQuote(symbol) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`;
+  try {
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; NSLinBot/1.0)' },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const meta = data.chart?.result?.[0]?.meta;
+    return {
+      price: meta?.regularMarketPrice,
+      currency: meta?.currency,
+      symbol,
+    };
+  } catch (e) {
+    console.warn(`Yahoo Finance fetch failed for ${symbol}: ${e.message}`);
+    return null;
+  }
+}
+
+async function collectMaterialPrices() {
+  const fxQuote = await fetchYahooQuote('TWDUSD=X');
+  if (!fxQuote?.price) {
+    console.warn('Failed to fetch USD/TWD exchange rate, skipping material prices');
+    return [];
+  }
+  const usdToTwd = 1 / fxQuote.price;
+
+  const snapshots = [];
+  const today = new Date().toISOString().slice(0, 10);
+
+  for (const mat of DIRECT_MATERIALS) {
+    const quote = await fetchYahooQuote(mat.symbol);
+    if (!quote?.price) {
+      console.warn(`Failed to fetch ${mat.id} price (${mat.symbol}), skipping`);
+      continue;
+    }
+
+    const priceRaw = quote.price;
+    const priceTwdPerKg = mat.toTwdPerKg(priceRaw, usdToTwd);
+    const priceUsdPerTon = mat.unit === 'USD/lb'
+      ? priceRaw * 2204.62
+      : priceRaw;
+
+    snapshots.push({
+      date: today,
+      material: mat.id,
+      material_zh: mat.zh,
+      data_class: 'direct',
+      price_twd_per_kg: Math.round(priceTwdPerKg * 10) / 10,
+      price_usd_per_ton: Math.round(priceUsdPerTon * 100) / 100,
+      price_usd_raw: priceRaw,
+      price_raw_unit: mat.unit,
+      exchange_rate: Math.round(usdToTwd * 100) / 100,
+      source_type: 'futures_api',
+      source_symbol: mat.symbol,
+      source_currency: 'USD',
+      source_url: `https://finance.yahoo.com/quote/${encodeURIComponent(mat.symbol)}`,
+      source_description: `COMEX ${mat.zh} Futures (${mat.symbol}) + USD/TWD`,
+      conversion_method: 'usd_fx_derived',
+      retrieved_at: new Date().toISOString(),
+    });
+  }
+
+  const oilQuote = await fetchYahooQuote(PROXY_SYMBOL);
+  if (oilQuote?.price) {
+    for (const mat of PROXY_MATERIALS) {
+      snapshots.push({
+        date: today,
+        material: mat.id,
+        material_zh: mat.zh,
+        data_class: 'proxy',
+        proxy_symbol: PROXY_SYMBOL,
+        proxy_name: 'WTI Crude Oil',
+        proxy_price: oilQuote.price,
+        proxy_unit: 'USD/barrel',
+        source_type: 'futures_api',
+        source_symbol: PROXY_SYMBOL,
+        source_currency: 'USD',
+        source_url: `https://finance.yahoo.com/quote/${encodeURIComponent(PROXY_SYMBOL)}`,
+        source_description: `WTI Crude Oil (upstream proxy for ${mat.zh})`,
+        conversion_method: 'proxy',
+        retrieved_at: new Date().toISOString(),
+      });
+    }
+  } else {
+    console.warn('Failed to fetch crude oil price, skipping proxy materials');
+  }
+
+  return snapshots;
+}
+
 // ── Main ──
 
 async function main() {
@@ -258,12 +416,48 @@ async function main() {
     console.log('No proposals generated. No file written.');
   }
 
+  // Collect material prices (independent of Tavily/Claude)
+  let materialSnapshotsCount = 0;
+  if (!isDryRun) {
+    console.log('Collecting material prices...');
+    const materialSnapshots = await collectMaterialPrices();
+    if (materialSnapshots.length > 0) {
+      const mpFile = path.join(DATA_DIR, 'material-prices.json');
+      const existing = fs.existsSync(mpFile)
+        ? JSON.parse(fs.readFileSync(mpFile, 'utf-8'))
+        : { snapshots: [] };
+
+      // Upsert: date + material as unique key
+      for (const snap of materialSnapshots) {
+        const idx = existing.snapshots.findIndex(
+          (s) => s.date === snap.date && s.material === snap.material,
+        );
+        if (idx >= 0) {
+          existing.snapshots[idx] = snap;
+        } else {
+          existing.snapshots.push(snap);
+        }
+      }
+
+      // Retain only last 6 months
+      const sixMonthsAgo = new Date();
+      sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+      const cutoff = sixMonthsAgo.toISOString().slice(0, 10);
+      existing.snapshots = existing.snapshots.filter((s) => s.date >= cutoff);
+
+      fs.writeFileSync(mpFile, JSON.stringify(existing, null, 2), 'utf-8');
+      materialSnapshotsCount = materialSnapshots.length;
+      console.log(`Material prices: ${materialSnapshotsCount} snapshots saved`);
+    }
+  }
+
   // Update last-collected timestamp
   const lastCollected = {
     date: new Date().toISOString().slice(0, 10),
     method: isDryRun ? 'dry_run' : 'automated',
     sources_queried: sourcesQueried,
     proposals_generated: deduped.length,
+    material_snapshots: materialSnapshotsCount,
   };
   fs.writeFileSync(
     path.join(DATA_DIR, 'last-collected.json'),

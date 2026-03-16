@@ -19,6 +19,11 @@ export const EvidenceSourceSchema = z.object({
   ]),
   retrieved_at: z.string().datetime(),
   snippet: z.string().max(500),
+  url_status: z.enum(['alive', 'blocked', 'unreachable', 'dead', 'unchecked']).default('unchecked'),
+  url_http_status: z.number().int().min(0).optional(),
+  url_check_method: z.enum(['head', 'get', 'none']).default('none'),
+  url_status_reason: z.string().optional(),
+  url_checked_at: z.string().datetime().optional(),
 });
 
 export const ProposalSchema = z.object({
@@ -86,6 +91,45 @@ export const EvidenceLogEntrySchema = z.object({
   change_class: z.number().int().min(1).max(4),
   requires_review: z.boolean(),
   status: z.enum(['pending', 'accepted', 'rejected']),
+});
+
+// --- Material Price Snapshot Schema ---
+
+const SharedMaterialFields = {
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  material: z.enum(['copper', 'aluminum', 'abs', 'pc', 'epdm', 'nbr']),
+  material_zh: z.string(),
+  source_type: z.enum(['futures_api', 'manual']),
+  source_symbol: z.string(),
+  source_currency: z.string(),
+  source_url: z.string().url(),
+  source_description: z.string(),
+  conversion_method: z.enum(['direct_twd', 'usd_fx_derived', 'proxy']),
+  retrieved_at: z.string().datetime(),
+};
+
+export const MaterialPriceSnapshotSchema = z.discriminatedUnion('data_class', [
+  z.object({
+    ...SharedMaterialFields,
+    data_class: z.literal('direct'),
+    price_twd_per_kg: z.number().positive(),
+    price_usd_per_ton: z.number().positive(),
+    price_usd_raw: z.number().positive(),
+    price_raw_unit: z.string(),
+    exchange_rate: z.number().positive(),
+  }),
+  z.object({
+    ...SharedMaterialFields,
+    data_class: z.literal('proxy'),
+    proxy_symbol: z.string(),
+    proxy_name: z.string(),
+    proxy_price: z.number().positive(),
+    proxy_unit: z.string(),
+  }),
+]);
+
+export const MaterialPricesFileSchema = z.object({
+  snapshots: z.array(MaterialPriceSnapshotSchema),
 });
 
 // --- Tool definition for Claude API Tool Use ---

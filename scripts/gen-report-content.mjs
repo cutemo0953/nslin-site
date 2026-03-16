@@ -33,7 +33,13 @@ for (const report of reports) {
 
   const raw = fs.readFileSync(filePath, 'utf-8');
   // Strip any frontmatter (between --- markers) if present
-  const body = raw.replace(/^---[\s\S]*?---\s*/, '');
+  let body = raw.replace(/^---[\s\S]*?---\s*/, '');
+
+  // Replace material prices placeholder with dynamic content
+  if (body.includes('<!-- MATERIAL_PRICES_PLACEHOLDER -->')) {
+    const materialHtml = renderMaterialPricesHtml(loadMaterialSnapshots());
+    body = body.replace('<!-- MATERIAL_PRICES_PLACEHOLDER -->', materialHtml);
+  }
 
   // Compile markdown (MDX handles plain markdown) to HTML at build time
   const compiled = await compile(body, { outputFormat: 'function-body', remarkPlugins: [remarkGfm] });
@@ -86,3 +92,105 @@ fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
 fs.writeFileSync(OUT_FILE, output, 'utf-8');
 
 console.log(`Generated ${OUT_FILE} with ${entries.length} pre-compiled report(s)`);
+
+// ── Material Prices Helpers ──
+
+function loadMaterialSnapshots() {
+  const mpFile = path.join(process.cwd(), 'data/competitive-intel/material-prices.json');
+  if (!fs.existsSync(mpFile)) return null;
+  const { snapshots } = JSON.parse(fs.readFileSync(mpFile, 'utf-8'));
+  return snapshots && snapshots.length > 0 ? snapshots : null;
+}
+
+function computeMaterialViewModel(snapshots) {
+  const latestDate = snapshots.map((s) => s.date).sort().pop();
+  const latest = snapshots.filter((s) => s.date === latestDate);
+
+  const prevDates = [...new Set(snapshots.map((s) => s.date))]
+    .filter((d) => d < latestDate)
+    .sort();
+  const prevDate = prevDates.pop();
+  const prev = prevDate ? snapshots.filter((s) => s.date === prevDate) : [];
+
+  const directItems = latest
+    .filter((s) => s.data_class === 'direct')
+    .map((item) => {
+      const prevItem = prev.find(
+        (s) => s.material === item.material && s.data_class === 'direct',
+      );
+      const changePct = prevItem
+        ? ((item.price_twd_per_kg - prevItem.price_twd_per_kg) /
+            prevItem.price_twd_per_kg) *
+          100
+        : null;
+      return { ...item, changePct };
+    });
+
+  const proxyLatest = latest.filter((s) => s.data_class === 'proxy');
+  const prevOil = prev.find((s) => s.data_class === 'proxy');
+  const proxyViewModel =
+    proxyLatest.length > 0
+      ? {
+          oil: proxyLatest[0],
+          materialNames: proxyLatest.map((s) => s.material_zh).join(' / '),
+          changePct: prevOil
+            ? ((proxyLatest[0].proxy_price - prevOil.proxy_price) /
+                prevOil.proxy_price) *
+              100
+            : null,
+        }
+      : null;
+
+  return { directItems, proxyViewModel, latestDate };
+}
+
+function renderMaterialPricesHtml(snapshots) {
+  if (!snapshots)
+    return '<p style="color:#94a3b8;">原材料價格資料尚未收集。</p>';
+
+  const { directItems, proxyViewModel } = computeMaterialViewModel(snapshots);
+  let html = '';
+
+  if (directItems.length > 0) {
+    html += '<h3>金屬（精確報價）</h3>\n\n';
+    html += '<table>\n<thead>\n<tr>\n';
+    html += '<th>材料</th>\n<th>台幣/公斤</th>\n<th>美元/噸</th>\n<th>週變化</th>\n<th>匯率</th>\n<th>資料日期</th>\n';
+    html += '</tr>\n</thead>\n<tbody>\n';
+    for (const item of directItems) {
+      const changeStr =
+        item.changePct !== null
+          ? `${item.changePct > 0 ? '+' : ''}${item.changePct.toFixed(1)}%`
+          : '—';
+      html += '<tr>\n';
+      html += `<td>${item.material_zh}</td>\n`;
+      html += `<td>NT$ ${item.price_twd_per_kg.toFixed(1)}</td>\n`;
+      html += `<td>$${item.price_usd_per_ton.toLocaleString()}</td>\n`;
+      html += `<td>${changeStr}</td>\n`;
+      html += `<td>${item.exchange_rate} TWD/USD</td>\n`;
+      html += `<td>${item.date}</td>\n`;
+      html += '</tr>\n';
+    }
+    html += '</tbody>\n</table>\n\n';
+  }
+
+  if (proxyViewModel) {
+    const { oil, materialNames, changePct } = proxyViewModel;
+    const changeStr =
+      changePct !== null
+        ? `${changePct > 0 ? '▲' : '▼'} ${changePct > 0 ? '+' : ''}${changePct.toFixed(1)}%`
+        : '';
+    html += '<h3>石化衍生材料（共享石化上游指標）</h3>\n\n';
+    html += `<p>影響材料：${materialNames}</p>\n\n`;
+    html += '<table>\n<thead>\n<tr>\n<th>上游指標</th>\n<th>報價</th>\n<th>週變化</th>\n<th>資料日期</th>\n</tr>\n</thead>\n<tbody>\n';
+    html += '<tr>\n';
+    html += `<td>WTI 原油 (${oil.proxy_symbol})</td>\n`;
+    html += `<td>$${oil.proxy_price.toFixed(2)} / barrel</td>\n`;
+    html += `<td>${changeStr}</td>\n`;
+    html += `<td>${oil.date}</td>\n`;
+    html += '</tr>\n';
+    html += '</tbody>\n</table>\n\n';
+    html += '<p>ABS/PC 源自石腦油裂解，EPDM/NBR 源自丁二烯/丙烯，均與原油正相關但非線性。此為共享上游方向性指標，非個別材料精確報價。</p>\n\n';
+  }
+
+  return html;
+}

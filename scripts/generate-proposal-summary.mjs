@@ -137,7 +137,16 @@ for (const [entityId, entityProposals] of Object.entries(byEntity)) {
     const confPct = Math.round(p.confidence * 100);
     lines.push(`- **${p.field}** (${classLabel}, ${confPct}% confidence)`);
     lines.push(`  - Change: \`${p.old_value}\` -> \`${p.new_value}\``);
-    lines.push(`  - Source: [${p.evidence.source_type}](${p.evidence.source_url})`);
+    const urlStatus = p.evidence.url_status || 'unchecked';
+    if (urlStatus === 'dead') {
+      lines.push(`  - Source: ~~[${p.evidence.source_type}](${p.evidence.source_url})~~ [DEAD]`);
+    } else if (urlStatus === 'blocked') {
+      lines.push(`  - Source: [${p.evidence.source_type}](${p.evidence.source_url}) [BLOCKED]`);
+    } else if (urlStatus === 'unreachable') {
+      lines.push(`  - Source: ~~[${p.evidence.source_type}](${p.evidence.source_url})~~ [UNREACHABLE]`);
+    } else {
+      lines.push(`  - Source: [${p.evidence.source_type}](${p.evidence.source_url})`);
+    }
     lines.push(`  - Evidence: "${p.evidence.snippet.slice(0, 200)}${p.evidence.snippet.length > 200 ? '...' : ''}"`);
     lines.push('');
   }
