@@ -1,6 +1,6 @@
 # Dev Spec: 競品情報系統改進 (v1.3)
 
-> 狀態：SPEC READY — 待簽收
+> 狀態：IMPLEMENTED — F1-F4 全部完成，CI workflow 已更新
 > 作者：架構師
 > 日期：2026-03-16
 > 版本：v1.3（v1.2 Gemini + ChatGPT review 反饋：CI 解耦、anchor 穩定化、schema 清理）
