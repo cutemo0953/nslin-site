@@ -1,6 +1,6 @@
 # 競品分析：無內胎氣嘴帽與高流量氣嘴
 
-> 最後更新：2026-03-14
+> 最後更新：2026-03-16
 > 用途：BBB CoreCap 產品內容策略的競品情報資料庫
 
 > **重要說明**：只有無內胎（tubeless）氣嘴的 valve core 才能拆卸。一般有內胎的 Presta 氣嘴，valve core 是固定的、無法拆除。因此 CoreCap 這類「替換 valve core」的產品，實際適用對象是無內胎系統的使用者。
@@ -407,7 +407,7 @@ BBB CoreCap 佔據獨特的市場利基：
 | **Peaty's x Chris King MK2** | 鋼絲扳手（帽 1）+ 閥芯拆卸工具（帽 2） | 最佳雙功能帽蓋實作 |
 | **DT Swiss**（鋁合金版） | 整合閥芯拆卸工具 | 鋁合金帽蓋設計 |
 | **WTB Max-Flow** | 整合閥芯拆卸工具 | 另有免工具人體工學螺母 |
-| **Ride Maple** | 閥芯拆卸工具 | CNC 加工帽蓋，多色可選 |
+| **[Ride Maple](https://ridemaple.com/products/core-tool-valve-cap)** | 閥芯拆卸工具 | CNC 加工帽蓋，13 色可選，$9/對 |
 | **BBB CoreCap** | 彈簧閥本身就是帽蓋（不需要另外的帽蓋） | 徹底消除了帽蓋的概念 |
 | **Stan's NoTubes** | TAP 帽蓋（閥芯拆卸） | Universal+ 及 Exo-Core 均配備 |
 | **Muc-Off V2** | 帽蓋整合閥芯拆卸工具 | V2 氣嘴標配 |
@@ -492,6 +492,10 @@ BBB CoreCap（iF 設計獎 2026）和 Muc-Off Big Bore（Design & Innovation Awa
 
 ---
 
+> **自行車 TPMS 市場研究** — 13 款產品比較、sensor 晶片分析、市場趨勢、與氣嘴市場的交集。[查看完整 TPMS 報告 →](/zh-TW/reports/bicycle-tpms)
+
+---
+
 ## 資料來源
 
 ### BBB CoreCap
@@ -562,6 +566,54 @@ BBB CoreCap（iF 設計獎 2026）和 Muc-Off Big Bore（Design & Innovation Awa
 - [TROJAN Vmax d&i 獎 - Bikerumor (2025)](https://bikerumor.com/taipei-cycle-show-ifdesign-design-gold-d-i-award-winners-2025/)
 - [TROJAN Vmax iF 設計獎頁](https://ifdesign.com/en/taipei-cycle-d-and-i-awards-2025-winner-trojan-vmax)
 - [高流量氣嘴市場需求 - Bike-EU](https://www.bike-eu.com/42480/the-need-for-high-volume-valves-in-the-tubeless-market)
+
+### Ride Now TPMS T1（胎壓感測器）
+- [Ride Now 官方 TPMS 頁面](https://www.ridenowtech.com/?page_id=2213&lang=en)
+- [台北自行車展 2025 報導 - Velo / Outside](https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/)
+- [Amazon UK 商品頁](https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX)
+
+### Lezyne CNC TLR
+- [Lezyne CNC TLR 官方](https://ride.lezyne.com/products/cnc-tlr-valve)
+- [Lezyne CNC TLR Pro（胎墊相容版）](https://ride.lezyne.com/products/cnc-tlr-tubeless-ready-tire-valve-pro)
+- [Lezyne 無內胎解決方案總覽](https://ride.lezyne.com/pages/premium-tubeless-tire-solutions)
+
+### Ride Maple
+- [Ride Maple Core Tool 閥蓋](https://ridemaple.com/products/core-tool-valve-cap)
+
+### 自行車 TPMS
+- [Quarq TyreWiz 2.0 官方](https://www.sram.com/en/quarq/series/tyrewiz)
+- [DC Rainmaker TyreWiz Hands-on](https://www.dcrainmaker.com/2018/04/tirewiz-cycling-pressure.html)
+- [SKS Airspy SV 官方](https://www.sks-germany.com/en/Products/Multi-Tools/AIRSPY-SET.htm)
+- [SKS Airspy TL 官方](https://sks-us.com/products/airspy-tl-pressure-sensor)
+- [SKS Airspy 評測 - NSMB](https://nsmb.com/articles/sks-airspy-review/)
+- [SKS Airspy 硬體逆向工程 - GitHub](https://github.com/bitmeal/sks_airspy_ant_community_fw/blob/master/doc/HARDWARE_PROTO.md)
+- [SKS Airspy 逆向工程 - Hackaday](https://hackaday.com/2025/02/25/reverse-engineering-sks-airspy-tire-pressure-sensors-for-custom-firmware/)
+- [Outrider TPMS - Bikerumor](https://bikerumor.com/outrider-tpms-lightweight-affordable-bicycle-tire-pressure-monitoring-sensors/)
+- [Outrider TL Pro 官方](https://www.outridercomponents.com/products/outrider-tl-pro)
+- [Outrider - New Atlas](https://newatlas.com/bicycles/outrider-bike-tire-pressure-sensor/)
+- [RideNow TPMS 官方](https://www.ridenowtech.com/?page_id=2213&lang=en)
+- [RideNow T1 - Amazon UK](https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX)
+- [RideNow 台北自行車展 - Velo](https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/)
+- [AIRsistant 官方](https://www.airsistant.com/)
+- [AIRsistant 評測 - ENDURO MTB](https://enduro-mtb.com/en/schrader-airsistant-review/)
+- [FOBO Bike 2 官方](https://my-fobo.com/product-family/FOBO_Bike_2)
+- [FOBO Bike 2 評測 - RideApart](https://www.rideapart.com/reviews/698971/gear-review-fobo-bike-tpms/)
+- [StatCap P1 評測 - Road Bike Rider](https://www.roadbikerider.com/statcap-p1-tire-pressure-monitoring-system-tpms-review/)
+- [Tubolito PSENS 官方](https://www.tubolito.com/product/tubo-mtb-psens/)
+- [Tubolito SYNCD 官方](https://www.tubolito.com/product/tubo-road-syncd/)
+- [Tubolito PSENS - Singletracks](https://www.singletracks.com/mtb-gear/trying-out-tubolitos-new-mtb-psens-smart-tube/)
+- [Rover PSIcle - Bikerumor](https://bikerumor.com/exclusive-rover-psicle-wireless-tire-pressure-monitor-is-accurate-tubeless-battery-free/)
+- [Rover PSIcle - Pinkbike](https://www.pinkbike.com/news/psicle-batteryless-nfc-sensor-threads-into-presta-valve-to-measure-tire-pressure.html)
+- [Gravaa 破產 - road.cc](https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767)
+- [JOSN TyreDog 自行車 TPMS - TaiwanTrade](https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html)
+- [Cycling Weekly TPMS 比較](https://www.cyclingweekly.com/reviews/tyres-and-wheels/what-pressure-are-you-running-three-different-pressure-monitoring-systems-put-to-the-test)
+- [Hammerhead Karoo TPMS 支援](https://support.hammerhead.io/hc/en-us/articles/25605314831131-Karoo-OS-Tire-Pressure-Sensor-Integration)
+- [Pinkbike 民調：你會用 TPMS 嗎？](https://www.pinkbike.com/news/pinkbike-poll-real-time-pressure-sensors.html)
+- [TREEL TPMS 使用 nRF52 - Nordic 案例](https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs)
+- [Nordic nRF52 ANT 支援](https://www.thisisant.com/developer/components/nrf52832)
+- [Infineon XENSIV TPMS 感測器](https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html)
+- [TPMS 市場報告 - IMARC Group](https://www.imarcgroup.com/tire-pressure-monitoring-system-market)
+- [自行車 TPMS 專利 WO2025/261588 - Bikerumor](https://bikerumor.com/patent-patrol-inventor-with-tire-pressure-management-system-patent-seeks-industry-partner/)
 
 ### 比較與總評
 - [2026 年 3 月最佳登山車無內胎氣嘴 - BikerSays](https://bikersays.com/best-mountain-bike-tubeless-valves/)
@@ -744,8 +796,8 @@ BIKE24 折扣力度大（RRP 的 25-40% off），尤其 Muc-Off 和 Schwalbe。S
 
 ### 台北國際自行車展 2025（2025 年 3 月）
 
-- **Legion TROJAN Vmax** — 獲 iF/d&i 獎。隱藏式高流量氣嘴，藏入輪圈內降低風阻。300% 氣流量。可透過氣嘴注入補胎液。彰化。
-- **Ride Now 胎壓感測器** — 取代任何 Presta 氣嘴帽，即時胎壓監控。預估售價 ~$80。
+- **[Legion TROJAN Vmax](https://ifdesign.com/en/taipei-cycle-d-and-i-awards-2025-winner-trojan-vmax)** — 獲 iF/d&i 獎。隱藏式高流量氣嘴，藏入輪圈內降低風阻。300% 氣流量。可透過氣嘴注入補胎液。彰化。[官方](https://www.thelegion.com.tw/VMAX.html) · [Pinkbike](https://www.pinkbike.com/news/legions-clever-high-flow-tubeless-valves-taipei-cycle-show-2024.html)
+- **[Ride Now TPMS T1](https://www.ridenowtech.com/?page_id=2213&lang=en)** — 取代任何 Presta 氣嘴帽，即時胎壓監控（ANT+ / Bluetooth，Garmin Edge 相容）。6.1g/顆，IPX9 防水，CR1025 電池。預估售價 ~$80。[Velo 報導](https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/) · [Amazon UK](https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX)
 
 ### 台北國際自行車展 2026（2026 年 3 月 25-28 日）
 
@@ -753,10 +805,10 @@ BIKE24 折扣力度大（RRP 的 25-40% off），尤其 Muc-Off 和 Schwalbe。S
 
 ### Eurobike 2024-2025
 
-- **Schwalbe Clik** — 獲 Eurobike 2024 大獎。全新氣嘴標準。開放授權 — 目標成為產業標準。Wolf Tooth 和 Lezyne 已製造相容氣嘴桿。
-- **Muc-Off Big Bore** — 獲 Design & Innovation Award。開發歷時 3 年。254% 氣流量提升。
+- **[Schwalbe Clik](https://clikvalve.com/)** — 獲 Eurobike 2024 大獎。全新氣嘴標準。開放授權 — 目標成為產業標準。Wolf Tooth 和 Lezyne 已製造相容氣嘴桿。[Escape Collective 評測](https://escapecollective.com/review-clik-valve-deserves-to-win-the-market/) · [Velo 年度創新](https://velo.outsideonline.com/road/road-gear/velo-innovation-of-the-year-2025-schwalbe-clik-valve/)
+- **[Muc-Off Big Bore](https://us.muc-off.com/products/big-bore-hybrid-tubeless-valves)** — 獲 Design & Innovation Award。開發歷時 3 年。254% 氣流量提升。[Bikerumor](https://bikerumor.com/muc-off-new-tubeless-valves-big-bore-no-core/) · [D&I 獎](https://eu.muc-off.com/blogs/press-releases/muc-off-s-big-bore-tubeless-valves-receives-design-innovation-award)
 
 ### Sea Otter Classic 2025
 
-- **Topeak TurboFlow** — 專用氣嘴 + RapidHead 打氣頭。3 倍氣流量。台中。
-- **Lezyne CNC TLR 氣嘴** — 更新版增加胎墊相容性。$28/對。
+- **[Topeak TurboFlow](https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT)** — 專用氣嘴 + RapidHead 打氣頭。3 倍氣流量。台中。[Bikerumor](https://bikerumor.com/first-look-topeak-adds-to-the-list-of-alt0valves-with-new-turboflow-adapters/) · [off-road.cc 評測](https://road.cc/offroad/review_v2/topeak-turboflow-valve-combo-w-rapidhead)
+- **[Lezyne CNC TLR 氣嘴](https://ride.lezyne.com/products/cnc-tlr-valve)** — 更新版增加胎墊相容性。$28/對。[Pro 版（胎墊相容）](https://ride.lezyne.com/products/cnc-tlr-tubeless-ready-tire-valve-pro)

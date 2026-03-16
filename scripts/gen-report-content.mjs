@@ -20,6 +20,10 @@ const reports = [
     slug: 'competitive-landscape',
     file: 'COMPETITIVE_LANDSCAPE_TUBELESS_VALVES_ZH-TW.md',
   },
+  {
+    slug: 'bicycle-tpms',
+    file: 'BICYCLE_TPMS_MARKET_ZH-TW.md',
+  },
 ];
 
 const entries = [];

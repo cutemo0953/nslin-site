@@ -3,7 +3,7 @@
 export const reportHtmlContent: Record<string, string> = {
   'competitive-landscape': `<h1>競品分析：無內胎氣嘴帽與高流量氣嘴</h1>
 <blockquote>
-<p>最後更新：2026-03-14
+<p>最後更新：2026-03-16
 用途：BBB CoreCap 產品內容策略的競品情報資料庫</p>
 </blockquote>
 <blockquote>
@@ -106,7 +106,7 @@ export const reportHtmlContent: Record<string, string> = {
 <hr/>
 <h2>整合工具功能的氣嘴帽</h2>
 <p>各品牌提供帽蓋內建功能的彙整：</p>
-<table><thead><tr><th>品牌</th><th>帽蓋功能</th><th>備註</th></tr></thead><tbody><tr><td><strong>Peaty&#x27;s x Chris King MK2</strong></td><td>鋼絲扳手（帽 1）+ 閥芯拆卸工具（帽 2）</td><td>最佳雙功能帽蓋實作</td></tr><tr><td><strong>DT Swiss</strong>（鋁合金版）</td><td>整合閥芯拆卸工具</td><td>鋁合金帽蓋設計</td></tr><tr><td><strong>WTB Max-Flow</strong></td><td>整合閥芯拆卸工具</td><td>另有免工具人體工學螺母</td></tr><tr><td><strong>Ride Maple</strong></td><td>閥芯拆卸工具</td><td>CNC 加工帽蓋，多色可選</td></tr><tr><td><strong>BBB CoreCap</strong></td><td>彈簧閥本身就是帽蓋（不需要另外的帽蓋）</td><td>徹底消除了帽蓋的概念</td></tr><tr><td><strong>Stan&#x27;s NoTubes</strong></td><td>TAP 帽蓋（閥芯拆卸）</td><td>Universal+ 及 Exo-Core 均配備</td></tr><tr><td><strong>Muc-Off V2</strong></td><td>帽蓋整合閥芯拆卸工具</td><td>V2 氣嘴標配</td></tr></tbody></table>
+<table><thead><tr><th>品牌</th><th>帽蓋功能</th><th>備註</th></tr></thead><tbody><tr><td><strong>Peaty&#x27;s x Chris King MK2</strong></td><td>鋼絲扳手（帽 1）+ 閥芯拆卸工具（帽 2）</td><td>最佳雙功能帽蓋實作</td></tr><tr><td><strong>DT Swiss</strong>（鋁合金版）</td><td>整合閥芯拆卸工具</td><td>鋁合金帽蓋設計</td></tr><tr><td><strong>WTB Max-Flow</strong></td><td>整合閥芯拆卸工具</td><td>另有免工具人體工學螺母</td></tr><tr><td><strong><a href="https://ridemaple.com/products/core-tool-valve-cap">Ride Maple</a></strong></td><td>閥芯拆卸工具</td><td>CNC 加工帽蓋，13 色可選，$9/對</td></tr><tr><td><strong>BBB CoreCap</strong></td><td>彈簧閥本身就是帽蓋（不需要另外的帽蓋）</td><td>徹底消除了帽蓋的概念</td></tr><tr><td><strong>Stan&#x27;s NoTubes</strong></td><td>TAP 帽蓋（閥芯拆卸）</td><td>Universal+ 及 Exo-Core 均配備</td></tr><tr><td><strong>Muc-Off V2</strong></td><td>帽蓋整合閥芯拆卸工具</td><td>V2 氣嘴標配</td></tr></tbody></table>
 <hr/>
 <h2>車友痛點</h2>
 <p>根據 MTBR 論壇、Singletrack World、BikeForums、Weight Weenies 及 TrainerRoad 論壇的研究：</p>
@@ -175,6 +175,10 @@ export const reportHtmlContent: Record<string, string> = {
 <p>BBB CoreCap（iF 設計獎 2026）和 Muc-Off Big Bore（Design &amp; Innovation Award 2026）都利用工業設計獎項建立市場公信力，顯示氣嘴創新正在產品設計層面（而不僅是自行車媒體內）獲得認可。</p>
 <h3>8. 生態系鎖定的隱憂</h3>
 <p>新的氣嘴標準（Clik 的專用打氣頭、Fillmore 的不可拆卸閥芯、Big Bore 的搖桿機構）創造了不同程度的生態系鎖定。車友對被綁定在單一系統表示擔憂。</p>
+<hr/>
+<blockquote>
+<p><strong>自行車 TPMS 市場研究</strong> — 13 款產品比較、sensor 晶片分析、市場趨勢、與氣嘴市場的交集。<a href="/zh-TW/reports/bicycle-tpms">查看完整 TPMS 報告 →</a></p>
+</blockquote>
 <hr/>
 <h2>資料來源</h2>
 <h3>BBB CoreCap</h3>
@@ -254,6 +258,58 @@ export const reportHtmlContent: Record<string, string> = {
 <li><a href="https://bikerumor.com/taipei-cycle-show-ifdesign-design-gold-d-i-award-winners-2025/">TROJAN Vmax d&amp;i 獎 - Bikerumor (2025)</a></li>
 <li><a href="https://ifdesign.com/en/taipei-cycle-d-and-i-awards-2025-winner-trojan-vmax">TROJAN Vmax iF 設計獎頁</a></li>
 <li><a href="https://www.bike-eu.com/42480/the-need-for-high-volume-valves-in-the-tubeless-market">高流量氣嘴市場需求 - Bike-EU</a></li>
+</ul>
+<h3>Ride Now TPMS T1（胎壓感測器）</h3>
+<ul>
+<li><a href="https://www.ridenowtech.com/?page_id=2213&amp;lang=en">Ride Now 官方 TPMS 頁面</a></li>
+<li><a href="https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/">台北自行車展 2025 報導 - Velo / Outside</a></li>
+<li><a href="https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX">Amazon UK 商品頁</a></li>
+</ul>
+<h3>Lezyne CNC TLR</h3>
+<ul>
+<li><a href="https://ride.lezyne.com/products/cnc-tlr-valve">Lezyne CNC TLR 官方</a></li>
+<li><a href="https://ride.lezyne.com/products/cnc-tlr-tubeless-ready-tire-valve-pro">Lezyne CNC TLR Pro（胎墊相容版）</a></li>
+<li><a href="https://ride.lezyne.com/pages/premium-tubeless-tire-solutions">Lezyne 無內胎解決方案總覽</a></li>
+</ul>
+<h3>Ride Maple</h3>
+<ul>
+<li><a href="https://ridemaple.com/products/core-tool-valve-cap">Ride Maple Core Tool 閥蓋</a></li>
+</ul>
+<h3>自行車 TPMS</h3>
+<ul>
+<li><a href="https://www.sram.com/en/quarq/series/tyrewiz">Quarq TyreWiz 2.0 官方</a></li>
+<li><a href="https://www.dcrainmaker.com/2018/04/tirewiz-cycling-pressure.html">DC Rainmaker TyreWiz Hands-on</a></li>
+<li><a href="https://www.sks-germany.com/en/Products/Multi-Tools/AIRSPY-SET.htm">SKS Airspy SV 官方</a></li>
+<li><a href="https://sks-us.com/products/airspy-tl-pressure-sensor">SKS Airspy TL 官方</a></li>
+<li><a href="https://nsmb.com/articles/sks-airspy-review/">SKS Airspy 評測 - NSMB</a></li>
+<li><a href="https://github.com/bitmeal/sks_airspy_ant_community_fw/blob/master/doc/HARDWARE_PROTO.md">SKS Airspy 硬體逆向工程 - GitHub</a></li>
+<li><a href="https://hackaday.com/2025/02/25/reverse-engineering-sks-airspy-tire-pressure-sensors-for-custom-firmware/">SKS Airspy 逆向工程 - Hackaday</a></li>
+<li><a href="https://bikerumor.com/outrider-tpms-lightweight-affordable-bicycle-tire-pressure-monitoring-sensors/">Outrider TPMS - Bikerumor</a></li>
+<li><a href="https://www.outridercomponents.com/products/outrider-tl-pro">Outrider TL Pro 官方</a></li>
+<li><a href="https://newatlas.com/bicycles/outrider-bike-tire-pressure-sensor/">Outrider - New Atlas</a></li>
+<li><a href="https://www.ridenowtech.com/?page_id=2213&amp;lang=en">RideNow TPMS 官方</a></li>
+<li><a href="https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX">RideNow T1 - Amazon UK</a></li>
+<li><a href="https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/">RideNow 台北自行車展 - Velo</a></li>
+<li><a href="https://www.airsistant.com/">AIRsistant 官方</a></li>
+<li><a href="https://enduro-mtb.com/en/schrader-airsistant-review/">AIRsistant 評測 - ENDURO MTB</a></li>
+<li><a href="https://my-fobo.com/product-family/FOBO_Bike_2">FOBO Bike 2 官方</a></li>
+<li><a href="https://www.rideapart.com/reviews/698971/gear-review-fobo-bike-tpms/">FOBO Bike 2 評測 - RideApart</a></li>
+<li><a href="https://www.roadbikerider.com/statcap-p1-tire-pressure-monitoring-system-tpms-review/">StatCap P1 評測 - Road Bike Rider</a></li>
+<li><a href="https://www.tubolito.com/product/tubo-mtb-psens/">Tubolito PSENS 官方</a></li>
+<li><a href="https://www.tubolito.com/product/tubo-road-syncd/">Tubolito SYNCD 官方</a></li>
+<li><a href="https://www.singletracks.com/mtb-gear/trying-out-tubolitos-new-mtb-psens-smart-tube/">Tubolito PSENS - Singletracks</a></li>
+<li><a href="https://bikerumor.com/exclusive-rover-psicle-wireless-tire-pressure-monitor-is-accurate-tubeless-battery-free/">Rover PSIcle - Bikerumor</a></li>
+<li><a href="https://www.pinkbike.com/news/psicle-batteryless-nfc-sensor-threads-into-presta-valve-to-measure-tire-pressure.html">Rover PSIcle - Pinkbike</a></li>
+<li><a href="https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767">Gravaa 破產 - road.cc</a></li>
+<li><a href="https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html">JOSN TyreDog 自行車 TPMS - TaiwanTrade</a></li>
+<li><a href="https://www.cyclingweekly.com/reviews/tyres-and-wheels/what-pressure-are-you-running-three-different-pressure-monitoring-systems-put-to-the-test">Cycling Weekly TPMS 比較</a></li>
+<li><a href="https://support.hammerhead.io/hc/en-us/articles/25605314831131-Karoo-OS-Tire-Pressure-Sensor-Integration">Hammerhead Karoo TPMS 支援</a></li>
+<li><a href="https://www.pinkbike.com/news/pinkbike-poll-real-time-pressure-sensors.html">Pinkbike 民調：你會用 TPMS 嗎？</a></li>
+<li><a href="https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs">TREEL TPMS 使用 nRF52 - Nordic 案例</a></li>
+<li><a href="https://www.thisisant.com/developer/components/nrf52832">Nordic nRF52 ANT 支援</a></li>
+<li><a href="https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html">Infineon XENSIV TPMS 感測器</a></li>
+<li><a href="https://www.imarcgroup.com/tire-pressure-monitoring-system-market">TPMS 市場報告 - IMARC Group</a></li>
+<li><a href="https://bikerumor.com/patent-patrol-inventor-with-tire-pressure-management-system-patent-seeks-industry-partner/">自行車 TPMS 專利 WO2025/261588 - Bikerumor</a></li>
 </ul>
 <h3>比較與總評</h3>
 <ul>
@@ -348,8 +404,8 @@ export const reportHtmlContent: Record<string, string> = {
 <h2>展會新品（2024-2026）</h2>
 <h3>台北國際自行車展 2025（2025 年 3 月）</h3>
 <ul>
-<li><strong>Legion TROJAN Vmax</strong> — 獲 iF/d&amp;i 獎。隱藏式高流量氣嘴，藏入輪圈內降低風阻。300% 氣流量。可透過氣嘴注入補胎液。彰化。</li>
-<li><strong>Ride Now 胎壓感測器</strong> — 取代任何 Presta 氣嘴帽，即時胎壓監控。預估售價 ~$80。</li>
+<li><strong><a href="https://ifdesign.com/en/taipei-cycle-d-and-i-awards-2025-winner-trojan-vmax">Legion TROJAN Vmax</a></strong> — 獲 iF/d&amp;i 獎。隱藏式高流量氣嘴，藏入輪圈內降低風阻。300% 氣流量。可透過氣嘴注入補胎液。彰化。<a href="https://www.thelegion.com.tw/VMAX.html">官方</a> · <a href="https://www.pinkbike.com/news/legions-clever-high-flow-tubeless-valves-taipei-cycle-show-2024.html">Pinkbike</a></li>
+<li><strong><a href="https://www.ridenowtech.com/?page_id=2213&amp;lang=en">Ride Now TPMS T1</a></strong> — 取代任何 Presta 氣嘴帽，即時胎壓監控（ANT+ / Bluetooth，Garmin Edge 相容）。6.1g/顆，IPX9 防水，CR1025 電池。預估售價 ~$80。<a href="https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/">Velo 報導</a> · <a href="https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX">Amazon UK</a></li>
 </ul>
 <h3>台北國際自行車展 2026（2026 年 3 月 25-28 日）</h3>
 <ul>
@@ -357,20 +413,192 @@ export const reportHtmlContent: Record<string, string> = {
 </ul>
 <h3>Eurobike 2024-2025</h3>
 <ul>
-<li><strong>Schwalbe Clik</strong> — 獲 Eurobike 2024 大獎。全新氣嘴標準。開放授權 — 目標成為產業標準。Wolf Tooth 和 Lezyne 已製造相容氣嘴桿。</li>
-<li><strong>Muc-Off Big Bore</strong> — 獲 Design &amp; Innovation Award。開發歷時 3 年。254% 氣流量提升。</li>
+<li><strong><a href="https://clikvalve.com/">Schwalbe Clik</a></strong> — 獲 Eurobike 2024 大獎。全新氣嘴標準。開放授權 — 目標成為產業標準。Wolf Tooth 和 Lezyne 已製造相容氣嘴桿。<a href="https://escapecollective.com/review-clik-valve-deserves-to-win-the-market/">Escape Collective 評測</a> · <a href="https://velo.outsideonline.com/road/road-gear/velo-innovation-of-the-year-2025-schwalbe-clik-valve/">Velo 年度創新</a></li>
+<li><strong><a href="https://us.muc-off.com/products/big-bore-hybrid-tubeless-valves">Muc-Off Big Bore</a></strong> — 獲 Design &amp; Innovation Award。開發歷時 3 年。254% 氣流量提升。<a href="https://bikerumor.com/muc-off-new-tubeless-valves-big-bore-no-core/">Bikerumor</a> · <a href="https://eu.muc-off.com/blogs/press-releases/muc-off-s-big-bore-tubeless-valves-receives-design-innovation-award">D&amp;I 獎</a></li>
 </ul>
 <h3>Sea Otter Classic 2025</h3>
 <ul>
-<li><strong>Topeak TurboFlow</strong> — 專用氣嘴 + RapidHead 打氣頭。3 倍氣流量。台中。</li>
-<li><strong>Lezyne CNC TLR 氣嘴</strong> — 更新版增加胎墊相容性。$28/對。</li>
+<li><strong><a href="https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT">Topeak TurboFlow</a></strong> — 專用氣嘴 + RapidHead 打氣頭。3 倍氣流量。台中。<a href="https://bikerumor.com/first-look-topeak-adds-to-the-list-of-alt0valves-with-new-turboflow-adapters/">Bikerumor</a> · <a href="https://road.cc/offroad/review_v2/topeak-turboflow-valve-combo-w-rapidhead">off-road.cc 評測</a></li>
+<li><strong><a href="https://ride.lezyne.com/products/cnc-tlr-valve">Lezyne CNC TLR 氣嘴</a></strong> — 更新版增加胎墊相容性。$28/對。<a href="https://ride.lezyne.com/products/cnc-tlr-tubeless-ready-tire-valve-pro">Pro 版（胎墊相容）</a></li>
+</ul>`,
+  'bicycle-tpms': `<h1>自行車 TPMS 市場研究</h1>
+<blockquote>
+<p>最後更新：2026-03-16
+用途：自行車胎壓監控系統市場研究，與無內胎氣嘴市場的交集分析</p>
+</blockquote>
+<blockquote>
+<p><strong>背景：</strong> TPMS（Tire Pressure Monitoring System）正與無內胎氣嘴市場產生交集。氣嘴帽型感測器取代傳統氣嘴帽，整合型感測氣嘴合併了「高流量氣嘴」與「即時胎壓監控」兩個品類。對 N.S.-LIN 而言，這是潛在的產品線擴展方向。</p>
+</blockquote>
+<hr/>
+<h2>目錄</h2>
+<ol>
+<li><a href="#%E7%94%A2%E5%93%81%E7%B8%BD%E8%A6%BD">產品總覽</a></li>
+<li><a href="#%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F%E5%88%86%E9%A1%9E">安裝方式分類</a></li>
+<li><a href="#%E9%80%9A%E8%A8%8A%E5%8D%94%E8%AD%B0">通訊協議</a></li>
+<li><a href="#ridenow-tpms-t1-%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90">RideNow TPMS T1 深度分析</a></li>
+<li><a href="#%E5%B8%82%E5%A0%B4%E8%B6%A8%E5%8B%A2">市場趨勢</a></li>
+<li><a href="#%E8%88%87%E7%84%A1%E5%85%A7%E8%83%8E%E6%B0%A3%E5%98%B4%E5%B8%82%E5%A0%B4%E7%9A%84%E4%BA%A4%E9%9B%86">與無內胎氣嘴市場的交集</a></li>
+<li><a href="#tpms-%E7%9B%B8%E9%97%9C-oem-%E4%BE%9B%E6%87%89%E5%95%86">TPMS 相關 OEM 供應商</a></li>
+<li><a href="#tpms-%E7%9B%B8%E9%97%9C%E5%B0%88%E5%88%A9">TPMS 相關專利</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E4%BE%86%E6%BA%90">資料來源</a></li>
+</ol>
+<hr/>
+<h2>產品總覽</h2>
+<h3>Quarq TyreWiz 2.0（SRAM）</h3>
+<table><thead><tr><th>屬性</th><th>詳情</th></tr></thead><tbody><tr><td><strong>品牌</strong></td><td>Quarq（SRAM 子公司）</td></tr><tr><td><strong>價格</strong></td><td>~$120/對</td></tr><tr><td><strong>重量</strong></td><td>10g/顆</td></tr><tr><td><strong>協議</strong></td><td>ANT+ / BLE 雙協議</td></tr><tr><td><strong>相容裝置</strong></td><td>Garmin Edge、Wahoo ELEMNT/BOLT/ROAM、Hammerhead Karoo、SRAM AXS app</td></tr><tr><td><strong>精度</strong></td><td>±2%</td></tr><tr><td><strong>防水</strong></td><td>IPX7</td></tr><tr><td><strong>電池</strong></td><td>CR1632，~300 小時</td></tr><tr><td><strong>安裝</strong></td><td>Presta 氣嘴帽替換</td></tr><tr><td><strong>特色</strong></td><td>LED 紅/綠指示燈顯示胎壓狀態。AXS app 根據體重/胎寬/輪位自動推薦胎壓。市場龍頭。</td></tr><tr><td><strong>來源</strong></td><td><a href="https://www.sram.com/en/quarq/series/tyrewiz">官方</a> · <a href="https://www.dcrainmaker.com/2018/04/tirewiz-cycling-pressure.html">DC Rainmaker</a></td></tr></tbody></table>
+<h3>SKS Airspy SV / Airspy TL</h3>
+<table><thead><tr><th>屬性</th><th>Airspy SV</th><th>Airspy TL</th></tr></thead><tbody><tr><td><strong>價格</strong></td><td>~$145/對</td><td>~$145/對</td></tr><tr><td><strong>重量</strong></td><td>18g/顆</td><td>17g/顆</td></tr><tr><td><strong>協議</strong></td><td>ANT+ / BLE</td><td>ANT+ / BLE</td></tr><tr><td><strong>相容裝置</strong></td><td>Garmin (Connect IQ)、SKS MYBIKE app</td><td>同左</td></tr><tr><td><strong>最大壓力</strong></td><td>8.3 bar (~120 PSI)</td><td>8.3 bar (~120 PSI)</td></tr><tr><td><strong>電池</strong></td><td>CR2032，~500 小時</td><td>CR2032</td></tr><tr><td><strong>安裝</strong></td><td>外掛式，滑套在 Presta 氣嘴上，支架勾住輻條</td><td><strong>整合式鋁合金無內胎氣嘴</strong>（60/67/81mm）</td></tr><tr><td><strong>特色</strong></td><td>德國品牌。TL 版是「TPMS + 無內胎氣嘴」的匯流產品。</td><td></td></tr><tr><td><strong>來源</strong></td><td><a href="https://www.sks-germany.com/en/Products/Multi-Tools/AIRSPY-SET.htm">SV 官方</a> · <a href="https://sks-us.com/products/airspy-tl-pressure-sensor">TL 官方</a> · <a href="https://nsmb.com/articles/sks-airspy-review/">NSMB 評測</a></td><td></td></tr></tbody></table>
+<h3>Outrider TL / TL Pro</h3>
+<table><thead><tr><th>屬性</th><th>Outrider TL</th><th>Outrider TL Pro</th></tr></thead><tbody><tr><td><strong>價格</strong></td><td>$55-79/對</td><td>~$79/對</td></tr><tr><td><strong>重量</strong></td><td>3.5g/顆</td><td>6.9g/顆</td></tr><tr><td><strong>協議</strong></td><td>ANT+ only</td><td>ANT+ only</td></tr><tr><td><strong>相容裝置</strong></td><td>Garmin Edge 系列</td><td>同左</td></tr><tr><td><strong>壓力範圍</strong></td><td>0-85 PSI</td><td>0-200 PSI</td></tr><tr><td><strong>精度</strong></td><td>±0.7% (0-39 PSI)，±1.4% (40-85 PSI)</td><td>±0.5%</td></tr><tr><td><strong>電池</strong></td><td>CR1225，~2 年</td><td>~5 年以上</td></tr><tr><td><strong>安裝</strong></td><td><strong>胎內</strong>——安裝在既有無內胎氣嘴桿底座</td><td>同左</td></tr><tr><td><strong>狀態</strong></td><td>預購中（預計 2025 年 9 月出貨）</td><td></td></tr><tr><td><strong>特色</strong></td><td>市場最輕（TL 僅 3.5g）。胎內安裝，隱藏且受保護。刺破通知。僅限無內胎。無 BLE——純 Garmin 取向。</td><td></td></tr><tr><td><strong>來源</strong></td><td><a href="https://www.outridercomponents.com/products/the-outrider-tpms">TL 官方</a> · <a href="https://www.outridercomponents.com/products/outrider-tl-pro">TL Pro 官方</a> · <a href="https://bikerumor.com/outrider-tpms-lightweight-affordable-bicycle-tire-pressure-monitoring-sensors/">Bikerumor</a> · <a href="https://newatlas.com/bicycles/outrider-bike-tire-pressure-sensor/">New Atlas</a></td><td></td></tr></tbody></table>
+<h3>RideNow TPMS T1</h3>
+<blockquote>
+<p>詳見下方「<a href="#ridenow-tpms-t1-%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90">RideNow TPMS T1 深度分析</a>」</p>
+</blockquote>
+<h3>AIRsistant（Schrader / Sensata）</h3>
+<table><thead><tr><th>屬性</th><th>詳情</th></tr></thead><tbody><tr><td><strong>價格</strong></td><td>EUR 99.99 (~$108)</td></tr><tr><td><strong>重量</strong></td><td>20g/輪（氣嘴 + 感測器合計）</td></tr><tr><td><strong>協議</strong></td><td>BLE</td></tr><tr><td><strong>相容裝置</strong></td><td>Garmin（BLE 相容型號）、AIRsistant app、相容 e-bike 儀表板</td></tr><tr><td><strong>電池</strong></td><td>密封式，~5,000 小時 / ~5 年，不可更換</td></tr><tr><td><strong>安裝</strong></td><td>閥芯替換（Schrader 和 Presta 版）</td></tr><tr><td><strong>特色</strong></td><td>Schrader 發明者（現 Sensata Technologies 旗下）製造。全球 #1 TPMS 製造商（~40% 汽車售後市佔）。E-bike OEM 整合取向。FIT 系統整合。</td></tr><tr><td><strong>來源</strong></td><td><a href="https://www.airsistant.com/">官方</a> · <a href="https://enduro-mtb.com/en/schrader-airsistant-review/">ENDURO MTB 評測</a></td></tr></tbody></table>
+<h3>FOBO Bike 2</h3>
+<table><thead><tr><th>屬性</th><th>詳情</th></tr></thead><tbody><tr><td><strong>價格</strong></td><td>~$99</td></tr><tr><td><strong>重量</strong></td><td>7.6g/顆</td></tr><tr><td><strong>協議</strong></td><td>BLE 5.0</td></tr><tr><td><strong>相容裝置</strong></td><td>FOBO app、智慧手錶、藍牙耳機警示</td></tr><tr><td><strong>壓力範圍</strong></td><td>0-116 PSI (800 kPa)</td></tr><tr><td><strong>電池</strong></td><td>CR1632，~1 年</td></tr><tr><td><strong>安裝</strong></td><td>氣嘴帽替換（Schrader 為主，也適用機車）</td></tr><tr><td><strong>更新間隔</strong></td><td>每 15 秒</td></tr><tr><td><strong>特色</strong></td><td>原為機車產品，也用於自行車。防盜鎖緊螺母。多級警報（慢漏/快漏）。無車錶整合（手機 only）。</td></tr><tr><td><strong>來源</strong></td><td><a href="https://my-fobo.com/product-family/FOBO_Bike_2">官方</a> · <a href="https://www.rideapart.com/reviews/698971/gear-review-fobo-bike-tpms/">RideApart 評測</a></td></tr></tbody></table>
+<h3>其他產品</h3>
+<table><thead><tr><th>產品</th><th>價格</th><th>協議</th><th>安裝方式</th><th>備註</th></tr></thead><tbody><tr><td><a href="https://teamstatcap.com/product/statcap-p1/">StatCap P1</a></td><td>$99</td><td>BLE</td><td>氣嘴帽替換</td><td>250ms 更新間隔。Tahuna app。小量生產（200 台）。含溫度和搖晃偵測。</td></tr><tr><td><a href="https://www.tubolito.com/product/tubo-mtb-psens/">Tubolito PSENS</a></td><td>~$50</td><td>NFC</td><td>TPU 內胎內建</td><td>按需讀取（手機貼近）。無電池。~93g（含管）。27.5&quot;/29&quot;。</td></tr><tr><td><a href="https://www.tubolito.com/product/tubo-road-syncd/">Tubolito SYNCD</a></td><td>未公布</td><td>BLE</td><td>TPU 內胎內建</td><td>即時監控。2 年/10,000km 電池壽命。不可更換（換胎方案）。700c。</td></tr><tr><td><a href="https://www.tindie.com/products/CaptMcAllister/psicle-nfc-pressure-sensor-for-presta-valves/">Rover PSIcle</a></td><td>小量</td><td>NFC</td><td>閥芯延長管</td><td>無電池。MTB 版 ±0.06 PSI 精度。Maker 產品（Tindie）。專利申請中。</td></tr><tr><td><a href="https://gravaa.com/">Gravaa KAPS</a></td><td>EUR 3,200+</td><td>ANT+/BLE</td><td>花鼓整合</td><td><strong>已破產</strong>（2026 年 1 月）。主動充/放氣系統。Visma-Lease a Bike 曾使用。售價過高。<a href="https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767">road.cc 報導</a></td></tr><tr><td><a href="https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html">JOSN TyreDog</a></td><td>OEM</td><td>—</td><td>氣嘴帽型</td><td>台灣 OEM/ODM 製造商。汽車/機車/自行車 TPMS。</td></tr><tr><td>Cikada MLD-B08</td><td>隨車</td><td>專有 2.4GHz</td><td>外掛式</td><td>E-bike 品牌專屬。非 ANT+/BLE 相容。</td></tr><tr><td><a href="https://www.fit-ebike.com/en-en/technology/accessories/tire-pressure-sensors-fit/">FIT (Rotax/Schrader)</a></td><td>未公布</td><td>BLE</td><td>Schrader/Presta</td><td>E-bike OEM 整合。FIT 儀表板顯示紅/綠胎壓狀態。非零售。</td></tr></tbody></table>
+<hr/>
+<h2>安裝方式分類</h2>
+<table><thead><tr><th>類型</th><th>代表產品</th><th>優點</th><th>缺點</th></tr></thead><tbody><tr><td><strong>氣嘴帽替換</strong></td><td>TyreWiz、RideNow T1、FOBO</td><td>最簡單安裝，通用</td><td>增加高度，暴露在外</td></tr><tr><td><strong>閥芯替換</strong></td><td>AIRsistant</td><td>低矮輪廓</td><td>安裝複雜</td></tr><tr><td><strong>整合式無內胎氣嘴</strong></td><td>SKS Airspy TL</td><td>最乾淨的整合</td><td>較重，綁定單一氣嘴品牌</td></tr><tr><td><strong>胎內安裝</strong></td><td>Outrider TL/Pro</td><td>最輕（3.5g），隱藏，受保護</td><td>僅限無內胎，換電池需拆胎</td></tr><tr><td><strong>TPU 內胎內建</strong></td><td>Tubolito PSENS/SYNCD</td><td>無額外零件</td><td>僅限有內胎，鎖定品牌</td></tr><tr><td><strong>閥芯延長管</strong></td><td>Rover PSIcle</td><td>超輕，無電池</td><td>僅 NFC 按需讀取</td></tr></tbody></table>
+<hr/>
+<h2>通訊協議</h2>
+<table><thead><tr><th>協議</th><th>產品</th><th>特點</th></tr></thead><tbody><tr><td><strong>ANT+</strong></td><td>TyreWiz、Airspy、Outrider、RideNow T1</td><td>ANT+ 有官方 TPMS 裝置 profile，Garmin/Wahoo/Karoo 原生支援</td></tr><tr><td><strong>BLE</strong></td><td>TyreWiz、Airspy、AIRsistant、FOBO、StatCap、SYNCD</td><td>更通用但 TPMS 標準化不足，多數走手機 app</td></tr><tr><td><strong>NFC（被動）</strong></td><td>Tubolito PSENS、Rover PSIcle</td><td>無需電池，但非即時（需手機貼近讀取）</td></tr></tbody></table>
+<p><strong>關鍵：ANT+ 有已發布的 TPMS device profile，是車錶整合的標準。</strong> Hammerhead 明確表示只支援「標準 ANT+ TPMS spec」。</p>
+<h3>車錶相容性矩陣</h3>
+<table><thead><tr><th>感測器</th><th>Garmin Edge</th><th>Wahoo ELEMNT</th><th>Hammerhead Karoo</th><th>手機 app</th></tr></thead><tbody><tr><td>Quarq TyreWiz 2.0</td><td>是（原生 ANT+）</td><td>是</td><td>是</td><td>SRAM AXS</td></tr><tr><td>SKS Airspy</td><td>是（Connect IQ）</td><td>可能</td><td>是</td><td>SKS MYBIKE</td></tr><tr><td>Outrider TL/Pro</td><td>是（原生 ANT+）</td><td>可能</td><td>可能</td><td>透過 Garmin Connect</td></tr><tr><td>RideNow T1</td><td>是</td><td>未知</td><td>未知</td><td>Tireo</td></tr><tr><td>AIRsistant</td><td>是（BLE）</td><td>未知</td><td>未知</td><td>AIRsistant</td></tr><tr><td>FOBO Bike 2</td><td>否</td><td>否</td><td>否</td><td>FOBO</td></tr><tr><td>Tubolito SYNCD</td><td>是（BLE）</td><td>未知</td><td>未知</td><td>Tubolito</td></tr></tbody></table>
+<hr/>
+<h2>RideNow TPMS T1 深度分析</h2>
+<h3>規格</h3>
+<table><thead><tr><th>參數</th><th>值</th></tr></thead><tbody><tr><td>型號</td><td>TPMS T1</td></tr><tr><td>製造商</td><td>青島 RideNow Tech Co., Ltd.（中國）</td></tr><tr><td>尺寸</td><td>⌀13.5 × 31.5 mm</td></tr><tr><td>重量</td><td>6.1g</td></tr><tr><td>氣嘴型式</td><td>Presta 帽蓋替換</td></tr><tr><td>壓力範圍</td><td>0-150 PSI (0-10.3 bar)</td></tr><tr><td>精度</td><td>±1.5 PSI (±0.1 bar)</td></tr><tr><td>防水</td><td>IPX9</td></tr><tr><td>電池</td><td>CR1025 (30mAh)，可更換</td></tr><tr><td>續航</td><td>~300 小時</td></tr><tr><td>工作電流</td><td>發射模式 5mA 以下</td></tr><tr><td>工作電壓</td><td>2.5-3.3V</td></tr><tr><td>工作溫度</td><td>-20 至 +80°C</td></tr><tr><td>連線</td><td>ANT+（Garmin）+ BLE（Tireo app）雙協議同時</td></tr><tr><td>相容裝置</td><td>Garmin Edge Explore 2、840、830、540、530、1050、1040、1030 Plus；Bontrager 車錶</td></tr><tr><td>包裝</td><td>2 顆感測器 + 安裝扳手</td></tr><tr><td><strong>來源</strong></td><td><a href="https://www.ridenowtech.com/?page_id=2213&amp;lang=en">官方</a> · <a href="https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/">Velo 報導</a> · <a href="https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX">Amazon UK</a></td></tr></tbody></table>
+<h3>工作原理</h3>
+<p>感測器旋入標準 Presta 氣嘴，取代氣嘴帽。旋緊時壓下 Presta 閥芯頂部，使感測器暴露於胎內氣壓。透過 ANT+ 或 BLE 無線傳輸即時胎壓數據至 Garmin 車錶或 Tireo 手機 app。</p>
+<h3>Sensor 晶片分析（無公開拆解，基於特性推斷）</h3>
+<p><strong>無線 SoC：幾乎確定是 Nordic nRF52810（不是 TI）</strong></p>
+<ul>
+<li>RideNow T1 同時支援 ANT+ 和 BLE 雙協議</li>
+<li><strong>全球唯一能在單晶片上同時跑 ANT + BLE 的只有 Nordic nRF52 系列</strong>（透過 S332 SoftDevice）</li>
+<li>TI CC26xx（CC2640, CC2652）支援 BLE/Thread/Zigbee 但<strong>不支援 ANT 協議</strong>——排除 TI</li>
+<li>ANT 授權專屬於 Nordic nRF52 系列（每顆 $0.08 權利金）</li>
+<li>在 nRF52 家族中，nRF52810 最可能：最低成本、最小封裝（QFN 6x6mm, 192KB Flash, 24KB RAM），適合成本優化的 TPMS</li>
+<li>已知案例：<a href="https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs">TREEL Mobility TPMS 確認使用 nRF52810</a></li>
+<li>競品 SKS Airspy <a href="https://github.com/bitmeal/sks_airspy_ant_community_fw/blob/master/doc/HARDWARE_PROTO.md">已被拆解</a>，確認使用 <strong>nRF52832</strong></li>
+</ul>
+<p><strong>壓力感測器（MEMS）：可能為中國國產或 Bosch BMP 系列</strong></p>
+<ul>
+<li>SKS Airspy 使用 NXP FXTH87（汽車級 TPMS SoC，含 MEMS 電容式壓力感測器 + 溫度 + 2 軸加速度計 + 8-bit MCU + RF 發射器），但此晶片<strong>已停產</strong>（NXP 推薦 NTM88 替代）</li>
+<li>RideNow 作為青島製造商，更可能使用成本更低的方案：
+<ul>
+<li>Bosch BMP390 / BMP581（超小型氣壓感測器）</li>
+<li>國產 MEMS（歌爾微電子 / 敏芯微電子）</li>
+</ul>
+</li>
+<li>透過 I2C/SPI 連接 nRF52</li>
+</ul>
+<p><strong>白牌 OEM 可能性高</strong></p>
+<ul>
+<li>RideNow 核心業務是 TPU 內胎，非無線電子</li>
+<li>「Tireo」app 名稱與「RideNow」品牌不同，暗示第三方模組/app 供應商</li>
+<li>深圳 OEM 供應商在 Alibaba 上有類似 TPMS 模組</li>
+<li>產品在台北自行車展 2025 首次展出，暗示近期 OEM 合作</li>
+</ul>
+<p><strong>估計 BOM 成本</strong></p>
+<table><thead><tr><th>元件</th><th>可能型號</th><th>估價</th></tr></thead><tbody><tr><td>無線 SoC</td><td>Nordic nRF52810</td><td>$1.00-1.50</td></tr><tr><td>MEMS 壓力感測器</td><td>國產或 Bosch BMP</td><td>$0.50-1.50</td></tr><tr><td>電池</td><td>CR1025</td><td>$0.10-0.20</td></tr><tr><td>天線</td><td>PCB trace antenna</td><td>$0.00</td></tr><tr><td>被動元件</td><td>電容、電阻、晶振</td><td>$0.10-0.20</td></tr><tr><td>PCB</td><td>2 層板</td><td>$0.10-0.20</td></tr><tr><td>外殼</td><td>CNC 鋁 + O-ring</td><td>$1.00-2.00</td></tr><tr><td>ANT 授權金</td><td>$0.08/顆</td><td>$0.08</td></tr><tr><td><strong>BOM 合計</strong></td><td></td><td><strong>~$3-6/顆</strong></td></tr></tbody></table>
+<blockquote>
+<p>售價 $80/對 = $40/顆，毛利率極高。</p>
+</blockquote>
+<hr/>
+<h2>市場趨勢</h2>
+<ol>
+<li><strong>ANT+ TPMS profile 普及</strong> — Garmin、Wahoo、Hammerhead 都支援官方 ANT+ TPMS device profile，新進者（Outrider、RideNow）優先對接 ANT+</li>
+<li><strong>E-bike 整合驅動量產</strong> — AIRsistant 和 FIT 瞄準 OEM 整合到 e-bike 儀表板。E-bike 重量不敏感 + 安全需求強 = TPMS 的最大成長動力</li>
+<li><strong>價格壓縮</strong> — 從 $145（SKS Airspy）下滑到 $55-80（Outrider、RideNow）。新專利 WO2025/261588 宣稱可將售價降至現有系統的 20-30%</li>
+<li><strong>內建/整合式趨勢</strong> — 從外掛帽蓋型→胎內型（Outrider）、整合氣嘴型（SKS TL）、內胎內建型（Tubolito）</li>
+<li><strong>Gravel/MTB 優先於公路</strong> — 即時 TPMS 在越野場景（頻繁調壓）比公路有更強使用案例。公路主要是賽前確認和慢漏偵測</li>
+<li><strong>亞洲平價進入者</strong> — RideNow、JOSN（TyreDog）等亞洲 OEM 以低價進入，基礎帽蓋型 TPMS 正被商品化</li>
+<li><strong>Gravaa 破產的教訓</strong> — 最先進的主動充/放氣系統（WorldTour 車隊使用）因 EUR 3,200+ 售價在 2026 年 1 月破產。市場還沒準備好為主動胎壓管理支付溢價</li>
+</ol>
+<hr/>
+<h2>與無內胎氣嘴市場的交集</h2>
+<p><strong>氣嘴正在從「空氣通道」演變為「電子平台」：</strong></p>
+<ol>
+<li><strong>SKS Airspy TL</strong> 是最明確的匯流案例——它本身就是一支含壓力感測器的無內胎氣嘴，購買 TPMS = 購買新氣嘴</li>
+<li><strong>Outrider TL</strong> 安裝在現有無內胎氣嘴桿底座的胎內側，物理上屬於氣嘴組件</li>
+<li><strong>AIRsistant</strong> 替換閥芯，氣嘴桿不變但內部結構改變</li>
+<li><strong>帽蓋型感測器（TyreWiz、RideNow、FOBO）</strong> 直接取代氣嘴帽，使傳統氣嘴帽失去存在意義</li>
+</ol>
+<h3>產品空白 / 機會</h3>
+<p>目前無產品同時具備：</p>
+<ul>
+<li>高流量無內胎氣嘴設計（方便座胎與補胎液注入）</li>
+<li>整合 TPMS + ANT+/BLE 雙協議</li>
+<li>輕量（含氣嘴 10g 以下）</li>
+<li>公路壓力相容（120+ PSI）</li>
+</ul>
+<p>SKS Airspy TL 最接近但偏重（17g）且使用標準（非高流量）氣嘴內徑。</p>
+<hr/>
+<h2>TPMS 相關 OEM 供應商</h2>
+<table><thead><tr><th>公司</th><th>地點</th><th>產品</th><th>備註</th></tr></thead><tbody><tr><td><a href="https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html">JOSN (TyreDog)</a></td><td>台灣</td><td>自行車/機車/汽車 TPMS</td><td>OEM/ODM，白牌方案</td></tr><tr><td>SMP (Standard Motor Products)</td><td>台中</td><td>TPMS 設計製造</td><td>台灣工廠</td></tr><tr><td>Sensata / Schrader</td><td>愛爾蘭/全球</td><td>AIRsistant、FIT</td><td>全球 #1 TPMS 製造商（~40% 汽車售後市佔）</td></tr><tr><td>深圳 Bonrre Technology</td><td>深圳</td><td>機車/自行車 TPMS</td><td>OEM</td></tr><tr><td>佛山百信德</td><td>佛山</td><td>TPMS 感測器（1999 成立）</td><td></td></tr><tr><td>Alibaba 供應商</td><td>廣東(189)/浙江(66)/山東(65)</td><td>TPMS 模組</td><td>白牌方案</td></tr></tbody></table>
+<hr/>
+<h2>TPMS 相關專利</h2>
+<table><thead><tr><th>專利</th><th>持有者</th><th>內容</th></tr></thead><tbody><tr><td>Patent pending</td><td>Rover PSIcle</td><td>NFC 供電閥門整合壓力感測</td></tr><tr><td>已授權</td><td>Gravaa KAPS</td><td>花鼓動能氣壓系統（公司已破產）</td></tr><tr><td>WO2025/261588</td><td>獨立發明人</td><td>低成本輪胎壓力管理系統（3D 列印歧管 + 現成工業元件）。<a href="https://bikerumor.com/patent-patrol-inventor-with-tire-pressure-management-system-patent-seeks-industry-partner/">Bikerumor 報導</a></td></tr><tr><td>已授權</td><td>Tubolito</td><td>TPU 內胎製造 + 感測器嵌入製程</td></tr></tbody></table>
+<hr/>
+<h2>資料來源</h2>
+<h3>TPMS 產品</h3>
+<ul>
+<li><a href="https://www.sram.com/en/quarq/series/tyrewiz">Quarq TyreWiz 2.0 官方</a></li>
+<li><a href="https://www.dcrainmaker.com/2018/04/tirewiz-cycling-pressure.html">DC Rainmaker TyreWiz Hands-on</a></li>
+<li><a href="https://www.sks-germany.com/en/Products/Multi-Tools/AIRSPY-SET.htm">SKS Airspy SV 官方</a></li>
+<li><a href="https://sks-us.com/products/airspy-tl-pressure-sensor">SKS Airspy TL 官方</a></li>
+<li><a href="https://nsmb.com/articles/sks-airspy-review/">SKS Airspy 評測 - NSMB</a></li>
+<li><a href="https://bikerumor.com/outrider-tpms-lightweight-affordable-bicycle-tire-pressure-monitoring-sensors/">Outrider TPMS - Bikerumor</a></li>
+<li><a href="https://www.outridercomponents.com/products/outrider-tl-pro">Outrider TL Pro 官方</a></li>
+<li><a href="https://newatlas.com/bicycles/outrider-bike-tire-pressure-sensor/">Outrider - New Atlas</a></li>
+<li><a href="https://www.ridenowtech.com/?page_id=2213&amp;lang=en">RideNow TPMS 官方</a></li>
+<li><a href="https://www.amazon.co.uk/Ridenow-Pressure-Monitoring-Compatible-Bontrager/dp/B0GGHTKJTX">RideNow T1 - Amazon UK</a></li>
+<li><a href="https://velo.outsideonline.com/road/road-gear/randoms-part-1-taipei-cycle-show-2025/">RideNow 台北自行車展 - Velo</a></li>
+<li><a href="https://www.airsistant.com/">AIRsistant 官方</a></li>
+<li><a href="https://enduro-mtb.com/en/schrader-airsistant-review/">AIRsistant 評測 - ENDURO MTB</a></li>
+<li><a href="https://my-fobo.com/product-family/FOBO_Bike_2">FOBO Bike 2 官方</a></li>
+<li><a href="https://www.rideapart.com/reviews/698971/gear-review-fobo-bike-tpms/">FOBO Bike 2 評測 - RideApart</a></li>
+<li><a href="https://www.roadbikerider.com/statcap-p1-tire-pressure-monitoring-system-tpms-review/">StatCap P1 評測</a></li>
+<li><a href="https://www.tubolito.com/product/tubo-mtb-psens/">Tubolito PSENS 官方</a></li>
+<li><a href="https://www.tubolito.com/product/tubo-road-syncd/">Tubolito SYNCD 官方</a></li>
+<li><a href="https://www.singletracks.com/mtb-gear/trying-out-tubolitos-new-mtb-psens-smart-tube/">Tubolito PSENS 評測 - Singletracks</a></li>
+<li><a href="https://bikerumor.com/exclusive-rover-psicle-wireless-tire-pressure-monitor-is-accurate-tubeless-battery-free/">Rover PSIcle - Bikerumor</a></li>
+<li><a href="https://www.pinkbike.com/news/psicle-batteryless-nfc-sensor-threads-into-presta-valve-to-measure-tire-pressure.html">Rover PSIcle - Pinkbike</a></li>
+<li><a href="https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767">Gravaa 破產 - road.cc</a></li>
+<li><a href="https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html">JOSN TyreDog - TaiwanTrade</a></li>
+</ul>
+<h3>技術與晶片</h3>
+<ul>
+<li><a href="https://github.com/bitmeal/sks_airspy_ant_community_fw/blob/master/doc/HARDWARE_PROTO.md">SKS Airspy 硬體逆向工程 - GitHub</a></li>
+<li><a href="https://hackaday.com/2025/02/25/reverse-engineering-sks-airspy-tire-pressure-sensors-for-custom-firmware/">SKS Airspy 逆向工程 - Hackaday</a></li>
+<li><a href="https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs">TREEL TPMS 使用 nRF52 - Nordic 案例</a></li>
+<li><a href="https://www.thisisant.com/developer/components/nrf52832">Nordic nRF52 ANT 支援</a></li>
+<li><a href="https://www.thisisant.com/developer/components/view-all-components/nrf52-ant-stack-licensing-faq">ANT Stack 授權 FAQ</a></li>
+<li><a href="https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html">Infineon XENSIV TPMS 感測器</a></li>
+<li><a href="https://www.nxp.com/products/sensors/pressure-sensors/tire-pressure-monitoring-sensors-tpms/fxth87e-tire-pressure-monitor-sensor-tpms-family:FXTH87E">NXP FXTH87E TPMS 感測器（已停產）</a></li>
+<li><a href="https://fccid.io/C9O-PMB1">Quarq TyreWiz FCC Filing (C9O-PMB1)</a></li>
+</ul>
+<h3>市場與比較</h3>
+<ul>
+<li><a href="https://www.cyclingweekly.com/reviews/tyres-and-wheels/what-pressure-are-you-running-three-different-pressure-monitoring-systems-put-to-the-test">Cycling Weekly TPMS 比較</a></li>
+<li><a href="https://support.hammerhead.io/hc/en-us/articles/25605314831131-Karoo-OS-Tire-Pressure-Sensor-Integration">Hammerhead Karoo TPMS 支援</a></li>
+<li><a href="https://www.pinkbike.com/news/pinkbike-poll-real-time-pressure-sensors.html">Pinkbike 民調：你會用 TPMS 嗎？</a></li>
+<li><a href="https://www.imarcgroup.com/tire-pressure-monitoring-system-market">TPMS 市場報告 - IMARC Group</a></li>
+<li><a href="https://bikerumor.com/patent-patrol-inventor-with-tire-pressure-management-system-patent-seeks-industry-partner/">自行車 TPMS 專利 WO2025/261588 - Bikerumor</a></li>
 </ul>`,
 };
 
 export const reportLastUpdated: Record<string, string> = {
   'competitive-landscape': '2026-03-16',
+  'bicycle-tpms': '2026-03-16',
 };
 
 export const reportEvidenceCollected: Record<string, string> = {
   'competitive-landscape': '2026-03-16',
+  'bicycle-tpms': '2026-03-16',
 };
