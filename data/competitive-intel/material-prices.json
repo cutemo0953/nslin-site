@@ -5,18 +5,18 @@
       "material": "copper",
       "material_zh": "銅",
       "data_class": "direct",
-      "price_twd_per_kg": 407.6,
-      "price_usd_per_ton": 12716.25,
-      "price_usd_raw": 5.768,
+      "price_twd_per_kg": 407.7,
+      "price_usd_per_ton": 12720.66,
+      "price_usd_raw": 5.77,
       "price_raw_unit": "USD/lb",
       "exchange_rate": 32.05,
       "source_type": "futures_api",
       "source_symbol": "HG=F",
       "source_currency": "USD",
       "source_url": "https://finance.yahoo.com/quote/HG%3DF",
-      "source_description": "COMEX Copper Futures (HG=F) + USD/TWD",
+      "source_description": "COMEX 銅 Futures (HG=F) + USD/TWD",
       "conversion_method": "usd_fx_derived",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.026Z"
     },
     {
       "date": "2026-03-16",
@@ -32,9 +32,9 @@
       "source_symbol": "ALI=F",
       "source_currency": "USD",
       "source_url": "https://finance.yahoo.com/quote/ALI%3DF",
-      "source_description": "COMEX Aluminum Futures (ALI=F) + USD/TWD",
+      "source_description": "COMEX 鋁 Futures (ALI=F) + USD/TWD",
       "conversion_method": "usd_fx_derived",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.085Z"
     },
     {
       "date": "2026-03-16",
@@ -43,7 +43,7 @@
       "data_class": "proxy",
       "proxy_symbol": "CL=F",
       "proxy_name": "WTI Crude Oil",
-      "proxy_price": 98.73,
+      "proxy_price": 99.41,
       "proxy_unit": "USD/barrel",
       "source_type": "futures_api",
       "source_symbol": "CL=F",
@@ -51,7 +51,7 @@
       "source_url": "https://finance.yahoo.com/quote/CL%3DF",
       "source_description": "WTI Crude Oil (upstream proxy for ABS 塑膠)",
       "conversion_method": "proxy",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.144Z"
     },
     {
       "date": "2026-03-16",
@@ -60,7 +60,7 @@
       "data_class": "proxy",
       "proxy_symbol": "CL=F",
       "proxy_name": "WTI Crude Oil",
-      "proxy_price": 98.73,
+      "proxy_price": 99.41,
       "proxy_unit": "USD/barrel",
       "source_type": "futures_api",
       "source_symbol": "CL=F",
@@ -68,7 +68,7 @@
       "source_url": "https://finance.yahoo.com/quote/CL%3DF",
       "source_description": "WTI Crude Oil (upstream proxy for PC 聚碳酸酯)",
       "conversion_method": "proxy",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.144Z"
     },
     {
       "date": "2026-03-16",
@@ -77,7 +77,7 @@
       "data_class": "proxy",
       "proxy_symbol": "CL=F",
       "proxy_name": "WTI Crude Oil",
-      "proxy_price": 98.73,
+      "proxy_price": 99.41,
       "proxy_unit": "USD/barrel",
       "source_type": "futures_api",
       "source_symbol": "CL=F",
@@ -85,7 +85,7 @@
       "source_url": "https://finance.yahoo.com/quote/CL%3DF",
       "source_description": "WTI Crude Oil (upstream proxy for EPDM 橡膠)",
       "conversion_method": "proxy",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.144Z"
     },
     {
       "date": "2026-03-16",
@@ -94,7 +94,7 @@
       "data_class": "proxy",
       "proxy_symbol": "CL=F",
       "proxy_name": "WTI Crude Oil",
-      "proxy_price": 98.73,
+      "proxy_price": 99.41,
       "proxy_unit": "USD/barrel",
       "source_type": "futures_api",
       "source_symbol": "CL=F",
@@ -102,7 +102,7 @@
       "source_url": "https://finance.yahoo.com/quote/CL%3DF",
       "source_description": "WTI Crude Oil (upstream proxy for NBR 丁腈橡膠)",
       "conversion_method": "proxy",
-      "retrieved_at": "2026-03-16T06:17:47.135Z"
+      "retrieved_at": "2026-03-16T06:34:49.144Z"
     }
   ]
 }
