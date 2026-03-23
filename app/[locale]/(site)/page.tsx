@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates } from '@/lib/seo';
 import BannerCarousel from '@/components/BannerCarousel';
@@ -124,10 +125,11 @@ export default async function HomePage({
                 className="group overflow-hidden rounded-xl border border-metal-200 bg-white hover:border-steel-300 hover:shadow-lg transition-all"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-metal-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={image}
                     alt={key}
+                    width={400}
+                    height={300}
                     className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { categories } from '@/data/products/categories';
@@ -70,10 +71,11 @@ export default async function CategoryPage({
             >
               {product.images?.[0] && (
                 <div className="aspect-[4/3] overflow-hidden bg-metal-50">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={product.images[0]}
                     alt={product.sku}
+                    width={400}
+                    height={300}
                     className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

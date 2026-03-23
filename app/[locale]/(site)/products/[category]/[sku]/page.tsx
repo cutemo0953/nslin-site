@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { getProductBySku, getAllProductSlugs, getProductsByCategory } from '@/data/products';
@@ -135,10 +136,11 @@ export default async function ProductPage({
           {/* Product Image */}
           {product.images?.[0] && (
             <div className="overflow-hidden rounded-xl border border-metal-200 bg-metal-50">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={product.images[0]}
                 alt={product.sku}
+                width={600}
+                height={600}
                 className="h-full w-full object-contain p-6"
               />
             </div>

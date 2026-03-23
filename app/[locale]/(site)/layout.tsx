@@ -1,4 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import LocaleToggle from '@/components/LocaleToggle';
@@ -13,10 +14,11 @@ function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/images/banner/logo4.png"
             alt="N.S.-LIN"
+            width={36}
+            height={36}
             className="h-9 w-auto"
           />
           <div>

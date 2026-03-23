@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import { seoAlternates } from '@/lib/seo';
+import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { categories } from '@/data/products/categories';
 import type { Metadata } from 'next';
 
@@ -31,6 +32,23 @@ export default async function ProductsPage({
   const isZh = locale === 'zh-TW';
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: isZh ? '產品目錄' : 'Product Catalog',
+          url: `${BASE_URL}/${isZh ? 'zh-TW/' : ''}products`,
+          description: isZh
+            ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
+            : '13 product categories, 70+ SKUs. TRA, ETRTO, JATMA compliant.',
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: categories.length,
+          },
+        }) }}
+      />
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
       <p className="mb-12 text-lg text-metal-600">
@@ -48,10 +66,11 @@ export default async function ProductsPage({
           >
             {cat.image && (
               <div className="aspect-[4/3] overflow-hidden bg-metal-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={cat.image}
                   alt={isZh ? cat.name['zh-TW'] : cat.name.en}
+                  width={400}
+                  height={300}
                   className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -71,5 +90,6 @@ export default async function ProductsPage({
         ))}
       </div>
     </div>
+    </>
   );
 }

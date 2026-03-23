@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { seoAlternates } from '@/lib/seo';
+import { seoAlternates, BASE_URL } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({
@@ -29,6 +29,22 @@ export default async function AboutPage({
   const isZh = locale === 'zh-TW';
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: isZh ? '關於奕道實業' : 'About N.S.-LIN Industrial',
+          url: `${BASE_URL}/${isZh ? 'zh-TW/' : ''}about`,
+          mainEntity: {
+            '@type': 'Organization',
+            name: 'N.S.-LIN Industrial Co., Ltd.',
+            foundingDate: '1980',
+            numberOfEmployees: { '@type': 'QuantitativeValue', value: '50+' },
+          },
+        }) }}
+      />
     <div className="mx-auto max-w-4xl px-4 py-12">
       <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
 
@@ -89,5 +105,6 @@ export default async function AboutPage({
         </div>
       </section>
     </div>
+    </>
   );
 }
