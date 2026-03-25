@@ -376,10 +376,10 @@ export const reportHtmlContent: Record<string, string> = {
 <hr/>
 <h2 id="material-prices">原材料行情</h2>
 <h3>金屬（精確報價）</h3>
-<table><thead><tr><th>材料</th><th>台幣/公斤</th><th>美元/噸</th><th>週變化</th><th>匯率</th><th>資料日期</th></tr></thead><tbody><tr><td>銅</td><td>NT$ 407.7</td><td>$12,720.66</td><td>—</td><td>32.05 TWD/USD</td><td>2026-03-16</td></tr><tr><td>鋁</td><td>NT$ 111.0</td><td>$3,464</td><td>—</td><td>32.05 TWD/USD</td><td>2026-03-16</td></tr></tbody></table>
+<table><thead><tr><th>材料</th><th>台幣/公斤</th><th>美元/噸</th><th>週變化</th><th>匯率</th><th>資料日期</th></tr></thead><tbody><tr><td>銅</td><td>NT$ 372.8</td><td>$11,632.68</td><td>-8.6%</td><td>32.05 TWD/USD</td><td>2026-03-22</td></tr><tr><td>鋁</td><td>NT$ 100.2</td><td>$3,126.75</td><td>-9.7%</td><td>32.05 TWD/USD</td><td>2026-03-22</td></tr></tbody></table>
 <h3>石化衍生材料（共享石化上游指標）</h3>
 <p>影響材料：ABS 塑膠 / PC 聚碳酸酯 / EPDM 橡膠 / NBR 丁腈橡膠</p>
-<table><thead><tr><th>上游指標</th><th>報價</th><th>週變化</th><th>資料日期</th></tr></thead><tbody><tr><td>WTI 原油 (CL=F)</td><td>$99.40 / barrel</td><td></td><td>2026-03-16</td></tr></tbody></table>
+<table><thead><tr><th>上游指標</th><th>報價</th><th>週變化</th><th>資料日期</th></tr></thead><tbody><tr><td>WTI 原油 (CL=F)</td><td>$98.77 / barrel</td><td>▼ -0.6%</td><td>2026-03-22</td></tr></tbody></table>
 <p>ABS/PC 源自石腦油裂解，EPDM/NBR 源自丁二烯/丙烯，均與原油正相關但非線性。此為共享上游方向性指標，非個別材料精確報價。</p>
 <blockquote>
 <p>方向性上游指標。期貨價非採購成本，不含運輸、關稅、合金成分差異與加工損耗。黃銅≠純銅，鋁合金≠純鋁，合成橡膠≠天然橡膠。</p>
@@ -594,11 +594,11 @@ export const reportHtmlContent: Record<string, string> = {
 };
 
 export const reportLastUpdated: Record<string, string> = {
-  'competitive-landscape': '2026-03-16',
-  'bicycle-tpms': '2026-03-16',
+  'competitive-landscape': '2026-03-22',
+  'bicycle-tpms': '2026-03-22',
 };
 
 export const reportEvidenceCollected: Record<string, string> = {
-  'competitive-landscape': '2026-03-16',
-  'bicycle-tpms': '2026-03-16',
+  'competitive-landscape': '2026-03-22',
+  'bicycle-tpms': '2026-03-22',
 };
