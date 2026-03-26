@@ -1,6 +1,6 @@
 # 自行車 TPMS 市場研究
 
-> 最後更新：2026-03-16
+> 最後更新：2026-03-26
 > 用途：自行車胎壓監控系統市場研究，與無內胎氣嘴市場的交集分析
 
 > **背景：** TPMS（Tire Pressure Monitoring System）正與無內胎氣嘴市場產生交集。氣嘴帽型感測器取代傳統氣嘴帽，整合型感測氣嘴合併了「高流量氣嘴」與「即時胎壓監控」兩個品類。對 N.S.-LIN 而言，這是潛在的產品線擴展方向。
@@ -13,11 +13,12 @@
 2. [安裝方式分類](#安裝方式分類)
 3. [通訊協議](#通訊協議)
 4. [RideNow TPMS T1 深度分析](#ridenow-tpms-t1-深度分析)
-5. [市場趨勢](#市場趨勢)
-6. [與無內胎氣嘴市場的交集](#與無內胎氣嘴市場的交集)
-7. [TPMS 相關 OEM 供應商](#tpms-相關-oem-供應商)
-8. [TPMS 相關專利](#tpms-相關專利)
-9. [資料來源](#資料來源)
+5. [E-bike 與 Motorcycle 市場背景](#e-bike-與-motorcycle-市場背景)
+6. [市場趨勢](#市場趨勢)
+7. [與無內胎氣嘴市場的交集](#與無內胎氣嘴市場的交集)
+8. [TPMS 相關 OEM 供應商](#tpms-相關-oem-供應商)
+9. [TPMS 相關專利](#tpms-相關專利)
+10. [資料來源](#資料來源)
 
 ---
 
@@ -65,7 +66,7 @@
 | **精度** | ±0.7% (0-39 PSI)，±1.4% (40-85 PSI) | ±0.5% |
 | **電池** | CR1225，~2 年 | ~5 年以上 |
 | **安裝** | **胎內**——安裝在既有無內胎氣嘴桿底座 | 同左 |
-| **狀態** | 預購中（預計 2025 年 9 月出貨） |
+| **狀態** | **已開始出貨**（2025 年初 Kickstarter 批次已交付，零售持續接單中） |
 | **特色** | 市場最輕（TL 僅 3.5g）。胎內安裝，隱藏且受保護。刺破通知。僅限無內胎。無 BLE——純 Garmin 取向。 |
 | **來源** | [TL 官方](https://www.outridercomponents.com/products/the-outrider-tpms) · [TL Pro 官方](https://www.outridercomponents.com/products/outrider-tl-pro) · [Bikerumor](https://bikerumor.com/outrider-tpms-lightweight-affordable-bicycle-tire-pressure-monitoring-sensors/) · [New Atlas](https://newatlas.com/bicycles/outrider-bike-tire-pressure-sensor/) |
 
@@ -105,11 +106,11 @@
 
 | 產品 | 價格 | 協議 | 安裝方式 | 備註 |
 |---|---|---|---|---|
-| [StatCap P1](https://teamstatcap.com/product/statcap-p1/) | $99 | BLE | 氣嘴帽替換 | 250ms 更新間隔。Tahuna app。小量生產（200 台）。含溫度和搖晃偵測。 |
+| [StatCap P1](https://teamstatcap.com/product/statcap-p1/) | $99 | BLE | 氣嘴帽替換 | 250ms 更新間隔。Tahuna app。小量生產。含溫度和搖晃偵測。**V2 開發中**：含 AI 異常偵測、ANT+/BLE 雙協議、輪圈/輪胎異常警報、互動串流功能。 |
 | [Tubolito PSENS](https://www.tubolito.com/product/tubo-mtb-psens/) | ~$50 | NFC | TPU 內胎內建 | 按需讀取（手機貼近）。無電池。~93g（含管）。27.5"/29"。 |
 | [Tubolito SYNCD](https://www.tubolito.com/product/tubo-road-syncd/) | 未公布 | BLE | TPU 內胎內建 | 即時監控。2 年/10,000km 電池壽命。不可更換（換胎方案）。700c。 |
 | [Rover PSIcle](https://www.tindie.com/products/CaptMcAllister/psicle-nfc-pressure-sensor-for-presta-valves/) | 小量 | NFC | 閥芯延長管 | 無電池。MTB 版 ±0.06 PSI 精度。Maker 產品（Tindie）。專利申請中。 |
-| [Gravaa KAPS](https://gravaa.com/) | EUR 3,200+ | ANT+/BLE | 花鼓整合 | **已破產**（2026 年 1 月）。主動充/放氣系統。Visma-Lease a Bike 曾使用。售價過高。[road.cc 報導](https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767) |
+| [Gravaa KAPS](https://gravaa.com/) | EUR 3,200+ | ANT+/BLE | 花鼓整合 | **已破產**（2026 年 1 月，荷蘭法院宣告）。主動充/放氣系統。Visma-Lease a Bike 曾使用（Marianne Vos 2024 Gravel 世界冠軍、Ferrand-Prévot Paris-Roubaix 冠軍均使用）。破產原因：無法量產降價（需 tubeless 化 + 降價才能 scale），多家業界方有意收購資產重啟。[road.cc](https://road.cc/content/news/gravaa-declared-bankrupt-due-lack-sales-317767) · [Bikerumor](https://bikerumor.com/gravaa-declares-bankruptcy-despite-race-winning-performances-of-its-pressure-adjusting-hubs/) |
 | [JOSN TyreDog](https://tyredog.en.taiwantrade.com/product/bicycle-tpms-345524.html) | OEM | — | 氣嘴帽型 | 台灣 OEM/ODM 製造商。汽車/機車/自行車 TPMS。 |
 | Cikada MLD-B08 | 隨車 | 專有 2.4GHz | 外掛式 | E-bike 品牌專屬。非 ANT+/BLE 相容。 |
 | [FIT (Rotax/Schrader)](https://www.fit-ebike.com/en-en/technology/accessories/tire-pressure-sensors-fit/) | 未公布 | BLE | Schrader/Presta | E-bike OEM 整合。FIT 儀表板顯示紅/綠胎壓狀態。非零售。 |
@@ -226,15 +227,83 @@
 
 ---
 
+## E-bike 與 Motorcycle 市場背景
+
+### 氣嘴型式
+
+| 車種 | 氣嘴型式 | 說明 |
+|---|---|---|
+| **Motorcycle（機車/重機）** | **100% Schrader**（TR412/TR413） | 無例外。TR412（短）為現代機車標準，TR413（長）為汽車標準但可替代 |
+| **E-bike — 通勤/Fat tire/入門** | **Schrader 為主** | 佔 e-bike 市場大宗。加油站可直接打氣，不需轉接頭 |
+| **E-bike — e-MTB/e-Road/e-Gravel** | **Presta 為主** | 跟隨傳統高階自行車慣例。高壓路線（80-120+ PSI） |
+
+**關鍵洞察：** E-bike 市場越大，Schrader valve 需求成長越快——與傳統自行車的 Presta 主導格局不同。這對 N.S.-LIN 的 Schrader 產品線是直接利多。
+
+### E-bike 補胎液（Sealant）使用狀況
+
+| 模式 | 說明 | 常見車種 | 市場成熟度 |
+|---|---|---|---|
+| **Tubeless + Sealant** | 需 tubeless-ready 輪組 + tubeless 外胎 + sealant | 高階 e-MTB | 成熟 |
+| **傳統內胎 + Slime** | 在一般內胎灌注 sealant（如 Slime、Muc-Off） | 通勤 e-bike | 成熟 |
+| **TPU 內胎 + Sealant** | 2025 新趨勢「仿 tubeless」（Eclipse、Pirelli Smartube） | 各類型 | 新興 |
+
+**E-bike 特有問題：** 許多平價 e-bike 輪圈是鉚釘拼合（非焊接），即使貼上 tubeless 膠帶，接合處仍容易漏氣。這導致 e-bike 的 tubeless 轉換失敗率高於一般自行車，中低階車款多數仍使用傳統內胎。
+
+**Sealant 維護：** Tubeless sealant 約每 90 天需補充、每年完全更換。CO2 氣瓶不可與 sealant 併用（會使其凝固）。
+
+### E-bike 全球市場規模
+
+| 研究機構 | 2025 估值 (USD) | CAGR | 預測期 | 目標年估值 |
+|---|---|---|---|---|
+| Grand View Research | $69.7B | 9.2% | 2026-2033 | $144.3B (2033) |
+| Fortune Business Insights | $57.5B | 14.4% | 2025-2034 | — |
+| Precedence Research | $68.3B | 10.2% | 2026-2035 | $180.3B (2035) |
+| MarketsandMarkets | ~$51B | 6.6% | 2024-2030 | $71.5B (2030) |
+| Mordor Intelligence | $38.1B | 3.6% | 2025-2030 | $45.4B (2030) |
+| Allied Market Research | — | 10.5% | 2020-2030 | $118.6B (2030) |
+
+> 估值差異主要來自是否包含中國低速電動車。共識 CAGR 約 **9-11%**，屬高成長市場。
+
+### 區域分佈
+
+| 區域 | 市佔 (2025) | CAGR | 備註 |
+|---|---|---|---|
+| **亞太** | ~77% | — | 中國主導（年產 3,000 萬台以上） |
+| **歐洲** | ~20% | ~14% | 補貼政策最成熟，法規驅動 |
+| **北美** | ~3-4% | ~15% | 成長最快。各州補貼最高 $1,750（加州、紐約） |
+
+> 美國子市場：2022 年 $1.98B，以 **15.6% CAGR** 成長至 2030 年。
+
+### 對 TPMS 市場的影響
+
+- E-bike 重量（20-30kg，一般自行車 2-3 倍）→ 胎壓正確性更關鍵 → TPMS 需求更強
+- E-bike 騎士多為非傳統車友（通勤、外送、休閒），對操作簡便的 Schrader 氣嘴帽型 TPMS 接受度高
+- AIRsistant（Sensata）和 FIT（Rotax/Schrader）已瞄準 e-bike OEM 整合
+- E-bike 輪胎市場預估 2024 年 $1.2B → 2033 年 $3.5B（CAGR 12.5%），防穿刺與 tubeless 是主要驅動力
+
+---
+
 ## 市場趨勢
 
+### Smart Bicycle TPMS 專屬市場規模（2026-03 更新）
+
+| 研究機構 | 2024 估值 | 目標年估值 | CAGR | 來源 |
+|---|---|---|---|---|
+| Newstrail | USD 185.7M | USD 676M (2032) | **17.53%** | [Newstrail](https://www.newstrail.com/smart-bicycle-tire-pressure-monitor-market-share/) |
+
+> TPMS 專屬市場 CAGR 17.5% 遠高於整體 E-bike 市場 9-11%，顯示 TPMS 正處於 S 曲線早期。亞太和歐洲為主要成長區域。
+
+### 趨勢（2026-03 更新）
+
 1. **ANT+ TPMS profile 普及** — Garmin、Wahoo、Hammerhead 都支援官方 ANT+ TPMS device profile，新進者（Outrider、RideNow）優先對接 ANT+
-2. **E-bike 整合驅動量產** — AIRsistant 和 FIT 瞄準 OEM 整合到 e-bike 儀表板。E-bike 重量不敏感 + 安全需求強 = TPMS 的最大成長動力
+2. **E-bike 整合驅動量產** — AIRsistant 和 FIT 瞄準 OEM 整合到 e-bike 儀表板。E-bike 重量不敏感 + 安全需求強 = TPMS 的最大成長動力。汽車 TPMS 大廠（Sensata/Schrader）積極跨入自行車 OEM 市場
 3. **價格壓縮** — 從 $145（SKS Airspy）下滑到 $55-80（Outrider、RideNow）。新專利 WO2025/261588 宣稱可將售價降至現有系統的 20-30%
 4. **內建/整合式趨勢** — 從外掛帽蓋型→胎內型（Outrider）、整合氣嘴型（SKS TL）、內胎內建型（Tubolito）
 5. **Gravel/MTB 優先於公路** — 即時 TPMS 在越野場景（頻繁調壓）比公路有更強使用案例。公路主要是賽前確認和慢漏偵測
-6. **亞洲平價進入者** — RideNow、JOSN（TyreDog）等亞洲 OEM 以低價進入，基礎帽蓋型 TPMS 正被商品化
-7. **Gravaa 破產的教訓** — 最先進的主動充/放氣系統（WorldTour 車隊使用）因 EUR 3,200+ 售價在 2026 年 1 月破產。市場還沒準備好為主動胎壓管理支付溢價
+6. **亞洲平價進入者** — RideNow、JOSN（TyreDog）等亞洲 OEM 以低價進入，基礎帽蓋型 TPMS 正被商品化。RideNow T1 在台北自行車展 2025 首次亮相，$80/對定價衝擊市場
+7. **Gravaa 破產的教訓（2026-01 更新）** — 最先進的主動充/放氣系統（Marianne Vos 2024 Gravel 世界冠軍、Paris-Roubaix 冠軍均使用）因無法量產降價而破產。商業總監 John Zopfi 指出「需要 tubeless 化 + 量產降價 + 資本」三要素未能到位。多家業界方有意收購資產重啟，顯示技術有價值但商業模式未成熟
+8. **StatCap V2 開發中** — 新一代將加入 AI 異常偵測（區分真問題 vs 正常波動）、ANT+/BLE 雙協議、輪圈/輪胎異常警報，代表 TPMS 正從「讀數值」走向「智慧診斷」
+9. **Outrider 已出貨** — Kickstarter 批次已交付，用戶回饋正面（Garmin 即時顯示胎壓），但單裝置連線限制和氣嘴相容性為已知痛點
 
 ---
 
@@ -319,6 +388,39 @@ SKS Airspy TL 最接近但偏重（17g）且使用標準（非高流量）氣嘴
 - [Infineon XENSIV TPMS 感測器](https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html)
 - [NXP FXTH87E TPMS 感測器（已停產）](https://www.nxp.com/products/sensors/pressure-sensors/tire-pressure-monitoring-sensors-tpms/fxth87e-tire-pressure-monitor-sensor-tpms-family:FXTH87E)
 - [Quarq TyreWiz FCC Filing (C9O-PMB1)](https://fccid.io/C9O-PMB1)
+
+### E-bike 市場
+- [Grand View Research - E-Bike Market Report 2033](https://www.grandviewresearch.com/industry-analysis/e-bikes-market-report)
+- [Fortune Business Insights - Electric Bike Market 2034](https://www.fortunebusinessinsights.com/electric-e-bike-market-102022)
+- [Precedence Research - E-Bike Market 2035](https://www.precedenceresearch.com/e-bike-market)
+- [MarketsandMarkets - Electric Bike Market 2032](https://www.marketsandmarkets.com/Market-Reports/electric-bike-market-110827400.html)
+- [Mordor Intelligence - E-Bike Market 2030](https://www.mordorintelligence.com/industry-reports/e-bike-market)
+- [Allied Market Research - Electric Bikes Market 2030](https://www.alliedmarketresearch.com/electric-bikes-market)
+- [Grand View Research - U.S. E-Bike Market 2030](https://www.grandviewresearch.com/industry-analysis/us-e-bike-market-report)
+- [Accio - Electric Bike Tire Trends 2025](https://www.accio.com/t-v2/business/electric-bike-tire-trends)
+
+### E-bike Valve 與 Sealant
+- [Lacros E-Bike - Presta vs Schrader Valve](https://lacrosebike.com/blogs/lacrosebike-blogs/presta-vs-schrader-valve-which-one-should-you-choose)
+- [eBikes Forum - Schrader vs Presta](https://ebikesforum.com/threads/schrader-vs-presta-valve.3942/)
+- [Vitilan - E-Bike Tires Tubed vs Tubeless](https://www.eu.vitilanebike.com/blogs/news/understanding-e-bike-tires-tubed-vs-tubeless)
+- [Electric Bike Forums - Tubeless Tire Experiences](https://forums.electricbikereview.com/threads/tubeless-tire-experiences.54367/)
+- [Eclipse - TPU vs Tubeless 2025](https://eclipse.bike/en/blogs/news/tpu-vs-tubeless-which-setup-is-right-for-your-ride-in-2025)
+- [Cycling Weekly - Sealant Shunning: Rise of TPU Inner Tube](https://www.cyclingweekly.com/deals/sealant-shunning-the-rise-of-the-tpu-inner-tube-4-cyber-monday-discounts-on-the-performance-trend-of-2025)
+- [BikeRadar - Faux Tubeless](https://www.bikeradar.com/news/faux-tubeless)
+
+### TPMS 市場規模（2026-03 新增）
+- [Newstrail - Smart Bicycle Tire Pressure Monitor Market](https://www.newstrail.com/smart-bicycle-tire-pressure-monitor-market-share/)
+- [Research & Markets - TPMS Sensor Chip Market 2026-2032](https://www.researchandmarkets.com/reports/6119313/tpms-tire-pressure-sensor-chip-market-global)
+
+### Gravaa 破產（2026-03 新增）
+- [Bikerumor - Gravaa Declares Bankruptcy](https://bikerumor.com/gravaa-declares-bankruptcy-despite-race-winning-performances-of-its-pressure-adjusting-hubs/)
+- [Pinkbike - Gravaa Bankruptcy Low Sales](https://www.pinkbike.com/news/gravaa-declares-bankruptcy-after-low-sales-of-its-on-board-tire-inflator.html)
+- [Cyclingnews - Was Gravaa Ahead of Its Time?](https://www.cyclingnews.com/cycling-tech-components/gravaa-has-been-declared-bankrupt-was-the-adjustable-tyre-inflation-system-simply-ahead-of-its-time/)
+- [Escape Collective - Gravaa Declared Bankrupt](https://escapecollective.com/gravaa-declared-bankrupt/)
+
+### StatCap / Outrider 用戶回饋（2026-03 新增）
+- [Road Bike Rider - StatCap P1 Review](https://www.roadbikerider.com/statcap-p1-tire-pressure-monitoring-system-tpms-review/)
+- [Outrider TL Pro 官方](https://www.outridercomponents.com/products/outrider-tl-pro)
 
 ### 市場與比較
 - [Cycling Weekly TPMS 比較](https://www.cyclingweekly.com/reviews/tyres-and-wheels/what-pressure-are-you-running-three-different-pressure-monitoring-systems-put-to-the-test)
