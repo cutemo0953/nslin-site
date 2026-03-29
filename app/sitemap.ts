@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { categories } from '@/data/products/categories';
+import { getAllProductSlugs } from '@/data/products';
 import { getAllSlugs as getAllBlogSlugs } from '@/lib/blog';
 import { getAllGuideSlugs } from '@/lib/guides';
 
@@ -11,6 +12,7 @@ const staticRoutes = [
   '/contact',
   '/products',
   '/blog',
+  '/guides',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -60,6 +62,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+      alternates: {
+        languages: { en: enUrl, 'zh-TW': zhUrl, 'x-default': enUrl },
+      },
+    });
+  });
+
+  // Product SKU pages
+  const productSlugs = getAllProductSlugs();
+  productSlugs.forEach(({ category, sku }) => {
+    const enUrl = `${BASE_URL}/products/${category}/${sku}`;
+    const zhUrl = `${BASE_URL}/zh-TW/products/${category}/${sku}`;
+    entries.push({
+      url: enUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: {
+        languages: { en: enUrl, 'zh-TW': zhUrl, 'x-default': enUrl },
+      },
+    });
+    entries.push({
+      url: zhUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
       alternates: {
         languages: { en: enUrl, 'zh-TW': zhUrl, 'x-default': enUrl },
       },

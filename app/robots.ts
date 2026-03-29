@@ -19,7 +19,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Meta-ExternalAgent', allow: '/' },
       { userAgent: 'Bytespider', allow: '/' },
     ],
-    // TODO: Replace with actual domain
-    sitemap: 'https://nslin-site.vercel.app/sitemap.xml',
+    sitemap: 'https://nslin-site.tom-e31.workers.dev/sitemap.xml',
   };
 }

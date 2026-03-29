@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { compile, run } from '@mdx-js/mdx';
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
 import * as runtime from 'react/jsx-runtime';
 import { renderToStaticMarkup } from 'react-dom/server';
 
@@ -46,7 +47,7 @@ for (const report of reports) {
   }
 
   // Compile markdown (MDX handles plain markdown) to HTML at build time
-  const compiled = await compile(body, { outputFormat: 'function-body', remarkPlugins: [remarkGfm] });
+  const compiled = await compile(body, { outputFormat: 'function-body', remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] });
   const { default: MDXContent } = await run(String(compiled), {
     ...runtime,
     baseUrl: import.meta.url,

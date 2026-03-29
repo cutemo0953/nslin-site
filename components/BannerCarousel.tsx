@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 
 const bannerImages = [
   '/images/banner/bgg01.jpg',
@@ -37,12 +38,13 @@ export default function BannerCarousel({ children }: { children: React.ReactNode
             i === current ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
             alt={`N.S.-LIN Industrial banner ${i + 1}`}
-            className="absolute inset-0 h-full w-full object-cover"
-            loading={i === 0 ? 'eager' : 'lazy'}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority={i === 0}
           />
         </div>
       ))}

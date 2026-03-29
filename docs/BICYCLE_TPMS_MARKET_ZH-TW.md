@@ -1,9 +1,28 @@
 # 自行車 TPMS 市場研究
 
-> 最後更新：2026-03-26
+> 最後更新：2026-03-26（晶片分析更新）
 > 用途：自行車胎壓監控系統市場研究，與無內胎氣嘴市場的交集分析
 
 > **背景：** TPMS（Tire Pressure Monitoring System）正與無內胎氣嘴市場產生交集。氣嘴帽型感測器取代傳統氣嘴帽，整合型感測氣嘴合併了「高流量氣嘴」與「即時胎壓監控」兩個品類。對 N.S.-LIN 而言，這是潛在的產品線擴展方向。
+
+---
+
+## 更新紀錄
+
+### 2026-03-26（晶片分析更新）
+- **新增** [TPMS 感測器晶片分析](#tpms-感測器晶片分析) 完整章節 — Infineon SP49、Senasic SNP746、Bosch SMP290、Nordic nRF52 方案比較
+- **新增** [氣嘴帽整合可行性評估](#氣嘴帽整合可行性評估) — 12mm 直徑限制、電池壽命、天線方案
+
+### 2026-03-26
+- **新增** [E-bike 與 Motorcycle 市場背景](#e-bike-與-motorcycle-市場背景) 完整章節（氣嘴型式、sealant、全球市場規模、區域分佈）
+- **新增** TPMS 專屬市場規模（$185.7M → $676M，CAGR 17.53%）→ [市場趨勢](#市場趨勢)
+- **更新** Outrider 已出貨（Kickstarter 批次交付）→ [產品總覽](#產品總覽)
+- **更新** Gravaa 破產細節（荷蘭法院、收購動向）→ [市場趨勢](#市場趨勢)
+- **新增** StatCap V2 開發中（AI 異常偵測、雙協議）→ [市場趨勢](#市場趨勢)
+- **新增** 33 筆資料來源（E-bike 市場、Valve/Sealant、破產報導、用戶回饋）
+
+### 2026-03-16
+- 首版上線：產品總覽（7 款 + 8 款其他）、安裝方式分類、通訊協議、RideNow T1 深度分析、OEM 供應商、專利、資料來源
 
 ---
 
@@ -18,7 +37,9 @@
 7. [與無內胎氣嘴市場的交集](#與無內胎氣嘴市場的交集)
 8. [TPMS 相關 OEM 供應商](#tpms-相關-oem-供應商)
 9. [TPMS 相關專利](#tpms-相關專利)
-10. [資料來源](#資料來源)
+10. [TPMS 感測器晶片分析](#tpms-感測器晶片分析)
+11. [氣嘴帽整合可行性評估](#氣嘴帽整合可行性評估)
+12. [資料來源](#資料來源)
 
 ---
 
@@ -352,6 +373,154 @@ SKS Airspy TL 最接近但偏重（17g）且使用標準（非高流量）氣嘴
 
 ---
 
+## TPMS 感測器晶片分析
+
+> 評估哪些 TPMS 晶片適合整合到自行車氣嘴帽中。核心需求：BLE 連線（手機/車錶）、低功耗（CR1225 電池 1 年以上）、封裝 ≤ 6mm 寬。
+
+### 晶片比較總表
+
+<table>
+<thead>
+<tr>
+<th>晶片</th><th>廠商</th><th>封裝尺寸</th><th>BLE</th><th>Sub-GHz</th><th>MCU</th><th>休眠電流</th><th>BLE TX 電流</th><th>壓力範圍</th><th>評價</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SNP746</strong></td><td>Senasic（南京）</td><td>6×5×1.9mm LGA-24</td><td><strong>BLE 5.1 雙向</strong></td><td>433/315 MHz</td><td>ARM Cortex-M0+ 64MHz, 512KB Flash</td><td>0.3 µA</td><td><strong>6.3 mA</strong>（DCDC）</td><td>100-900/1500 kPa</td><td>⭐ <strong>首選</strong></td>
+</tr>
+<tr>
+<td>SNP736</td><td>Senasic（南京）</td><td>6×5×1.9mm LGA-24</td><td>BLE 4.2 廣播</td><td>433/315 MHz</td><td>8051, ~64KB Flash</td><td>0.5 µA</td><td>13 mA</td><td>100-900 kPa</td><td>可用但舊款</td>
+</tr>
+<tr>
+<td>SMP290</td><td>Bosch</td><td><strong>4.5×3.5mm</strong> DFN</td><td><strong>BLE 5.4</strong></td><td>無</td><td>ARC EM6 32-bit</td><td>&lt;0.3 µA</td><td>&lt;5 mA</td><td>90-920/1500 kPa</td><td>最小封裝，但可能僅供汽車 OEM</td>
+</tr>
+<tr>
+<td>SP490</td><td>Infineon</td><td>5.4×5.7×<strong>3.4mm</strong> DSOSP-14</td><td><strong>無 BLE</strong></td><td>315/434 MHz</td><td>ARM Cortex-M0+, 19KB Flash</td><td>0.24 µA</td><td>5.5 mA（RF）</td><td>100-920 kPa</td><td>❌ 無 BLE，不適用</td>
+</tr>
+<tr>
+<td>nRF52832 + BMP390</td><td>Nordic + Bosch</td><td>~6×6mm（兩顆堆疊）</td><td><strong>BLE 5.0 + ANT+</strong></td><td>無</td><td>ARM Cortex-M4F 64MHz, 512KB Flash</td><td>1.9 µA</td><td>5.3 mA</td><td>300-1250 hPa（BMP390）</td><td>最靈活，可自行開發韌體</td>
+</tr>
+</tbody>
+</table>
+
+### Senasic SNP746 詳細規格
+
+| 參數 | 數值 |
+|---|---|
+| **封裝** | LGA-24, 6.0×5.0×1.9mm |
+| **MCU** | ARM Cortex-M0+ @ 64 MHz（也支援 16 MHz 省電模式） |
+| **Flash / RAM** | 512 KB / 80 KB |
+| **ADC** | 16-bit, 5 通道 |
+| **BLE** | 5.1，支援廣播 + 連線模式 |
+| **Sub-GHz** | 433/315 MHz ASK/FSK/GFSK（可僅用 BLE 不啟用） |
+| **壓力精度** | ±3 kPa（-40 至 125°C），相當於 ±0.44 PSI |
+| **溫度精度** | ±2°C（-20 至 70°C） |
+| **供電** | 2.1-3.6V（直接接鈕扣電池） |
+| **休眠電流** | 0.3 µA |
+| **BLE TX 電流** | 6.3 mA @ 0 dBm（含 DCDC） |
+| **內建感測器** | 壓力 MEMS + XZ 軸加速度計 + 溫度 + 電池電壓 |
+| **介面** | I2C / SPI / UART / LIN |
+| **車規認證** | AEC-Q100, ISO 26262 ASIL D |
+| **來源** | [Senasic 產品頁](https://www.senasic.com/en/product/tire-pressu-monitoring-system/14) · [Datasheet PDF](https://www.senasic.com/Public/Uploads/uploadfile/files/20240124/DS0026SNP746Datasheet.pdf) |
+
+### Senasic 公司背景
+
+| 項目 | 資訊 |
+|---|---|
+| 中文名稱 | 南京英銳創電子科技有限公司 |
+| 成立 | 2015 年 |
+| 總部 | 南京江北新區，上海張江研發中心 |
+| 人數 | 189 人 |
+| 模式 | Fabless（無晶圓廠，純晶片設計） |
+| 全球 TPMS 晶片市佔 | 7-8%（全球第三，僅次於 Infineon 30%、Sensata 21%） |
+| 中國 TPMS 市佔 | 22%（國內第一） |
+| 客戶 | 吉利、上汽、廣汽、三一等 |
+| 2024 年營收 | 4.78 億人民幣（~$66M USD），YoY +37% |
+| 上市狀態 | 2026 年 3 月申請香港交易所上市（中金承銷） |
+| 採購管道 | 需直接洽 info@senasic.com（DigiKey/Mouser 無庫存） |
+
+### Infineon SP49 — 為什麼不適用
+
+Infineon XENSIV SP490 是汽車 TPMS 市場龍頭，但對自行車氣嘴帽有兩個致命問題：
+
+1. **沒有 BLE** — 只有 315/434 MHz 射頻，手機和車錶無法接收。必須額外配一顆 BLE 晶片才能通訊。
+2. **封裝過高** — DSOSP-14 cavity 封裝高度 3.4mm（加上 PCB + 電池堆疊超過 8mm），且需要 26 MHz 石英振盪器 + 1.1 mH LF 天線線圈 + ~15 顆被動元件。
+3. **LF 接收器多餘** — 115-135 kHz 低頻接收器用於汽車自動定位（前左/前右/後左/後右），自行車不需要。
+
+> 來源：[Infineon SP490 Datasheet](https://www.infineon.com/assets/row/public/documents/24/49/infineon-sp490-01-12-datasheet-en.pdf) · [XENSIV TPMS 新聞稿](https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html)
+
+### Nordic nRF52 + MEMS 分離方案
+
+另一種路線是不用 TPMS 專用晶片，改用通用 BLE SoC + 獨立壓力感測器：
+
+- **BLE SoC**：Nordic nRF52832（6×6mm QFN-48）或 nRF52810（5×5mm QFN-32，較低成本）
+- **壓力感測器**：Bosch BMP390（2×2×0.75mm LGA）或 TE MS5839（3.3×3.3×2.75mm）
+- **優點**：完整 BLE 5.0 + ANT+ 雙協議（Garmin 原生支援）、開源韌體（Zephyr RTOS）、Nordic 有完整開發板與文件
+- **缺點**：兩顆晶片 + 天線，BOM 成本和 PCB 面積較大
+- **市場驗證**：TREEL Mobility（印度）已用 nRF52833/52832/52810 量產二輪車 TPMS（[Nordic 案例](https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs)）
+
+---
+
+## 氣嘴帽整合可行性評估
+
+> 目標：在 CoreCap 氣嘴帽形式（~12mm 直徑 × 15-20mm 高度圓柱）內整合 TPMS 感測器。
+
+### 空間堆疊分析
+
+<table>
+<thead>
+<tr><th>層</th><th>元件</th><th>厚度</th><th>備註</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>外殼底蓋（含壓力孔）</td><td>~1 mm</td><td>需開孔讓氣壓進入 MEMS</td></tr>
+<tr><td>2</td><td>PCB + SNP746 + 被動元件</td><td>~2.5 mm</td><td>晶片 1.9mm + PCB 0.8mm，12mm 圓形 PCB</td></tr>
+<tr><td>3</td><td>CR1225 電池</td><td>~2.5 mm</td><td>12.5mm 直徑，需 0.25mm 邊緣讓位</td></tr>
+<tr><td>4</td><td>天線層（MIFA PCB trace 或 chip antenna）</td><td>~1 mm</td><td>可與電池共面或獨立層</td></tr>
+<tr><td>5</td><td>外殼頂蓋</td><td>~1 mm</td><td></td></tr>
+<tr><td colSpan="2"><strong>總計</strong></td><td><strong>~8 mm</strong></td><td>15mm cap 有 7mm 餘裕；20mm 有 12mm</td></tr>
+</tbody>
+</table>
+
+### 電池壽命估算（CR1225, 50mAh）
+
+<table>
+<thead>
+<tr><th>狀態</th><th>電流</th><th>時長</th><th>占比</th><th>平均電流貢獻</th></tr>
+</thead>
+<tbody>
+<tr><td>休眠</td><td>0.3 µA</td><td>~99.5%</td><td>—</td><td>0.30 µA</td></tr>
+<tr><td>量測（ADC + 感測器）</td><td>~2 mA</td><td>~5ms / 30s</td><td>0.017%</td><td>0.33 µA</td></tr>
+<tr><td>BLE TX（0 dBm）</td><td>6.3 mA</td><td>~3ms / 60s</td><td>0.005%</td><td>0.32 µA</td></tr>
+<tr><td colSpan="4"><strong>平均總電流</strong></td><td><strong>~1.0 µA</strong></td></tr>
+</tbody>
+</table>
+
+**理論壽命：** 50 mAh ÷ 0.001 mA ≈ 50,000 hr ≈ **5.7 年**
+
+**實際估計：1.5-2.5 年**（考慮自放電 ~1%/年、低溫容量衰減 ~20%、MCU 喚醒開銷、BLE 多頻廣播）
+
+**市場對比：** Outrider 使用 CR1225 宣稱 ~2 年，FOBO Bike 2 使用 CR1632（140mAh）宣稱 ~1 年。
+
+### BLE 天線方案
+
+| 方案 | 尺寸 | 優點 | 缺點 |
+|---|---|---|---|
+| **MIFA PCB trace** | ~7×11mm（可彎折適應 12mm 圓形 PCB） | 零 BOM 成本 | 需 RF 工程設計、地平面較小影響效率 |
+| **Chip antenna**（如 Johanson 2450AT18x100） | 1.2×2.0mm | 免設計、可靠 | 成本 ~$0.15-0.30 |
+
+12mm 直徑下地平面不足（建議 15×15mm），但自行車用途只需 1-3m 有效距離（感測器到車錶），衰減後仍可達 5-10m，完全足夠。
+
+### 結論與建議
+
+1. **首選方案：Senasic SNP746** — BLE 5.1 + 壓力 MEMS + 加速度計整合在 6×5×1.9mm 單晶片，明確支援二輪車市場，公司背景可靠（全球第三大 TPMS 晶片商，港交所上市申請中）
+2. **備選方案：Nordic nRF52810 + Bosch BMP390** — 開源韌體 + ANT+ 原生支援（Garmin 直接相容），但兩顆晶片增加 BOM 和面積
+3. **未來關注：Bosch SMP290** — 4.5×3.5mm 最小封裝 + BLE 5.4，但目前可能僅供汽車 Tier-1 客戶
+4. **不推薦：Infineon SP490** — 無 BLE、封裝過高、需外掛 LF 天線
+5. **下一步**：聯繫 Senasic（info@senasic.com）取得 SNP746 EVK + SDK，確認小量採購可行性
+
+---
+
 ## 資料來源
 
 ### TPMS 產品
@@ -421,6 +590,22 @@ SKS Airspy TL 最接近但偏重（17g）且使用標準（非高流量）氣嘴
 ### StatCap / Outrider 用戶回饋（2026-03 新增）
 - [Road Bike Rider - StatCap P1 Review](https://www.roadbikerider.com/statcap-p1-tire-pressure-monitoring-system-tpms-review/)
 - [Outrider TL Pro 官方](https://www.outridercomponents.com/products/outrider-tl-pro)
+
+### TPMS 晶片與感測器（2026-03 新增）
+- [Senasic SNP746 產品頁](https://www.senasic.com/en/product/tire-pressu-monitoring-system/14)
+- [Senasic SNP746 Datasheet PDF](https://www.senasic.com/Public/Uploads/uploadfile/files/20240124/DS0026SNP746Datasheet.pdf)
+- [Senasic SNP736 技術文章](https://www.senasic.com/en/technical-support/technical-article/18)
+- [Senasic 香港上市新聞 - Benzinga](https://www.benzinga.com/Opinion/26/03/51156780/senasic-sheds-mom-and-pop-chip-shop-roots-with-hong-kong-ipo)
+- [Senasic HKEX 招股文件](https://www1.hkexnews.hk/app/sehk/2026/108265/documents/sehk26030600295.pdf)
+- [Infineon SP490 Datasheet PDF](https://www.infineon.com/assets/row/public/documents/24/49/infineon-sp490-01-12-datasheet-en.pdf)
+- [Infineon XENSIV TPMS 新聞稿](https://www.infineon.com/cms/en/about-infineon/press/market-news/2023/INFATV202309-149.html)
+- [Bosch SMP290 產品頁](https://www.bosch-semiconductors.com/products/mems-sensors/safety-systems/smp290/)
+- [Bosch SMP290 介紹 - Rutronik](https://www.rutronik.com/article/single-chip-solution-for-tpms-the-smp290-sensor-module-from-bosch-in-rutroniks-automotive-portfolio)
+- [NXP FXTH87E（已停產）](https://www.nxp.com/products/sensors/pressure-sensors/tire-pressure-monitoring-sensors-tpms/fxth87e-tire-pressure-monitor-sensor-tpms-family:FXTH87E)
+- [TREEL 使用 Nordic nRF52 量產 TPMS](https://www.nordicsemi.com/Nordic-news/2024/04/TREEL-Mobility-Solutions-incorporates-Nordics-nRF52833-nRF52832-and-nRF52810-SoCs)
+- [RF-star CC2340 BLE TPMS 方案](https://www.rfstariot.com/blog/rf-star-cc2340-ble-modules-show-how-to-work-in-tpms_b60)
+- [BLE-TPMS 開源專案 - GitHub](https://github.com/ra6070/BLE-TPMS)
+- [TPMS PCB 天線專利 CN204424429U](https://patents.google.com/patent/CN204424429U/en)
 
 ### 市場與比較
 - [Cycling Weekly TPMS 比較](https://www.cyclingweekly.com/reviews/tyres-and-wheels/what-pressure-are-you-running-three-different-pressure-monitoring-systems-put-to-the-test)

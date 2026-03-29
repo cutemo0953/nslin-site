@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { CalendarDaysIcon, TagIcon } from '@heroicons/react/24/outline';
 import type { BlogFrontmatter } from '@/lib/blog';
 
@@ -67,12 +68,13 @@ export default function BlogPostGrid({
               className="group overflow-hidden rounded-xl border border-metal-200 hover:border-steel-300 hover:shadow-lg transition-all"
             >
               {post.frontmatter.coverImage && (
-                <div className="aspect-[16/9] overflow-hidden bg-metal-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="relative aspect-[16/9] overflow-hidden bg-metal-100">
+                  <Image
                     src={post.frontmatter.coverImage}
                     alt={post.frontmatter.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               )}
