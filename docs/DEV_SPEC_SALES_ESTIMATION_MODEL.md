@@ -2,7 +2,7 @@
 
 **Project:** nslin-site (N.S.-LIN competitive intelligence)
 **Date:** 2026-03-30
-**Status:** Rev 2 — ChatGPT + Gemini reviewed, nodes expanded from 26 to 50+
+**Status:** Rev 3 FINAL — 3 rounds review. Nodes: 50+. Structure: causal layers + 3 parallel estimators
 
 ## Overview
 
@@ -239,3 +239,159 @@ Installed-base score:
 - **OEM 預裝量是最大的 unknown** — 如果 Schwalbe 成功說服 Trek/Specialized 預裝 Clik，年銷量可能直接跳 10x
 - **OEM 是最大的量體也是最大的黑盒子** — 如果 Schwalbe 成功讓 DT Swiss/Mavic 標配 Clik，Aftermarket 推估會嚴重失真
 - **管材 (tube) 市場可能是 Clik 的隱藏殺手鐧** — 每年全球賣出數億條內胎，Schwalbe 如果逐步切換為 Clik 介面，量體遠超 tubeless 氣嘴
+
+---
+
+## R3 Structural Upgrades (ChatGPT + Gemini R2 consensus)
+
+### Core Hypothesis (promote from open question to spec body)
+
+> **Clik 可能不是單純的 tubeless valve 產品，而是介面標準（interface standard）之爭。**
+>
+> 如果這句成立：
+> - Aftermarket valve 不是主戰場
+> - Tube 介面切換可能才是真正量體來源（全球年銷數億條內胎）
+> - Pump ecosystem support 變成領先指標
+> - 輪組廠、配件廠、tube 出貨比 rider search volume 更重要
+
+### Causal Layer Reclassification
+
+不按 data source 分類，改按因果角色：
+
+| Layer | Role | Key Nodes | Signal Type |
+|-------|------|-----------|-------------|
+| **L1: Supply Availability** | 能不能進入市場 | N.S.-LIN 出貨、代工廠產能、模具動態、海關提單 | Leading |
+| **L2: Channel Placement** | 有沒有鋪到通路 | Retailer count、dealer locator、SKU depth、展會後上架 | Leading/Coincident |
+| **L3: Sell-Through Velocity** | 通路裡賣多快 | Stockout frequency、reorder interval、BSR persistence、review velocity | Coincident |
+| **L4: Installed Base** | 累計裝了多少 | Accessory attach rate、workshop installs、OEM persistence、used-bike mentions | Lagging |
+| **L5: Future Signal** | 未來會怎樣 | Patent filings、FCC/BLE SIG、ETRTO 標準委員會、CAD 下載、employee growth | Leading (12-18mo) |
+
+**時間延遲 (lag) 範例：**
+- 展會 → 零售上架：60-120 天
+- OEM spec announcement → 終端銷售：6-12 個月
+- Pump ecosystem support → adoption acceleration：3-6 個月
+- 海關進口 spike → 1-2 季 sell-through
+
+### Three Parallel Estimators (replace single blended model)
+
+不要把 50 個節點塞進一個總分。拆成三個獨立估計器，最後合併：
+
+**Total units = Aftermarket + OEM + Ecosystem-linked ancillary**
+
+#### Estimator A — Aftermarket Demand Engine
+
+| Input Nodes | Weight |
+|-------------|--------|
+| Amazon BSR × 3 markets (US/DE/UK) | 0.25 |
+| Review velocity (monthly net-new) | 0.15 |
+| Retailer count × in-stock ratio | 0.20 |
+| Stockout recurrence | 0.15 |
+| LBS install survey (20 shops) | 0.15 |
+| Promo frequency inverse | 0.10 |
+
+校準：CoreCap aftermarket ≈ N.S.-LIN 出貨 × aftermarket ratio（由你提供）
+
+#### Estimator B — OEM / Spec-In Engine
+
+| Input Nodes | Weight |
+|-------------|--------|
+| Wheelset conversion rate (Top 10 brands) | 0.30 |
+| Model-year spec penetration (99spokes scrape) | 0.20 |
+| OEM persistence (same model next MY) | 0.15 |
+| Tube interface rollout (Clik tube SKU ratio) | 0.20 |
+| Annual unit volume × brand share | 0.15 |
+
+校準：CoreCap OEM ≈ N.S.-LIN 出貨 × OEM ratio
+
+#### Estimator C — Ecosystem Adoption Engine
+
+| Input Nodes | Weight |
+|-------------|--------|
+| Pump-head support count (brands × SKUs) | 0.25 |
+| Accessory attach rate | 0.20 |
+| Replacement-part demand | 0.15 |
+| Tech manual downloads (SimilarWeb) | 0.15 |
+| Mechanic tutorial count | 0.10 |
+| Compatibility mentions in specs | 0.15 |
+
+Ecosystem engine 不直接輸出銷量，而是作為 adoption velocity multiplier。
+
+### Correlation Penalty
+
+節點高度相關時，折扣合併權重：
+
+| Pair | Correlation | Penalty |
+|------|-------------|---------|
+| BSR persistence + review velocity | High | -30% combined weight |
+| Stockout frequency + reorder interval | High | -30% |
+| Retailer count + dealer locator density | Medium | -20% |
+| YouTube views + forum mentions | High | -40% |
+
+### Node Dependency Map (Leading / Coincident / Lagging)
+
+| Signal | Timing |
+|--------|--------|
+| FCC/BLE filing | Leading 12-18 mo |
+| CAD model download | Leading 12-18 mo |
+| Wheelset spec-in | Leading 6-12 mo |
+| Trade show appearance | Leading 3-6 mo |
+| Pump ecosystem support | Leading 3-6 mo |
+| Retailer listing | Coincident/Leading |
+| Importer spike | Coincident |
+| BSR / review velocity | Coincident |
+| Reorder interval | Coincident |
+| Workshop install | Coincident/Lagging |
+| Accessory attach rate | Lagging |
+| Used-bike mention | Lagging 6-12 mo |
+| OEM persistence next MY | Lagging 12 mo |
+
+### Failure / Friction Nodes (Negative Multiplier)
+
+| Node | Signal | Effect |
+|------|--------|--------|
+| Complaint keywords (leak, adapter missing, incompatible pump) | Adoption friction | -5% to -15% per high-frequency complaint |
+| Pump head wear-out reports (Clik: 8 mo reported) | Retention risk | Suppress repeat adoption |
+| Adapter requirement frequency | Ecosystem lock-in cost | Dampen conversion from interest to adoption |
+| Mechanic reluctance | Workshop bottleneck | Slow LBS channel |
+
+### Regional Diffusion Panel
+
+Track separately, not blended:
+
+| Region | Expected Diffusion Order | Key Signal |
+|--------|-------------------------|------------|
+| DACH (Germany/Austria/Switzerland) | First mover (Schwalbe home market) | Bike24/Rose in-stock |
+| Benelux | Early follower (BBB home market) | BBB dealer locator |
+| UK | Fast follower | Wiggle/CRC listings |
+| US | Lagging (Presta entrenchment) | QBP/REI listings |
+| Japan | Niche/late | Amazon.co.jp BSR |
+| Taiwan | Production-side early, retail late | 展會 + N.S.-LIN intel |
+
+### Gemini R2 新增節點
+
+| # | 節點 | Tier | 精確度 |
+|---|------|------|--------|
+| 53 | **3D CAD 下載量** (GrabCAD/TraceParts) — 工程師設計新品前下載 Clik 3D 模型 | L5 Future | 高（領先 12-18 mo） |
+| 54 | **海關提單重量反推** (Panjiva/ImportGenius) — 用已知單位重量除以貨櫃淨重 | L1 Supply | 高 |
+| 55 | **ETRTO 標準委員會議程** — Clik 幾何是否被列入標準討論 | L5 Future | 高 |
+| 56 | **歐洲三大電商內胎 SKU 佔比** — Schwalbe Presta tube vs Clik tube 在 Bike24/Bike-Discount/Rose 的 SKU 比 | L3 Sell-through | 中-高 |
+| 57 | **B2B 到貨通知 turnaround time** — 缺貨到補貨的天數 | L3 Sell-through | 高 |
+| 58 | **打氣筒廠專利佈局** — Topeak/Lezyne 是否申請 Clik 兼容打氣頭專利 | L5 Future | 中 |
+| 59 | **Icecat 開源產品型錄 API** — 結構化 PIM 數據，比自己爬規格表更乾淨 | L2 Channel | 中-高 |
+| 60 | **Circana (NPD) / CONEBI 年報** — LBS sell-through 數據（付費）或歐洲自行車協會年報（公開） | L3 Sell-through | 高 |
+
+### MVP 執行優先序（Top 10 by signal-to-effort）
+
+| # | Action | Effort | Impact |
+|---|--------|--------|--------|
+| 1 | **Schwalbe tube-interface volume tracker** — Bike24 SKU 爬蟲 | 1 天 | 最高（hidden volume） |
+| 2 | **Amazon BSR weekly panel** — CoreCap + Clik × 3 markets | 半天 | 高 |
+| 3 | **Wheelset spec scrape** — DT Swiss/Mavic/Hunt 2026 specs | 半天 | 高（OEM leading） |
+| 4 | **海關提單查詢** — Panjiva trial | 1 天 | 高（物理數據） |
+| 5 | **Pump ecosystem count** — 所有 Clik 相容打氣頭品牌/SKU | 2 小時 | 中-高 |
+| 6 | **Review velocity baseline** — 月度 review 快照 × 5 platforms | 2 小時 | 中 |
+| 7 | **20-shop LBS 問卷** — CoreCap/Clik install frequency | 1-2 週 | 中-高（直接） |
+| 8 | **99spokes 規格爬蟲** — 2026 MY valve type 統計 | 1 天 | 中-高 |
+| 9 | **Regional stockout panel** — 每週 5 retailer × 5 region | 半天設定 | 中 |
+| 10 | **N.S.-LIN 出貨數據月度 time series** — 你有的最精準數據 | 1 小時 | 校準基準 |
+
