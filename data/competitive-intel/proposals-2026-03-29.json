@@ -1,0 +1,138 @@
+[
+  {
+    "entity_id": "mucoff-big-bore",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "48.99",
+    "new_value": "50.00",
+    "evidence": {
+      "source_url": "https://us.muc-off.com/collections/big-bore-tubeless-valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-29T22:28:29.700Z",
+      "snippet": "Big Bore Tubeless Valves ; Big Bore Lite Tubeless Valves · $50.00 ; Hey Dipstick! · $15.00 ; Big Bore Hybrid Tubeless Valves · $50.00",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"42mm\", \"52mm\", \"62mm\"]",
+    "new_value": "[\"15-35mm\", \"30-50mm\", \"45-65mm\"]",
+    "evidence": {
+      "source_url": "https://www.bikeperfect.com/reviews/76-projects-hi-flow-no-clog-valves-review",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-29T22:29:16.299Z",
+      "snippet": "Price: $28.00 / £24.50 / €29.90; Sizes: 15-35mm, 30-50mm, 45-65mm; Color: Anodized black or pink. Shop for tubeless valves. Peaty's x Chris King",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 4
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "29",
+    "new_value": "28",
+    "evidence": {
+      "source_url": "https://www.bikeperfect.com/reviews/76-projects-hi-flow-no-clog-valves-review",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-29T22:29:16.299Z",
+      "snippet": "Price: $28.00 / £24.50 / €29.90; Sizes: 15-35mm, 30-50mm, 45-65mm; Color: Anodized black or pink. Shop for tubeless valves. Peaty's x Chris King",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.6,
+    "change_class": 4
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "24.95",
+    "evidence": {
+      "source_url": "https://www.wtb.com/products/max-flow-tubeless-valves?srsltid=AfmBOoqtwqDgfLIuX5AxA3kzluobnu5HP0tX253f14-obDWzhk8btxEh",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-29T22:30:03.149Z",
+      "snippet": "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopFxq5TnJq9kBqoCa4m2VrQlrQHuDwXJJGjxXTJZiqCfKS8iGjj",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-29T22:30:16.090Z",
+      "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"52mm\", \"67mm\"]",
+    "new_value": "[\"40mm\", \"52mm\", \"57mm\", \"67mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.ap.industrynine.com/parts/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-03-29T22:30:31.326Z",
+      "snippet": "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves). TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). TKVABLK67 Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). TKVABLK80_ Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "21.0",
+    "evidence": {
+      "source_url": "https://worldwidecyclery.com/products/industry-nine-no-clog-aluminum-tubeless-valve-stems-39mm-lime-pair?srsltid=AfmBOooZxKz_wuSi82gEkYe9P7nDchLhYFsUA2kTjRqdxOkRgzYbU1xE",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-29T22:30:32.904Z",
+      "snippet": "Industry Nine Tubeless Valves - 40mm, Lime, Pair ; List Price ; Sale Price · $21.99 ; Savings · $-21.99 (0%).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "peatys-mk2",
+    "change_type": "spec_update",
+    "field": "material",
+    "old_value": "aluminum (Chris King collab)",
+    "new_value": "7075 aluminum (Chris King collab)",
+    "evidence": {
+      "source_url": "https://www.ebay.com/itm/116962097603",
+      "source_type": "retail",
+      "retrieved_at": "2026-03-29T22:30:46.279Z",
+      "snippet": "Made from premium lightweight, high strength 7075 aluminium, Peaty's MK2 Tubeless Valves fit most tubeless setups from MTB to road and cyclocross, including",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  }
+]
