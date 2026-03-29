@@ -1,6 +1,6 @@
 # 競品分析：無內胎氣嘴帽與高流量氣嘴
 
-> 最後更新：2026-03-16
+> 最後更新：2026-03-30（新增終端銷售量推估 + 論壇輿情比較 + Clik Valve OEM 動態）
 > 用途：BBB CoreCap 產品內容策略的競品情報資料庫
 
 > **重要說明**：只有無內胎（tubeless）氣嘴的 valve core 才能拆卸。一般有內胎的 Presta 氣嘴，valve core 是固定的、無法拆除。因此 CoreCap 這類「替換 valve core」的產品，實際適用對象是無內胎系統的使用者。
@@ -70,6 +70,53 @@ BBB CoreCap 佔據獨特的市場利基：
 - 二輪車輛（含自行車）約占輪胎無內胎氣嘴市場的 25%。
 - 「替代閥門革命」始於 2020 年 Reserve 的專利 Fillmore 氣嘴，2024 年後加速發展，目前市場上已有 6 種以上的替代氣嘴設計。
 - 主要市場驅動力：無內胎系統普及率成長、車友對 Presta 氣嘴堵塞的不滿、免工具維護需求。
+
+### 終端銷售量推估（2026-03-30 新增）
+
+> **注意：** 以下為間接推估，無直接銷售數據來源。BBB 和 Schwalbe 均未公開單一產品線銷售數字。
+
+| 產品 | 年銷量推估 | 推估邏輯 |
+|------|-----------|---------|
+| **BBB CoreCap** | **5,000-15,000 對/年** | BBB Cycling 年營收約 $8M（全線），CoreCap 為 2026 新品，估佔 5-10% 營收 → $400K-800K ÷ $25 均價 |
+| **Schwalbe Clik Valve** | **50,000-200,000 組/年** | Schwalbe 年營收 $500M+，Clik 為 aftermarket + OEM dual channel。2025 Q2 上市，2026 起高階車款 OEM 預裝 |
+| **Reserve Fillmore** | **10,000-30,000 對/年** | SRAM 旗下高端品牌，$50/pair，主攻 MTB |
+| **中國白牌（RideNow 等）** | **20,000-50,000 對/年** | AliExpress/淘寶大量，$15-30/pair |
+| **整體替代閥門 niche** | **~100,000-300,000 組/年** | 佔無內胎氣嘴市場不到 3% |
+
+**BBB vs Clik 銷量差距可能達 10:1**。Schwalbe 的 OEM 通路是最大差異——一旦新車出廠就裝 Clik，aftermarket 遊戲規則就變了。
+
+### CoreCap vs Clik Valve 論壇輿情比較（2026-03-30 新增）
+
+| 面向 | BBB CoreCap | Schwalbe Clik Valve |
+|------|-----------|-------------------|
+| **最大優勢** | 萬用打氣相容（Schrader 頭、加油站都能打） | Snap-on 介面（一按就上，體驗極佳） |
+| **最大劣勢** | Schrader 頭拔出時微漏氣；依賴既有氣嘴桿品質 | 封閉生態系，需專用打氣頭；pump head 8 個月可能磨損 |
+| **流量** | 300% vs 標準 Presta | 50% vs 標準 Presta |
+| **OEM 採用** | 無 | 2026 高階車款開始 OEM 預裝；目標 3-5 年進入中階車 |
+| **獎項** | iF Design Award 2026 | Eurobike Award 2024 |
+| **論壇風向** | 「works brilliantly with every pump, no extra bits」 | 「clearly no contest, far superior experience」 |
+
+**關鍵論壇語錄：**
+
+挺 CoreCap：
+- "Such a better system. Works brilliantly with every pump, won't get clogged with sealant." — [Weight Weenies](https://weightweenies.starbike.com/forum/viewtopic.php?t=179235)
+- "The smart response to Clik Valve — you don't need new pump heads." — [CyclingReview.nl](https://cyclingreview.nl/en/bbb-corecap-is-this-the-smart-response-to-clik-valve/)
+
+挺 Clik：
+- "Once you've used it, it's clearly no contest. A far superior system." — [The Loam Wolf](https://theloamwolf.com/reviews/components/review-schwalbe-clik-valve/)
+- "I converted all my bikes to Clik because checking pressure before rides is easier." — Singletrack Forum
+
+中立 / 批評：
+- "Both are destined to remain niche until the cost is closer to pennies rather than pounds." — [BikeRadar](https://www.bikeradar.com/features/bbb-corecap-first-look)
+
+### Clik Valve OEM 動態（2026-03-30 新增）
+
+- 2025 Q2 上市（aftermarket conversion kit $6.50-15 / 完整氣嘴 $12-28）
+- Eurobike Award 2024 得獎
+- Wolf Tooth Components 已推出 Clik 相容打氣配件
+- Schwalbe 計劃 2026 年起在高階車款 OEM 預裝，3-5 年內拓展到中階
+- 封閉生態系策略：Clik pump head 專用，形成 vendor lock-in
+- **對 N.S.-LIN 的影響：** 如果 Clik 成為 OEM 標準，CoreCap 的「替換閥芯」市場會縮小。CoreCap 的防守策略應是強調「不需換打氣筒」的通用性優勢
 
 ---
 

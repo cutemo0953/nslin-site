@@ -3,7 +3,7 @@
 export const reportHtmlContent: Record<string, string> = {
   'competitive-landscape': `<h1 id="競品分析無內胎氣嘴帽與高流量氣嘴">競品分析：無內胎氣嘴帽與高流量氣嘴</h1>
 <blockquote>
-<p>最後更新：2026-03-16
+<p>最後更新：2026-03-30（新增終端銷售量推估 + 論壇輿情比較 + Clik Valve OEM 動態）
 用途：BBB CoreCap 產品內容策略的競品情報資料庫</p>
 </blockquote>
 <blockquote>
@@ -52,6 +52,38 @@ export const reportHtmlContent: Record<string, string> = {
 <li>二輪車輛（含自行車）約占輪胎無內胎氣嘴市場的 25%。</li>
 <li>「替代閥門革命」始於 2020 年 Reserve 的專利 Fillmore 氣嘴，2024 年後加速發展，目前市場上已有 6 種以上的替代氣嘴設計。</li>
 <li>主要市場驅動力：無內胎系統普及率成長、車友對 Presta 氣嘴堵塞的不滿、免工具維護需求。</li>
+</ul>
+<h3 id="終端銷售量推估2026-03-30-新增">終端銷售量推估（2026-03-30 新增）</h3>
+<blockquote>
+<p><strong>注意：</strong> 以下為間接推估，無直接銷售數據來源。BBB 和 Schwalbe 均未公開單一產品線銷售數字。</p>
+</blockquote>
+<table><thead><tr><th>產品</th><th>年銷量推估</th><th>推估邏輯</th></tr></thead><tbody><tr><td><strong>BBB CoreCap</strong></td><td><strong>5,000-15,000 對/年</strong></td><td>BBB Cycling 年營收約 $8M（全線），CoreCap 為 2026 新品，估佔 5-10% 營收 → $400K-800K ÷ $25 均價</td></tr><tr><td><strong>Schwalbe Clik Valve</strong></td><td><strong>50,000-200,000 組/年</strong></td><td>Schwalbe 年營收 $500M+，Clik 為 aftermarket + OEM dual channel。2025 Q2 上市，2026 起高階車款 OEM 預裝</td></tr><tr><td><strong>Reserve Fillmore</strong></td><td><strong>10,000-30,000 對/年</strong></td><td>SRAM 旗下高端品牌，$50/pair，主攻 MTB</td></tr><tr><td><strong>中國白牌（RideNow 等）</strong></td><td><strong>20,000-50,000 對/年</strong></td><td>AliExpress/淘寶大量，$15-30/pair</td></tr><tr><td><strong>整體替代閥門 niche</strong></td><td><strong>~100,000-300,000 組/年</strong></td><td>佔無內胎氣嘴市場不到 3%</td></tr></tbody></table>
+<p><strong>BBB vs Clik 銷量差距可能達 10:1</strong>。Schwalbe 的 OEM 通路是最大差異——一旦新車出廠就裝 Clik，aftermarket 遊戲規則就變了。</p>
+<h3 id="corecap-vs-clik-valve-論壇輿情比較2026-03-30-新增">CoreCap vs Clik Valve 論壇輿情比較（2026-03-30 新增）</h3>
+<table><thead><tr><th>面向</th><th>BBB CoreCap</th><th>Schwalbe Clik Valve</th></tr></thead><tbody><tr><td><strong>最大優勢</strong></td><td>萬用打氣相容（Schrader 頭、加油站都能打）</td><td>Snap-on 介面（一按就上，體驗極佳）</td></tr><tr><td><strong>最大劣勢</strong></td><td>Schrader 頭拔出時微漏氣；依賴既有氣嘴桿品質</td><td>封閉生態系，需專用打氣頭；pump head 8 個月可能磨損</td></tr><tr><td><strong>流量</strong></td><td>300% vs 標準 Presta</td><td>50% vs 標準 Presta</td></tr><tr><td><strong>OEM 採用</strong></td><td>無</td><td>2026 高階車款開始 OEM 預裝；目標 3-5 年進入中階車</td></tr><tr><td><strong>獎項</strong></td><td>iF Design Award 2026</td><td>Eurobike Award 2024</td></tr><tr><td><strong>論壇風向</strong></td><td>「works brilliantly with every pump, no extra bits」</td><td>「clearly no contest, far superior experience」</td></tr></tbody></table>
+<p><strong>關鍵論壇語錄：</strong></p>
+<p>挺 CoreCap：</p>
+<ul>
+<li>&quot;Such a better system. Works brilliantly with every pump, won&#x27;t get clogged with sealant.&quot; — <a href="https://weightweenies.starbike.com/forum/viewtopic.php?t=179235">Weight Weenies</a></li>
+<li>&quot;The smart response to Clik Valve — you don&#x27;t need new pump heads.&quot; — <a href="https://cyclingreview.nl/en/bbb-corecap-is-this-the-smart-response-to-clik-valve/">CyclingReview.nl</a></li>
+</ul>
+<p>挺 Clik：</p>
+<ul>
+<li>&quot;Once you&#x27;ve used it, it&#x27;s clearly no contest. A far superior system.&quot; — <a href="https://theloamwolf.com/reviews/components/review-schwalbe-clik-valve/">The Loam Wolf</a></li>
+<li>&quot;I converted all my bikes to Clik because checking pressure before rides is easier.&quot; — Singletrack Forum</li>
+</ul>
+<p>中立 / 批評：</p>
+<ul>
+<li>&quot;Both are destined to remain niche until the cost is closer to pennies rather than pounds.&quot; — <a href="https://www.bikeradar.com/features/bbb-corecap-first-look">BikeRadar</a></li>
+</ul>
+<h3 id="clik-valve-oem-動態2026-03-30-新增">Clik Valve OEM 動態（2026-03-30 新增）</h3>
+<ul>
+<li>2025 Q2 上市（aftermarket conversion kit $6.50-15 / 完整氣嘴 $12-28）</li>
+<li>Eurobike Award 2024 得獎</li>
+<li>Wolf Tooth Components 已推出 Clik 相容打氣配件</li>
+<li>Schwalbe 計劃 2026 年起在高階車款 OEM 預裝，3-5 年內拓展到中階</li>
+<li>封閉生態系策略：Clik pump head 專用，形成 vendor lock-in</li>
+<li><strong>對 N.S.-LIN 的影響：</strong> 如果 Clik 成為 OEM 標準，CoreCap 的「替換閥芯」市場會縮小。CoreCap 的防守策略應是強調「不需換打氣筒」的通用性優勢</li>
 </ul>
 <hr/>
 <h2 id="bbb-corecap參考產品">BBB CoreCap（參考產品）</h2>
@@ -423,7 +455,7 @@ export const reportHtmlContent: Record<string, string> = {
 </ul>`,
   'bicycle-tpms': `<h1 id="自行車-tpms-市場研究">自行車 TPMS 市場研究</h1>
 <blockquote>
-<p>最後更新：2026-03-26（晶片分析更新）
+<p>最後更新：2026-03-30（新增終端銷售量推估 + BBB CoreCap vs Clik 銷量對比）
 用途：自行車胎壓監控系統市場研究，與無內胎氣嘴市場的交集分析</p>
 </blockquote>
 <blockquote>
@@ -431,6 +463,11 @@ export const reportHtmlContent: Record<string, string> = {
 </blockquote>
 <hr/>
 <h2 id="更新紀錄">更新紀錄</h2>
+<h3 id="2026-03-30終端銷售量推估">2026-03-30（終端銷售量推估）</h3>
+<ul>
+<li><strong>新增</strong> <a href="#%E7%B5%82%E7%AB%AF%E9%8A%B7%E5%94%AE%E9%87%8F%E6%8E%A8%E4%BC%B0">終端銷售量推估</a> — TPMS 3-8 萬對/年、BBB CoreCap vs Clik 10:1 銷量差距</li>
+<li><strong>新增</strong> BBB CoreCap vs Clik Valve 論壇輿情比較</li>
+</ul>
 <h3 id="2026-03-26晶片分析更新">2026-03-26（晶片分析更新）</h3>
 <ul>
 <li><strong>新增</strong> <a href="#tpms-%E6%84%9F%E6%B8%AC%E5%99%A8%E6%99%B6%E7%89%87%E5%88%86%E6%9E%90">TPMS 感測器晶片分析</a> 完整章節 — Infineon SP49、Senasic SNP746、Bosch SMP290、Nordic nRF52 方案比較</li>
@@ -560,6 +597,20 @@ export const reportHtmlContent: Record<string, string> = {
 </ul>
 <hr/>
 <h2 id="市場趨勢">市場趨勢</h2>
+<h3 id="終端銷售量推估2026-03-30-新增">終端銷售量推估（2026-03-30 新增）</h3>
+<blockquote>
+<p><strong>注意：</strong> 無直接銷售數據。以下為間接推估。</p>
+</blockquote>
+<h4 id="自行車-tpms-終端銷售量">自行車 TPMS 終端銷售量</h4>
+<table><thead><tr><th>層級</th><th>數字</th><th>來源</th></tr></thead><tbody><tr><td>全球 Smart Bicycle Accessories 市場</td><td>$1.76B (2025)</td><td>DataInsightsMarket</td></tr><tr><td>其中 TPMS 專屬</td><td>$185.7M (2024)</td><td>Newstrail</td></tr><tr><td>TPMS 平均單價</td><td>$55-145/pair</td><td>產品調查</td></tr><tr><td><strong>推估年銷量</strong></td><td><strong>30,000-80,000 對/年</strong></td><td>Top-down: $185.7M ÷ $80 avg</td></tr></tbody></table>
+<h4 id="按產品推估">按產品推估</h4>
+<table><thead><tr><th>產品</th><th>年銷量推估</th><th>備註</th></tr></thead><tbody><tr><td>Quarq TyreWiz</td><td>5,000-15,000 pairs</td><td>SRAM 旗下，中高階</td></tr><tr><td>SKS Airspy</td><td>3,000-10,000 pairs</td><td>歐洲通路強</td></tr><tr><td>RideNow T1</td><td>10,000-30,000 pairs</td><td>中國白牌最大量</td></tr><tr><td>Outrider</td><td>1,000-5,000 pairs</td><td>Kickstarter 已出貨</td></tr><tr><td>其他（Silca、AIRsistant 等）</td><td>5,000-15,000 pairs</td><td>零散</td></tr><tr><td><strong>Total</strong></td><td><strong>~30,000-80,000 pairs/year</strong></td><td></td></tr></tbody></table>
+<p><strong>成長動力：</strong> E-bike 崛起（用戶更在意安全 → TPMS 需求）、Garmin/Wahoo 整合、價格壓縮到 $55 以下。</p>
+<h4 id="bbb-corecap-vs-schwalbe-clik-valve關聯市場">BBB CoreCap vs Schwalbe Clik Valve（關聯市場）</h4>
+<p>氣嘴帽 / 替代閥芯市場與 TPMS 有潛在交集（氣嘴帽型感測器）。</p>
+<table><thead><tr><th>產品</th><th>年銷量推估</th><th>銷量差距</th></tr></thead><tbody><tr><td>BBB CoreCap</td><td>5,000-15,000 對</td><td>1x</td></tr><tr><td>Schwalbe Clik Valve</td><td>50,000-200,000 組</td><td><strong>~10x</strong></td></tr></tbody></table>
+<p><strong>Clik OEM 動態：</strong> 2026 高階車款開始 OEM 預裝。若 Clik 成為 OEM 標準，氣嘴帽型 TPMS 整合方向需重新評估（Clik 的 snap-on 介面不相容傳統 Presta 帽型感測器）。</p>
+<hr/>
 <h3 id="smart-bicycle-tpms-專屬市場規模2026-03-更新">Smart Bicycle TPMS 專屬市場規模（2026-03 更新）</h3>
 <table><thead><tr><th>研究機構</th><th>2024 估值</th><th>目標年估值</th><th>CAGR</th><th>來源</th></tr></thead><tbody><tr><td>Newstrail</td><td>USD 185.7M</td><td>USD 676M (2032)</td><td><strong>17.53%</strong></td><td><a href="https://www.newstrail.com/smart-bicycle-tire-pressure-monitor-market-share/">Newstrail</a></td></tr></tbody></table>
 <blockquote>
@@ -759,8 +810,8 @@ export const reportHtmlContent: Record<string, string> = {
 };
 
 export const reportLastUpdated: Record<string, string> = {
-  'competitive-landscape': '2026-03-16',
-  'bicycle-tpms': '2026-03-26',
+  'competitive-landscape': '2026-03-29',
+  'bicycle-tpms': '2026-03-29',
 };
 
 export const reportEvidenceCollected: Record<string, string> = {

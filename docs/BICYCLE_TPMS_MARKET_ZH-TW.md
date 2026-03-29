@@ -1,6 +1,6 @@
 # 自行車 TPMS 市場研究
 
-> 最後更新：2026-03-26（晶片分析更新）
+> 最後更新：2026-03-30（新增終端銷售量推估 + BBB CoreCap vs Clik 銷量對比）
 > 用途：自行車胎壓監控系統市場研究，與無內胎氣嘴市場的交集分析
 
 > **背景：** TPMS（Tire Pressure Monitoring System）正與無內胎氣嘴市場產生交集。氣嘴帽型感測器取代傳統氣嘴帽，整合型感測氣嘴合併了「高流量氣嘴」與「即時胎壓監控」兩個品類。對 N.S.-LIN 而言，這是潛在的產品線擴展方向。
@@ -8,6 +8,10 @@
 ---
 
 ## 更新紀錄
+
+### 2026-03-30（終端銷售量推估）
+- **新增** [終端銷售量推估](#終端銷售量推估) — TPMS 3-8 萬對/年、BBB CoreCap vs Clik 10:1 銷量差距
+- **新增** BBB CoreCap vs Clik Valve 論壇輿情比較
 
 ### 2026-03-26（晶片分析更新）
 - **新增** [TPMS 感測器晶片分析](#tpms-感測器晶片分析) 完整章節 — Infineon SP49、Senasic SNP746、Bosch SMP290、Nordic nRF52 方案比較
@@ -305,6 +309,45 @@
 ---
 
 ## 市場趨勢
+
+### 終端銷售量推估（2026-03-30 新增）
+
+> **注意：** 無直接銷售數據。以下為間接推估。
+
+#### 自行車 TPMS 終端銷售量
+
+| 層級 | 數字 | 來源 |
+|------|------|------|
+| 全球 Smart Bicycle Accessories 市場 | $1.76B (2025) | DataInsightsMarket |
+| 其中 TPMS 專屬 | $185.7M (2024) | Newstrail |
+| TPMS 平均單價 | $55-145/pair | 產品調查 |
+| **推估年銷量** | **30,000-80,000 對/年** | Top-down: $185.7M ÷ $80 avg |
+
+#### 按產品推估
+
+| 產品 | 年銷量推估 | 備註 |
+|------|-----------|------|
+| Quarq TyreWiz | 5,000-15,000 pairs | SRAM 旗下，中高階 |
+| SKS Airspy | 3,000-10,000 pairs | 歐洲通路強 |
+| RideNow T1 | 10,000-30,000 pairs | 中國白牌最大量 |
+| Outrider | 1,000-5,000 pairs | Kickstarter 已出貨 |
+| 其他（Silca、AIRsistant 等） | 5,000-15,000 pairs | 零散 |
+| **Total** | **~30,000-80,000 pairs/year** | |
+
+**成長動力：** E-bike 崛起（用戶更在意安全 → TPMS 需求）、Garmin/Wahoo 整合、價格壓縮到 $55 以下。
+
+#### BBB CoreCap vs Schwalbe Clik Valve（關聯市場）
+
+氣嘴帽 / 替代閥芯市場與 TPMS 有潛在交集（氣嘴帽型感測器）。
+
+| 產品 | 年銷量推估 | 銷量差距 |
+|------|-----------|---------|
+| BBB CoreCap | 5,000-15,000 對 | 1x |
+| Schwalbe Clik Valve | 50,000-200,000 組 | **~10x** |
+
+**Clik OEM 動態：** 2026 高階車款開始 OEM 預裝。若 Clik 成為 OEM 標準，氣嘴帽型 TPMS 整合方向需重新評估（Clik 的 snap-on 介面不相容傳統 Presta 帽型感測器）。
+
+---
 
 ### Smart Bicycle TPMS 專屬市場規模（2026-03 更新）
 
