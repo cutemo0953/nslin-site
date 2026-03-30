@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-03-30T11:00:00Z",
+  "lastScan": "2026-03-30T12:31:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -154,15 +154,21 @@
         "NL": 0,
         "other_EU": 1
       },
-      "updatedAt": "2026-03-30T18:00:00Z",
+      "updatedAt": "2026-03-30T12:31:00Z",
       "source": "manual",
       "confidence": "medium",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "CoreCap retailers found: Bike24(DE), R2-Bike(DE), Bike-Discount(DE?), Windwave/JEJames/Merlin(UK), CCACHE(EU), Amazon.com(US), BBB official(NL). Clik: Bike24(DE), Amazon.de(DE), Amazon.com(US), bike-components.de(DE). CRC/Wiggle: neither listed. CoreCap NOT available in North America (per Escape Collective).",
+      "note": "UPDATED 3/30: 美國市場快了。BBB 正在跟加拿大代理商商談。目前沒有美國代理商的原因：美國人被大陸養壞了，習慣開票期 3-6 個月，BBB 要收到代理商的錢才願意出貨。CoreCap retailers: DE 3+, UK 3+, NL 1, US 0 (but coming via Canada). Clik: DE 2+, US 1 (Amazon).",
       "sourceRef": "multiple web searches 2026-03-30",
-      "previousValue": null,
-      "changeReason": "initial retailer scan"
+      "previousValue": {
+        "DE": 3,
+        "UK": 3,
+        "US": 1,
+        "NL": 1,
+        "other_EU": 2
+      },
+      "changeReason": "INSIDER: BBB negotiating with Canada distributor. US blocked by payment terms (3-6mo credit), not by strategy"
     },
     "28": {
       "raw": null,
@@ -468,15 +474,15 @@
       "raw": null,
       "corecap": "BBB group only",
       "clik": null,
-      "updatedAt": "2026-03-30T12:00:00Z",
+      "updatedAt": "2026-03-30T12:31:00Z",
       "source": "internal",
       "confidence": "high",
       "enteredBy": "user",
       "entryMethod": "direct_intel",
-      "note": "BBB 目前以供貨自己集團為主（內銷），尚未大量供貨外部經銷商。光集團內部需求就超過 N.S.-LIN 產能。這解釋了為什麼北美市場沒有鋪貨 — 不是不想，是產能不夠。",
+      "note": "UPDATED 3/30: BBB 集團內銷為主，但正在跟加拿大代理商商談北美市場。美國沒代理商是因為付款條件（美國習慣 3-6 月票期，BBB 要先收錢）。這不是產能問題，是金流問題。一旦加拿大代理成功，美國可能跟進。",
       "sourceRef": "user direct 2026-03-30",
       "previousValue": null,
-      "changeReason": "BBB group-internal distribution confirmed"
+      "changeReason": "INSIDER: Canada distributor negotiation + US payment terms issue explained"
     },
     "2": {
       "raw": 100,
