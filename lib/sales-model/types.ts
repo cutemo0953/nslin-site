@@ -14,7 +14,7 @@ export interface NodeValue {
   corecap?: number | string | null;
   clik?: number | string | null;
   updatedAt: string | null;
-  source: 'manual' | 'scraper' | 'api' | 'estimate' | 'field' | 'survey' | null;
+  source: 'manual' | 'scraper' | 'api' | 'estimate' | 'field' | 'survey' | 'internal' | 'public_filing' | 'paid_api' | 'paid_report' | 'patent_db' | 'public' | 'free_api' | 'relationship' | null;
   confidence: 'high' | 'medium' | 'low' | 'estimate' | null;
   enteredBy?: string;
   entryMethod?: string;

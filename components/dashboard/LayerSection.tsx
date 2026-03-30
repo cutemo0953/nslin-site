@@ -61,13 +61,13 @@ export default function LayerSection({
   onChange,
   isZh,
 }: Props) {
-  // Auto-expand layers that have data, collapse empty ones
-  const [open, setOpen] = useState(collected > 0);
-
   const collected = nodeDefs.filter(
     (nd) => nodesData[String(nd.id)]?.raw != null,
   ).length;
   const total = nodeDefs.length;
+
+  // Auto-expand layers that have data, collapse empty ones
+  const [open, setOpen] = useState(collected > 0);
   const freshness = getFreshnessBadge(nodeDefs, nodesData, isZh);
 
   return (
