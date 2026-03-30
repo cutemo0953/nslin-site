@@ -1,5 +1,5 @@
 {
-  "lastScan": null,
+  "lastScan": "2026-03-30T15:00:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -11,5 +11,90 @@
     "notes": "",
     "updatedAt": null
   },
-  "nodes": {}
+  "nodes": {
+    "1": {
+      "raw": 16700,
+      "corecap": 16700,
+      "clik": null,
+      "updatedAt": "2026-03-30T09:00:00Z",
+      "source": "internal",
+      "confidence": "high",
+      "enteredBy": "user",
+      "entryMethod": "direct",
+      "note": "N.S.-LIN shipment >100K/6mo = 16,700+/mo",
+      "sourceRef": "internal-erp",
+      "previousValue": null,
+      "changeReason": "initial entry"
+    },
+    "8": {
+      "raw": 8000000,
+      "corecap": 8000000,
+      "clik": null,
+      "updatedAt": "2026-03-30T12:00:00Z",
+      "source": "manual",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "BBB Cycling annual revenue ~$8M (Owler)",
+      "sourceRef": "owler.com/company/augustabenelux",
+      "previousValue": null,
+      "changeReason": "initial entry"
+    },
+    "7": {
+      "raw": 59000000,
+      "corecap": null,
+      "clik": 59000000,
+      "updatedAt": "2026-03-30T12:00:00Z",
+      "source": "manual",
+      "confidence": "low",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Schwalbe revenue $16-59M (sources vary, using LeadIQ high)",
+      "sourceRef": "leadiq.com",
+      "previousValue": null,
+      "changeReason": "initial entry"
+    },
+    "46": {
+      "raw": 5,
+      "corecap": 0,
+      "clik": 5,
+      "updatedAt": "2026-03-30T14:00:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Clik: Lezyne(native 4+SKU), WolfTooth(native), Topeak(adapter), Silca(adapter), Schwalbe(native). CoreCap: 0 (universal Schrader)",
+      "sourceRef": "ride.lezyne.com/pages/clik-valve-pumps-accessories",
+      "previousValue": null,
+      "changeReason": "Lezyne native support = strong signal"
+    },
+    "45": {
+      "raw": 0,
+      "corecap": 0,
+      "clik": 0,
+      "updatedAt": "2026-03-30T14:00:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "DT Swiss 2026: still standard Presta, no Clik adoption at wheelset level",
+      "sourceRef": "dtswiss.com/en/components/wheel-accessories/valve",
+      "previousValue": null,
+      "changeReason": "initial — Clik OEM window not yet open"
+    },
+    "f2": {
+      "raw": 30,
+      "corecap": 0,
+      "clik": 30,
+      "updatedAt": "2026-03-30T14:00:00Z",
+      "source": "manual",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "forum_research",
+      "note": "Clik pump head wear-out ~8 months (Singletrack forum). 30% friction severity.",
+      "sourceRef": "singletrackworld.com/forum/bike-forum/clik-valves/",
+      "previousValue": null,
+      "changeReason": "initial entry"
+    }
+  }
 }
