@@ -24,14 +24,14 @@ function getStatus(value: NodeValue | null): FreshnessStatus {
 function StatusIcon({ status }: { status: FreshnessStatus }) {
   switch (status) {
     case 'fresh':
-      return <span className="text-cert-500" title="Fresh (<7d)">&#x2705;</span>;
+      return <span className="text-cert-500" title="最新">&#x2705;</span>;
     case 'stale':
-      return <span className="text-safety-500" title="Stale (7-14d)">&#x26A0;&#xFE0F;</span>;
+      return <span className="text-safety-500" title="可能需要更新">&#x26A0;&#xFE0F;</span>;
     case 'outdated':
-      return <span className="text-red-500" title="Outdated (>14d)">&#x1F534;</span>;
+      return <span className="text-red-500" title="已過期，請更新">&#x1F534;</span>;
     case 'not_collected':
     default:
-      return <span className="text-metal-300" title="Not collected">&#x2B1C;</span>;
+      return <span className="text-metal-300" title="待收集">&#x2B1C;</span>;
   }
 }
 
@@ -212,10 +212,10 @@ export default function NodeCard({
           {/* ── Metadata line ── */}
           <div className="mt-1.5 flex flex-wrap gap-x-3 text-xs text-metal-400">
             <span>
-              {isZh ? '來源' : 'Source'}: {value?.source ?? '--'}
+              {isZh ? '來源' : 'Source'}: {value?.source === 'internal' ? '公司內部' : value?.source === 'manual' ? '手動輸入' : value?.source === 'scraper' ? '自動抓取' : value?.source === 'survey' ? '問卷調查' : value?.source ?? '待收集'}
             </span>
             <span>
-              {isZh ? '信心' : 'Conf.'}: {value?.confidence ?? '--'}
+              {isZh ? '可信度' : 'Conf.'}: {value?.confidence === 'high' ? '高' : value?.confidence === 'medium' ? '中' : value?.confidence === 'low' ? '低' : value?.confidence === 'estimate' ? '推估' : '待評估'}
             </span>
           </div>
 

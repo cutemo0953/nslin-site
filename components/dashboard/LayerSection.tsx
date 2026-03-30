@@ -61,7 +61,8 @@ export default function LayerSection({
   onChange,
   isZh,
 }: Props) {
-  const [open, setOpen] = useState(false);
+  // Auto-expand layers that have data, collapse empty ones
+  const [open, setOpen] = useState(collected > 0);
 
   const collected = nodeDefs.filter(
     (nd) => nodesData[String(nd.id)]?.raw != null,
@@ -112,18 +113,31 @@ export default function LayerSection({
       </button>
 
       {/* Body */}
-      {open && (
-        <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {nodeDefs.map((nd) => (
-            <NodeCard
-              key={nd.id}
-              definition={nd}
-              value={nodesData[String(nd.id)] ?? null}
-              editMode={editMode}
-              onChange={(update) => onChange(String(nd.id), update)}
-              isZh={isZh}
-            />
-          ))}
+      {open && collected === 0 && (
+        <p className="mt-2 px-4 py-2 text-sm text-metal-400">尚未收集數據 — 有數據後會自動顯示</p>
+      )}
+      {open && collected > 0 && (
+        <div className="mt-2">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Show filled nodes first */}
+            {nodeDefs
+              .filter((nd) => nodesData[String(nd.id)]?.raw != null)
+              .map((nd) => (
+                <NodeCard
+                  key={nd.id}
+                  definition={nd}
+                  value={nodesData[String(nd.id)] ?? null}
+                  editMode={editMode}
+                  onChange={(update) => onChange(String(nd.id), update)}
+                  isZh={isZh}
+                />
+              ))}
+          </div>
+          {total - collected > 0 && (
+            <p className="mt-2 px-2 text-xs text-metal-400">
+              + {total - collected} 項待收集
+            </p>
+          )}
         </div>
       )}
     </section>

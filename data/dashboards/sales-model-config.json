@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
   "layers": [
-    { "id": "L1", "name": "Supply Availability", "nameZh": "供給可得性", "timing": "leading" },
-    { "id": "L2", "name": "Channel Placement", "nameZh": "通路鋪貨", "timing": "leading/coincident" },
-    { "id": "L3", "name": "Sell-Through Velocity", "nameZh": "通路動銷速度", "timing": "coincident" },
-    { "id": "L4", "name": "Installed Base", "nameZh": "安裝基數", "timing": "lagging" },
-    { "id": "L5", "name": "Future Signal", "nameZh": "未來訊號", "timing": "leading 12-18mo" },
-    { "id": "friction", "name": "Friction / Negative", "nameZh": "摩擦力 / 負面因子", "timing": "coincident" },
+    { "id": "L1", "name": "Supply Availability", "nameZh": "上游供貨", "timing": "leading" },
+    { "id": "L2", "name": "Channel Placement", "nameZh": "鋪貨狀況", "timing": "leading/coincident" },
+    { "id": "L3", "name": "Sell-Through Velocity", "nameZh": "賣得多快", "timing": "coincident" },
+    { "id": "L4", "name": "Installed Base", "nameZh": "市場上多少人在用", "timing": "lagging" },
+    { "id": "L5", "name": "Future Signal", "nameZh": "未來趨勢", "timing": "leading 12-18mo" },
+    { "id": "friction", "name": "Friction / Negative", "nameZh": "阻力與風險", "timing": "coincident" },
     { "id": "regional", "name": "Regional Diffusion", "nameZh": "區域擴散", "timing": "varies" }
   ],
   "nodes": [

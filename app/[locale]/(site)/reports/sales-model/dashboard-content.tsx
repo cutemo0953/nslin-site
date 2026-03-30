@@ -210,6 +210,45 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
         isZh={isZh}
       />
 
+      {/* ── Data Collection Progress ── */}
+      {isZh && (
+        <div className="bg-steel-50 border border-steel-200 rounded-lg p-4 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-steel-800 font-medium">數據收集進度</span>
+            <span className="text-steel-600 text-sm">{estimation.coverage.collected} / {estimation.coverage.total} 項</span>
+          </div>
+          <div className="w-full bg-steel-200 rounded-full h-2">
+            <div className="bg-brass-500 rounded-full h-2 transition-all" style={{ width: `${Math.round(estimation.coverage.collected / estimation.coverage.total * 100)}%` }} />
+          </div>
+          <p className="text-metal-500 text-xs mt-2">
+            持續收集更多數據可以提高推估準確度。目前已有的數據足以看出初步趨勢。
+          </p>
+        </div>
+      )}
+
+      {/* ── Data Collection Progress ── */}
+      <div className="mb-6 rounded-lg border border-steel-200 bg-steel-50 p-4">
+        <div className="mb-2 flex items-center justify-between">
+          <span className="font-medium text-steel-800">數據收集進度</span>
+          <span className="text-sm text-steel-600">
+            {estimation.coverage.collected} / {estimation.coverage.total} 項
+          </span>
+        </div>
+        <div className="h-2 w-full rounded-full bg-steel-200">
+          <div
+            className="h-2 rounded-full bg-brass-500 transition-all"
+            style={{ width: `${Math.round((estimation.coverage.collected / Math.max(1, estimation.coverage.total)) * 100)}%` }}
+          />
+        </div>
+        <p className="mt-2 text-xs text-metal-500">
+          {estimation.coverage.collected < 10
+            ? '剛開始收集數據。填入更多項目後，推估結果會越來越準確。'
+            : estimation.coverage.collected < 30
+            ? '已有初步數據，可以看出一些趨勢。繼續收集可提高準確度。'
+            : '數據量充足，推估結果具有參考價值。'}
+        </p>
+      </div>
+
       {/* ── Summary Card ── */}
       <SummaryCard
         estimation={estimation}

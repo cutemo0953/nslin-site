@@ -108,7 +108,7 @@ export default function SummaryCard({ estimation, config, nodesState, isZh }: Pr
         <div className="rounded-lg bg-steel-900/50 px-4 py-3">
           <p className="text-xs font-medium uppercase tracking-wider text-steel-300">Clik</p>
           <p className="mt-1 text-2xl font-bold text-brass-300">
-            {hasClik ? `~${formatK(clik.total)}/yr` : isZh ? '資料不足' : 'Insufficient data'}
+            {hasClik ? `~${formatK(clik.total)}/yr` : isZh ? '收集中...' : 'Collecting...'}
           </p>
           {hasClik && (
             <p className="mt-0.5 text-xs text-steel-400">
