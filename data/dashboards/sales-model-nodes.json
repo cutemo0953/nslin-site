@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-03-30T15:00:00Z",
+  "lastScan": "2026-03-30T18:00:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -137,6 +137,88 @@
       "sourceRef": "bike24.com/p2993585.html",
       "previousValue": null,
       "changeReason": "initial — Amazon blocked, using Bike24 as proxy"
+    },
+    "27": {
+      "raw": null,
+      "corecap": {
+        "DE": 3,
+        "UK": 3,
+        "US": 1,
+        "NL": 1,
+        "other_EU": 2
+      },
+      "clik": {
+        "DE": 2,
+        "UK": 0,
+        "US": 1,
+        "NL": 0,
+        "other_EU": 1
+      },
+      "updatedAt": "2026-03-30T18:00:00Z",
+      "source": "manual",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "CoreCap retailers found: Bike24(DE), R2-Bike(DE), Bike-Discount(DE?), Windwave/JEJames/Merlin(UK), CCACHE(EU), Amazon.com(US), BBB official(NL). Clik: Bike24(DE), Amazon.de(DE), Amazon.com(US), bike-components.de(DE). CRC/Wiggle: neither listed. CoreCap NOT available in North America (per Escape Collective).",
+      "sourceRef": "multiple web searches 2026-03-30",
+      "previousValue": null,
+      "changeReason": "initial retailer scan"
+    },
+    "28": {
+      "raw": null,
+      "corecap": "340+",
+      "clik": "Schwalbe network (thousands)",
+      "updatedAt": "2026-03-30T18:00:00Z",
+      "source": "manual",
+      "confidence": "low",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "BBB official says 'visit your local dealer'. BBB Cycling Owler shows global presence but CoreCap is new. Schwalbe has massive existing dealer network but Clik is aftermarket add-on.",
+      "sourceRef": "bbbcycling.com + owler.com",
+      "previousValue": null,
+      "changeReason": "initial — BBB dealer count needs direct inquiry"
+    },
+    "33": {
+      "raw": null,
+      "corecap": "3 months",
+      "clik": "10 months",
+      "updatedAt": "2026-03-30T18:00:00Z",
+      "source": "estimate",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "estimate",
+      "note": "CoreCap launched Q4 2025/Q1 2026, ~3 months on market. Clik launched Q2 2025, ~10 months. Both still being stocked = positive retention signal.",
+      "sourceRef": "launch date comparison",
+      "previousValue": null,
+      "changeReason": "initial — based on launch dates"
+    },
+    "17": {
+      "raw": 0,
+      "corecap": 0,
+      "clik": 0,
+      "updatedAt": "2026-03-30T18:00:00Z",
+      "source": "manual",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "No confirmed 2026 complete bikes with Clik pre-installed found in search. Schwalbe plans 2026 high-end, 3-5yr mid-range. DT Swiss not converted. Still in aftermarket/conversion kit phase.",
+      "sourceRef": "multiple searches 2026-03-30",
+      "previousValue": null,
+      "changeReason": "initial — OEM pipeline announced but not shipping"
+    },
+    "12": {
+      "raw": null,
+      "corecap": 8,
+      "clik": 15,
+      "updatedAt": "2026-03-30T18:00:00Z",
+      "source": "estimate",
+      "confidence": "low",
+      "enteredBy": "claude",
+      "entryMethod": "estimate",
+      "note": "Rough estimate from search results. CoreCap: BikeRadar, Bikerumor, Pinkbike, road.cc, 3bikes.fr, CycleTechReview, Muddymoles, NewAtlas = ~8 major reviews. Clik: more coverage due to earlier launch + Eurobike buzz = ~15.",
+      "sourceRef": "web search count estimate",
+      "previousValue": null,
+      "changeReason": "initial rough estimate"
     }
   }
 }
