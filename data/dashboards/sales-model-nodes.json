@@ -95,6 +95,48 @@
       "sourceRef": "singletrackworld.com/forum/bike-forum/clik-valves/",
       "previousValue": null,
       "changeReason": "initial entry"
+    },
+    "29": {
+      "raw": null,
+      "corecap": 13,
+      "clik": 10,
+      "updatedAt": "2026-03-30T17:00:00Z",
+      "source": "scraper",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_fetch",
+      "note": "Bike24.com SKU depth: CoreCap 13 SKUs (BTI-165 6色 + BTI-166 3長度×2色 + tool), Clik 10 SKUs (3 conversion kits + 3 tubeless lengths + DV variants)",
+      "sourceRef": "bike24.com/search?searchTerm=BBB+CoreCap + schwalbe+clik+valve",
+      "previousValue": null,
+      "changeReason": "initial — first Bike24 scan"
+    },
+    "30": {
+      "raw": null,
+      "corecap": 8,
+      "clik": 0,
+      "updatedAt": "2026-03-30T17:00:00Z",
+      "source": "scraper",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_fetch",
+      "note": "Bike24 stockout: CoreCap RED (BTI-165) OUT OF STOCK, rest in stock. 1/13=8% OOS. Clik: all 10 SKUs status unknown (no stock indicator in search results).",
+      "sourceRef": "bike24.com/p2993585.html",
+      "previousValue": null,
+      "changeReason": "initial — CoreCap red OOS is demand signal"
+    },
+    "5": {
+      "raw": null,
+      "corecap": 3,
+      "clik": null,
+      "updatedAt": "2026-03-30T17:00:00Z",
+      "source": "scraper",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "web_fetch",
+      "note": "Bike24 review count (proxy for overall review signal): CoreCap BTI-165 red = 3 reviews, 4.67★. Amazon direct fetch blocked. Clik: no Bike24 reviews visible.",
+      "sourceRef": "bike24.com/p2993585.html",
+      "previousValue": null,
+      "changeReason": "initial — Amazon blocked, using Bike24 as proxy"
     }
   }
 }
