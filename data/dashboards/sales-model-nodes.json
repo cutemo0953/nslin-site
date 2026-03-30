@@ -941,10 +941,10 @@
       "confidence": null,
       "enteredBy": "claude",
       "entryMethod": "placeholder",
-      "note": "7075 鋁合金溢價需要 N.S.-LIN 提供。7075 是 CoreCap 帽體材質（CNC 加工），通常比基礎鋁價多 30-50% 溢價。目前缺貨情況下溢價可能更高。",
+      "note": "CoreCap 帽體用 6061 鋁合金（非 7075）。6061 比 7075 便宜但同樣受 LME 鋁價影響。需要 N.S.-LIN 提供目前 6061 報價。",
       "sourceRef": "needs user input",
       "previousValue": null,
-      "changeReason": "placeholder — ask user's brother for current 7075 quote"
+      "changeReason": "CORRECTED: 6061 not 7075 (user confirmed)"
     },
     "66": {
       "raw": "severe",
@@ -955,10 +955,10 @@
       "confidence": "medium",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "美伊戰事對 CoreCap 影響比 Clik 嚴重。CoreCap 用 7075 CNC 鋁合金（直接受鋁價影響）。Clik 用黃銅/塑膠為主（間接影響較小）。N.S.-LIN 已確認鋁材缺貨影響產能。",
+      "note": "美伊戰事對 CoreCap 影響比 Clik 嚴重。CoreCap 用 6061 CNC 鋁合金（直接受鋁價影響）。Clik 用黃銅/塑膠為主（間接影響較小）。N.S.-LIN 已確認鋁材缺貨影響產能。",
       "sourceRef": "user insider + cnbc + bloomberg",
       "previousValue": null,
-      "changeReason": "initial — differential material impact analysis"
+      "changeReason": "CORRECTED: 6061 not 7075"
     }
   }
 }
