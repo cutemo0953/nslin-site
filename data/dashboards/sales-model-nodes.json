@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-03-30T18:00:00Z",
+  "lastScan": "2026-03-30T10:30:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -58,29 +58,29 @@
       "raw": 5,
       "corecap": 0,
       "clik": 5,
-      "updatedAt": "2026-03-30T14:00:00Z",
+      "updatedAt": "2026-03-30T10:21:00Z",
       "source": "manual",
       "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "Clik: Lezyne(native 4+SKU), WolfTooth(native), Topeak(adapter), Silca(adapter), Schwalbe(native). CoreCap: 0 (universal Schrader)",
+      "note": "UPDATED: Lezyne 的 Clik support 本質上是「預裝轉接頭在充氣頭上」，不是重新設計打氣筒。Lezyne 是台中的貿易商（外國人+台灣老婆）。Clik valve 仍然需要轉接頭。CoreCap 的「不需任何轉接頭」優勢仍然成立。原始數據: Clik 5 brands (Lezyne native, WolfTooth native, Topeak/Silca adapter, Schwalbe native)。",
       "sourceRef": "ride.lezyne.com/pages/clik-valve-pumps-accessories",
-      "previousValue": null,
-      "changeReason": "Lezyne native support = strong signal"
+      "previousValue": 5,
+      "changeReason": "downgrade Lezyne from 'native redesign' to 'pre-mounted adapter' — insider intel"
     },
     "45": {
       "raw": 0,
       "corecap": 0,
       "clik": 0,
-      "updatedAt": "2026-03-30T14:00:00Z",
+      "updatedAt": "2026-03-30T10:30:00Z",
       "source": "manual",
       "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "DT Swiss 2026: still standard Presta, no Clik adoption at wheelset level",
+      "note": "DT Swiss + Mavic 2026: both still standard Presta tubeless valves. Mavic UST system unchanged. Hunt: no info. No wheelset brand has adopted Clik or CoreCap as standard. Window still open.",
       "sourceRef": "dtswiss.com/en/components/wheel-accessories/valve",
       "previousValue": null,
-      "changeReason": "initial — Clik OEM window not yet open"
+      "changeReason": "added Mavic confirmation — still Presta"
     },
     "f2": {
       "raw": 30,
@@ -219,6 +219,62 @@
       "sourceRef": "web search count estimate",
       "previousValue": null,
       "changeReason": "initial rough estimate"
+    },
+    "19": {
+      "raw": 1,
+      "corecap": 1,
+      "clik": 0,
+      "updatedAt": "2026-03-30T10:21:00Z",
+      "source": "internal",
+      "confidence": "high",
+      "enteredBy": "user_brother",
+      "entryMethod": "direct_intel",
+      "note": "N.S.-LIN 有氣嘴底部六角孔專利。Lezyne 為了閃這個專利，把六角孔改成星星孔。代表 CoreCap 有專利護城河。",
+      "sourceRef": "LINE 對話 佑奕 2026-03-30 08:49",
+      "previousValue": null,
+      "changeReason": "insider intel — patent moat confirmed"
+    },
+    "f3": {
+      "raw": 50,
+      "corecap": 0,
+      "clik": 50,
+      "updatedAt": "2026-03-30T10:21:00Z",
+      "source": "internal",
+      "confidence": "high",
+      "enteredBy": "user_brother",
+      "entryMethod": "direct_intel",
+      "note": "Clik valve 還是需要轉接頭（連 Lezyne 都只是預裝轉接頭）。CoreCap 用 Schrader 通用，完全不需要任何轉接頭。50% friction severity — 消費者需要額外購買或確認相容性。",
+      "sourceRef": "LINE 對話 佑奕 2026-03-30 08:51",
+      "previousValue": null,
+      "changeReason": "insider confirmation — Clik adapter dependency"
+    },
+    "56": {
+      "raw": 10,
+      "corecap": 0,
+      "clik": 10,
+      "updatedAt": "2026-03-30T10:30:00Z",
+      "source": "scraper",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Schwalbe 已推出 10 款 Clik 介面內胎 (SCV butyl tubes No. 3,4,6,7,10,12,13,15,17,19)。Bike24 有售。Schwalbe 官方確認「Numerous butyl tubes with CLIK VALVE are now available」。這是 Clik 最大的隱藏量體 — 全球每年賣出數億條內胎，Schwalbe 正在逐步切換。CoreCap: 0 (只做 tubeless valve，不做內胎)。",
+      "sourceRef": "schwalbe.com/en/clik-valve/ + bike24.com search",
+      "previousValue": null,
+      "changeReason": "CRITICAL finding — tube interface rollout is Clik's real volume play"
+    },
+    "41": {
+      "raw": 100,
+      "corecap": null,
+      "clik": null,
+      "updatedAt": "2026-03-30T10:30:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Reserve Fillmore: NOT discontinued, still widely sold (BIKE24, Jenson, Amazon). Santa Cruz bikes still ship with Fillmore. This is the incumbent competitor — neither CoreCap nor Clik has displaced Fillmore in the MTB high-end segment.",
+      "sourceRef": "reservewheels.com + bike24.com + jensonusa.com",
+      "previousValue": null,
+      "changeReason": "initial — Fillmore is the incumbent to beat"
     }
   }
 }
