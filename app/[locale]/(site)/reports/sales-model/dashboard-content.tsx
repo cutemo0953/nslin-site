@@ -270,6 +270,90 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
         );
       })()}
 
+      {/* ── Strategic Insights ── */}
+      {(() => {
+        const n = nodesState.nodes;
+        type Insight = { icon: string; title: string; detail: string; sentiment: 'positive' | 'negative' | 'neutral' | 'warning'; refs: string[] };
+        const insights: Insight[] = [];
+
+        // Patent moat
+        if (n['19']?.raw) {
+          insights.push({ icon: '🛡', title: 'CoreCap 有專利護城河', detail: 'N.S.-LIN 持有氣嘴底部六角孔專利，Lezyne 被迫改用星星孔來迴避。這是防禦性壁壘。', sentiment: 'positive', refs: ['#19'] });
+        }
+
+        // Tube interface rollout
+        if (n['56']?.raw && Number(n['56'].raw) > 0) {
+          insights.push({ icon: '⚠', title: 'Schwalbe 已推 ' + n['56'].raw + ' 款 Clik 內胎', detail: '全球每年賣出 6-7.8 億條自行車內胎。Schwalbe 正在逐步將內胎切換為 Clik 介面。CoreCap 完全沒有內胎產品線 — 這是最大的戰略缺口。', sentiment: 'warning', refs: ['#56', '#51'] });
+        }
+
+        // Wheelset OEM window
+        if (n['45']?.raw === 0) {
+          insights.push({ icon: '🔓', title: '輪組 OEM 窗口仍未開啟', detail: 'DT Swiss 和 Mavic 2026 年式仍使用標準 Presta，未轉向 Clik 或任何替代方案。這是 CoreCap 爭取 OEM 的機會。', sentiment: 'positive', refs: ['#45'] });
+        }
+
+        // Adapter truth
+        if (n['46']?.note?.includes('預裝轉接頭')) {
+          insights.push({ icon: '💡', title: 'Clik 的「原生支援」其實是預裝轉接頭', detail: 'Lezyne 的 Clik 打氣筒只是把轉接頭預先鎖在充氣頭上，不是重新設計。CoreCap 使用 Schrader 通用介面，真正不需要任何轉接頭。', sentiment: 'positive', refs: ['#46', '#f3'] });
+        }
+
+        // Revenue gap
+        if (n['7']?.raw && n['8']?.raw) {
+          const ratio = Math.round(Number(n['7'].raw) / Math.max(1, Number(n['8'].raw)));
+          insights.push({ icon: '📊', title: 'Schwalbe 營收是 BBB 的 ' + ratio + ' 倍', detail: 'Schwalbe EUR 335M vs BBB $8M。資源差距懸殊。但 CoreCap 半年出貨 >10 萬支，證明小公司也能打出量。', sentiment: 'neutral', refs: ['#7', '#8', '#1'] });
+        }
+
+        // North America gap
+        if (n['27']?.note?.includes('NOT') || n['27']?.note?.includes('North America')) {
+          insights.push({ icon: '🌎', title: 'CoreCap 尚未進入北美市場', detail: '美國是全球最大自行車配件市場之一。CoreCap 目前僅在歐洲（DE/UK/NL）+ 少量灰色市場。Clik 已在 Amazon.com 銷售。', sentiment: 'negative', refs: ['#27'] });
+        }
+
+        // Stockout signal
+        if (n['30']?.corecap && Number(n['30'].corecap) > 0) {
+          insights.push({ icon: '🔥', title: 'CoreCap 特定色系缺貨', detail: 'Bike24 上 CoreCap RED 缺貨，其他顏色有貨。缺貨 = 需求 > 供給的訊號。', sentiment: 'positive', refs: ['#30'] });
+        }
+
+        // Clik pump wear
+        if (n['f2']?.raw && Number(n['f2'].raw) > 0) {
+          insights.push({ icon: '🔧', title: 'Clik 打氣頭約 8 個月磨損', detail: '論壇用戶回報 Clik pump head converter 使用約 8 個月後連接不穩，需更換。這是 Clik 的結構性弱點。', sentiment: 'positive', refs: ['#f2'] });
+        }
+
+        // Fillmore incumbent
+        if (n['41']?.raw === 100) {
+          insights.push({ icon: '🏔', title: 'Reserve Fillmore 仍是在位者', detail: 'Fillmore 未停產，Santa Cruz 整車仍標配。在 MTB 高端市場，CoreCap 和 Clik 都還沒取代 Fillmore。', sentiment: 'neutral', refs: ['#41'] });
+        }
+
+        // No OEM adoption
+        if (n['17']?.raw === 0) {
+          insights.push({ icon: '🏭', title: '完整車 OEM 預裝 = 0', detail: '2026 年沒有任何整車品牌確認預裝 CoreCap 或 Clik。替代閥門仍在 aftermarket 階段。Schwalbe 計劃 2026 高端、3-5 年中端。', sentiment: 'neutral', refs: ['#17', '#26'] });
+        }
+
+        const sentimentColors = { positive: 'border-cert-500 bg-cert-50', negative: 'border-red-400 bg-red-50', warning: 'border-safety-500 bg-safety-50', neutral: 'border-steel-300 bg-steel-50' };
+
+        return insights.length > 0 ? (
+          <div className="mb-6">
+            <h2 className="mb-3 text-lg font-semibold text-steel-800">戰略發現</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {insights.map((ins, i) => (
+                <div key={i} className={`rounded-lg border-l-4 p-3 ${sentimentColors[ins.sentiment]}`}>
+                  <div className="flex items-start gap-2">
+                    <span className="text-lg">{ins.icon}</span>
+                    <div className="flex-1">
+                      <p className="font-medium text-steel-800 text-sm">{ins.title}</p>
+                      <p className="mt-1 text-xs text-metal-600">{ins.detail}</p>
+                      <p className="mt-1.5 text-xs text-metal-400">
+                        數據來源：{ins.refs.map((r, j) => (
+                          <span key={j} className="inline-block rounded bg-steel-100 px-1.5 py-0.5 mr-1 font-mono text-steel-600">{r}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null;
+      })()}
+
       {/* ── Summary Card ── */}
       <SummaryCard
         estimation={estimation}
