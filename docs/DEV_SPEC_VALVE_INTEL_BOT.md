@@ -111,3 +111,108 @@ Data Sources:
 2. **Amazon 封鎖** — bot 也一樣被擋，需要 Helium10 或手動
 3. **即時性 vs 快取** — 每次問都重新掃描太慢，要有快取策略
 4. **你弟的 AI 熟練度** — Phase 1 透過你操作，Phase 2 才讓他直接用
+
+---
+
+## Rev 2 — ChatGPT + Gemini Review Integrated
+
+### Core Fix: 3-Mode Separation
+
+Bot 拆成三個明確模式，不混在一起：
+
+| Mode | 功能 | 可寫入？ |
+|------|------|---------|
+| **A: ask** | 問答（只讀） | 否 |
+| **B: scan** | 掃描 + 產生 candidate update | 否（產生 patch 檔，不直接改 nodes） |
+| **C: patch** | 驗證 + 人工確認後寫入 | 是（需明確確認） |
+
+**Hard rule:** `ask` 永遠不會修改 `sales-model-nodes.json`。
+
+### R1. Intent Taxonomy
+
+| Intent | Mode | Source Priority | Output Schema |
+|--------|------|----------------|---------------|
+| `ask_readonly` | A | nodes → KB → web search | Answer + Evidence + Freshness + Source |
+| `scan_retail` | B | live retailer fetch → nodes cache | Findings + Candidate Updates |
+| `scan_forum` | B | web search → KB | Findings + Sentiment |
+| `query_dashboard` | A | nodes.json direct read | Node values + Coverage |
+| `query_kb` | A | markdown files | Summary + Source refs |
+| `compare_periods` | A | nodes history + calibration | Current vs Previous + Delta |
+| `propose_update` | B→C | scan result → patch file | Proposed change preview |
+| `commit_update` | C | patch file → nodes.json | Confirmed write + audit trail |
+
+### R2. Source Precedence (when sources conflict)
+
+1. Live retailer page (strongest)
+2. Fresh dashboard node (<7d)
+3. Internal KB synthesis
+4. Forum / rumor / community
+
+Bot 必須標註：Observed / Inferred / Uncertain
+
+### R3. Patch Workflow (不直接改 nodes.json)
+
+```
+scan → findings → candidate update → sales-model-patches.json
+                                      ↓
+                        human review → /valve-intel patch → nodes.json
+```
+
+`sales-model-patches.json` 結構：
+```json
+[
+  {
+    "nodeId": "30",
+    "oldValue": 8,
+    "newValue": 15,
+    "reason": "Bike24 scan: CoreCap RED + BLACK now OOS (was only RED)",
+    "source": "bike24.com/search 2026-03-30",
+    "confidence": "high",
+    "createdAt": "2026-03-30T12:00:00Z",
+    "status": "pending"
+  }
+]
+```
+
+### R4. Cache Policy
+
+| Source | TTL | Force Refresh |
+|--------|-----|---------------|
+| Retailer page | 12-24h | `/valve-intel scan --force` |
+| Forum / news | 24h | same |
+| Dashboard nodes | instant (file read) | N/A |
+| Shipment data | instant | N/A |
+| Amazon | never auto-fetch (blocked) | manual only via Helium10 |
+
+### R5. Answer Schema
+
+**Status question:**
+- Answer (1 sentence)
+- Evidence (data points)
+- Freshness (when was this last checked)
+- Source(s) with links
+- Suggested next action
+
+**Comparison question:**
+- Current value
+- Previous value
+- Delta (↑/↓/→)
+- Confidence
+- Source(s)
+
+**Scan result:**
+- N new findings
+- N candidate updates (with preview)
+- Commit? (explicit yes/no required)
+
+### R6. Observation Labeling
+
+Every answer segment must be labeled:
+- **Observed** — directly seen on page/database
+- **Inferred** — derived from data pattern
+- **Uncertain** — low confidence, needs verification
+
+### R7. Amazon Short-Circuit
+
+When intent targets Amazon: skip fetch, return last known node value with warning:
+「Amazon 數據需透過 Helium10 更新，目前顯示為 [date] 之歷史快照。」
