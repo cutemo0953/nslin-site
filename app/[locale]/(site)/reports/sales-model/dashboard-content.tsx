@@ -227,27 +227,48 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
       )}
 
       {/* ── Data Collection Progress ── */}
-      <div className="mb-6 rounded-lg border border-steel-200 bg-steel-50 p-4">
-        <div className="mb-2 flex items-center justify-between">
-          <span className="font-medium text-steel-800">數據收集進度</span>
-          <span className="text-sm text-steel-600">
-            {estimation.coverage.collected} / {estimation.coverage.total} 項
-          </span>
-        </div>
-        <div className="h-2 w-full rounded-full bg-steel-200">
-          <div
-            className="h-2 rounded-full bg-brass-500 transition-all"
-            style={{ width: `${Math.round((estimation.coverage.collected / Math.max(1, estimation.coverage.total)) * 100)}%` }}
-          />
-        </div>
-        <p className="mt-2 text-xs text-metal-500">
-          {estimation.coverage.collected < 10
-            ? '剛開始收集數據。填入更多項目後，推估結果會越來越準確。'
-            : estimation.coverage.collected < 30
-            ? '已有初步數據，可以看出一些趨勢。繼續收集可提高準確度。'
-            : '數據量充足，推估結果具有參考價值。'}
-        </p>
-      </div>
+      {(() => {
+        const totalNodes = config.nodes.length + config.frictionNodes.length;
+        const withValue = Object.values(nodesState.nodes).filter((n: any) => n?.raw != null).length;
+        const investigated = Object.values(nodesState.nodes).filter((n: any) => n?.note && n.note.length > 0).length;
+        const notTouched = totalNodes - investigated;
+        const valuePct = Math.round((withValue / Math.max(1, totalNodes)) * 100);
+        const investigatedPct = Math.round((investigated / Math.max(1, totalNodes)) * 100);
+        return (
+          <div className="mb-6 rounded-lg border border-steel-200 bg-steel-50 p-4">
+            <div className="mb-2 flex items-center justify-between">
+              <span className="font-medium text-steel-800">數據收集進度</span>
+              <span className="text-sm text-steel-600">
+                {withValue} 項有數值 / {investigated} 項已調查 / {totalNodes} 項總計
+              </span>
+            </div>
+            <div className="flex h-2 w-full overflow-hidden rounded-full bg-steel-200">
+              <div
+                className="h-2 bg-brass-500 transition-all"
+                style={{ width: `${valuePct}%` }}
+                title={`${withValue} 項有可計算的數值`}
+              />
+              <div
+                className="h-2 bg-steel-400 transition-all"
+                style={{ width: `${investigatedPct - valuePct}%` }}
+                title={`${investigated - withValue} 項已調查但缺數值`}
+              />
+            </div>
+            <div className="mt-1.5 flex gap-4 text-xs text-metal-500">
+              <span className="flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-full bg-brass-500" /> 有數值 ({withValue})</span>
+              <span className="flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-full bg-steel-400" /> 已調查 ({investigated - withValue})</span>
+              <span className="flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-full bg-steel-200" /> 未觸及 ({notTouched})</span>
+            </div>
+            <p className="mt-2 text-xs text-metal-500">
+              {withValue < 10
+                ? '持續收集中。有 7 項需要公司內部數據，5 項需要付費工具。'
+                : withValue < 30
+                ? '已有初步數據。繼續填入內部數據可大幅提高準確度。'
+                : '數據量充足，推估結果具有參考價值。'}
+            </p>
+          </div>
+        );
+      })()}
 
       {/* ── Summary Card ── */}
       <SummaryCard
