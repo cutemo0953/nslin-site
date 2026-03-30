@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-03-30T12:31:00Z",
+  "lastScan": "2026-03-30T13:00:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -875,6 +875,90 @@
       "sourceRef": "conebi.eu — check for free report",
       "previousValue": null,
       "changeReason": "paid data — check free CONEBI alternative"
+    },
+    "61": {
+      "raw": 3284,
+      "corecap": 3284,
+      "clik": 3284,
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": "free_api",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "LME 鋁價 $3,284/t (2026-03-27)。四年新高。CRU Group 預測可能衝 $4,000/t。",
+      "sourceRef": "tradingeconomics.com + westmetall.com",
+      "previousValue": null,
+      "changeReason": "initial — 4-year high due to Iran conflict"
+    },
+    "62": {
+      "raw": 1.0,
+      "corecap": 1.0,
+      "clik": null,
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "US Midwest Premium 突破 $1/lb（歷史新高）。美國買家面臨全球最高溢價。Section 232 關稅維持。",
+      "sourceRef": "supplychaindive.com/news/aluminum-steel-tinplate-tariffs-midwest-premium-2026/814102/",
+      "previousValue": null,
+      "changeReason": "initial — historic high, affects NA market entry cost"
+    },
+    "63": {
+      "raw": 81,
+      "corecap": null,
+      "clik": null,
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Alba（巴林，全球最大煉鋁廠，年產能 160 萬噸）減產 19% → 產能利用率約 81%。原因：美伊衝突。",
+      "sourceRef": "cnbc.com/2026/03/18/why-aluminum-surged-iran-war.html",
+      "previousValue": null,
+      "changeReason": "initial — Alba 19% capacity cut"
+    },
+    "64": {
+      "raw": "disrupted",
+      "corecap": null,
+      "clik": null,
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "荷莫茲海峽航運受阻。去年有 500 萬噸鋁經此海峽出口到約 70 國（亞洲/歐洲/北美）。目前航運中斷中。",
+      "sourceRef": "argusmedia.com + bloomberg.com",
+      "previousValue": null,
+      "changeReason": "initial — active disruption"
+    },
+    "65": {
+      "raw": null,
+      "corecap": null,
+      "clik": null,
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": null,
+      "confidence": null,
+      "enteredBy": "claude",
+      "entryMethod": "placeholder",
+      "note": "7075 鋁合金溢價需要 N.S.-LIN 提供。7075 是 CoreCap 帽體材質（CNC 加工），通常比基礎鋁價多 30-50% 溢價。目前缺貨情況下溢價可能更高。",
+      "sourceRef": "needs user input",
+      "previousValue": null,
+      "changeReason": "placeholder — ask user's brother for current 7075 quote"
+    },
+    "66": {
+      "raw": "severe",
+      "corecap": "severe",
+      "clik": "moderate",
+      "updatedAt": "2026-03-30T13:00:00Z",
+      "source": "manual",
+      "confidence": "medium",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "美伊戰事對 CoreCap 影響比 Clik 嚴重。CoreCap 用 7075 CNC 鋁合金（直接受鋁價影響）。Clik 用黃銅/塑膠為主（間接影響較小）。N.S.-LIN 已確認鋁材缺貨影響產能。",
+      "sourceRef": "user insider + cnbc + bloomberg",
+      "previousValue": null,
+      "changeReason": "initial — differential material impact analysis"
     }
   }
 }

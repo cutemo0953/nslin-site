@@ -1,123 +1,1102 @@
 {
   "version": "1.0.0",
   "layers": [
-    { "id": "L1", "name": "Supply Availability", "nameZh": "上游供貨", "timing": "leading" },
-    { "id": "L2", "name": "Channel Placement", "nameZh": "鋪貨狀況", "timing": "leading/coincident" },
-    { "id": "L3", "name": "Sell-Through Velocity", "nameZh": "賣得多快", "timing": "coincident" },
-    { "id": "L4", "name": "Installed Base", "nameZh": "市場上多少人在用", "timing": "lagging" },
-    { "id": "L5", "name": "Future Signal", "nameZh": "未來趨勢", "timing": "leading 12-18mo" },
-    { "id": "friction", "name": "Friction / Negative", "nameZh": "阻力與風險", "timing": "coincident" },
-    { "id": "regional", "name": "Regional Diffusion", "nameZh": "區域擴散", "timing": "varies" }
+    {
+      "id": "L1",
+      "name": "Supply Availability",
+      "nameZh": "上游供貨",
+      "timing": "leading"
+    },
+    {
+      "id": "L2",
+      "name": "Channel Placement",
+      "nameZh": "鋪貨狀況",
+      "timing": "leading/coincident"
+    },
+    {
+      "id": "L3",
+      "name": "Sell-Through Velocity",
+      "nameZh": "賣得多快",
+      "timing": "coincident"
+    },
+    {
+      "id": "L4",
+      "name": "Installed Base",
+      "nameZh": "市場上多少人在用",
+      "timing": "lagging"
+    },
+    {
+      "id": "L5",
+      "name": "Future Signal",
+      "nameZh": "未來趨勢",
+      "timing": "leading 12-18mo"
+    },
+    {
+      "id": "friction",
+      "name": "Friction / Negative",
+      "nameZh": "阻力與風險",
+      "timing": "coincident"
+    },
+    {
+      "id": "regional",
+      "name": "Regional Diffusion",
+      "nameZh": "區域擴散",
+      "timing": "varies"
+    },
+    {
+      "id": "supply_cost",
+      "name": "Supply Cost",
+      "nameZh": "原料成本",
+      "timing": "coincident"
+    }
   ],
   "nodes": [
-    { "id": 1, "name": "N.S.-LIN 出貨量", "nameEn": "N.S.-LIN Shipment Volume", "layer": "L1", "timing": "coincident", "unit": "units/month", "sourceType": "internal", "products": ["corecap"] },
-    { "id": 2, "name": "生產排程/產能利用率", "nameEn": "Production Schedule / Capacity Utilization", "layer": "L1", "timing": "coincident", "unit": "percent", "sourceType": "internal", "products": ["corecap"] },
-    { "id": 3, "name": "BBB 下單紀錄", "nameEn": "BBB Purchase Orders", "layer": "L1", "timing": "leading", "unit": "PO count + amount", "sourceType": "internal", "products": ["corecap"] },
-    { "id": 4, "name": "Amazon BSR (US/DE/UK)", "nameEn": "Amazon Best Seller Rank", "layer": "L3", "timing": "coincident", "unit": "rank", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 5, "name": "Amazon Review Count → 銷量", "nameEn": "Amazon Review Count to Sales", "layer": "L3", "timing": "lagging", "unit": "reviews", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 6, "name": "海關進出口數據 (HS 8714)", "nameEn": "Customs Import/Export Data", "layer": "L1", "timing": "coincident", "unit": "USD + units", "sourceType": "paid_api", "products": ["all"] },
-    { "id": 7, "name": "Schwalbe 財務數據", "nameEn": "Schwalbe Financial Data", "layer": "L1", "timing": "lagging", "unit": "EUR revenue", "sourceType": "public_filing", "products": ["clik"] },
-    { "id": 8, "name": "BBB Cycling 財務數據", "nameEn": "BBB Cycling Financial Data", "layer": "L1", "timing": "lagging", "unit": "EUR revenue", "sourceType": "public_filing", "products": ["corecap"] },
-    { "id": 9, "name": "經銷商進貨量 (QBP/Wiggle/CRC)", "nameEn": "Distributor Purchase Volume", "layer": "L2", "timing": "coincident", "unit": "units", "sourceType": "relationship", "products": ["corecap", "clik"] },
-    { "id": 10, "name": "Google Shopping 定價追蹤", "nameEn": "Google Shopping Price Tracking", "layer": "L2", "timing": "coincident", "unit": "price + count", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 11, "name": "Google Trends 搜尋量比", "nameEn": "Google Trends Search Volume Ratio", "layer": "L3", "timing": "coincident", "unit": "relative index", "sourceType": "free_api", "products": ["corecap", "clik"] },
-    { "id": 12, "name": "YouTube 評測影片觀看數", "nameEn": "YouTube Review Video Views", "layer": "L3", "timing": "lagging", "unit": "views", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 13, "name": "社群媒體提及量", "nameEn": "Social Media Mentions", "layer": "L3", "timing": "coincident", "unit": "count", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 14, "name": "Strava 騎乘設備統計", "nameEn": "Strava Equipment Stats", "layer": "L4", "timing": "lagging", "unit": "percentage", "sourceType": "public", "products": ["all"] },
-    { "id": 15, "name": "Shopify 商店排名", "nameEn": "Shopify Store Best-Selling Rank", "layer": "L3", "timing": "coincident", "unit": "rank", "sourceType": "manual", "products": ["corecap"] },
-    { "id": 16, "name": "展會觀察 (Eurobike/Taipei Cycle)", "nameEn": "Trade Show Observations", "layer": "L5", "timing": "leading", "unit": "qualitative", "sourceType": "field", "products": ["corecap", "clik"] },
-    { "id": 17, "name": "Clik OEM 預裝車款數", "nameEn": "Clik OEM Pre-Installed Models", "layer": "L2", "timing": "leading", "unit": "model count", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 18, "name": "第三方 Clik 配件銷量", "nameEn": "Third-Party Clik Accessory Sales", "layer": "L4", "timing": "lagging", "unit": "units", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 19, "name": "專利引用分析", "nameEn": "Patent Citation Analysis", "layer": "L5", "timing": "leading", "unit": "citations", "sourceType": "patent_db", "products": ["corecap", "clik"] },
-    { "id": 20, "name": "二手市場出現頻率", "nameEn": "Second-Hand Market Frequency", "layer": "L4", "timing": "lagging", "unit": "listings/month", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 21, "name": "LBS 問卷 (20 shops)", "nameEn": "Bike Shop Survey", "layer": "L3", "timing": "coincident", "unit": "installs/month", "sourceType": "survey", "products": ["corecap", "clik"] },
-    { "id": 22, "name": "Warranty / RMA 比例", "nameEn": "Warranty / RMA Rate", "layer": "L4", "timing": "lagging", "unit": "percent", "sourceType": "internal", "products": ["corecap"] },
-    { "id": 23, "name": "Schwalbe 經銷商大會情報", "nameEn": "Schwalbe Dealer Conference Intel", "layer": "L5", "timing": "leading", "unit": "qualitative", "sourceType": "field", "products": ["clik"] },
-    { "id": 24, "name": "LinkedIn 員工增長", "nameEn": "LinkedIn Employee Growth", "layer": "L5", "timing": "leading", "unit": "headcount", "sourceType": "manual", "products": ["clik"] },
-    { "id": 25, "name": "Google Ads 競標價 (CPC)", "nameEn": "Google Ads CPC", "layer": "L3", "timing": "coincident", "unit": "USD", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 26, "name": "E-bike 規格表 Clik 出現率", "nameEn": "E-bike Spec Sheet Clik Frequency", "layer": "L2", "timing": "leading", "unit": "percent of models", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 27, "name": "各國 Retailer 上架數", "nameEn": "Retailer Listing Count by Country", "layer": "L2", "timing": "coincident", "unit": "count by region", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 28, "name": "Dealer Locator 密度", "nameEn": "Dealer Locator Density", "layer": "L2", "timing": "coincident", "unit": "dealer count", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 29, "name": "SKU 深度", "nameEn": "SKU Depth per Retailer", "layer": "L2", "timing": "coincident", "unit": "SKU count", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 30, "name": "缺貨頻率 (每週快照)", "nameEn": "Stockout Frequency (Weekly)", "layer": "L3", "timing": "coincident", "unit": "percent OOS", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 31, "name": "價格分散度", "nameEn": "Price Dispersion", "layer": "L2", "timing": "coincident", "unit": "std dev", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 32, "name": "促銷頻率", "nameEn": "Promotion Frequency", "layer": "L3", "timing": "coincident", "unit": "promos/month", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 33, "name": "零售商保留時間", "nameEn": "Assortment Retention", "layer": "L2", "timing": "lagging", "unit": "months listed", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 34, "name": "經銷商補貨間隔", "nameEn": "Distributor Reorder Interval", "layer": "L3", "timing": "coincident", "unit": "days", "sourceType": "relationship", "products": ["corecap", "clik"] },
-    { "id": 35, "name": "平均補貨量", "nameEn": "Average Reorder Quantity", "layer": "L3", "timing": "coincident", "unit": "units", "sourceType": "relationship", "products": ["corecap", "clik"] },
-    { "id": 36, "name": "Clik 生態系配件 Attach Rate", "nameEn": "Clik Ecosystem Accessory Attach Rate", "layer": "L4", "timing": "lagging", "unit": "ratio", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 37, "name": "替換零件需求", "nameEn": "Replacement Part Demand", "layer": "L4", "timing": "lagging", "unit": "units/month", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 38, "name": "二手車規格描述", "nameEn": "Used Bike Spec Mentions", "layer": "L4", "timing": "lagging", "unit": "mentions/month", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 39, "name": "Workshop 安裝頻率", "nameEn": "Workshop Install Frequency", "layer": "L4", "timing": "coincident", "unit": "installs/shop/month", "sourceType": "survey", "products": ["corecap", "clik"] },
-    { "id": 40, "name": "技師教學影片數", "nameEn": "Mechanic Tutorial Video Count", "layer": "L4", "timing": "lagging", "unit": "count", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 41, "name": "OEM 持續沿用率", "nameEn": "OEM Persistence (Next Model Year)", "layer": "L4", "timing": "lagging", "unit": "percent", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 42, "name": "Review Velocity (月增 review)", "nameEn": "Monthly Net-New Reviews", "layer": "L3", "timing": "coincident", "unit": "reviews/month", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 43, "name": "Q&A 成長", "nameEn": "Product Page Q&A Growth", "layer": "L3", "timing": "coincident", "unit": "questions/month", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 44, "name": "BSR 持續天數", "nameEn": "BSR Persistence (Days in Top X)", "layer": "L3", "timing": "coincident", "unit": "days", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 45, "name": "輪組廠規格轉換率", "nameEn": "Wheelset Brand Spec Conversion Rate", "layer": "L1", "timing": "leading", "unit": "percent of new models", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 46, "name": "打氣筒廠生態系支援", "nameEn": "Pump Brand Ecosystem Support", "layer": "L2", "timing": "leading", "unit": "brand + SKU count", "sourceType": "manual", "products": ["clik"] },
-    { "id": 47, "name": "代工廠產能動態", "nameEn": "Contract Manufacturer Capacity Dynamics", "layer": "L1", "timing": "leading", "unit": "qualitative", "sourceType": "field", "products": ["corecap", "clik"] },
-    { "id": 48, "name": "FCC / Bluetooth SIG 認證", "nameEn": "Wireless Certification Filings", "layer": "L5", "timing": "leading", "unit": "filing count", "sourceType": "patent_db", "products": ["all"] },
-    { "id": 49, "name": "99spokes 規格表統計", "nameEn": "99spokes Spec Sheet Valve Statistics", "layer": "L2", "timing": "coincident", "unit": "percent of MY models", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 50, "name": "Schwalbe 技術手冊下載量", "nameEn": "Schwalbe Tech Manual Downloads", "layer": "L3", "timing": "coincident", "unit": "visits", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 51, "name": "整車廠年報 × 高階比例 × Tubeless比例", "nameEn": "OEM Annual Volume × Premium × Tubeless Rate", "layer": "L1", "timing": "lagging", "unit": "units", "sourceType": "public_filing", "products": ["all"] },
-    { "id": 52, "name": "展會後 60-120 天新上架", "nameEn": "Post-Show New Retailer Listings", "layer": "L2", "timing": "leading", "unit": "new listings", "sourceType": "manual", "products": ["corecap", "clik"] },
-    { "id": 53, "name": "3D CAD 下載量", "nameEn": "3D CAD Model Downloads", "layer": "L5", "timing": "leading", "unit": "downloads", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 54, "name": "海關提單重量反推", "nameEn": "Bill of Lading Weight Deduction", "layer": "L1", "timing": "coincident", "unit": "units (deduced)", "sourceType": "paid_api", "products": ["clik"] },
-    { "id": 55, "name": "ETRTO 標準委員會議程", "nameEn": "ETRTO Standards Committee Agenda", "layer": "L5", "timing": "leading", "unit": "agenda item", "sourceType": "field", "products": ["clik"] },
-    { "id": 56, "name": "歐洲三大電商內胎 SKU 佔比", "nameEn": "EU Top 3 Retailer Tube SKU Ratio (Presta vs Clik)", "layer": "L3", "timing": "coincident", "unit": "percent", "sourceType": "scraper", "products": ["clik"] },
-    { "id": 57, "name": "B2B 到貨通知 Turnaround Time", "nameEn": "B2B Back-in-Stock Turnaround", "layer": "L3", "timing": "coincident", "unit": "days", "sourceType": "scraper", "products": ["corecap", "clik"] },
-    { "id": 58, "name": "打氣筒廠專利佈局", "nameEn": "Pump Brand Patent Filings", "layer": "L5", "timing": "leading", "unit": "patents", "sourceType": "patent_db", "products": ["clik"] },
-    { "id": 59, "name": "Icecat 產品型錄 API", "nameEn": "Icecat Open Catalog API", "layer": "L2", "timing": "coincident", "unit": "product entries", "sourceType": "free_api", "products": ["all"] },
-    { "id": 60, "name": "Circana / CONEBI 年報", "nameEn": "Circana/CONEBI Annual Report", "layer": "L3", "timing": "lagging", "unit": "sell-through units", "sourceType": "paid_report", "products": ["all"] }
+    {
+      "id": 1,
+      "name": "N.S.-LIN 出貨量",
+      "nameEn": "N.S.-LIN Shipment Volume",
+      "layer": "L1",
+      "timing": "coincident",
+      "unit": "units/month",
+      "sourceType": "internal",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "生產排程/產能利用率",
+      "nameEn": "Production Schedule / Capacity Utilization",
+      "layer": "L1",
+      "timing": "coincident",
+      "unit": "percent",
+      "sourceType": "internal",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "BBB 下單紀錄",
+      "nameEn": "BBB Purchase Orders",
+      "layer": "L1",
+      "timing": "leading",
+      "unit": "PO count + amount",
+      "sourceType": "internal",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Amazon BSR (US/DE/UK)",
+      "nameEn": "Amazon Best Seller Rank",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "rank",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Amazon Review Count → 銷量",
+      "nameEn": "Amazon Review Count to Sales",
+      "layer": "L3",
+      "timing": "lagging",
+      "unit": "reviews",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "海關進出口數據 (HS 8714)",
+      "nameEn": "Customs Import/Export Data",
+      "layer": "L1",
+      "timing": "coincident",
+      "unit": "USD + units",
+      "sourceType": "paid_api",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Schwalbe 財務數據",
+      "nameEn": "Schwalbe Financial Data",
+      "layer": "L1",
+      "timing": "lagging",
+      "unit": "EUR revenue",
+      "sourceType": "public_filing",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "BBB Cycling 財務數據",
+      "nameEn": "BBB Cycling Financial Data",
+      "layer": "L1",
+      "timing": "lagging",
+      "unit": "EUR revenue",
+      "sourceType": "public_filing",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "經銷商進貨量 (QBP/Wiggle/CRC)",
+      "nameEn": "Distributor Purchase Volume",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "units",
+      "sourceType": "relationship",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Google Shopping 定價追蹤",
+      "nameEn": "Google Shopping Price Tracking",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "price + count",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Google Trends 搜尋量比",
+      "nameEn": "Google Trends Search Volume Ratio",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "relative index",
+      "sourceType": "free_api",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "YouTube 評測影片觀看數",
+      "nameEn": "YouTube Review Video Views",
+      "layer": "L3",
+      "timing": "lagging",
+      "unit": "views",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "社群媒體提及量",
+      "nameEn": "Social Media Mentions",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "count",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Strava 騎乘設備統計",
+      "nameEn": "Strava Equipment Stats",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "percentage",
+      "sourceType": "public",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Shopify 商店排名",
+      "nameEn": "Shopify Store Best-Selling Rank",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "rank",
+      "sourceType": "manual",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "展會觀察 (Eurobike/Taipei Cycle)",
+      "nameEn": "Trade Show Observations",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "qualitative",
+      "sourceType": "field",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Clik OEM 預裝車款數",
+      "nameEn": "Clik OEM Pre-Installed Models",
+      "layer": "L2",
+      "timing": "leading",
+      "unit": "model count",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "第三方 Clik 配件銷量",
+      "nameEn": "Third-Party Clik Accessory Sales",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "units",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "專利引用分析",
+      "nameEn": "Patent Citation Analysis",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "citations",
+      "sourceType": "patent_db",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "二手市場出現頻率",
+      "nameEn": "Second-Hand Market Frequency",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "listings/month",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "LBS 問卷 (20 shops)",
+      "nameEn": "Bike Shop Survey",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "installs/month",
+      "sourceType": "survey",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Warranty / RMA 比例",
+      "nameEn": "Warranty / RMA Rate",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "percent",
+      "sourceType": "internal",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Schwalbe 經銷商大會情報",
+      "nameEn": "Schwalbe Dealer Conference Intel",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "qualitative",
+      "sourceType": "field",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "LinkedIn 員工增長",
+      "nameEn": "LinkedIn Employee Growth",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "headcount",
+      "sourceType": "manual",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Google Ads 競標價 (CPC)",
+      "nameEn": "Google Ads CPC",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "USD",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "E-bike 規格表 Clik 出現率",
+      "nameEn": "E-bike Spec Sheet Clik Frequency",
+      "layer": "L2",
+      "timing": "leading",
+      "unit": "percent of models",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "各國 Retailer 上架數",
+      "nameEn": "Retailer Listing Count by Country",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "count by region",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Dealer Locator 密度",
+      "nameEn": "Dealer Locator Density",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "dealer count",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "SKU 深度",
+      "nameEn": "SKU Depth per Retailer",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "SKU count",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "缺貨頻率 (每週快照)",
+      "nameEn": "Stockout Frequency (Weekly)",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "percent OOS",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "價格分散度",
+      "nameEn": "Price Dispersion",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "std dev",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "促銷頻率",
+      "nameEn": "Promotion Frequency",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "promos/month",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "零售商保留時間",
+      "nameEn": "Assortment Retention",
+      "layer": "L2",
+      "timing": "lagging",
+      "unit": "months listed",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "經銷商補貨間隔",
+      "nameEn": "Distributor Reorder Interval",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "days",
+      "sourceType": "relationship",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "平均補貨量",
+      "nameEn": "Average Reorder Quantity",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "units",
+      "sourceType": "relationship",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Clik 生態系配件 Attach Rate",
+      "nameEn": "Clik Ecosystem Accessory Attach Rate",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "ratio",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "替換零件需求",
+      "nameEn": "Replacement Part Demand",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "units/month",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "二手車規格描述",
+      "nameEn": "Used Bike Spec Mentions",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "mentions/month",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Workshop 安裝頻率",
+      "nameEn": "Workshop Install Frequency",
+      "layer": "L4",
+      "timing": "coincident",
+      "unit": "installs/shop/month",
+      "sourceType": "survey",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "技師教學影片數",
+      "nameEn": "Mechanic Tutorial Video Count",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "count",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "OEM 持續沿用率",
+      "nameEn": "OEM Persistence (Next Model Year)",
+      "layer": "L4",
+      "timing": "lagging",
+      "unit": "percent",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Review Velocity (月增 review)",
+      "nameEn": "Monthly Net-New Reviews",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "reviews/month",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Q&A 成長",
+      "nameEn": "Product Page Q&A Growth",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "questions/month",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "BSR 持續天數",
+      "nameEn": "BSR Persistence (Days in Top X)",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "days",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "輪組廠規格轉換率",
+      "nameEn": "Wheelset Brand Spec Conversion Rate",
+      "layer": "L1",
+      "timing": "leading",
+      "unit": "percent of new models",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "打氣筒廠生態系支援",
+      "nameEn": "Pump Brand Ecosystem Support",
+      "layer": "L2",
+      "timing": "leading",
+      "unit": "brand + SKU count",
+      "sourceType": "manual",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "代工廠產能動態",
+      "nameEn": "Contract Manufacturer Capacity Dynamics",
+      "layer": "L1",
+      "timing": "leading",
+      "unit": "qualitative",
+      "sourceType": "field",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "FCC / Bluetooth SIG 認證",
+      "nameEn": "Wireless Certification Filings",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "filing count",
+      "sourceType": "patent_db",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "99spokes 規格表統計",
+      "nameEn": "99spokes Spec Sheet Valve Statistics",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "percent of MY models",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Schwalbe 技術手冊下載量",
+      "nameEn": "Schwalbe Tech Manual Downloads",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "visits",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "整車廠年報 × 高階比例 × Tubeless比例",
+      "nameEn": "OEM Annual Volume × Premium × Tubeless Rate",
+      "layer": "L1",
+      "timing": "lagging",
+      "unit": "units",
+      "sourceType": "public_filing",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "展會後 60-120 天新上架",
+      "nameEn": "Post-Show New Retailer Listings",
+      "layer": "L2",
+      "timing": "leading",
+      "unit": "new listings",
+      "sourceType": "manual",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "3D CAD 下載量",
+      "nameEn": "3D CAD Model Downloads",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "downloads",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "海關提單重量反推",
+      "nameEn": "Bill of Lading Weight Deduction",
+      "layer": "L1",
+      "timing": "coincident",
+      "unit": "units (deduced)",
+      "sourceType": "paid_api",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "ETRTO 標準委員會議程",
+      "nameEn": "ETRTO Standards Committee Agenda",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "agenda item",
+      "sourceType": "field",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "歐洲三大電商內胎 SKU 佔比",
+      "nameEn": "EU Top 3 Retailer Tube SKU Ratio (Presta vs Clik)",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "percent",
+      "sourceType": "scraper",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "B2B 到貨通知 Turnaround Time",
+      "nameEn": "B2B Back-in-Stock Turnaround",
+      "layer": "L3",
+      "timing": "coincident",
+      "unit": "days",
+      "sourceType": "scraper",
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "打氣筒廠專利佈局",
+      "nameEn": "Pump Brand Patent Filings",
+      "layer": "L5",
+      "timing": "leading",
+      "unit": "patents",
+      "sourceType": "patent_db",
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Icecat 產品型錄 API",
+      "nameEn": "Icecat Open Catalog API",
+      "layer": "L2",
+      "timing": "coincident",
+      "unit": "product entries",
+      "sourceType": "free_api",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Circana / CONEBI 年報",
+      "nameEn": "Circana/CONEBI Annual Report",
+      "layer": "L3",
+      "timing": "lagging",
+      "unit": "sell-through units",
+      "sourceType": "paid_report",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "LME 鋁價 (USD/t)",
+      "nameEn": "LME Aluminum Price",
+      "layer": "supply_cost",
+      "timing": "coincident",
+      "unit": "USD/ton",
+      "sourceType": "free_api",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "US Midwest Premium",
+      "nameEn": "US Midwest Aluminum Premium",
+      "layer": "supply_cost",
+      "timing": "coincident",
+      "unit": "USD/lb",
+      "sourceType": "free_api",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Alba 產能利用率",
+      "nameEn": "Alba Smelter Capacity",
+      "layer": "supply_cost",
+      "timing": "coincident",
+      "unit": "percent",
+      "sourceType": "manual",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "荷莫茲海峽航運狀態",
+      "nameEn": "Strait of Hormuz Shipping Status",
+      "layer": "supply_cost",
+      "timing": "leading",
+      "unit": "qualitative",
+      "sourceType": "manual",
+      "products": [
+        "all"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "7075 鋁合金溢價",
+      "nameEn": "7075 Alloy Premium",
+      "layer": "supply_cost",
+      "timing": "coincident",
+      "unit": "USD/kg premium",
+      "sourceType": "internal",
+      "products": [
+        "corecap"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "美伊戰事影響評估",
+      "nameEn": "US-Iran Conflict Impact Assessment",
+      "layer": "supply_cost",
+      "timing": "leading",
+      "unit": "qualitative",
+      "sourceType": "manual",
+      "products": [
+        "all"
+      ]
+    }
   ],
   "frictionNodes": [
-    { "id": "f1", "name": "Complaint Keywords", "nameZh": "客訴關鍵字 (漏氣/轉接頭/不相容)", "effect": "negative_multiplier", "range": [-0.05, -0.15], "products": ["corecap", "clik"] },
-    { "id": "f2", "name": "Pump Head Wear-Out", "nameZh": "打氣頭磨損 (Clik 8 個月壽命)", "effect": "retention_risk", "range": [-0.05, -0.10], "products": ["clik"] },
-    { "id": "f3", "name": "Adapter Requirement", "nameZh": "需額外轉接頭", "effect": "conversion_dampen", "range": [-0.05, -0.10], "products": ["clik"] },
-    { "id": "f4", "name": "Mechanic Reluctance", "nameZh": "技師不推薦", "effect": "channel_slow", "range": [-0.05, -0.10], "products": ["corecap", "clik"] }
+    {
+      "id": "f1",
+      "name": "Complaint Keywords",
+      "nameZh": "客訴關鍵字 (漏氣/轉接頭/不相容)",
+      "effect": "negative_multiplier",
+      "range": [
+        -0.05,
+        -0.15
+      ],
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    },
+    {
+      "id": "f2",
+      "name": "Pump Head Wear-Out",
+      "nameZh": "打氣頭磨損 (Clik 8 個月壽命)",
+      "effect": "retention_risk",
+      "range": [
+        -0.05,
+        -0.1
+      ],
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": "f3",
+      "name": "Adapter Requirement",
+      "nameZh": "需額外轉接頭",
+      "effect": "conversion_dampen",
+      "range": [
+        -0.05,
+        -0.1
+      ],
+      "products": [
+        "clik"
+      ]
+    },
+    {
+      "id": "f4",
+      "name": "Mechanic Reluctance",
+      "nameZh": "技師不推薦",
+      "effect": "channel_slow",
+      "range": [
+        -0.05,
+        -0.1
+      ],
+      "products": [
+        "corecap",
+        "clik"
+      ]
+    }
   ],
   "regions": [
-    { "id": "DACH", "name": "DACH", "nameZh": "德語區 (德/奧/瑞)", "diffusionOrder": 1, "keyRetailers": ["Bike24", "Rose", "Amazon.de"] },
-    { "id": "Benelux", "name": "Benelux", "nameZh": "荷比盧", "diffusionOrder": 2, "keyRetailers": ["Bike-Discount", "BBB official"] },
-    { "id": "UK", "name": "UK", "nameZh": "英國", "diffusionOrder": 3, "keyRetailers": ["Wiggle", "CRC", "Amazon.co.uk"] },
-    { "id": "US", "name": "US", "nameZh": "美國", "diffusionOrder": 4, "keyRetailers": ["QBP", "REI", "Amazon.com"] },
-    { "id": "JP", "name": "Japan", "nameZh": "日本", "diffusionOrder": 5, "keyRetailers": ["Amazon.co.jp", "Y's Road"] },
-    { "id": "TW", "name": "Taiwan", "nameZh": "台灣", "diffusionOrder": 6, "keyRetailers": ["Taipei Cycle", "local LBS"] }
+    {
+      "id": "DACH",
+      "name": "DACH",
+      "nameZh": "德語區 (德/奧/瑞)",
+      "diffusionOrder": 1,
+      "keyRetailers": [
+        "Bike24",
+        "Rose",
+        "Amazon.de"
+      ]
+    },
+    {
+      "id": "Benelux",
+      "name": "Benelux",
+      "nameZh": "荷比盧",
+      "diffusionOrder": 2,
+      "keyRetailers": [
+        "Bike-Discount",
+        "BBB official"
+      ]
+    },
+    {
+      "id": "UK",
+      "name": "UK",
+      "nameZh": "英國",
+      "diffusionOrder": 3,
+      "keyRetailers": [
+        "Wiggle",
+        "CRC",
+        "Amazon.co.uk"
+      ]
+    },
+    {
+      "id": "US",
+      "name": "US",
+      "nameZh": "美國",
+      "diffusionOrder": 4,
+      "keyRetailers": [
+        "QBP",
+        "REI",
+        "Amazon.com"
+      ]
+    },
+    {
+      "id": "JP",
+      "name": "Japan",
+      "nameZh": "日本",
+      "diffusionOrder": 5,
+      "keyRetailers": [
+        "Amazon.co.jp",
+        "Y's Road"
+      ]
+    },
+    {
+      "id": "TW",
+      "name": "Taiwan",
+      "nameZh": "台灣",
+      "diffusionOrder": 6,
+      "keyRetailers": [
+        "Taipei Cycle",
+        "local LBS"
+      ]
+    }
   ],
   "estimators": {
     "aftermarket": {
       "name": "Aftermarket Demand Engine",
       "nameZh": "零售端需求引擎",
-      "inputNodes": [4, 42, 27, 30, 21, 32],
-      "weights": [0.25, 0.15, 0.20, 0.15, 0.15, 0.10],
+      "inputNodes": [
+        4,
+        42,
+        27,
+        30,
+        21,
+        32
+      ],
+      "weights": [
+        0.25,
+        0.15,
+        0.2,
+        0.15,
+        0.15,
+        0.1
+      ],
       "description": "Amazon BSR × review velocity × retailer coverage × stockout × LBS survey × promo inverse"
     },
     "oem": {
       "name": "OEM / Spec-In Engine",
       "nameZh": "OEM 標配引擎",
-      "inputNodes": [45, 49, 41, 56, 51],
-      "weights": [0.30, 0.20, 0.15, 0.20, 0.15],
+      "inputNodes": [
+        45,
+        49,
+        41,
+        56,
+        51
+      ],
+      "weights": [
+        0.3,
+        0.2,
+        0.15,
+        0.2,
+        0.15
+      ],
       "description": "Wheelset conversion × model-year spec × OEM persistence × tube rollout × annual volume"
     },
     "ecosystem": {
       "name": "Ecosystem Adoption Engine",
       "nameZh": "生態系採用引擎",
-      "inputNodes": [46, 36, 37, 50, 40, 49],
-      "weights": [0.25, 0.20, 0.15, 0.15, 0.10, 0.15],
+      "inputNodes": [
+        46,
+        36,
+        37,
+        50,
+        40,
+        49
+      ],
+      "weights": [
+        0.25,
+        0.2,
+        0.15,
+        0.15,
+        0.1,
+        0.15
+      ],
       "description": "Pump support × accessory attach × replacement parts × tech downloads × tutorials × compatibility"
     }
   },
   "correlationPenalties": [
-    { "pair": [44, 42], "label": "BSR persistence + review velocity", "penalty": 0.30 },
-    { "pair": [30, 34], "label": "stockout frequency + reorder interval", "penalty": 0.30 },
-    { "pair": [27, 28], "label": "retailer count + dealer locator", "penalty": 0.20 },
-    { "pair": [12, 13], "label": "YouTube views + forum mentions", "penalty": 0.40 }
+    {
+      "pair": [
+        44,
+        42
+      ],
+      "label": "BSR persistence + review velocity",
+      "penalty": 0.3
+    },
+    {
+      "pair": [
+        30,
+        34
+      ],
+      "label": "stockout frequency + reorder interval",
+      "penalty": 0.3
+    },
+    {
+      "pair": [
+        27,
+        28
+      ],
+      "label": "retailer count + dealer locator",
+      "penalty": 0.2
+    },
+    {
+      "pair": [
+        12,
+        13
+      ],
+      "label": "YouTube views + forum mentions",
+      "penalty": 0.4
+    }
   ],
   "confidenceWeights": {
-    "A_commercial": 0.40,
-    "B_channel": 0.30,
-    "C_adoption": 0.20,
-    "D_attention": 0.10
+    "A_commercial": 0.4,
+    "B_channel": 0.3,
+    "C_adoption": 0.2,
+    "D_attention": 0.1
   }
 }
