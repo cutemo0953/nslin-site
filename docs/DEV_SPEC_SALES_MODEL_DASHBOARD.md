@@ -2,7 +2,7 @@
 
 **Project:** nslin-site
 **Date:** 2026-03-30
-**Status:** Draft
+**Status:** Rev 2 FINAL (ChatGPT + Gemini reviewed)
 
 ## Overview
 
@@ -171,6 +171,88 @@ Phase 2：爬蟲自動收集 → 寫入 JSON → dashboard 讀取
 
 - Export CSV 按鈕：將所有節點 + 值 + 時間戳匯出
 - 供在 Excel 或 Google Sheet 中進一步分析
+
+### R10. Calculation Semantics
+
+**Node normalization:**
+- Binary nodes (true/false) → 0 or 1
+- Count nodes (retailer count, review count) → min-max scaling with configurable bounds
+- Ratio nodes (percent, rate) → direct 0-1 bounded
+- Rank nodes (Amazon BSR) → inverse log scaling (lower rank = higher score)
+- Ordinal confidence → High=1.0, Medium=0.8, Low=0.6, Estimate=0.4
+
+**Freshness multiplier (applied to each node's weight):**
+- Fresh (<7 days): 1.0
+- Stale (7-14 days): 0.75
+- Outdated (>14 days): 0.4
+- Not collected: excluded from weighted denominator
+
+**Confidence multiplier:**
+- High: 1.0 / Medium: 0.8 / Low: 0.6 / Estimate: 0.4
+
+**Null handling:**
+- Exclude null nodes from weighted sum AND denominator
+- Trigger visible "coverage loss" indicator on the layer
+- If an estimator has <40% node coverage, show warning "Insufficient data"
+
+**Correlation penalty math:**
+- If both paired nodes present, reduce the lesser-weight node's effective weight by penalty %
+- Only one node in pair penalized (the weaker one), not both
+
+**Estimator formula:**
+```
+score = Σ(normalized_value × weight × freshness × confidence) / Σ(active_weight)
+```
+Where active_weight = weight × freshness × confidence for non-null nodes only.
+
+### R11. Coverage & Trust Indicators
+
+Replace single "Confidence bar" with three decomposed indicators:
+
+| Indicator | Calculation | Display |
+|-----------|-------------|---------|
+| **Coverage** | collected nodes / total nodes per scope | Percentage + progress bar |
+| **Freshness** | weighted average freshness multiplier | High/Medium/Low label |
+| **Stability** | sensitivity to top-3 weight changes (±10%) | High/Medium/Low label |
+
+Show per: overall, per-layer, per-estimator, per-region.
+
+### R12. Audit Metadata
+
+Every node value entry must carry:
+
+```json
+{
+  "raw": 42,
+  "corecap": 42,
+  "clik": 87,
+  "updatedAt": "2026-03-29T08:00:00Z",
+  "source": "manual",
+  "confidence": "medium",
+  "enteredBy": "cwlin",
+  "entryMethod": "manual_scan",
+  "note": "Bike24 + Rose Bikes rescan",
+  "sourceRef": "manual-retail-scan-2026-03-29",
+  "previousValue": 38,
+  "changeReason": "added 4 new retailers in DE"
+}
+```
+
+### R13. Sparse Data Rules
+
+| Scenario | Behavior |
+|----------|----------|
+| Region missing 2+ of 6 countries | Show region but mark "Partial (N/6 countries)" |
+| Estimator missing >60% of nodes | Show warning "Insufficient data — estimate unreliable" |
+| Layer all-null | Collapse by default, show "No data collected" |
+| Stale but non-null | Include with freshness penalty (0.4-0.75), show ⚠️ |
+
+### R14. Phase 1 Interaction Truthfulness
+
+- Rename [Run Scan] → [Refresh Calculations] in Phase 1
+- [Run Scan] reserved for Phase 2 when scrapers exist
+- Add [Import JSON] button for uploading updated node files
+- Add hidden Edit Mode (query param `?edit=1`) for inline node editing + Export JSON
 
 ## Implementation Steps
 

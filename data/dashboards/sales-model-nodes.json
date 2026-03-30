@@ -1,0 +1,15 @@
+{
+  "lastScan": null,
+  "calibration": {
+    "monthlyShipment": null,
+    "aftermarketPct": null,
+    "oemPct": null,
+    "period": null,
+    "anchorScope": "shipment",
+    "anchorGeography": "global",
+    "anchorConfidence": "high",
+    "notes": "",
+    "updatedAt": null
+  },
+  "nodes": {}
+}
