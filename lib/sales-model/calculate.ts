@@ -9,7 +9,52 @@
  * Total = (A + B) × C_multiplier
  */
 
-import type { SalesModelConfig, SalesModelNodes, CalibrationData, EstimationResult, NodeValue } from './types';
+import type { SalesModelConfig, SalesModelNodes, CalibrationData, EstimationResult, NodeValue, StalenessThreshold } from './types';
+
+// ── Staleness helpers ──
+
+const DEFAULT_STALENESS: Record<string, StalenessThreshold> = {
+  high:   { freshDays: 3,  staleDays: 7 },
+  medium: { freshDays: 7,  staleDays: 14 },
+  low:    { freshDays: 14, staleDays: 30 },
+  manual: { freshDays: 30, staleDays: 90 },
+};
+
+// Volatility lookup: loaded from query registry at runtime if available,
+// falls back to sourceType-based heuristic
+let volatilityMap: Record<string, string> | null = null;
+
+export function setVolatilityMap(map: Record<string, string>) {
+  volatilityMap = map;
+}
+
+function getNodeVolatility(nodeId: number, sourceType?: string): string {
+  if (volatilityMap?.[String(nodeId)]) return volatilityMap[String(nodeId)];
+  // Heuristic fallback based on sourceType
+  if (sourceType === 'scraper') return 'high';
+  if (sourceType === 'free_api') return 'low';
+  if (sourceType === 'internal' || sourceType === 'manual' || sourceType === 'field' ||
+      sourceType === 'survey' || sourceType === 'relationship') return 'manual';
+  return 'medium';
+}
+
+function getStalenessThresholds(config: SalesModelConfig, volatility: string): StalenessThreshold {
+  return config.staleness?.[volatility] || DEFAULT_STALENESS[volatility] || DEFAULT_STALENESS.medium;
+}
+
+export function getNodeStatus(
+  daysSince: number | null,
+  config: SalesModelConfig,
+  nodeId: number,
+  sourceType?: string,
+): 'fresh' | 'stale' | 'outdated' | 'not_collected' {
+  if (daysSince == null) return 'not_collected';
+  const vol = getNodeVolatility(nodeId, sourceType);
+  const thresholds = getStalenessThresholds(config, vol);
+  if (daysSince <= thresholds.freshDays) return 'fresh';
+  if (daysSince <= thresholds.staleDays) return 'stale';
+  return 'outdated';
+}
 
 // ── Node scoring ──
 
@@ -156,13 +201,15 @@ export function calculateEstimation(
     confidence = Math.round((collectedNodes / totalNodes) * 100);
   }
 
-  // Count collected vs total
+  // Count collected vs total (using per-node volatility staleness)
   const totalNodes = config.nodes.length;
   const collectedNodes = Object.keys(nodes.nodes).filter(k => nodes.nodes[k]?.raw != null).length;
-  const staleNodes = Object.values(nodes.nodes).filter(n => {
+  const staleNodes = config.nodes.filter(nodeDef => {
+    const n = nodes.nodes[String(nodeDef.id)];
     if (!n?.updatedAt) return false;
     const daysSince = (Date.now() - new Date(n.updatedAt).getTime()) / 86_400_000;
-    return daysSince > 14;
+    const status = getNodeStatus(daysSince, config, nodeDef.id, nodeDef.sourceType);
+    return status === 'stale' || status === 'outdated';
   }).length;
 
   return {
@@ -208,10 +255,7 @@ export function exportToCSV(config: SalesModelConfig, nodes: SalesModelNodes): s
     const daysSince = nodeData?.updatedAt
       ? Math.floor((Date.now() - new Date(nodeData.updatedAt).getTime()) / 86_400_000)
       : null;
-    const status = !nodeData?.updatedAt ? 'not_collected'
-      : daysSince! > 14 ? 'outdated'
-      : daysSince! > 7 ? 'stale'
-      : 'fresh';
+    const status = getNodeStatus(daysSince, config, nodeDef.id, nodeDef.sourceType);
 
     rows.push([
       nodeDef.id,

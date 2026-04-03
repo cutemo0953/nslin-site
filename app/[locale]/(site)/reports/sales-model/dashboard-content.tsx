@@ -8,7 +8,7 @@ import type {
   EstimationResult,
   NodeValue,
 } from '@/lib/sales-model/types';
-import { calculateEstimation, exportToCSV } from '@/lib/sales-model/calculate';
+import { calculateEstimation, exportToCSV, getNodeStatus } from '@/lib/sales-model/calculate';
 import CalibrationPanel from '@/components/dashboard/CalibrationPanel';
 import SummaryCard from '@/components/dashboard/SummaryCard';
 import LayerSection from '@/components/dashboard/LayerSection';
@@ -128,9 +128,10 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
     setNodesState((prev) => ({ ...prev }));
   }, []);
 
-  // Format last scan date
-  const lastScan = nodesState.lastScan
-    ? new Date(nodesState.lastScan).toLocaleDateString(isZh ? 'zh-TW' : 'en-US', {
+  // Format last scan date + freshness check
+  const lastScanDate = nodesState.lastScan ? new Date(nodesState.lastScan) : null;
+  const lastScan = lastScanDate
+    ? lastScanDate.toLocaleDateString(isZh ? 'zh-TW' : 'en-US', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
@@ -138,6 +139,10 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
         minute: '2-digit',
       })
     : 'N/A';
+  const hoursSinceLastScan = lastScanDate
+    ? (Date.now() - lastScanDate.getTime()) / 3_600_000
+    : Infinity;
+  const scanStale = hoursSinceLastScan > 48;
 
   // Separate layers (exclude friction/regional which have their own sections)
   const causalLayers = config.layers.filter(
@@ -160,9 +165,14 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
           <h1 className="text-2xl font-bold text-steel-900 sm:text-3xl">
             {isZh ? '銷量推估模型' : 'Sales Estimation Model'}
           </h1>
-          <p className="mt-1 text-sm text-metal-500">
+          <p className={`mt-1 text-sm ${scanStale ? 'text-safety-600 font-medium' : 'text-metal-500'}`}>
             {isZh ? '最後掃描：' : 'Last scan: '}
             {lastScan}
+            {scanStale && (
+              <span className="ml-2 inline-flex items-center rounded-md bg-safety-100 px-2 py-0.5 text-xs font-medium text-safety-700">
+                {isZh ? '超過 48 小時未更新' : 'Stale: >48h since last scan'}
+              </span>
+            )}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -358,6 +368,7 @@ export default function DashboardContent({ config, initialNodes, locale }: Props
             editMode={editMode}
             onChange={handleNodeChange}
             isZh={isZh}
+            config={config}
           />
         );
       })}

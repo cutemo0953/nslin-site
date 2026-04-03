@@ -1,0 +1,199 @@
+name: Sales Model Node Update
+
+on:
+  schedule:
+    - cron: '0 21 * * *'    # Daily 05:00 TWN — Tier A
+    - cron: '0 21 */3 * *'  # Every 3 days — Tier A + B
+    - cron: '0 21 * * 0'    # Sunday — Tier A + B + C
+  workflow_dispatch:
+    inputs:
+      tier:
+        description: 'Override tier (A/B/C/all)'
+        default: 'A'
+        type: choice
+        options: ['A', 'B', 'C', 'all']
+      force:
+        description: 'Force run (ignore schedule matching)'
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  collect-and-apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      # ── Determine tier from schedule or manual input ──
+      - name: Determine tier
+        id: tier
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TIER="${{ inputs.tier }}"
+            FORCE="${{ inputs.force }}"
+          else
+            # Determine from cron schedule
+            DOW=$(date -u +%u)  # 1=Mon, 7=Sun
+            DOM=$(date -u +%-d)
+            if [ "$DOW" = "7" ]; then
+              TIER="all"
+            elif [ $((DOM % 3)) -eq 1 ]; then
+              TIER="B"
+            else
+              TIER="A"
+            fi
+            FORCE="false"
+          fi
+          echo "tier=$TIER" >> $GITHUB_OUTPUT
+          echo "force=$FORCE" >> $GITHUB_OUTPUT
+          echo "Tier: $TIER | Force: $FORCE"
+
+      # ── Collect node data ──
+      - name: Collect sales model nodes
+        id: collect
+        run: |
+          FLAGS=""
+          TIER="${{ steps.tier.outputs.tier }}"
+          FORCE="${{ steps.tier.outputs.force }}"
+
+          if [ "$TIER" = "all" ] || [ "$FORCE" = "true" ]; then
+            FLAGS="--force"
+          else
+            FLAGS="--tier $TIER"
+          fi
+
+          node scripts/update-sales-model-nodes.mjs $FLAGS 2>&1 | tee /tmp/collect.log
+
+          # Extract patch filename
+          PATCH=$(ls -t data/dashboards/patches/sales-model-patch-*.json 2>/dev/null | head -1)
+          echo "patch=$PATCH" >> $GITHUB_OUTPUT
+
+          if [ -z "$PATCH" ]; then
+            echo "has_patch=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_patch=true" >> $GITHUB_OUTPUT
+          fi
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      # ── Apply patch to temp copy ──
+      - name: Apply patch
+        if: steps.collect.outputs.has_patch == 'true'
+        id: apply
+        run: |
+          PATCH="${{ steps.collect.outputs.patch }}"
+
+          # Apply to temp copy first
+          node scripts/apply-sales-model-patch.mjs "$PATCH" \
+            --out /tmp/sales-model-nodes-merged.json \
+            --summary 2>&1 | tee /tmp/apply.log
+
+          # Check if PR should be created
+          DATE=$(date +%Y-%m-%d)
+          SUMMARY_FILE="data/dashboards/patches/run-summary-${DATE}.json"
+          PR_CREATED=$(node -e "const d=JSON.parse(require('fs').readFileSync('${SUMMARY_FILE}','utf-8')); console.log(d.prCreated)")
+          PR_REASON=$(node -e "const d=JSON.parse(require('fs').readFileSync('${SUMMARY_FILE}','utf-8')); console.log(d.prReason || 'none')")
+
+          echo "pr_needed=$PR_CREATED" >> $GITHUB_OUTPUT
+          echo "pr_reason=$PR_REASON" >> $GITHUB_OUTPUT
+          echo "PR needed: $PR_CREATED ($PR_REASON)"
+
+      # ── Create PR if threshold met ──
+      - name: Copy merged nodes to canonical path
+        if: steps.apply.outputs.pr_needed == 'true'
+        run: cp /tmp/sales-model-nodes-merged.json data/dashboards/sales-model-nodes.json
+
+      - name: Check for changes
+        if: steps.apply.outputs.pr_needed == 'true'
+        id: diff
+        run: |
+          if git diff --quiet data/dashboards/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create PR
+        if: steps.apply.outputs.pr_needed == 'true' && steps.diff.outputs.has_changes == 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          RUN_ID=${{ github.run_number }}
+          BRANCH="sales-model-update-${DATE}-${RUN_ID}"
+          REASON="${{ steps.apply.outputs.pr_reason }}"
+
+          # Count updated nodes
+          UPDATED=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/dashboards/patches/run-summary-${DATE}.json','utf-8')); console.log(d.nodes.collected)")
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add data/dashboards/
+          git commit -m "chore: sales model update ${DATE} (${UPDATED} nodes, ${REASON})"
+          git push -u origin "$BRANCH"
+
+          # Use PR summary as body if available
+          SUMMARY_FILE="data/dashboards/patches/pr-summary-${DATE}.md"
+          if [ -f "$SUMMARY_FILE" ]; then
+            gh pr create \
+              --title "Sales Model Update ${DATE} (${UPDATED} nodes)" \
+              --body-file "$SUMMARY_FILE"
+          else
+            gh pr create \
+              --title "Sales Model Update ${DATE} (${UPDATED} nodes)" \
+              --body "Automated sales model node update. Reason: ${REASON}"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Email digest (only when PR created) ──
+      - name: Send email digest
+        if: steps.apply.outputs.pr_needed == 'true' && steps.diff.outputs.has_changes == 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          SUMMARY_FILE="data/dashboards/patches/pr-summary-${DATE}.md"
+
+          if [ ! -f "$SUMMARY_FILE" ]; then
+            echo "No summary file, skipping email"
+            exit 0
+          fi
+
+          # Convert markdown to simple HTML
+          BODY=$(node -e "
+            const fs = require('fs');
+            const md = fs.readFileSync('${SUMMARY_FILE}', 'utf-8');
+            const html = '<pre>' + md.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+            console.log(JSON.stringify({
+              from: 'N.S.-LIN Sales Model <intel@denovortho.com>',
+              to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
+              subject: 'Sales Model Update — ${DATE}',
+              html: html
+            }));
+          ")
+
+          curl -s https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$BODY"
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
+      # ── Cleanup old patches (> 30 days) ──
+      - name: Cleanup old patches
+        if: always()
+        run: |
+          find data/dashboards/patches/ -name "sales-model-patch-*.json" -mtime +30 -delete 2>/dev/null || true
+          # Keep run summaries for 90 days
+          find data/dashboards/patches/ -name "run-summary-*.json" -mtime +90 -delete 2>/dev/null || true
+          find data/dashboards/patches/ -name "pr-summary-*.md" -mtime +30 -delete 2>/dev/null || true

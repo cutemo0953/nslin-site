@@ -55,6 +55,11 @@ export interface RegionConfig {
   keyRetailers: string[];
 }
 
+export interface StalenessThreshold {
+  freshDays: number;
+  staleDays: number;
+}
+
 export interface SalesModelConfig {
   version: string;
   layers: Array<{ id: string; name: string; nameZh: string; timing: string }>;
@@ -68,6 +73,8 @@ export interface SalesModelConfig {
   };
   correlationPenalties: CorrelationPenalty[];
   confidenceWeights: Record<string, number>;
+  staleness?: Record<string, StalenessThreshold>;
+  sourcePrecedence?: Record<string, number>;
 }
 
 export interface CalibrationData {

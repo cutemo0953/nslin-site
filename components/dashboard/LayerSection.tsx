@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { NodeDefinition, NodeValue } from '@/lib/sales-model/types';
+import type { NodeDefinition, NodeValue, SalesModelConfig } from '@/lib/sales-model/types';
 import NodeCard from './NodeCard';
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
   editMode: boolean;
   onChange: (nodeId: string, update: Partial<NodeValue>) => void;
   isZh: boolean;
+  config?: SalesModelConfig;
 }
 
 function getFreshnessBadge(
@@ -60,6 +61,7 @@ export default function LayerSection({
   editMode,
   onChange,
   isZh,
+  config,
 }: Props) {
   const collected = nodeDefs.filter(
     (nd) => nodesData[String(nd.id)]?.raw != null,
@@ -130,6 +132,7 @@ export default function LayerSection({
                   editMode={editMode}
                   onChange={(update) => onChange(String(nd.id), update)}
                   isZh={isZh}
+                  config={config}
                 />
               ))}
           </div>

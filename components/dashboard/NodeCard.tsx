@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import type { NodeDefinition, NodeValue } from '@/lib/sales-model/types';
+import type { NodeDefinition, NodeValue, SalesModelConfig } from '@/lib/sales-model/types';
+import { getNodeStatus } from '@/lib/sales-model/calculate';
 
 interface Props {
   definition: NodeDefinition;
@@ -9,17 +10,12 @@ interface Props {
   editMode: boolean;
   onChange: (update: Partial<NodeValue>) => void;
   isZh: boolean;
+  config?: SalesModelConfig;
+  locked?: boolean;
+  onLockToggle?: (nodeId: number, locked: boolean) => void;
 }
 
 type FreshnessStatus = 'fresh' | 'stale' | 'outdated' | 'not_collected';
-
-function getStatus(value: NodeValue | null): FreshnessStatus {
-  if (!value || value.updatedAt == null) return 'not_collected';
-  const days = (Date.now() - new Date(value.updatedAt).getTime()) / 86_400_000;
-  if (days <= 7) return 'fresh';
-  if (days <= 14) return 'stale';
-  return 'outdated';
-}
 
 function StatusIcon({ status }: { status: FreshnessStatus }) {
   switch (status) {
@@ -60,9 +56,23 @@ export default function NodeCard({
   editMode,
   onChange,
   isZh,
+  config,
+  locked = false,
+  onLockToggle,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
-  const status = getStatus(value);
+
+  // Use config-aware staleness if available, else fallback
+  const status: FreshnessStatus = (() => {
+    if (!value || value.updatedAt == null) return 'not_collected';
+    const days = (Date.now() - new Date(value.updatedAt).getTime()) / 86_400_000;
+    if (config) {
+      return getNodeStatus(days, config, definition.id, definition.sourceType);
+    }
+    if (days <= 7) return 'fresh';
+    if (days <= 14) return 'stale';
+    return 'outdated';
+  })();
 
   // Edit state
   const [editCorecap, setEditCorecap] = useState<string>(
@@ -105,6 +115,16 @@ export default function NodeCard({
           </span>
         </div>
         <div className="flex shrink-0 items-center gap-1">
+          {locked && (
+            <span title={isZh ? '已鎖定 (自動化不可覆寫)' : 'Locked (automation cannot overwrite)'}>
+              <svg className="h-3.5 w-3.5 text-metal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </span>
+          )}
+          {(value?.entryMethod === 'auto_tavily' || value?.entryMethod === 'auto_api') && (
+            <span className="rounded bg-steel-100 px-1 py-0.5 text-[10px] font-mono text-steel-500">auto</span>
+          )}
           <StatusIcon status={status} />
           <span className="text-xs text-metal-400">
             {formatDate(value?.updatedAt ?? null, isZh)}
@@ -185,12 +205,31 @@ export default function NodeCard({
             className="w-full rounded border border-metal-300 bg-white px-2 py-1 text-xs text-steel-700 focus:border-steel-500 focus:outline-none"
             placeholder={isZh ? '備註...' : 'Note...'}
           />
-          <button
-            onClick={handleSave}
-            className="rounded bg-brass-500 px-3 py-1 text-xs font-semibold text-white hover:bg-brass-600 transition-colors"
-          >
-            {isZh ? '儲存' : 'Save'}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleSave}
+              className="rounded bg-brass-500 px-3 py-1 text-xs font-semibold text-white hover:bg-brass-600 transition-colors"
+            >
+              {isZh ? '儲存' : 'Save'}
+            </button>
+            {onLockToggle && (
+              <button
+                onClick={() => onLockToggle(definition.id, !locked)}
+                className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
+                  locked
+                    ? 'bg-metal-200 text-metal-600 hover:bg-metal-300'
+                    : 'bg-white border border-metal-300 text-metal-500 hover:bg-metal-50'
+                }`}
+                title={locked
+                  ? (isZh ? '解鎖：允許自動化覆寫' : 'Unlock: allow automation to overwrite')
+                  : (isZh ? '鎖定：防止自動化覆寫' : 'Lock: prevent automation from overwriting')}
+              >
+                {locked
+                  ? (isZh ? '解鎖' : 'Unlock')
+                  : (isZh ? '鎖定' : 'Lock')}
+              </button>
+            )}
+          </div>
         </div>
       ) : (
         <>
@@ -212,7 +251,7 @@ export default function NodeCard({
           {/* ── Metadata line ── */}
           <div className="mt-1.5 flex flex-wrap gap-x-3 text-xs text-metal-400">
             <span>
-              {isZh ? '來源' : 'Source'}: {value?.source === 'internal' ? '公司內部' : value?.source === 'manual' ? '手動輸入' : value?.source === 'scraper' ? '自動抓取' : value?.source === 'survey' ? '問卷調查' : value?.source ?? '待收集'}
+              {isZh ? '來源' : 'Source'}: {value?.entryMethod === 'auto_tavily' ? '自動搜尋' : value?.entryMethod === 'auto_api' ? '自動 API' : value?.entryMethod === 'derived' ? '推算' : value?.source === 'internal' ? '公司內部' : value?.source === 'manual' ? '手動輸入' : value?.source === 'scraper' ? '自動抓取' : value?.source === 'survey' ? '問卷調查' : value?.source === 'estimate' ? '推算' : value?.source ?? '待收集'}
             </span>
             <span>
               {isZh ? '可信度' : 'Conf.'}: {value?.confidence === 'high' ? '高' : value?.confidence === 'medium' ? '中' : value?.confidence === 'low' ? '低' : value?.confidence === 'estimate' ? '推估' : '待評估'}

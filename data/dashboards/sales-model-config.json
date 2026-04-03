@@ -1098,5 +1098,20 @@
     "B_channel": 0.3,
     "C_adoption": 0.2,
     "D_attention": 0.1
+  },
+  "staleness": {
+    "high":   { "freshDays": 3,  "staleDays": 7 },
+    "medium": { "freshDays": 7,  "staleDays": 14 },
+    "low":    { "freshDays": 14, "staleDays": 30 },
+    "manual": { "freshDays": 30, "staleDays": 90 }
+  },
+  "sourcePrecedence": {
+    "direct": 1,
+    "internal": 2,
+    "relationship": 3,
+    "field": 4,
+    "web_search": 5,
+    "auto_api": 6,
+    "auto_tavily": 7
   }
 }

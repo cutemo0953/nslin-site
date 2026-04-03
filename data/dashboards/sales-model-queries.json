@@ -1,0 +1,800 @@
+{
+  "version": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "globalQueryCap": 30,
+  "budgetThresholdPct": 75,
+  "nodes": [
+    {
+      "nodeId": 27,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "BBB CoreCap tubeless valve site:bike24.de",
+          "allowedDomains": ["bike24.de", "bike24.com"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": ["pump", "tool", "cleaning"],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Schwalbe Clik valve site:bike24.de",
+          "allowedDomains": ["bike24.de", "bike24.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": ["pump head", "adapter only"],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "UK",
+          "product": "corecap",
+          "q": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com",
+          "allowedDomains": ["wiggle.com", "chainreactioncycles.com"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct product listings for the target product (CoreCap or Clik valve). Each unique product page URL counts as 1. Return the total count as an integer. Do NOT count duplicate listings or accessories like pump heads.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 10,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 30,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "BBB CoreCap valve bike24.de",
+          "allowedDomains": ["bike24.de", "bike24.com"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "fetch_page"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Schwalbe Clik valve bike24.de",
+          "allowedDomains": ["bike24.de", "bike24.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "fetch_page"
+        }
+      ],
+      "extractPrompt": "Check if any product listings mention 'out of stock', 'currently unavailable', 'nicht verfugbar', 'ausverkauft', or similar. Return the percentage of out-of-stock listings as an integer (0-100). If all are available, return 0. If stock status cannot be determined from the text, return null.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 30,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 56,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Schwalbe Clik valve inner tube site:bike24.de",
+          "allowedDomains": ["bike24.de", "bike24.com"],
+          "requiredKeywords": ["Clik", "tube"],
+          "disallowedKeywords": ["valve only", "conversion kit"],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Schwalbe inner tube Clik valve site:schwalbe.com",
+          "allowedDomains": ["schwalbe.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct Schwalbe inner tube models/SKUs that use the Clik valve interface. Each unique tube size or model counts as 1. Do NOT count valves, conversion kits, or accessories. Return the total count as an integer.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 10,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "BBB CoreCap tubeless valve price EUR buy",
+          "allowedDomains": ["bike24.de", "bike24.com", "rosebikes.de", "bike-discount.de", "bike-components.de"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": ["used", "gebraucht"],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Schwalbe Clik valve price EUR buy",
+          "allowedDomains": ["bike24.de", "bike24.com", "rosebikes.de", "bike-discount.de", "schwalbe.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": ["used", "gebraucht"],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Extract all retail prices mentioned for the target product. Return the median price as a number in EUR. If multiple prices found, list them all in the extractionRationale. If no price found, return null.",
+      "validator": {
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "maxDeltaPct": 30,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": false,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 61,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "api",
+      "queries": [
+        {
+          "market": "global",
+          "product": "corecap",
+          "q": "LME aluminum price USD per ton today",
+          "endpoint": "https://metals-api.com/api/latest?access_key=${METALS_API_KEY}&base=USD&symbols=AL",
+          "fallbackQuery": "LME aluminum price USD per ton today 2026",
+          "allowedDomains": ["metals-api.com", "lme.com", "tradingeconomics.com", "investing.com"],
+          "requiredKeywords": ["aluminum", "aluminium"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Extract the current LME aluminum spot price in USD per metric ton. Return the number only (e.g., 2450). If price is in USD/lb, convert to USD/ton (multiply by 2204.62).",
+      "validator": {
+        "type": "number",
+        "min": 1500,
+        "max": 5000,
+        "maxDeltaPct": 15,
+        "maxDeltaAbs": 300,
+        "zeroToNonzeroAllowed": false,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 62,
+      "enabled": true,
+      "locked": false,
+      "volatility": "high",
+      "nodeType": "observed",
+      "collector": "api",
+      "queries": [
+        {
+          "market": "US",
+          "product": "corecap",
+          "q": "US Midwest aluminum premium USD per pound today 2026",
+          "allowedDomains": ["metals-api.com", "tradingeconomics.com", "investing.com", "fastmarkets.com"],
+          "requiredKeywords": ["midwest", "premium"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Extract the current US Midwest aluminum premium in USD per pound. Return the number (e.g., 0.23). If given in cents/lb, convert to USD/lb.",
+      "validator": {
+        "type": "number",
+        "min": 0.05,
+        "max": 1.0,
+        "maxDeltaPct": 30,
+        "maxDeltaAbs": 0.1,
+        "zeroToNonzeroAllowed": false,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 17,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM",
+          "allowedDomains": ["bikeradar.com", "cyclingnews.com", "road.cc", "bikerumor.com", "pinkbike.com", "99spokes.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": ["aftermarket", "conversion kit"],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct bicycle models or brands that come pre-installed with Schwalbe Clik valves for model year 2026 or 2027. Return the count as an integer. If no OEM adoption found, return 0.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 18,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "\"Wolf Tooth\" OR \"Lezyne\" OR \"SKS\" OR \"Topeak\" Clik valve accessory",
+          "allowedDomains": ["amazon.de", "amazon.com", "bike24.de", "wiggle.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct third-party accessory products (pump heads, adapters, tools) specifically designed for or compatible with Schwalbe Clik valve. Each unique product counts as 1. Return the total count as an integer.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 20,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de",
+          "allowedDomains": ["ebay.de", "bikemarkt.mtb-news.de", "ebay.com"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de",
+          "allowedDomains": ["ebay.de", "bikemarkt.mtb-news.de", "ebay.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct second-hand listings that mention the target valve product. Each unique listing URL counts as 1. Return the total count as an integer. If no listings found, return 0.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 10,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 36,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Schwalbe Clik valve accessories ecosystem pump adapter",
+          "allowedDomains": ["bike24.de", "amazon.de", "schwalbe.com", "amazon.com", "wiggle.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Estimate the accessory attach rate for Clik valve: what fraction of Clik valve product pages also show related accessories (pump heads, adapters, tubes) as 'frequently bought together' or 'related products'? Return a ratio between 0 and 1 (e.g., 0.6 means 60% of listings show accessories). If cannot determine, return null.",
+      "validator": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 0.3,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 37,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "BBB CoreCap replacement valve core spare part buy",
+          "allowedDomains": ["bike24.de", "amazon.de", "bbbcycling.com", "rosebikes.de"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Schwalbe Clik valve replacement spare part buy",
+          "allowedDomains": ["bike24.de", "amazon.de", "schwalbe.com", "rosebikes.de"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct replacement/spare part SKUs available for the target valve system. Include valve cores, seals, o-rings, and replacement kits. Return the count as an integer.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 30,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 38,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "CoreCap valve used bike specification listing",
+          "allowedDomains": ["bikemarkt.mtb-news.de", "ebay.de", "buycycle.com"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        },
+        {
+          "market": "DE",
+          "product": "clik",
+          "q": "Clik valve used bike specification listing",
+          "allowedDomains": ["bikemarkt.mtb-news.de", "ebay.de", "buycycle.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of used bike listings where the valve type (CoreCap or Clik) is mentioned as a spec or feature in the description. This indicates installed base visibility. Return the count as an integer.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 10,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 41,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Clik valve 2027 model year wheelset bicycle specification",
+          "allowedDomains": ["bikeradar.com", "bikerumor.com", "road.cc", "pinkbike.com", "cyclingnews.com", "99spokes.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Of bicycle/wheelset brands that adopted Clik valve in model year 2026, how many continue to use Clik in 2027? Return as a percentage (0-100). If no brands adopted Clik, return 0. If 2027 specs not yet available, return null.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 20,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 45,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless",
+          "allowedDomains": ["bikeradar.com", "bikerumor.com", "road.cc", "pinkbike.com", "dtswiss.com", "mavic.com", "99spokes.com"],
+          "requiredKeywords": [],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Check if any major wheelset brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) have adopted Clik valve as standard in their 2026 or 2027 product lines. Return the percentage of major brands that have converted (0-100). If none have converted, return 0.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 20,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 57,
+      "enabled": true,
+      "locked": false,
+      "volatility": "medium",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "DE",
+          "product": "corecap",
+          "q": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24",
+          "allowedDomains": ["bike24.de", "bike24.com", "rosebikes.de"],
+          "requiredKeywords": ["CoreCap"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Estimate the B2B restock turnaround time in days. If evidence mentions 'back in stock' with dates, calculate the gap. If product is currently available, return 0 (no restock delay). If cannot determine, return null.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 90,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 14,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 25,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "corecap",
+          "q": "tubeless valve bicycle Google Ads CPC average cost per click 2026",
+          "allowedDomains": ["semrush.com", "ahrefs.com", "wordstream.com", "spyfu.com"],
+          "requiredKeywords": ["CPC", "cost"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Extract the average CPC (cost per click) in USD for bicycle tubeless valve related keywords. Return the number (e.g., 0.85). If no CPC data found, return null.",
+      "validator": {
+        "type": "number",
+        "min": 0.01,
+        "max": 10.0,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 1.0,
+        "zeroToNonzeroAllowed": false,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 26,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Clik valve e-bike 2026 2027 specification electric bicycle",
+          "allowedDomains": ["bikeradar.com", "bikerumor.com", "road.cc", "electrek.co", "ebiketips.road.cc", "99spokes.com"],
+          "requiredKeywords": ["Clik", "e-bike"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "What percentage of 2026/2027 e-bike models mention or include Clik valve in their specifications? Return as a percentage (0-100). If no e-bike adoption found, return 0. If cannot determine, return null.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 10,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 49,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Clik valve site:99spokes.com",
+          "allowedDomains": ["99spokes.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count how many bicycle models on 99spokes.com list Clik valve in their specifications. Return the count as an integer. If no models found, return 0.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 500,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 20,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 50,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "site:schwalbe.com Clik valve installation guide technical manual",
+          "allowedDomains": ["schwalbe.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct Clik valve technical documents, installation guides, or FAQ pages on schwalbe.com. Each unique page URL counts as 1. Return the count as an integer.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 53,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "clik",
+          "q": "Clik valve 3D model CAD download GrabCAD Thingiverse",
+          "allowedDomains": ["grabcad.com", "thingiverse.com", "printables.com", "thangs.com"],
+          "requiredKeywords": ["Clik"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the number of distinct 3D model/CAD file downloads available for Clik valve or Clik-compatible parts. Each unique model counts as 1. Return the count as an integer. If none found, return 0.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 11,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "tavily",
+      "queries": [
+        {
+          "market": "global",
+          "product": "corecap",
+          "q": "\"CoreCap\" vs \"Clik valve\" Google Trends bicycle 2026",
+          "allowedDomains": ["trends.google.com", "explodingtopics.com", "semrush.com"],
+          "requiredKeywords": ["trend", "interest"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Extract the relative search interest ratio between CoreCap and Clik valve. If Google Trends data available, return the CoreCap interest as a percentage of total (CoreCap + Clik = 100). E.g., if CoreCap has 30% of combined interest, return 30. If no data available, return null.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 100,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 15,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    },
+    {
+      "nodeId": 59,
+      "enabled": true,
+      "locked": false,
+      "volatility": "low",
+      "nodeType": "observed",
+      "collector": "api",
+      "queries": [
+        {
+          "market": "global",
+          "product": "corecap",
+          "q": "tubeless valve bicycle Icecat product catalog",
+          "endpoint": "https://live.icecat.biz/api/?UserName=openIcecat-demo&Language=en&Category=bicycle+valves",
+          "fallbackQuery": "tubeless valve Icecat product catalog bicycle 2026",
+          "allowedDomains": ["icecat.biz", "icecat.us"],
+          "requiredKeywords": ["valve"],
+          "disallowedKeywords": [],
+          "evidenceMode": "snippet_only"
+        }
+      ],
+      "extractPrompt": "Count the total number of tubeless valve product entries in the Icecat catalog. Return the count as an integer. This indicates industry catalog penetration.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 200,
+        "maxDeltaPct": 50,
+        "maxDeltaAbs": 10,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": []
+      },
+      "minEvidenceCount": 1
+    }
+  ],
+  "derivedNodes": [
+    {
+      "nodeId": 31,
+      "enabled": true,
+      "volatility": "high",
+      "nodeType": "derived",
+      "derivedFrom": [10],
+      "calculation": "std_dev",
+      "description": "Standard deviation of price samples from node #10 (Google Shopping Price). Computed from post-merge canonical observed state across all markets/products.",
+      "validator": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "maxDeltaPct": 100,
+        "maxDeltaAbs": 5,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": [10]
+      }
+    },
+    {
+      "nodeId": 42,
+      "enabled": false,
+      "volatility": "high",
+      "nodeType": "derived",
+      "derivedFrom": [5],
+      "calculation": "delta",
+      "description": "Monthly net-new reviews = current #5 - previous #5. DISABLED: node #5 (Amazon Review Count) removed from automation due to Tavily hit rate failure.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 1000,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 50,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": [5]
+      }
+    },
+    {
+      "nodeId": 44,
+      "enabled": false,
+      "volatility": "high",
+      "nodeType": "derived",
+      "derivedFrom": [4],
+      "calculation": "consecutive_days",
+      "description": "Consecutive days BSR stays in top N. DISABLED: node #4 (Amazon BSR) removed from automation due to Tavily hit rate failure.",
+      "validator": {
+        "type": "integer",
+        "min": 0,
+        "max": 365,
+        "maxDeltaPct": 200,
+        "maxDeltaAbs": 30,
+        "zeroToNonzeroAllowed": true,
+        "dependsOn": [4]
+      }
+    }
+  ]
+}
