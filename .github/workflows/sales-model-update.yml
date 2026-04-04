@@ -99,11 +99,16 @@ jobs:
             --out /tmp/sales-model-nodes-merged.json \
             --summary 2>&1 | tee /tmp/apply.log
 
-          # Check if PR should be created
-          DATE=$(date +%Y-%m-%d)
-          SUMMARY_FILE="data/dashboards/patches/run-summary-${DATE}.json"
-          PR_CREATED=$(node -e "const d=JSON.parse(require('fs').readFileSync('${SUMMARY_FILE}','utf-8')); console.log(d.prCreated)")
-          PR_REASON=$(node -e "const d=JSON.parse(require('fs').readFileSync('${SUMMARY_FILE}','utf-8')); console.log(d.prReason || 'none')")
+          # Check if PR should be created (read from standalone decision file)
+          DECISION_FILE="data/dashboards/patches/pr-decision.json"
+          if [ -f "$DECISION_FILE" ]; then
+            PR_CREATED=$(node -e "const d=JSON.parse(require('fs').readFileSync('${DECISION_FILE}','utf-8')); console.log(d.create)")
+            PR_REASON=$(node -e "const d=JSON.parse(require('fs').readFileSync('${DECISION_FILE}','utf-8')); console.log(d.reason || 'none')")
+          else
+            echo "WARNING: pr-decision.json not found"
+            PR_CREATED="false"
+            PR_REASON="no_decision_file"
+          fi
 
           echo "pr_needed=$PR_CREATED" >> $GITHUB_OUTPUT
           echo "pr_reason=$PR_REASON" >> $GITHUB_OUTPUT

@@ -319,13 +319,21 @@ if (generateSummary) {
   console.log(`PR summary: ${summaryPath}`);
 }
 
-// Write PR decision to run summary
-const summaryPath = path.join(DASHBOARDS_DIR, 'patches', `run-summary-${patch.date}.json`);
-if (fs.existsSync(summaryPath)) {
-  const runSummary = loadJSON(summaryPath);
+// Write PR decision to standalone file (reliable for shell to read)
+const decisionFile = path.join(DASHBOARDS_DIR, 'patches', 'pr-decision.json');
+fs.writeFileSync(decisionFile, JSON.stringify({
+  create: prDecision.create,
+  reason: prDecision.reason,
+}), 'utf-8');
+console.log(`PR decision file: ${decisionFile}`);
+
+// Also update run summary if it exists
+const summaryJsonPath = path.join(DASHBOARDS_DIR, 'patches', `run-summary-${patch.date}.json`);
+if (fs.existsSync(summaryJsonPath)) {
+  const runSummary = loadJSON(summaryJsonPath);
   runSummary.prCreated = prDecision.create;
   runSummary.prReason = prDecision.reason;
-  fs.writeFileSync(summaryPath, JSON.stringify(runSummary, null, 2), 'utf-8');
+  fs.writeFileSync(summaryJsonPath, JSON.stringify(runSummary, null, 2), 'utf-8');
 }
 
 // ── Helper Functions ──
