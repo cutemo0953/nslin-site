@@ -169,15 +169,65 @@ jobs:
             exit 0
           fi
 
-          # Convert markdown to simple HTML
+          # Convert markdown to HTML email
           BODY=$(node -e "
             const fs = require('fs');
             const md = fs.readFileSync('${SUMMARY_FILE}', 'utf-8');
-            const html = '<pre>' + md.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+
+            // Simple markdown-to-HTML converter for tables + headers
+            function mdToHtml(text) {
+              const lines = text.split('\n');
+              let html = '<div style=\"font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;color:#1a1a2e;max-width:700px;margin:0 auto;\">';
+              let inTable = false;
+              let headerRow = false;
+
+              for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+
+                // Skip separator rows
+                if (/^\|[-:\s|]+\|$/.test(line)) { headerRow = false; continue; }
+
+                // Table row
+                if (line.startsWith('|') && line.endsWith('|')) {
+                  if (!inTable) { html += '<table style=\"border-collapse:collapse;width:100%;margin:12px 0;\">'; inTable = true; headerRow = true; }
+                  const cells = line.split('|').filter(c => c.trim() !== '');
+                  const tag = headerRow ? 'th' : 'td';
+                  const bg = headerRow ? 'background:#2d3a4a;color:#fff;' : '';
+                  html += '<tr>' + cells.map(c => '<' + tag + ' style=\"padding:6px 10px;border:1px solid #ddd;text-align:left;font-size:13px;' + bg + '\">' + c.trim() + '</' + tag + '>').join('') + '</tr>';
+                  if (headerRow) headerRow = false;
+                  continue;
+                }
+
+                // Close table if we were in one
+                if (inTable) { html += '</table>'; inTable = false; }
+
+                // Headers
+                if (line.startsWith('### ')) { html += '<h3 style=\"color:#2d3a4a;margin:16px 0 8px;font-size:15px;\">' + line.slice(4) + '</h3>'; continue; }
+                if (line.startsWith('## ')) { html += '<h2 style=\"color:#1a1a2e;margin:20px 0 10px;font-size:18px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;\">' + line.slice(3) + '</h2>'; continue; }
+
+                // Bold
+                let processed = line.replace(/\*\*([^*]+)\*\*/g, '<strong>\$1</strong>');
+
+                // HR
+                if (line === '---') { html += '<hr style=\"border:none;border-top:1px solid #ddd;margin:16px 0;\">'; continue; }
+
+                // Empty line
+                if (line === '') continue;
+
+                // Normal text
+                html += '<p style=\"margin:4px 0;\">' + processed + '</p>';
+              }
+
+              if (inTable) html += '</table>';
+              html += '</div>';
+              return html;
+            }
+
+            const html = mdToHtml(md);
             console.log(JSON.stringify({
               from: 'N.S.-LIN Sales Model <intel@denovortho.com>',
               to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
-              subject: 'Sales Model Update — ${DATE}',
+              subject: 'Sales Model Update \u2014 ${DATE}',
               html: html
             }));
           ")
