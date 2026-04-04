@@ -23,6 +23,18 @@ import path from 'path';
 const ROOT = process.cwd();
 const DASHBOARDS_DIR = path.join(ROOT, 'data/dashboards');
 
+// ── Constants (must be before main body to avoid TDZ) ──
+
+const NODE_NAMES = {
+  27: '零售商上架數', 30: '缺貨狀況', 56: 'Schwalbe Clik 內胎 SKU',
+  10: '零售價格', 61: 'LME 鋁價', 62: '美國中西部鋁溢價',
+  17: 'Clik OEM 預裝車款', 18: '第三方 Clik 配件', 20: '二手市場出現',
+  36: 'Clik 配件 Attach Rate', 37: '替換零件', 38: '二手車規格提及',
+  41: 'OEM 沿用率', 45: '輪組廠轉換率', 57: 'B2B 補貨時間',
+};
+
+const CONF_ZH = { high: '高', medium: '中', low: '低', estimate: '推估' };
+
 // ── CLI ──
 
 const args = process.argv.slice(2);
@@ -391,15 +403,7 @@ function evaluatePRThreshold(patch, log) {
   return { create: stats.collected > 0, reason: 'data_collected' };
 }
 
-// ── Insight generation: turn raw node data into business-readable findings ──
-
-const NODE_NAMES = {
-  27: '零售商上架數', 30: '缺貨狀況', 56: 'Schwalbe Clik 內胎 SKU',
-  10: '零售價格', 61: 'LME 鋁價', 62: '美國中西部鋁溢價',
-  17: 'Clik OEM 預裝車款', 18: '第三方 Clik 配件', 20: '二手市場出現',
-  36: 'Clik 配件 Attach Rate', 37: '替換零件', 38: '二手車規格提及',
-  41: 'OEM 沿用率', 45: '輪組廠轉換率', 57: 'B2B 補貨時間',
-};
+// ── Insight generation ──
 
 function generateInsights(patchNodes, currentNodes) {
   const insights = [];

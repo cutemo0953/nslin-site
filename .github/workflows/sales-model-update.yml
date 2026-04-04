@@ -91,7 +91,9 @@ jobs:
       - name: Apply patch
         if: steps.collect.outputs.has_patch == 'true'
         id: apply
+        shell: bash
         run: |
+          set -o pipefail
           PATCH="${{ steps.collect.outputs.patch }}"
 
           # Apply to temp copy first
