@@ -205,8 +205,9 @@ jobs:
                 if (line.startsWith('### ')) { html += '<h3 style=\"color:#2d3a4a;margin:16px 0 8px;font-size:15px;\">' + line.slice(4) + '</h3>'; continue; }
                 if (line.startsWith('## ')) { html += '<h2 style=\"color:#1a1a2e;margin:20px 0 10px;font-size:18px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;\">' + line.slice(3) + '</h2>'; continue; }
 
-                // Bold
+                // Bold + links
                 let processed = line.replace(/\*\*([^*]+)\*\*/g, '<strong>\$1</strong>');
+                processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href=\"\$2\" style=\"color:#2563eb;\">\$1</a>');
 
                 // HR
                 if (line === '---') { html += '<hr style=\"border:none;border-top:1px solid #ddd;margin:16px 0;\">'; continue; }

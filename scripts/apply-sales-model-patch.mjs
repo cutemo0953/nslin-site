@@ -501,7 +501,7 @@ function generateMarkdownSummary(patch, log, prDecision) {
   }
 
   lines.push('---');
-  lines.push(`自動收集 ${patch.stats.collected} 項 | 無變化 ${patch.stats.unchanged} 項 | 失敗 ${patch.stats.failed} 項`);
+  lines.push(`[完整儀表板](https://nslin-site.tom-e31.workers.dev/zh-TW/reports/sales-model) | 自動收集 ${patch.stats.collected} 項 | 無變化 ${patch.stats.unchanged} 項 | 失敗 ${patch.stats.failed} 項`);
 
   return lines.join('\n');
 }
