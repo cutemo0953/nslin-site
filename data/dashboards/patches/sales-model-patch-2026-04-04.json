@@ -1,0 +1,165 @@
+{
+  "date": "2026-04-04",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 3,
+    "failed": 8,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 36,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve accessories ecosystem pump adapter"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black; Utilizes Clik Valves for best-in-class performance",
+      "extractionRationale": "One distinct third-party accessory product (Wolf Tooth Tubeless Valve Stem Kit) is explicitly identified as designed for Clik Valve compatibility in the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps?srsltid=AfmBOoom5rjyMueZtVBvXQqbh6FVX_b0nkbp3wMzZW8kibnWTyiWwy5X",
+      "sourceTitle": "CoreCap Valve Cap Set - BBB Cycling",
+      "evidenceText": "Spare parts section mentioned on page but specific SKU list not provided in available content",
+      "extractionRationale": "The source page indicates a \"Spare parts\" section exists, but the actual list of distinct replacement SKUs (valve cores, seals, o-rings, replacement kits) is not included in the provided content snippet. Without the complete spare parts listing, an accurate count cannot be determined from the available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "Tubeless Technology - DT Swiss",
+      "evidenceText": "DT Swiss promotes their own proprietary \"DT Swiss tubeless valve\" that \"perfectly matches DT Swiss rims.\" No mention of Clik valve adoption. Hunt wheelsets include \"a valve fitted\" without specifying Clik. No evidence of Clik adoption by any major brand (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval).",
+      "extractionRationale": "The available evidence shows DT Swiss actively uses proprietary valves, Hunt's valve type is unspecified, and no information exists for the other four major brands. Zero brands explicitly identified as having adopted Clik as standard. Percentage of major brands converted = 0 out of 6 potential brands = 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993581.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Ventilkern - blau | 2 Stück - BIKE24",
+      "evidenceText": "Product listing page for CoreCap BTI-165 showing product name, features, and related products, but no stock status, availability status, or restock dates mentioned.",
+      "extractionRationale": "The provided content does not contain any information about current availability status, stock status, \"back in stock\" dates, or restock turnaround times. Without such information, the restock turnaround time cannot be determined from the available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
