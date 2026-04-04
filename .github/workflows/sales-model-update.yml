@@ -177,7 +177,7 @@ jobs:
             // Simple markdown-to-HTML converter for tables + headers
             function mdToHtml(text) {
               const lines = text.split('\n');
-              let html = '<div style=\"font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;color:#1a1a2e;max-width:700px;margin:0 auto;\">';
+              let html = '<meta charset=\"utf-8\"><div style=\"font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;color:#1a1a2e;max-width:700px;margin:0 auto;\">';
               let inTable = false;
               let headerRow = false;
 
@@ -214,6 +214,12 @@ jobs:
                 // Empty line
                 if (line === '') continue;
 
+                // Bullet points
+                if (line.startsWith('- ')) {
+                  html += '<p style=\"margin:4px 0 4px 16px;\">' + line.slice(2).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') + '</p>';
+                  continue;
+                }
+
                 // Normal text
                 html += '<p style=\"margin:4px 0;\">' + processed + '</p>';
               }
@@ -227,7 +233,7 @@ jobs:
             console.log(JSON.stringify({
               from: 'N.S.-LIN Sales Model <intel@denovortho.com>',
               to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
-              subject: '\u92b7\u91cf\u6a21\u578b\u66f4\u65b0 \u2014 ${DATE}',
+              subject: 'N.S.-LIN \u6c23\u5634\u5e02\u5834\u65e5\u5831 \u2014 ${DATE}',
               html: html
             }));
           ")

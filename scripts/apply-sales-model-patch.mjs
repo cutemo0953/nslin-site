@@ -383,88 +383,125 @@ function evaluatePRThreshold(patch, log) {
   return { create: stats.collected > 0, reason: 'data_collected' };
 }
 
-const REASON_ZH = {
-  requires_review: '有節點需要人工審核',
-  overwrite_blocked: '自動值被來源優先權擋下',
-  all_unchanged: '所有節點無變化',
-  low_delta_only: '變動幅度極小',
-  data_collected: '有新數據收集',
+// ── Insight generation: turn raw node data into business-readable findings ──
+
+const NODE_NAMES = {
+  27: '零售商上架數', 30: '缺貨狀況', 56: 'Schwalbe Clik 內胎 SKU',
+  10: '零售價格', 61: 'LME 鋁價', 62: '美國中西部鋁溢價',
+  17: 'Clik OEM 預裝車款', 18: '第三方 Clik 配件', 20: '二手市場出現',
+  36: 'Clik 配件 Attach Rate', 37: '替換零件', 38: '二手車規格提及',
+  41: 'OEM 沿用率', 45: '輪組廠轉換率', 57: 'B2B 補貨時間',
 };
 
-const FAILURE_ZH = {
-  search_failed: '搜尋失敗',
-  no_relevant_result: '無相關結果',
-  extraction_failed: '萃取失敗',
-  validation_failed: '驗證未通過',
-  overwrite_blocked: '來源優先權不足',
-  rate_limited: '超過查詢額度',
-  locked: '節點已鎖定',
-};
+function generateInsights(patchNodes, currentNodes) {
+  const insights = [];
 
-const CONF_ZH = { high: '高', medium: '中', low: '低', estimate: '推估' };
+  for (const [nodeId, entry] of Object.entries(patchNodes)) {
+    if (entry.rawValue == null) continue;
+    const id = Number(nodeId);
+    const name = NODE_NAMES[id] || `#${id}`;
+    const prev = entry.previousValue;
+    const val = entry.rawValue;
+    const product = entry.product === 'corecap' ? 'CoreCap' : entry.product === 'clik' ? 'Clik' : '';
+    const evidence = entry.evidenceText || '';
+
+    switch (id) {
+      case 27: // Retailer count
+        if (product) {
+          insights.push(`**${product} 在歐洲零售商上架 ${val} 個產品頁**${prev != null && prev !== val ? `（前次：${prev}）` : ''}。`);
+        }
+        break;
+      case 30: // Stockout
+        if (val > 0) {
+          insights.push(`**${product || '產品'}有 ${val}% 品項缺貨** — 需求大於供給的訊號。`);
+        } else if (val === 0) {
+          insights.push(`${product || '產品'}目前全部有貨，供貨正常。`);
+        }
+        break;
+      case 56: // Tube SKU
+        insights.push(`**Schwalbe 目前有 ${val} 款 Clik 介面內胎**在售${prev != null && prev !== val ? `（前次：${prev}）` : ''}。內胎市場年銷 6-7 億條，Clik 正在蠶食 Presta 份額。`);
+        break;
+      case 10: // Price
+        if (product) {
+          insights.push(`${product} 零售均價 EUR ${val}。${prev != null && prev !== val ? `前次 EUR ${prev}，${val > prev ? '漲價' : '降價'}了。` : ''}`);
+        }
+        break;
+      case 61: // LME
+        insights.push(`鋁現貨價 $${val}/噸${prev != null ? `（前次 $${prev}，${val > prev ? '上漲' : '下跌'} ${Math.abs(Math.round((val - prev) / prev * 100))}%）` : ''}。鋁是 CoreCap 主要原料成本。`);
+        break;
+      case 17: // OEM
+        if (val === 0) {
+          insights.push('目前沒有整車品牌預裝 Clik 氣嘴。OEM 窗口仍未開啟，CoreCap 仍有機會爭取。');
+        } else {
+          insights.push(`**已有 ${val} 款車型預裝 Clik 氣嘴** — OEM 戰場開始了。`);
+        }
+        break;
+      case 45: // Wheelset conversion
+        if (val === 0) {
+          insights.push('DT Swiss、Mavic 等主要輪組廠仍用標準 Presta，尚未轉換到 Clik。');
+        } else {
+          insights.push(`**${val}% 主要輪組廠已轉換到 Clik** — 這是重大變化。`);
+        }
+        break;
+    }
+  }
+
+  return insights;
+}
 
 function generateMarkdownSummary(patch, log, prDecision) {
   const lines = [];
-  const reasonZh = REASON_ZH[prDecision.reason] || prDecision.reason;
 
-  lines.push(`## 銷量模型自動更新 ${patch.date}`);
-  lines.push('');
-  lines.push(`**觸發原因：** ${reasonZh}`);
-  lines.push(`**模型版本：** ${patch.methodVersion} | **萃取版本：** ${patch.extractorVersion}`);
-  lines.push('');
-  lines.push(`| 指標 | 數值 |`);
-  lines.push(`|------|------|`);
-  lines.push(`| 排定收集 | ${patch.stats.eligible} 個節點 |`);
-  lines.push(`| 成功收集 | ${patch.stats.collected} |`);
-  lines.push(`| 無變化 | ${patch.stats.unchanged} |`);
-  lines.push(`| 失敗 | ${patch.stats.failed} |`);
+  lines.push(`## N.S.-LIN 氣嘴市場日報 ${patch.date}`);
   lines.push('');
 
-  // Changes table
+  // ── Lead with insights ──
+  const insights = generateInsights(patch.nodes, nodes.nodes);
+  if (insights.length) {
+    lines.push('### 今日重點');
+    lines.push('');
+    for (const ins of insights) {
+      lines.push(`- ${ins}`);
+    }
+    lines.push('');
+  } else {
+    lines.push('今日掃描完成，數據無顯著變化。');
+    lines.push('');
+  }
+
+  // ── Data changes (compact) ──
   const changes = log.filter((l) => l.action === 'merged');
   if (changes.length) {
-    lines.push('### 數據變更');
+    lines.push('### 數據更新');
     lines.push('');
-    lines.push('| 節點 | 舊值 | 新值 | 變化 | 產品 | 信心度 |');
-    lines.push('|------|------|------|------|------|--------|');
+    lines.push('| 項目 | 舊值 | 新值 | 變化 |');
+    lines.push('|------|------|------|------|');
     for (const c of changes) {
+      const name = NODE_NAMES[Number(c.nodeId)] || `#${c.nodeId}`;
       const entry = patch.nodes[c.nodeId];
-      const conf = CONF_ZH[entry?.confidence] || '?';
-      lines.push(`| #${c.nodeId} | ${c.oldValue ?? '--'} | ${c.newValue ?? '--'} | ${c.deltaPct != null ? c.deltaPct + '%' : '--'} | ${c.product || '全部'} | ${conf} |`);
+      const product = entry?.product === 'corecap' ? ' (CoreCap)' : entry?.product === 'clik' ? ' (Clik)' : '';
+      lines.push(`| ${name}${product} | ${c.oldValue ?? '--'} | ${c.newValue ?? '--'} | ${c.deltaPct != null ? (c.deltaPct > 0 ? '+' : '') + c.deltaPct + '%' : '--'} |`);
     }
     lines.push('');
   }
 
-  // Review required
+  // ── Issues (only if there are review items, keep brief) ──
   const reviews = log.filter((l) => l.action === 'review');
   if (reviews.length) {
-    lines.push('### 需要人工審核');
+    lines.push(`### 待確認 (${reviews.length} 項)`);
     lines.push('');
-    lines.push('| 節點 | 原因 | 未通過的驗證 |');
-    lines.push('|------|------|-------------|');
     for (const r of reviews) {
+      const name = NODE_NAMES[Number(r.nodeId)] || `#${r.nodeId}`;
       const vr = r.validatorResults
-        ? Object.entries(r.validatorResults).filter(([, v]) => v === 'fail').map(([k]) => k).join(', ')
-        : '?';
-      lines.push(`| #${r.nodeId} | ${REASON_ZH[r.reason] || r.reason} | ${vr || '全部通過'} |`);
-    }
-    lines.push('');
-  }
-
-  // Failures
-  if (patch.failures.length) {
-    lines.push('### 收集失敗');
-    lines.push('');
-    lines.push('| 節點 | 原因 | 查詢 |');
-    lines.push('|------|------|------|');
-    for (const f of patch.failures) {
-      lines.push(`| #${f.nodeId} | ${FAILURE_ZH[f.code] || f.code} | ${(f.query || '').slice(0, 50)} |`);
+        ? Object.entries(r.validatorResults).filter(([, v]) => v === 'fail').map(([k]) => k).join('/')
+        : '';
+      lines.push(`- ${name}${vr ? `（${vr} 未通過）` : ''}`);
     }
     lines.push('');
   }
 
   lines.push('---');
-  lines.push('由 Sales Model Pipeline 自動產生');
+  lines.push(`自動收集 ${patch.stats.collected} 項 | 無變化 ${patch.stats.unchanged} 項 | 失敗 ${patch.stats.failed} 項`);
 
   return lines.join('\n');
 }
