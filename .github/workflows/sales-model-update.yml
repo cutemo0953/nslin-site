@@ -227,7 +227,7 @@ jobs:
             console.log(JSON.stringify({
               from: 'N.S.-LIN Sales Model <intel@denovortho.com>',
               to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
-              subject: 'Sales Model Update \u2014 ${DATE}',
+              subject: '\u92b7\u91cf\u6a21\u578b\u66f4\u65b0 \u2014 ${DATE}',
               html: html
             }));
           ")
