@@ -1,0 +1,23 @@
+{
+  "date": "2026-04-06",
+  "tier": "A",
+  "queriesUsed": 11,
+  "monthlyBurn": 11,
+  "monthlyBudget": 1000,
+  "nodes": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "prCreated": true,
+  "reason": "data_collected",
+  "failedNodes": [
+    27,
+    10,
+    61
+  ],
+  "duration_ms": 62142,
+  "prReason": "requires_review"
+}
