@@ -2,9 +2,7 @@ name: Sales Model Node Update
 
 on:
   schedule:
-    - cron: '0 21 * * *'    # Daily 05:00 TWN — Tier A
-    - cron: '0 21 */3 * *'  # Every 3 days — Tier A + B
-    - cron: '0 21 * * 0'    # Sunday — Tier A + B + C
+    - cron: '0 21 * * *'    # Daily 05:00 TWN — single cron, tier logic in script
   workflow_dispatch:
     inputs:
       tier:
