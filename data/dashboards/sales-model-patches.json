@@ -1,1 +1,11 @@
-[]
+[
+  {"nodeId":"30","field":"corecap","oldValue":8,"newValue":0,"reason":"Bike24: all 6 colors back in stock","source":"bike24.com/p2993585.html","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"29","field":"clik","oldValue":10,"newValue":25,"reason":"Bike24: Clik 10→25 SKUs (inner tubes added)","source":"bike24.com","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"33","field":null,"oldValue":"3mo/10mo","newValue":"6mo/13mo","reason":"time progression, both retained","source":"launch dates","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"61","field":null,"oldValue":null,"newValue":3478,"reason":"LME $3,478/t — 4yr high, UAE smelter strike","source":"tradingeconomics.com","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"64","field":null,"oldValue":null,"newValue":"active_conflict","reason":"EGA halted, Gulf 9% global aluminum","source":"tradingeconomics.com","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"46","field":"clik","oldValue":5,"newValue":6,"reason":"Wolf Tooth full Clik launch","source":"wolftoothcomponents.com","confidence":"high","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"12","field":"corecap","oldValue":8,"newValue":11,"reason":"+CycleTechReview(x2), BikeMag","source":"cycletechreview.com + bikemag.com","confidence":"medium","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"13","field":"clik","oldValue":8,"newValue":12,"reason":"WW 14pg, +road.cc, +MTBR WT pump, +BikeForums","source":"forum search","confidence":"medium","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"},
+  {"nodeId":"13","field":"corecap","oldValue":3,"newValue":5,"reason":"+MTBR new thread, +Muddymoles","source":"forum search","confidence":"medium","label":"observed","createdAt":"2026-04-12T23:10:00+08:00","status":"committed"}
+]

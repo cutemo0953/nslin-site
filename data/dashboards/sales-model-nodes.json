@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-03-30T13:00:00Z",
+  "lastScan": "2026-04-12T15:10:00Z",
   "calibration": {
     "monthlyShipment": null,
     "aftermarketPct": null,
@@ -55,18 +55,18 @@
       "changeReason": "CORRECTED: $59M was wrong. Actual is EUR 335M = ~$360M"
     },
     "46": {
-      "raw": 5,
+      "raw": 6,
       "corecap": 0,
-      "clik": 5,
-      "updatedAt": "2026-03-30T10:21:00Z",
+      "clik": 6,
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "manual",
       "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "UPDATED: Lezyne 的 Clik support 本質上是「預裝轉接頭在充氣頭上」，不是重新設計打氣筒。Lezyne 是台中的貿易商（外國人+台灣老婆）。Clik valve 仍然需要轉接頭。CoreCap 的「不需任何轉接頭」優勢仍然成立。原始數據: Clik 5 brands (Lezyne native, WolfTooth native, Topeak/Silca adapter, Schwalbe native)。",
-      "sourceRef": "ride.lezyne.com/pages/clik-valve-pumps-accessories",
+      "note": "Clik 6 brands: Schwalbe (native), Lezyne (pre-mounted adapter), WolfTooth (native — 3 EnCase pumps + 9-color tubeless valves, deepest third-party), Topeak (adapter), Silca (adapter), Birzman (adapter). Wolf Tooth now fully launched with dedicated Clik product line.",
+      "sourceRef": "wolftoothcomponents.com/collections/clik-valve + pinkbike.com",
       "previousValue": 5,
-      "changeReason": "downgrade Lezyne from 'native redesign' to 'pre-mounted adapter' — insider intel"
+      "changeReason": "Wolf Tooth full Clik ecosystem launch — count 5→6 brands"
     },
     "45": {
       "raw": 0,
@@ -99,30 +99,30 @@
     "29": {
       "raw": null,
       "corecap": 13,
-      "clik": 10,
-      "updatedAt": "2026-03-30T17:00:00Z",
+      "clik": 25,
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "scraper",
       "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "web_fetch",
-      "note": "Bike24.com SKU depth: CoreCap 13 SKUs (BTI-165 6色 + BTI-166 3長度×2色 + tool), Clik 10 SKUs (3 conversion kits + 3 tubeless lengths + DV variants)",
+      "note": "Bike24 SKU depth: CoreCap 13 SKUs (unchanged). Clik expanded 10→25 SKUs — now includes conversion kits, tubeless valves, AND SCV butyl inner tubes in multiple sizes. Major SKU depth increase driven by tube rollout.",
       "sourceRef": "bike24.com/search?searchTerm=BBB+CoreCap + schwalbe+clik+valve",
-      "previousValue": null,
-      "changeReason": "initial — first Bike24 scan"
+      "previousValue": 10,
+      "changeReason": "Clik SKU 2.5x increase — Schwalbe inner tube rollout hitting retail"
     },
     "30": {
       "raw": null,
-      "corecap": 8,
+      "corecap": 0,
       "clik": 0,
-      "updatedAt": "2026-03-30T17:00:00Z",
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "scraper",
       "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "web_fetch",
-      "note": "Bike24 stockout: CoreCap RED (BTI-165) OUT OF STOCK, rest in stock. 1/13=8% OOS. Clik: all 10 SKUs status unknown (no stock indicator in search results).",
+      "note": "Bike24 stockout: ALL 6 CoreCap BTI-165 colors now IN STOCK. Stockout dropped from 8% to 0%. Supply caught up with demand.",
       "sourceRef": "bike24.com/p2993585.html",
-      "previousValue": null,
-      "changeReason": "initial — CoreCap red OOS is demand signal"
+      "previousValue": 8,
+      "changeReason": "CoreCap RED back in stock — supply normalized"
     },
     "5": {
       "raw": null,
@@ -186,17 +186,17 @@
     },
     "33": {
       "raw": null,
-      "corecap": "3 months",
-      "clik": "10 months",
-      "updatedAt": "2026-03-30T18:00:00Z",
+      "corecap": "6 months",
+      "clik": "13 months",
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "estimate",
-      "confidence": "medium",
+      "confidence": "high",
       "enteredBy": "claude",
       "entryMethod": "estimate",
-      "note": "CoreCap launched Q4 2025/Q1 2026, ~3 months on market. Clik launched Q2 2025, ~10 months. Both still being stocked = positive retention signal.",
-      "sourceRef": "launch date comparison",
-      "previousValue": null,
-      "changeReason": "initial — based on launch dates"
+      "note": "CoreCap ~6 months on market, Clik ~13 months. Both still stocked at Bike24 with expanding SKU depth — strong retention signal.",
+      "sourceRef": "launch date progression + Bike24 listing confirmation",
+      "previousValue": "3 months / 10 months",
+      "changeReason": "time progression — both products retained, Clik SKU expanding"
     },
     "17": {
       "raw": 0,
@@ -214,17 +214,17 @@
     },
     "12": {
       "raw": null,
-      "corecap": 8,
+      "corecap": 11,
       "clik": 15,
-      "updatedAt": "2026-03-30T18:00:00Z",
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "estimate",
-      "confidence": "low",
+      "confidence": "medium",
       "enteredBy": "claude",
-      "entryMethod": "estimate",
-      "note": "Rough estimate from search results. CoreCap: BikeRadar, Bikerumor, Pinkbike, road.cc, 3bikes.fr, CycleTechReview, Muddymoles, NewAtlas = ~8 major reviews. Clik: more coverage due to earlier launch + Eurobike buzz = ~15.",
-      "sourceRef": "web search count estimate",
-      "previousValue": null,
-      "changeReason": "initial rough estimate"
+      "entryMethod": "web_search",
+      "note": "CoreCap 8→11: +CycleTechReview preview & full review (2 articles), +BikeMag first look. Full list: BikeRadar, Bikerumor, Pinkbike, road.cc, 3bikes.fr, CycleTechReview(x2), Muddymoles(x2), NewAtlas, BikeMag. Clik: ~15 (unchanged).",
+      "sourceRef": "cycletechreview.com/2026/accessories/corecap/ + bikemag.com",
+      "previousValue": 8,
+      "changeReason": "CoreCap media coverage growing — 3 new reviews since last scan"
     },
     "19": {
       "raw": 1,
@@ -332,17 +332,17 @@
     },
     "13": {
       "raw": null,
-      "corecap": 3,
-      "clik": 8,
-      "updatedAt": "2026-03-30T11:00:00Z",
+      "corecap": 5,
+      "clik": 12,
+      "updatedAt": "2026-04-12T15:10:00Z",
       "source": "manual",
       "confidence": "medium",
       "enteredBy": "claude",
       "entryMethod": "web_search",
-      "note": "Forum thread count: CoreCap — WeightWeenies 1, MTBR 1, Muddymoles 1. Clik — WeightWeenies 14pg, MTBR 1, Singletrack 1, EMTB 1, BikeForums 1, TrainerRoad 1, ElectricBikeReview 1, plus 1 Bike-Forums ≈ 8 threads. Clik has ~2.7x more forum presence.",
-      "sourceRef": "multiple forum searches",
-      "previousValue": null,
-      "changeReason": "initial forum thread count"
+      "note": "Forum threads updated. CoreCap 3→5: WW(1), MTBR(2 — +new 'converts presta to high-flow schrader'), Muddymoles(1), road.cc(1). Clik 8→12: WW(14+pg), MTBR(2 — +Wolf Tooth pump thread), Singletrack(1), road.cc(2 — +conversion thread), BikeForums(1), TrainerRoad(1), ElectricBikeReview(1), EMTB(1), BikBoard(1). Clik still ~2.4x more forum presence.",
+      "sourceRef": "forum search April 2026",
+      "previousValue": {"corecap": 3, "clik": 8},
+      "changeReason": "both growing — CoreCap +2 threads, Clik +4 threads"
     },
     "25": {
       "raw": null,
@@ -455,6 +455,34 @@
       "sourceRef": "mtbr.com/threads/clik-valve.1232132/",
       "previousValue": null,
       "changeReason": "initial estimate from forum sentiment"
+    },
+    "61": {
+      "raw": 3478,
+      "corecap": 3478,
+      "clik": null,
+      "updatedAt": "2026-04-12T15:10:00Z",
+      "source": "free_api",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "LME aluminum surged to $3,478/t (April 8, 2026) — approaching 4-year high. Driver: UAE Al Taweelah smelter (EGA) hit by Iranian missiles. Gulf region = 9% global primary aluminum supply. Direct impact on CoreCap (7075 AL alloy).",
+      "sourceRef": "tradingeconomics.com + barchart.com/futures/quotes/LHD*1",
+      "previousValue": null,
+      "changeReason": "first entry — geopolitical supply shock"
+    },
+    "64": {
+      "raw": "active_conflict",
+      "corecap": "high_risk",
+      "clik": "low_risk",
+      "updatedAt": "2026-04-12T15:10:00Z",
+      "source": "manual",
+      "confidence": "high",
+      "enteredBy": "claude",
+      "entryMethod": "web_search",
+      "note": "Emirates Global Aluminium halted Al Taweelah smelter after Iranian missile strike (April 2026). Gulf region supplies ~9% of global primary aluminum. CoreCap = high risk (7075 AL product, N.S.-LIN already reported 鋁材缺貨). Clik = low risk (plastic/rubber valve system, no aluminum dependency).",
+      "sourceRef": "tradingeconomics.com April 2026 aluminum analysis",
+      "previousValue": null,
+      "changeReason": "first entry — active geopolitical conflict affecting aluminum supply"
     },
     "4": {
       "raw": null,
