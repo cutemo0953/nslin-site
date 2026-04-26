@@ -9,13 +9,18 @@ on:
     paths:
       - '.github/workflows/**'
 
+permissions:
+  contents: read
+
 jobs:
   actionlint:
     runs-on: ubuntu-latest
+    env:
+      ACTIONLINT_VERSION: '1.7.12'
     steps:
       - uses: actions/checkout@v5
       - name: Run actionlint
         continue-on-error: true  # warn-only; flip when existing warnings cleaned
         run: |
-          bash <(curl -s https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          bash <(curl -fsSL "https://raw.githubusercontent.com/rhysd/actionlint/v${ACTIONLINT_VERSION}/scripts/download-actionlint.bash") "${ACTIONLINT_VERSION}"
           ./actionlint -color
