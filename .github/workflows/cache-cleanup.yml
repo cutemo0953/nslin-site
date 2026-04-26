@@ -1,3 +1,5 @@
+# Migrated 2026-04-26 to use shared reusable workflow at cutemo0953/.github@v1.
+
 name: Cleanup Actions Storage
 
 on:
@@ -5,56 +7,9 @@ on:
     - cron: '0 3 * * 0'  # Sunday 3 AM UTC
   workflow_dispatch:
 
+permissions:
+  actions: write
+
 jobs:
   cleanup:
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - name: Cleanup old caches and artifacts
-        uses: actions/github-script@v7
-        with:
-          script: |
-            // Delete caches unused for 7+ days
-            const caches = await github.rest.actions.getActionsCacheList({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              per_page: 100,
-            });
-            const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
-            let deletedCaches = 0;
-            for (const cache of caches.data.actions_caches) {
-              const lastUsed = new Date(cache.last_accessed_at).getTime();
-              if (lastUsed < cutoff) {
-                await github.rest.actions.deleteActionsCacheById({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  cache_id: cache.id,
-                });
-                deletedCaches++;
-              }
-            }
-
-            // Delete artifacts older than 7 days (keep newest 5)
-            const artifacts = await github.rest.actions.listArtifactsForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              per_page: 100,
-            });
-            let deletedArtifacts = 0;
-            const sorted = artifacts.data.artifacts.sort((a, b) =>
-              new Date(b.created_at) - new Date(a.created_at)
-            );
-            for (const art of sorted.slice(5)) {
-              const age = new Date(art.created_at).getTime();
-              if (age < cutoff) {
-                await github.rest.actions.deleteArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: art.id,
-                });
-                deletedArtifacts++;
-              }
-            }
-            console.log(`Deleted ${deletedCaches} caches, ${deletedArtifacts} artifacts`);
-
+    uses: cutemo0953/.github/.github/workflows/cache-cleanup.yml@v1
