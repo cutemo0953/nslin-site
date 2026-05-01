@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "month": "2026-05",
+    "snapshotAt": "2026-05-01T21:55:39.808Z",
+    "methodVersion": "1.0.0",
+    "extractorVersion": "1.0.0",
+    "queryRegistryVersion": "sha256:858c49c36c11",
+    "coverage": {
+      "total": 66,
+      "collected": 23,
+      "stale": 66
+    },
+    "estimation": {
+      "corecapTotal": null,
+      "clikTotal": null
+    },
+    "nodes": {
+      "1": {
+        "corecap": 16700,
+        "clik": null
+      },
+      "2": {
+        "corecap": 100,
+        "clik": null
+      },
+      "6": {
+        "corecap": 8000000,
+        "clik": 335000000
+      },
+      "7": {
+        "corecap": null,
+        "clik": 335000000
+      },
+      "8": {
+        "corecap": 8000000,
+        "clik": null
+      },
+      "17": {
+        "corecap": 0,
+        "clik": 0
+      },
+      "19": {
+        "corecap": 1,
+        "clik": 0
+      },
+      "26": {
+        "corecap": 0,
+        "clik": 0
+      },
+      "32": {
+        "corecap": 0,
+        "clik": 0
+      },
+      "38": {
+        "corecap": 0,
+        "clik": 0
+      },
+      "41": {
+        "corecap": null,
+        "clik": null
+      },
+      "45": {
+        "corecap": 0,
+        "clik": 0
+      },
+      "46": {
+        "corecap": 0,
+        "clik": 6
+      },
+      "56": {
+        "corecap": 0,
+        "clik": 10
+      },
+      "61": {
+        "corecap": 3284,
+        "clik": 3284
+      },
+      "62": {
+        "corecap": 1,
+        "clik": null
+      },
+      "63": {
+        "corecap": null,
+        "clik": null
+      },
+      "64": {
+        "corecap": null,
+        "clik": null
+      },
+      "66": {
+        "corecap": "severe",
+        "clik": "moderate"
+      },
+      "f2": {
+        "corecap": 0,
+        "clik": 30
+      },
+      "f3": {
+        "corecap": 0,
+        "clik": 50
+      },
+      "f1": {
+        "corecap": 20,
+        "clik": 30
+      },
+      "f4": {
+        "corecap": 5,
+        "clik": 15
+      }
+    }
+  }
+]
