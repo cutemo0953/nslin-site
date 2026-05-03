@@ -1,0 +1,240 @@
+[
+  {
+    "entity_id": "mucoff-big-bore",
+    "change_type": "new_product",
+    "field": "product_variants",
+    "old_value": "Big Bore Lite (Presta, 230%) + Big Bore Hybrid (Schrader, 254%)",
+    "new_value": "Big Bore Lite (Presta, 230%) + Big Bore Hybrid (Schrader, 254%) + V2 Tubeless Valves (enhanced tire insert compatibility with 6 machined slots)",
+    "evidence": {
+      "source_url": "https://us.muc-off.com/products/tubeless-valves-v2",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:37:42.846Z",
+      "snippet": "Introducing the Muc-Off V2 Tubeless Valves. Introducing our V2 Tubeless valves with a new Tire Insert air flow system. Featuring 6 slots machined into the base of the valve stem allowing them to be compatible with most tubeless tire inserts and allow your tubeless sealant fluid and air to flow freely when running tubeless tire inserts.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "legion-vmax",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": null,
+    "new_value": "4.5",
+    "evidence": {
+      "source_url": "https://www.amazon.com.be/-/en/LEGION-Aluminium-Valves-Tubeless-Unisex/dp/B0857V1DJ6",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:37:56.457Z",
+      "snippet": "Only 9 g per pair with nuts and caps.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "29",
+    "new_value": "28",
+    "evidence": {
+      "source_url": "https://www.bikeperfect.com/reviews/76-projects-hi-flow-no-clog-valves-review",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:38:26.315Z",
+      "snippet": "The HI FLOW 'No Clog' tubeless valves are a big improvement on ... Price: $28.00 / £24.50 / €29.90; Sizes: 15-35mm, 30-50mm, 45-65mm",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"42mm\", \"52mm\", \"62mm\"]",
+    "new_value": "[\"15-35mm\", \"30-50mm\", \"45-65mm\"]",
+    "evidence": {
+      "source_url": "https://www.bikeperfect.com/reviews/76-projects-hi-flow-no-clog-valves-review",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:38:26.315Z",
+      "snippet": "The HI FLOW 'No Clog' tubeless valves are a big improvement on ... Price: $28.00 / £24.50 / €29.90; Sizes: 15-35mm, 30-50mm, 45-65mm",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "28",
+    "new_value": "35.99",
+    "evidence": {
+      "source_url": "https://www.seattleelectricbike.net/products/schwalbe-scv-tubeless-clik-valve-clik-80mm-pair?srsltid=AfmBOopBCtuxRfOf7gduorE7kVm8pCwSqiCFHqhIIWYtQGB_vABFypTC",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:38:43.840Z",
+      "snippet": "Schwalbe SCV - Tubeless CLIK Valve CLIK 80mm Pair. $35.99. Pay in 2 interest-free installments of $18.00 with.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm)",
+    "new_value": "6.4g (45mm), 6.9g (60mm), 7.9g (80mm) per valve",
+    "evidence": {
+      "source_url": "https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:38:52.328Z",
+      "snippet": "Weight | 45 mm : 12.8 g (1 pair)   60 mm : 13.8 g (1 pair)   80 mm : 15.8 g (1 pair)",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "spec_update",
+    "field": "airflow_claim",
+    "old_value": "300%",
+    "new_value": "up to 3x airflow",
+    "evidence": {
+      "source_url": "https://www.topeak.com/global/en/product/1817-TURBOFLOW-VALVE-KIT",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:38:52.328Z",
+      "snippet": "UP TO 3X AIRFLOW. Compared to traditional Presta valves, the TurboFlow delivers higher airflow and features a clog-free",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "new_product",
+    "field": "product_variant",
+    "old_value": null,
+    "new_value": "TurboFlow Valve Adapter (TFV-08)",
+    "evidence": {
+      "source_url": "https://www.topeak.com/global/en/product/1818-TURBOFLOW-VALVE-ADAPTER",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:38:52.328Z",
+      "snippet": "TURBOFLOW VALVE ADAPTER. ART NO: TFV-08. High-flow valve adapter for tubeless tires, sold as a pair. Boosts airflow efficiency by 300% for faster inflation. Includes a Presta valve core tool.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOoqUvbO64G97S5HZhWIGGSXPhpO3YCY66hSU3hTNAiJ1cP9BYN_a",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:39:22.671Z",
+      "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.95,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"52mm\", \"67mm\"]",
+    "new_value": "[\"40mm\", \"52mm\", \"57mm\", \"67mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.ap.industrynine.com/parts/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:39:35.998Z",
+      "snippet": "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves). TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). TKVABLK67 Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). TKVABLK80_ Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "25.5",
+    "evidence": {
+      "source_url": "https://industrynine.com/parts/valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:39:37.169Z",
+      "snippet": "Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves) ... Includes: 2 - black 52mm valves. $25.50. Qty. - +. Buy Now.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"60mm\", \"80mm\"]",
+    "new_value": "[\"32mm\", \"36-48mm\", \"44mm\", \"60mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=WARC110AIDXCO22333",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:40:02.636Z",
+      "snippet": "Tubeless valve alloy black for 36 - 48 mm profile height; Material number ... Short name TUBELESS VALVE ALU BLACK 36-48MM 1PC; Amount 1 PC.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "22.5",
+    "new_value": "11.70",
+    "evidence": {
+      "source_url": "https://www.twowheelerskidealer.com/product/dt-swiss-aluminum-tubeless-valve-393138-1.htm?srsltid=AfmBOop94QVG78SMWrwBqNSGcJTAdMK4DxvghXbpN5PDyNTzBGIku0lh",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-03T22:40:06.281Z",
+      "snippet": "DT Swiss Aluminum Tubeless Valve. 0.0. No RatingsWrite the First Review. DT Swiss Aluminum Tubeless Valve Black. Black. $11.70 - $14.99. Color: Black.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.75,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "pack_quantity",
+    "old_value": "2",
+    "new_value": "1",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=WARC110AIDXCO22333",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-03T22:40:02.636Z",
+      "snippet": "Tubeless valve alloy black for 36 - 48 mm profile height; Material number ... Short name TUBELESS VALVE ALU BLACK 36-48MM 1PC; Amount 1 PC.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  }
+]
