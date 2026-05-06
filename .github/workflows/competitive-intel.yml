@@ -57,8 +57,56 @@ jobs:
           node scripts/generate-proposal-summary.mjs
           node scripts/generate-proposal-email.mjs
 
+      - name: Append sales model snapshot to weekly email
+        id: sales_snapshot
+        run: |
+          node -e "
+            const fs = require('fs');
+
+            const nodes = JSON.parse(fs.readFileSync('data/dashboards/sales-model-nodes.json', 'utf-8'));
+            const config = JSON.parse(fs.readFileSync('data/dashboards/sales-model-config.json', 'utf-8'));
+            const nameMap = {};
+            (config.nodes || []).forEach(n => { nameMap[n.id] = n.name; });
+
+            // Show nodes updated in past 7 days
+            const cutoff = new Date(Date.now() - 7*24*60*60*1000).toISOString();
+            const recent = Object.entries(nodes)
+              .filter(([, d]) => d.updatedAt && d.updatedAt >= cutoff)
+              .map(([id, d]) => ({ id, name: nameMap[id] || '#' + id, corecap: d.corecap ?? d.raw, clik: d.clik, date: (d.updatedAt || '').slice(0, 10) }));
+
+            if (recent.length === 0) {
+              console.log('has_sales_updates=false');
+              process.exit(0);
+            }
+
+            let section = '<hr style=\"margin:24px 0\"><h2 style=\"font-family:-apple-system,sans-serif;color:#1a1a2e;font-size:18px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;\">本週市場數據更新</h2>';
+            section += '<table style=\"border-collapse:collapse;width:100%;margin:12px 0;font-family:-apple-system,sans-serif;font-size:13px;\">';
+            section += '<tr>' + ['指標','CoreCap','Clik','更新日期'].map(h => '<th style=\"padding:6px 10px;background:#2d3a4a;color:#fff;text-align:left;border:1px solid #1a2533;\">' + h + '</th>').join('') + '</tr>';
+            recent.forEach((n, i) => {
+              const bg = i % 2 === 0 ? '#fff' : '#f7f9fc';
+              section += '<tr style=\"background:' + bg + '\">' +
+                '<td style=\"padding:6px 10px;border:1px solid #eee;\">' + n.name + '</td>' +
+                '<td style=\"padding:6px 10px;border:1px solid #eee;text-align:right;\">' + (n.corecap ?? '—') + '</td>' +
+                '<td style=\"padding:6px 10px;border:1px solid #eee;text-align:right;\">' + (n.clik ?? '—') + '</td>' +
+                '<td style=\"padding:6px 10px;border:1px solid #eee;\">' + n.date + '</td></tr>';
+            });
+            section += '</table>';
+
+            const emailPath = 'data/competitive-intel/proposal-email.html';
+            if (fs.existsSync(emailPath)) {
+              const html = fs.readFileSync(emailPath, 'utf-8');
+              fs.writeFileSync(emailPath, html.replace(/<\/div>\s*$/, section + '</div>'));
+            } else {
+              fs.mkdirSync('data/competitive-intel', { recursive: true });
+              fs.writeFileSync(emailPath,
+                '<html><body><div style=\"font-family:-apple-system,sans-serif;max-width:700px;margin:0 auto;padding:24px;\">' + section + '</div></body></html>');
+            }
+            console.log('has_sales_updates=true');
+            console.log(recent.length + ' node(s) updated this week');
+          " | tee -a $GITHUB_OUTPUT
+
       - name: Send email report via Resend
-        if: steps.check.outputs.has_proposals == 'true'
+        if: steps.check.outputs.has_proposals == 'true' || steps.sales_snapshot.outputs.has_sales_updates == 'true'
         run: |
           curl -s https://api.resend.com/emails \
             -H "Authorization: Bearer $RESEND_API_KEY" \
@@ -70,7 +118,7 @@ jobs:
               console.log(JSON.stringify({
                 from: 'N.S.-LIN Competitive Intel <intel@denovortho.com>',
                 to: ['nslin@nslin.com.tw', 'tom@denovortho.com'],
-                subject: '競品情報週報 — ' + date,
+                subject: '競品情報週報 + 市場數據 — ' + date,
                 html: html
               }));
             ")"

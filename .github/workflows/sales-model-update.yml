@@ -162,9 +162,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── Email digest (only when PR created) ──
+      # ── Email digest — disabled, merged into 競品情報週報 (competitive-intel.yml) ──
       - name: Send email digest
-        if: steps.apply.outputs.pr_needed == 'true' && steps.diff.outputs.has_changes == 'true'
+        if: false
         run: |
           DATE=$(date +%Y-%m-%d)
           SUMMARY_FILE="data/dashboards/patches/pr-summary-${DATE}.md"
