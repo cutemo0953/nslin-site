@@ -1,0 +1,257 @@
+[
+  {
+    "entity_id": "mucoff-big-bore",
+    "change_type": "spec_update",
+    "field": "airflow_claim",
+    "old_value": "230% (Lite) / 254% (Hybrid) vs Presta",
+    "new_value": "up to 264% vs traditional Presta valves",
+    "evidence": {
+      "source_url": "https://muc-off.com/collections/big-bore-tubeless-valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:43:03.533Z",
+      "snippet": "The revolutionary 'straight through' coreless design delivers up to 264% more airflow than traditional Presta valves. Featuring a lever-operated ball valve",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "legion-vmax",
+    "change_type": "spec_update",
+    "field": "weight_per_valve_g",
+    "old_value": null,
+    "new_value": "4.5",
+    "evidence": {
+      "source_url": "https://www.amazon.com.be/-/en/LEGION-Aluminium-Valves-Tubeless-Unisex/dp/B0857V1DJ6",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:43:19.223Z",
+      "snippet": "Only 9 g per pair with nuts and caps.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "legion-vmax",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "17.49",
+    "evidence": {
+      "source_url": "https://www.tradeinn.com/bikeinn/en/legion-v-max-tubeless-presta-21-29-mm-valves-2-units/139881837/p",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:43:19.223Z",
+      "snippet": "Legion V-Max Tubeless Presta 21-29 mm valves 2 units. 17.49 €. Price without code 17.49. RRP: 25.99 €.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "stans-exo-core",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "54.99",
+    "new_value": "59.00",
+    "evidence": {
+      "source_url": "https://notubes.com/",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:43:31.833Z",
+      "snippet": "Stan's Tubeless Exo-Core Valves. from $59.00 ; Stan's Original DART Tool. $27.00 ; Stan's ForkBoost. $13.00 ; Stan's Incredible DART Tubeless Repair Tool. $75.00.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "price_update",
+    "field": "currency",
+    "old_value": "USD",
+    "new_value": "GBP",
+    "evidence": {
+      "source_url": "https://76projects.com/collections/valves?srsltid=AfmBOopN8IEPc7Jhc0lgLogAeqf0wINK-G1pIioboVZziUmcVCZt0vKs",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:43:46.432Z",
+      "snippet": "PAIR OF SIZE 0 - RIMS 9-20mm · HI FLOW 'NO CLOG' TUBELESS VALVES. 4.23 / 5.0. (78) 78 total reviews. Regular Price: from £9.50.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "topeak-turboflow",
+    "change_type": "spec_update",
+    "field": "in_stock",
+    "old_value": "true",
+    "new_value": "false",
+    "evidence": {
+      "source_url": "https://www.topeak.com/us/en/product/1818-TURBOFLOW-VALVE-ADAPTER",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:44:25.439Z",
+      "snippet": "High-flow valve adapter for tubeless tires, sold as a pair. • Boosts airflow ... Regular price $34.95. Out of stock. find a store. Proposition 65 WARNING",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "24.95",
+    "evidence": {
+      "source_url": "https://www.wtb.com/products/max-flow-tubeless-valves?srsltid=AfmBOoriWtr30pewf1kySl2Ib0FNn6Ea3P_DB1dle_VupuperJQk__tr",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:44:41.395Z",
+      "snippet": "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOoq8p-JYFpWf34E5sHn6xV82J6DtnpWMMIMXm5krCaCuVpZdQosL",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:44:50.173Z",
+      "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.95,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "spec_update",
+    "field": "color_options",
+    "old_value": null,
+    "new_value": "13 color options",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOoq8p-JYFpWf34E5sHn6xV82J6DtnpWMMIMXm5krCaCuVpZdQosL",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:44:50.173Z",
+      "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"52mm\", \"67mm\"]",
+    "new_value": "[\"40mm\", \"52mm\", \"57mm\", \"67mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.ap.industrynine.com/parts/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:45:04.347Z",
+      "snippet": "TKVABLK52** Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). ### **TKVABLK57** Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). ### **TKVABLK67** Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). ### **TKVABLK80_** Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "21.99",
+    "evidence": {
+      "source_url": "https://worldwidecyclery.com/products/industry-nine-no-clog-aluminum-tubeless-valve-stems-39mm-lime-pair?srsltid=AfmBOor92MAX47pPFLiCWbPCMJfcN_jxGhwynJIZ0sMWMHnTLnpowvJg",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:45:05.951Z",
+      "snippet": "Industry Nine Tubeless Valves - 40mm, Lime, Pair ; List Price · $21.99 ; Sale Price · $21.99 ; Savings · $-21.99 (0%)",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "peatys-mk2",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "36",
+    "new_value": "35.99",
+    "evidence": {
+      "source_url": "https://peatys.com/products/peatys-x-chris-king-mk2-tubeless-valves?srsltid=AfmBOorS3VvC9bG_WWNY2yUEOOgB8-DZ9emOHWW3Uf0cP6_lKhGTct_w",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:45:20.823Z",
+      "snippet": "... 50to01 rasta. Peaty's x Chris King MK2 Tubeless Valves. The dependable everyday valve. $35.99. Unit price /. Unavailable. 98 reviews. Size. 42mm.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"60mm\", \"80mm\"]",
+    "new_value": "[\"32mm\", \"36-48mm\", \"44mm\", \"60mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=WHX1700BFIXSA18405",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:45:35.320Z",
+      "snippet": "Tubeless valve brass silver for 18 - 25 mm profile height MTB; Material number TVVXA32S25873S. Short name TUBELESS VALVE 32MM MTB 1PC",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "material",
+    "old_value": "aluminum",
+    "new_value": "aluminum, brass",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=WHX1700BFIXSA18405",
+      "source_type": "official_site",
+      "retrieved_at": "2026-05-10T22:45:35.320Z",
+      "snippet": "Tubeless valve brass silver for 18 - 25 mm profile height MTB; Material number TVVXA32S25873S. Short name TUBELESS VALVE 32MM MTB 1PC",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "22.5",
+    "new_value": "18.31",
+    "evidence": {
+      "source_url": "https://shop.unlimitedbiking.com/products/dt-swiss-aluminum-tubeless-valve-mtb-or-road-36-48mm-black-single-1?srsltid=AfmBOooZlg3eDQ5hwn0K0MbDyuH9QhOwdGMvtwWgAa_g7NaJeJNP9U3h",
+      "source_type": "retail",
+      "retrieved_at": "2026-05-10T22:45:41.024Z",
+      "snippet": "DT Swiss Aluminum Tubeless Valve - MTB or Road, 36-48mm, Black, Single. Regular price $18.31",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  }
+]
