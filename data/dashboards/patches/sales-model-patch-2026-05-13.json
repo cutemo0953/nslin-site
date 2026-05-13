@@ -1,0 +1,188 @@
+{
+  "date": "2026-05-13",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 8,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 36,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve accessories ecosystem pump adapter"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "17": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://bikerumor.com/schwalbe-clik-valve-review-the-presta-valve-killer/",
+      "sourceTitle": "",
+      "evidenceText": "Schwalbe introduced Clik Valves in July of 2024, presenting a novel new design with the goal of creating a new standard and replacing the",
+      "extractionRationale": "The provided source content does not contain any information about OEM bicycle brands or models pre-installing Clik valves for 2026 or 2027. The evidence only describes the product introduction in July 2024. No OEM adoption data is present in the available excerpt, therefore the count is 0.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - Amazon.com",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - Utilizes Clik Valves for best-in-class performance; Increased durability, increased air flow, and intuitive connection",
+      "extractionRationale": "Only one distinct third-party accessory product is mentioned in the evidence: the Wolf Tooth Tubeless Valve Stem Kit explicitly designed for Clik Valve compatibility. No other pump heads, adapters, or tools for Clik valves are listed in the provided source.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "41": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://road.cc/content/tech-news/schwalbe-launches-revolutionary-new-clik-valve-309229",
+      "sourceTitle": "RIP Presta and Schrader? Schwalbe reckons its \"revolutionary\" new Clik valve is set to become cycling's new tyre inflation industry standard",
+      "evidenceText": "The source discusses Schwalbe's 2024 Eurobike launch of the Clik valve but contains no data about 2026 or 2027 model year adoption by bicycle/wheelset brands.",
+      "extractionRationale": "2027 specifications and 2026 adoption data are not available in the provided source. The source only covers the 2024 launch announcement, not future adoption rates or brand continuity data.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 100,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "Tubeless Technology | DT Swiss",
+      "evidenceText": "DT Swiss uses their own proprietary \"DT Swiss tubeless valve\" system. Hunt sources mention tubeless ready rims with no reference to Clik valve. No evidence found of Clik adoption by DT Swiss, Mavic, Hunt, Zipp, ENVE, or Roval in available sources.",
+      "extractionRationale": "Based on the three provided sources, there is no evidence that any major wheelset brands have adopted Clik valve as standard. DT Swiss explicitly promotes their own proprietary valve system. Hunt's tubeless wheel information contains no mention of Clik valve. The sources do not contain information about 2026 or 2027 product lines adopting Clik valve, therefore the percentage of major brands converted is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993584.html",
+      "sourceTitle": "",
+      "evidenceText": "Sources show conflicting availability status: Source 1 states \"We are working hard to make the product available again\" (out of stock), but no specific dates provided. Source 2 (German market) shows product listed normally without stock warnings. Source 3 shows product as available. No specific 'back in stock' dates found to calculate turnaround time.",
+      "extractionRationale": "Cannot determine B2B restock turnaround time because: (1) No specific dates are provided for when the product went out of stock or when it's expected back, (2) Evidence shows conflicting availability status across sources, (3) No calculable gap between out-of-stock and back-in-stock dates is mentioned. The German market source (most relevant) does not clearly indicate current out-of-stock status.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
