@@ -1,0 +1,211 @@
+{
+  "date": "2026-05-04",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 8,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 36,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve accessories ecosystem pump adapter"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "17": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://bikerumor.com/schwalbe-clik-valve-review-the-presta-valve-killer/",
+      "sourceTitle": "Schwalbe Clik Valve Review: The Presta Valve Killer? - Bikerumor",
+      "evidenceText": "The provided source excerpt discusses the introduction of Schwalbe Clik Valves in July 2024 but contains no information about OEM bicycle brands or models pre-installing Clik valves for model years 2026 or 2027.",
+      "extractionRationale": "No evidence of OEM adoption was found in the provided source material. The excerpt only mentions the valve's introduction date and general purpose, with no mention of specific bicycle manufacturers or model year adoptions.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - Utilizes Clik Valves for best-in-class performance; Increased durability, increased air flow, and intuitive connection",
+      "extractionRationale": "The source explicitly lists the Wolf Tooth Tubeless Valve Stem Kit as a third-party accessory product specifically designed for Clik Valve compatibility. This represents 1 distinct product in the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps?srsltid=AfmBOor8b5YUpWrCt1jOPAwRBcZ7s9q08IsSjatUkI11QiFx_QJmVS62",
+      "sourceTitle": "CoreCap Valve Cap Set - BBB Cycling",
+      "evidenceText": "The sources mention \"Spare parts\" as a section and reference CoreCap product variants, but do not provide a specific enumeration of distinct replacement/spare part SKUs including valve cores, seals, o-rings, or replacement kits.",
+      "extractionRationale": "The evidence references that spare parts exist and lists two main product versions (CoreCap AL Tubeless Valve Set and CoreCap Valve Cap Upgrade Set), but does not provide a specific count or list of individual replacement/spare part SKUs for valve cores, seals, o-rings, and replacement kits. No specific part numbers or SKU count is stated in the provided sources.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "41": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://road.cc/feature/lezynes-clik-valve-compatible-pumps-make-tyre-inflation-easier-than-ever",
+      "sourceTitle": "",
+      "evidenceText": "The provided source discusses Lezyne's CLIK Valve-compatible pumps but contains no data on bicycle/wheelset brand adoption in 2026 or 2027 model years.",
+      "extractionRationale": "The evidence provided does not contain information about which brands adopted CLIK valves in 2026 or their continuation into 2027. The source only discusses pump compatibility, not brand adoption metrics or model year specifications. 2027 specifications are not yet available in the evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 100,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/components/wheel-accessories/valve",
+      "sourceTitle": "",
+      "evidenceText": "No evidence found across any of the four DT Swiss sources mentioning Clik valve adoption or 2026/2027 product line commitments. DT Swiss sources only reference their own tubeless valve products.",
+      "extractionRationale": "The provided sources contain no information about Clik valve adoption by any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) for 2026 or 2027. Without evidence of adoption by any brand, the percentage of major brands that have converted is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993585.html",
+      "sourceTitle": "",
+      "evidenceText": "Product listings show CoreCap availability on bike24.de and bike24.com, but contain no stock status, availability dates, or \"back in stock\" information from which to calculate restock turnaround time.",
+      "extractionRationale": "The evidence does not contain specific stock status, dates when products became available, or \"back in stock\" announcements. Without this information, the restock turnaround time cannot be determined from the provided sources.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
