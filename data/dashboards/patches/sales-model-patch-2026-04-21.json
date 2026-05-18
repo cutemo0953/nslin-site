@@ -1,0 +1,191 @@
+{
+  "date": "2026-04-21",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 4,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap valve bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859950.html",
+      "sourceTitle": "",
+      "evidenceText": "The provided content snippet does not contain any price information for the Schwalbe Clik Valve product.",
+      "extractionRationale": "The product page content includes the product name, features, and description, but the pricing section is not included in the provided evidence text. No retail price in EUR or any other currency could be extracted from the available content.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859949.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless-Ventil - 2er Set - 60 mm | BIKE24",
+      "evidenceText": "Three distinct Clik Valve product pages identified: p1859949.html (60mm), p1859948.html (40mm), p1859950.html (80mm). Source 4 is a category page, Source 5 is a tube accessory.",
+      "extractionRationale": "Counted distinct product page URLs for Clik Valve products. Sources 1, 2, and 3 represent three different Clik Valve 2er Set variants (60mm, 40mm, 80mm) with unique product page URLs. Source 4 is a category/filter page (not a single product listing) and Source 5 is a tube accessory, not the Clik Valve product itself, so both are excluded per task requirements.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859949.html",
+      "sourceTitle": "",
+      "evidenceText": "None of the 5 product listing sources contain stock status information such as 'out of stock', 'nicht verfügbar', 'ausverkauft', or 'currently unavailable'",
+      "extractionRationale": "All 5 sources (3 individual Clik Valve products, 1 series overview page, and 1 conversion kit) lack stock availability indicators. The provided content snippets contain only product descriptions and navigation elements, without any stock status messaging.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/press/clik-valve/?srsltid=AfmBOorPlfvCQ7uHLe0jldN5rKBhtS3YZpPbt07BPPisPJbM3K9lFrqo",
+      "sourceTitle": "",
+      "evidenceText": "The provided sources contain information about Clik valve products, conversion kits, and accessories, but do not list distinct inner tube models/SKUs that use the Clik valve interface.",
+      "extractionRationale": "The evidence discusses the Clik Valve technology and valve products (SKUs 3530 and 3532 for valves), but does not provide information about inner tube models that incorporate the Clik valve interface. No inner tube models or SKUs are mentioned in the sources.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 2339.24,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-premiums/lme-aluminium-premium-duty-paid-us-midwest-platts",
+      "sourceTitle": "LME Aluminium Premium Duty Paid US Midwest (Platts)",
+      "evidenceText": "LME Aluminium Premium Duty Paid US Midwest (Platts) Closing Prices ; 2339.24 · 2343.24 · 2339.24 · 2339.24",
+      "extractionRationale": "Extracted the closing price of 2339.24 from the LME official source showing current LME Aluminium Premium closing prices in USD per metric ton",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -28.77,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest (LUPc1) - Investing.com",
+      "evidenceText": "The Aluminium Premium Duty paid US Midwest price today is 1,793.99",
+      "extractionRationale": "Source shows 1,793.99 as the current price. Assuming this is in cents/lb (the standard unit for aluminum premiums), converted to USD/lb by dividing by 100 = 17.9399, rounded to 17.94. Confidence is low due to unit ambiguity in the source.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
