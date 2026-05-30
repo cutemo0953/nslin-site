@@ -1,0 +1,173 @@
+{
+  "date": "2026-05-30",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No price information found in the provided source content.",
+      "extractionRationale": "The source content does not contain any retail price or pricing information for the Schwalbe Clik Valve product. The excerpt provided focuses on product features and specifications only.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1960182.html",
+      "sourceTitle": "",
+      "evidenceText": "5 product URLs analyzed: p1960182 (tube), p1859950 (valve set), p1859952 (conversion kit), p1859953 (conversion kit), p1962381 (tube). Excluding conversion kits with pump heads (p1859952, p1859953) leaves 3 distinct Clik valve product listings.",
+      "extractionRationale": "Counted all unique product page URLs for Clik valve products. Excluded 2 conversion kits (sources 3-4) that are pump head accessories. Included 2 tubes with Clik valves (sources 1, 5) and 1 Clik valve tubeless valve set (source 2), totaling 3 distinct products.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993583.html",
+      "sourceTitle": "BBB Cycling CoreCap Product Listings - BIKE24",
+      "evidenceText": "All 4 product listings contain only product descriptions and features. No stock status indicators (out of stock, unavailable, nicht verfügbar, ausverkauft, etc.) are mentioned in any of the provided content.",
+      "extractionRationale": "Stock status information cannot be determined from the provided text. The evidence includes only product names, descriptions, and feature details from 4 CoreCap variants. No availability or stock status information is present in any of the 4 sources provided.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/press/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Evidence provided contains Clik Valve products (valves themselves in sizes 60mm SKU 3531 and 80mm SKU 3532) and general technology information, but no actual inner tube models/SKUs featuring the Clik valve interface.",
+      "extractionRationale": "The evidence shows Clik Valve products (the valve interfaces themselves) and their features, but does not list any distinct inner tube models or SKUs that use the Clik valve interface. The sources focus on the valve technology and specific valve products rather than inner tubes equipped with this valve.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3676,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News - Trading Economics",
+      "evidenceText": "Aluminum increased to 3676.00 USD/T, the highest since March 2022.",
+      "extractionRationale": "Extracted the current LME aluminum spot price directly from Trading Economics, which explicitly states \"3676.00 USD/T\". This is the spot price in the requested unit (USD per metric ton). Source 2 provides futures data which is less relevant for current spot price tracking.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 11.94,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
