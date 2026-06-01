@@ -1,0 +1,206 @@
+{
+  "date": "2026-06-01",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Quick-Connect-Conversion-Compatibility/dp/B0FB7VQN6M",
+      "sourceTitle": "Amazon.com : Wolf Tooth Aluminum Schrader Pump Head Adapter for Clik Valve",
+      "evidenceText": "Wolf Tooth Aluminum Schrader Pump Head Adapter for Clik Valve, SKS GERMANY CLIK TEC Adapter für Schwalbe Clik Valve, LEZYNE ABS Pro Clik Chuck with Clik Valve Cores, LEZYNE Bike Clik Valve Cores",
+      "extractionRationale": "Identified 4 distinct third-party Clik valve compatible products from the Amazon listings: (1) Wolf Tooth pump head adapter, (2) SKS Germany pump adapter, (3) LEZYNE ABS Pro Clik Chuck (pump head), and (4) LEZYNE Clik Valve Cores. Each is a unique product designed for or compatible with Schwalbe Clik valve.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve",
+      "evidenceText": "Only a pump head adapter is required for easy inflation with a single click. ... adapter for the Schwalbe CLIK VALVE can simply be screwed onto the car valve.",
+      "extractionRationale": "The provided evidence mentions a pump head adapter accessory but does not contain data about the fraction or percentage of Clik valve product pages that display accessories in 'frequently bought together' or 'related products' sections. This would require analysis of multiple product listings across different platforms/retailers, which is not available in the evidence provided.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve",
+      "evidenceText": "Discover the innovative Clik Valve from Schwalbe. Easy handling and maximum tightness for more safety and riding comfort.",
+      "extractionRationale": "The provided evidence is a general product description that does not contain specific information about the number of replacement/spare part SKUs (valve cores, seals, o-rings, or replacement kits). No numeric value could be extracted from the available content.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "41": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.pinkbike.com/news/schwalbe-introduces-new-clik-valve.html",
+      "sourceTitle": "It's Not Presta, It's Not Schrader - Schwalbe Introduces New Clik Valve",
+      "evidenceText": "The new valve is meant to address the main complaints that riders have about the current prevailing valve designs, promising increased durability, better air",
+      "extractionRationale": "2027 model year specifications are not yet available in the provided evidence. The source only mentions Schwalbe introducing the Clik valve but does not provide data on which brands adopted it in 2026 or their 2027 continuation status.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 100,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-road/gravel/grc-1400-dicut",
+      "sourceTitle": "",
+      "evidenceText": "DT Swiss wheelsets are described as tubeless compatible and tubeless ready with tubeless valves, but no specific mention of Clik valve adoption in 2026/2027 product lines across the six major brands reviewed.",
+      "extractionRationale": "The evidence provided discusses tubeless valves in general for DT Swiss wheels but does not explicitly confirm that any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) have adopted Clik valve as standard in their 2026 or 2027 product lines. Without explicit confirmation of Clik valve adoption, the percentage of brands that have converted is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993580.html",
+      "sourceTitle": "",
+      "evidenceText": "Product listing pages for BBB Cycling CoreCap BTI-165 Valve Core variants on bike24.de and bike24.com show product features and specifications but contain no stock status, availability dates, or restock timing information.",
+      "extractionRationale": "None of the three sources contain any information about stock status, restock dates, \"back in stock\" announcements, or turnaround times. The sources only display product specifications and related product recommendations. Without explicit stock status or restock timing data, the restock turnaround time cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
