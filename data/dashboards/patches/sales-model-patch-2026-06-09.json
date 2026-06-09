@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-09",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No retail prices found in any of the three provided sources",
+      "extractionRationale": "All three sources (bike-discount.de, bike24.com, and schwalbe.com) were reviewed but none contained explicit retail prices for Clik Valve products in the provided content excerpts.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859949.html",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct Clik Valve product pages found: (1) p1859949.html - 60mm, (2) p1859950.html - 80mm, (3) p1859948.html - 40mm. Sources p1960182 and p1960181 are tubes with Clik Valve (accessories, excluded per instructions).",
+      "extractionRationale": "Counted unique product page URLs for the Clik Valve itself. Excluded tubes (Schlauch) and other accessories as per task instructions. Sources 1-3 are distinct Clik Valve 2er Set listings in different sizes (40mm, 60mm, 80mm), each with unique product IDs on bike24.de. Sources 4-5 are tubes that use Clik Valve but are separate products/accessories.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper | 2 Pieces | BIKE24",
+      "evidenceText": "No stock status information found in any of the three product listings provided. Content shows only product descriptions without availability indicators.",
+      "extractionRationale": "The provided excerpts from all three BIKE24 product pages contain only product descriptions and features. No stock status information (available, out of stock, unavailable in German or English) is present in the text provided, therefore stock status cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/press/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The provided sources discuss the Clik Valve system and show specific valve products (SKU 3532 and 3530), but do not contain a comprehensive list of complete inner tube models/SKUs that use the Clik valve interface.",
+      "extractionRationale": "The available evidence does not provide sufficient information to count distinct Schwalbe inner tube models/SKUs with Clik valve interface. Sources 3 and 5 reference specific Clik Valve products (80mm and 40mm tubeless valves) but these appear to be valve components, not complete inner tubes. The sources lack a product catalog or list of complete tubes with Clik valves.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "",
+      "evidenceText": "LME Official Price is the global benchmark price for aluminium, quoted in US$ per tonne. However, the specific current price value is not provided in the excerpts.",
+      "extractionRationale": "Source 1 confirms the LME aluminum price is quoted in US$ per tonne (correct unit), but the actual numerical spot price is not stated in the provided evidence. Source 2 refers to aluminum alloy (different product), and Source 3 shows premium prices, not the base spot price.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest (LUPc1) - Investing.com",
+      "evidenceText": "The Aluminium Premium Duty paid US Midwest price today is 1,793.99.",
+      "extractionRationale": "The source provides a number (1,793.99) but the unit is ambiguous. While the title references \"Aluminium Premium,\" the value appears to be a futures price rather than a premium quote in USD/lb. A typical US Midwest aluminum premium is 10-20 cents/lb, making 1,793.99 cents/lb (17.94 USD/lb) implausible. Without clear confirmation that this is the premium in cents/lb and not another metric, I cannot confidently extract this as the requested value.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 1,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
