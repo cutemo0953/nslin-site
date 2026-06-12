@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import LocaleToggle from '@/components/LocaleToggle';
+import MobileNav from '@/components/MobileNav';
 
 function Header() {
   const t = useTranslations('nav');
@@ -53,6 +54,16 @@ function Header() {
             {t('contact')}
           </Link>
         </nav>
+
+        <MobileNav
+          labels={{
+            products: t('products'),
+            guides: t('guides'),
+            blog: t('blog'),
+            about: t('about'),
+            contact: t('contact'),
+          }}
+        />
       </div>
     </header>
   );

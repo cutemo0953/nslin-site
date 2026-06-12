@@ -58,7 +58,14 @@
       "volume": "預估年用量",
       "message": "需求說明 / 規格",
       "attachment": "附件（圖面或規格書，選填）",
-      "submit": "送出詢問"
+      "submit": "送出詢問",
+      "sending": "送出中…",
+      "success_title": "詢問已送出",
+      "success_body": "感謝您的詢問，我們的業務團隊會盡速回覆至您的電子郵件。",
+      "error_title": "自動送出失敗",
+      "error_body": "很抱歉，表單暫時無法送出，請直接來信：",
+      "error_mailto_cta": "開啟郵件草稿",
+      "invalid_body": "請確認必填欄位與電子郵件格式後再送出。"
     }
   },
   "products": {

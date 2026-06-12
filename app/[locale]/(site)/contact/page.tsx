@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { seoAlternates } from '@/lib/seo';
+import ContactForm from './ContactForm';
 import {
   DocumentTextIcon,
   CubeIcon,
@@ -61,74 +62,28 @@ export default async function ContactPage({
         </div>
 
         {/* Contact Form */}
-        <form className="md:col-span-2 space-y-4">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.company')}</label>
-              <input type="text" name="company" required className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none" />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.name')}</label>
-              <input type="text" name="name" required className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none" />
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.email')}</label>
-              <input type="email" name="email" required className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none" />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.country')}</label>
-              <select name="country" required className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none">
-                <option value="">--</option>
-                <option value="DE">Germany</option>
-                <option value="FR">France</option>
-                <option value="IT">Italy</option>
-                <option value="ES">Spain</option>
-                <option value="NL">Netherlands</option>
-                <option value="GB">United Kingdom</option>
-                <option value="US">United States</option>
-                <option value="TW">Taiwan</option>
-                <option value="JP">Japan</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.inquiry_type')}</label>
-              <select name="inquiryType" required className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none">
-                <option value="rfq">{t('rfq')}</option>
-                <option value="sample">{t('sample')}</option>
-                <option value="custom">{t('custom')}</option>
-              </select>
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.volume')}</label>
-              <select name="volume" className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none">
-                <option value="">--</option>
-                <option value="lt1k">&lt; 1,000</option>
-                <option value="1k-10k">1,000 - 10,000</option>
-                <option value="10k-50k">10,000 - 50,000</option>
-                <option value="gt50k">&gt; 50,000</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label className="mb-1 block text-sm font-medium text-metal-700">{t('form.message')}</label>
-            <textarea name="message" rows={4} className="w-full rounded-lg border border-metal-300 px-3 py-2 text-sm focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none" />
-          </div>
-
-          <button
-            type="submit"
-            className="rounded-lg bg-steel-600 px-6 py-3 font-semibold text-white hover:bg-steel-700 transition-colors"
-          >
-            {t('form.submit')}
-          </button>
-        </form>
+        <ContactForm
+          labels={{
+            company: t('form.company'),
+            name: t('form.name'),
+            email: t('form.email'),
+            country: t('form.country'),
+            inquiryType: t('form.inquiry_type'),
+            volume: t('form.volume'),
+            message: t('form.message'),
+            submit: t('form.submit'),
+            sending: t('form.sending'),
+            successTitle: t('form.success_title'),
+            successBody: t('form.success_body'),
+            errorTitle: t('form.error_title'),
+            errorBody: t('form.error_body'),
+            errorMailtoCta: t('form.error_mailto_cta'),
+            invalidBody: t('form.invalid_body'),
+            rfq: t('rfq'),
+            sample: t('sample'),
+            custom: t('custom'),
+          }}
+        />
       </div>
 
       {/* Direct Contact */}

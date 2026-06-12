@@ -58,7 +58,14 @@
       "volume": "Estimated Annual Volume",
       "message": "Message / Specifications",
       "attachment": "Attach Drawing/Spec (optional)",
-      "submit": "Submit Inquiry"
+      "submit": "Submit Inquiry",
+      "sending": "Sending…",
+      "success_title": "Inquiry sent",
+      "success_body": "Thank you! Our sales team will reply to your email shortly.",
+      "error_title": "Could not send automatically",
+      "error_body": "Sorry, the form is temporarily unavailable. Please email us directly:",
+      "error_mailto_cta": "Open email draft",
+      "invalid_body": "Please check the required fields and email format, then try again."
     }
   },
   "products": {
