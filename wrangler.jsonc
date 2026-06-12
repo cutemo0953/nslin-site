@@ -10,6 +10,9 @@
     { "pattern": "nslin.com", "custom_domain": true },
     { "pattern": "www.nslin.com", "custom_domain": true }
   ],
+  // Keep the legacy workers.dev URL alive so middleware can 301 it to nslin.com
+  // (defining routes otherwise disables the subdomain → dead links).
+  "workers_dev": true,
   "vars": {
     // Optional BCC for contact-form inquiries (site owner's archive copy).
     "INQUIRY_BCC": "tom@denovortho.com"
