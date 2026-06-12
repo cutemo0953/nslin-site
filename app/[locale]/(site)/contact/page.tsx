@@ -79,6 +79,8 @@ export default async function ContactPage({
             errorBody: t('form.error_body'),
             errorMailtoCta: t('form.error_mailto_cta'),
             invalidBody: t('form.invalid_body'),
+            rateLimitedBody: t('form.rate_limited_body'),
+            countryOther: t('form.country_other'),
             rfq: t('rfq'),
             sample: t('sample'),
             custom: t('custom'),

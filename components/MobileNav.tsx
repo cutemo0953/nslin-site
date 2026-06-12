@@ -12,6 +12,8 @@ interface MobileNavProps {
     blog: string;
     about: string;
     contact: string;
+    menuOpen: string;
+    menuClose: string;
   };
 }
 
@@ -50,7 +52,7 @@ export default function MobileNav({ labels }: MobileNavProps) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
-        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-label={open ? labels.menuClose : labels.menuOpen}
         className="flex h-11 w-11 items-center justify-center rounded-lg text-white/90 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brass-400"
       >
         {open ? <XMarkIcon className="h-7 w-7" /> : <Bars3Icon className="h-7 w-7" />}

@@ -1,23 +1,13 @@
 'use client';
 
 import { useActionState, useState } from 'react';
+import { useLocale } from 'next-intl';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { submitInquiry, type InquiryState } from './actions';
 
 const SALES_EMAIL = 'nslin@nslin.com.tw';
 
 const COUNTRIES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP'] as const;
-const COUNTRY_NAMES: Record<string, string> = {
-  DE: 'Germany',
-  FR: 'France',
-  IT: 'Italy',
-  ES: 'Spain',
-  NL: 'Netherlands',
-  GB: 'United Kingdom',
-  US: 'United States',
-  TW: 'Taiwan',
-  JP: 'Japan',
-};
 
 export interface ContactFormLabels {
   company: string;
@@ -35,6 +25,8 @@ export interface ContactFormLabels {
   errorBody: string;
   errorMailtoCta: string;
   invalidBody: string;
+  rateLimitedBody: string;
+  countryOther: string;
   rfq: string;
   sample: string;
   custom: string;
@@ -46,6 +38,8 @@ const inputClass =
   'w-full rounded-lg border border-metal-300 px-3 py-2 text-base focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none';
 
 export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
+  const locale = useLocale();
+  const regionNames = new Intl.DisplayNames([locale], { type: 'region' });
   const [state, formAction, pending] = useActionState(submitInquiry, initialState);
   const [values, setValues] = useState({
     company: '',
@@ -116,6 +110,11 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
           {labels.invalidBody}
         </div>
       )}
+      {state.status === 'rate_limited' && (
+        <div role="alert" className="rounded-lg border border-brass-400/60 bg-brass-400/10 p-4 text-sm text-metal-700">
+          {labels.rateLimitedBody}
+        </div>
+      )}
 
       {/* Honeypot — hidden from real users, bots fill it and get silently dropped */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
@@ -135,6 +134,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
             type="text"
             name="company"
             required
+            maxLength={200}
             aria-required="true"
             value={values.company}
             onChange={set('company')}
@@ -150,6 +150,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
             type="text"
             name="name"
             required
+            maxLength={200}
             aria-required="true"
             value={values.name}
             onChange={set('name')}
@@ -168,6 +169,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
             type="email"
             name="email"
             required
+            maxLength={254}
             aria-required="true"
             value={values.email}
             onChange={set('email')}
@@ -190,10 +192,10 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
             <option value="">--</option>
             {COUNTRIES.map((c) => (
               <option key={c} value={c}>
-                {COUNTRY_NAMES[c]}
+                {regionNames.of(c) ?? c}
               </option>
             ))}
-            <option value="other">Other</option>
+            <option value="other">{labels.countryOther}</option>
           </select>
         </div>
       </div>
@@ -245,6 +247,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
           id="inq-message"
           name="message"
           rows={4}
+          maxLength={5000}
           value={values.message}
           onChange={set('message')}
           className={inputClass}

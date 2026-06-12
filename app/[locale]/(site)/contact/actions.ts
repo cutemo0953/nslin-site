@@ -1,24 +1,57 @@
 'use server';
 
+import { headers } from 'next/headers';
+
 export interface InquiryState {
-  status: 'idle' | 'sent' | 'invalid' | 'error';
+  status: 'idle' | 'sent' | 'invalid' | 'rate_limited' | 'error';
 }
 
 const SALES_EMAIL = 'nslin@nslin.com.tw';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// RESEND_API_KEY is a Worker secret (wrangler secret put RESEND_API_KEY).
-// On Cloudflare it lives on the request env; process.env covers local dev.
-async function getResendKey(): Promise<string | undefined> {
+const INQUIRY_TYPES = ['rfq', 'sample', 'custom'];
+const COUNTRY_CODES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP', 'other'];
+const VOLUMES = ['', 'lt1k', '1k-10k', '10k-50k', 'gt50k'];
+const MAX_LEN = { company: 200, name: 200, email: 254, message: 5000 } as const;
+
+interface RateLimiter {
+  limit(options: { key: string }): Promise<{ success: boolean }>;
+}
+
+// RESEND_API_KEY is a Worker secret (wrangler secret put RESEND_API_KEY);
+// INQUIRY_BCC and the rate limiter come from wrangler.jsonc. process.env
+// covers local dev.
+async function getEnv(): Promise<Record<string, unknown>> {
   try {
     const { getCloudflareContext } = await import('@opennextjs/cloudflare');
-    const { env } = getCloudflareContext();
-    const key = (env as Record<string, unknown>).RESEND_API_KEY;
-    if (typeof key === 'string' && key) return key;
+    return getCloudflareContext().env as unknown as Record<string, unknown>;
   } catch {
-    // Not running on Cloudflare (local next dev/build) — fall through.
+    // Not running on Cloudflare (local next dev/build).
+    return process.env as Record<string, unknown>;
   }
-  return process.env.RESEND_API_KEY;
+}
+
+function isControlChar(code: number): boolean {
+  return code < 32 || code === 127;
+}
+
+// Single-line, subject-bearing fields: control chars (incl. CR/LF) become spaces.
+function cleanLine(value: string): string {
+  let out = '';
+  for (const ch of value) {
+    out += isControlChar(ch.charCodeAt(0)) ? ' ' : ch;
+  }
+  return out.replace(/\s+/g, ' ').trim();
+}
+
+// Multi-line field: keep tab (9) and newline (10), drop other control chars.
+function cleanMultiline(value: string): string {
+  let out = '';
+  for (const ch of value) {
+    const code = ch.charCodeAt(0);
+    if (code === 9 || code === 10 || !isControlChar(code)) out += ch;
+  }
+  return out.trim();
 }
 
 export async function submitInquiry(
@@ -28,24 +61,52 @@ export async function submitInquiry(
   // Honeypot: real users never see or fill this field.
   if (formData.get('website')) return { status: 'sent' };
 
-  const field = (name: string) => String(formData.get(name) ?? '').trim();
-  const company = field('company');
-  const name = field('name');
-  const email = field('email');
+  const field = (name: string) => String(formData.get(name) ?? '');
+  const company = cleanLine(field('company'));
+  const name = cleanLine(field('name'));
+  const email = cleanLine(field('email'));
   const country = field('country');
   const inquiryType = field('inquiryType');
   const volume = field('volume');
-  const message = field('message');
+  const message = cleanMultiline(field('message'));
 
-  if (!company || !name || !country || !inquiryType || !EMAIL_RE.test(email)) {
+  if (
+    !company ||
+    !name ||
+    company.length > MAX_LEN.company ||
+    name.length > MAX_LEN.name ||
+    email.length > MAX_LEN.email ||
+    message.length > MAX_LEN.message ||
+    !EMAIL_RE.test(email) ||
+    !INQUIRY_TYPES.includes(inquiryType) ||
+    !COUNTRY_CODES.includes(country) ||
+    !VOLUMES.includes(volume)
+  ) {
     return { status: 'invalid' };
   }
 
-  const apiKey = await getResendKey();
-  if (!apiKey) {
+  const env = await getEnv();
+
+  // Per-IP rate limit (Cloudflare ratelimit binding); honeypot alone is not
+  // abuse control. Skipped gracefully when the binding is absent (local dev).
+  const limiter = env.INQUIRY_RATE_LIMITER as RateLimiter | undefined;
+  if (limiter && typeof limiter.limit === 'function') {
+    try {
+      const ip = (await headers()).get('cf-connecting-ip') ?? 'unknown';
+      const { success } = await limiter.limit({ key: ip });
+      if (!success) return { status: 'rate_limited' };
+    } catch (e) {
+      console.error('submitInquiry: rate limiter failed', e);
+    }
+  }
+
+  const apiKey = env.RESEND_API_KEY;
+  if (typeof apiKey !== 'string' || !apiKey) {
     console.error('submitInquiry: RESEND_API_KEY not configured');
     return { status: 'error' };
   }
+  const bcc =
+    typeof env.INQUIRY_BCC === 'string' && env.INQUIRY_BCC ? [env.INQUIRY_BCC] : undefined;
 
   const body = [
     `Company: ${company}`,
@@ -68,7 +129,7 @@ export async function submitInquiry(
       body: JSON.stringify({
         from: 'N.S.-LIN Website <notifications@denovortho.com>',
         to: [SALES_EMAIL],
-        bcc: ['tom@denovortho.com'],
+        ...(bcc && { bcc }),
         reply_to: email,
         subject: `[${inquiryType.toUpperCase()}] ${company} (${country})`,
         text: body,

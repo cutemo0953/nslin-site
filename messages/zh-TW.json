@@ -5,7 +5,9 @@
     "guides": "知識中心",
     "about": "關於我們",
     "contact": "聯繫 / 詢價",
-    "blog": "技術文章"
+    "blog": "技術文章",
+    "menu_open": "開啟選單",
+    "menu_close": "關閉選單"
   },
   "home": {
     "hero": {
@@ -65,7 +67,9 @@
       "error_title": "自動送出失敗",
       "error_body": "很抱歉，表單暫時無法送出，請直接來信：",
       "error_mailto_cta": "開啟郵件草稿",
-      "invalid_body": "請確認必填欄位與電子郵件格式後再送出。"
+      "invalid_body": "請確認必填欄位與電子郵件格式後再送出。",
+      "rate_limited_body": "送出太頻繁，請稍候一分鐘再試，或直接來信 nslin@nslin.com.tw。",
+      "country_other": "其他"
     }
   },
   "products": {

@@ -32,6 +32,8 @@ export async function GET(
 
   const posts = getAllPosts(locale);
   const items = posts
+    // Guard against invalid frontmatter dates reaching the RSS output.
+    .filter((post) => !Number.isNaN(Date.parse(post.frontmatter.date)))
     .map((post) => {
       const link = buildUrl(locale, `/blog/${post.slug}`);
       return `    <item>

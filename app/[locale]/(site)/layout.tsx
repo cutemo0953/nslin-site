@@ -62,6 +62,8 @@ function Header() {
             blog: t('blog'),
             about: t('about'),
             contact: t('contact'),
+            menuOpen: t('menu_open'),
+            menuClose: t('menu_close'),
           }}
         />
       </div>

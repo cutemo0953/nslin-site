@@ -5,7 +5,9 @@
     "guides": "Knowledge Hub",
     "about": "About",
     "contact": "Contact / RFQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
   },
   "home": {
     "hero": {
@@ -65,7 +67,9 @@
       "error_title": "Could not send automatically",
       "error_body": "Sorry, the form is temporarily unavailable. Please email us directly:",
       "error_mailto_cta": "Open email draft",
-      "invalid_body": "Please check the required fields and email format, then try again."
+      "invalid_body": "Please check the required fields and email format, then try again.",
+      "rate_limited_body": "Too many attempts. Please wait a minute and try again, or email nslin@nslin.com.tw directly.",
+      "country_other": "Other"
     }
   },
   "products": {
