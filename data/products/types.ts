@@ -13,6 +13,15 @@ export interface ProductFAQ {
   a: LocalizedString;
 }
 
+// One orderable variant (B2B buyers put the part number on POs).
+export interface ProductVariant {
+  partNo: string; // e.g. "FVTH-40 AL"
+  length?: string; // "40mm"
+  material?: string; // only when it differs from the product-level material
+  finish?: string;
+  notes?: LocalizedString;
+}
+
 export interface ProductData {
   // Identity
   sku: string;
@@ -35,6 +44,9 @@ export interface ProductData {
   application: string; // "bicycle" | "motorcycle" | "car" | "truck"
   vehicleTypes?: string[];
   oeCrossReference?: string[];
+
+  // Ordering
+  variants?: ProductVariant[];
 
   // Content
   description: LocalizedString;

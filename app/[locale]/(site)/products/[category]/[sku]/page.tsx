@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { getProductBySku, getAllProductSlugs, getProductsByCategory } from '@/data/products';
+import { categories } from '@/data/products/categories';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 
@@ -28,8 +29,10 @@ export async function generateMetadata({
   if (!product) return {};
   const isZh = locale === 'zh-TW';
 
+  // Product names already lead with the SKU — don't prefix it twice.
+  const name = isZh ? product.name['zh-TW'] : product.name.en;
   return {
-    title: `${product.sku} — ${isZh ? product.name['zh-TW'] : product.name.en}`,
+    title: name.startsWith(product.sku) ? name : `${product.sku} — ${name}`,
     description: isZh ? product.description['zh-TW'] : product.description.en,
     alternates: seoAlternates(`/products/${category}/${sku}`, locale),
   };
@@ -91,6 +94,13 @@ function buildProductJsonLd(product: ReturnType<typeof getProductBySku>, locale:
       name: sku,
       url: `${BASE_URL}/products/${product.family}/${sku.toLowerCase()}`,
     })),
+    ...(product.variants && product.variants.length > 0 && {
+      hasVariant: product.variants.map((v) => ({
+        '@type': 'Product',
+        sku: v.partNo,
+        name: v.partNo,
+      })),
+    }),
   };
 }
 
@@ -107,6 +117,10 @@ export default async function ProductPage({
 
   const isZh = locale === 'zh-TW';
   const jsonLd = buildProductJsonLd(product, locale);
+  const categoryData = categories.find((c) => c.slug === category);
+  const relatedProducts = (product.relatedProducts ?? [])
+    .map((relSku) => getProductBySku(relSku))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -125,7 +139,7 @@ export default async function ProductPage({
           <Link href="/products" className="hover:text-steel-600">{isZh ? '產品' : 'Products'}</Link>
           <span className="mx-2">/</span>
           <Link href={`/products/${category}`} className="hover:text-steel-600">
-            {isZh ? '自行車氣嘴閥' : 'Bicycle Valves'}
+            {categoryData ? (isZh ? categoryData.name['zh-TW'] : categoryData.name.en) : category}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-metal-700">{product.sku}</span>
@@ -237,6 +251,67 @@ export default async function ProductPage({
           </div>
         </section>
 
+        {/* Part Numbers / Ordering Information */}
+        {product.variants && product.variants.length > 0 && (
+          <section className="mb-8">
+            <h2 className="mb-4 text-xl font-bold text-steel-800">
+              {isZh ? '料號與訂購資訊' : 'Part Numbers & Ordering'}
+            </h2>
+            <div className="overflow-x-auto rounded-lg border border-metal-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-metal-50 text-left">
+                    <th className="px-4 py-3 font-medium text-metal-700">
+                      {isZh ? '料號' : 'Part No'}
+                    </th>
+                    {product.variants.some((v) => v.length) && (
+                      <th className="px-4 py-3 font-medium text-metal-700">
+                        {isZh ? '長度' : 'Length'}
+                      </th>
+                    )}
+                    {product.variants.some((v) => v.material) && (
+                      <th className="px-4 py-3 font-medium text-metal-700">
+                        {isZh ? '材質' : 'Material'}
+                      </th>
+                    )}
+                    {product.variants.some((v) => v.finish) && (
+                      <th className="px-4 py-3 font-medium text-metal-700">
+                        {isZh ? '表面處理' : 'Finish'}
+                      </th>
+                    )}
+                    {product.variants.some((v) => v.notes) && (
+                      <th className="px-4 py-3 font-medium text-metal-700">
+                        {isZh ? '備註' : 'Notes'}
+                      </th>
+                    )}
+                  </tr>
+                </thead>
+                <tbody>
+                  {product.variants.map((v) => (
+                    <tr key={v.partNo} className="border-t border-metal-100">
+                      <td className="px-4 py-3 font-mono text-steel-800">{v.partNo}</td>
+                      {product.variants!.some((x) => x.length) && (
+                        <td className="px-4 py-3 text-metal-800">{v.length ?? '—'}</td>
+                      )}
+                      {product.variants!.some((x) => x.material) && (
+                        <td className="px-4 py-3 text-metal-800">{v.material ?? '—'}</td>
+                      )}
+                      {product.variants!.some((x) => x.finish) && (
+                        <td className="px-4 py-3 text-metal-800">{v.finish ?? '—'}</td>
+                      )}
+                      {product.variants!.some((x) => x.notes) && (
+                        <td className="px-4 py-3 text-metal-600">
+                          {v.notes ? (isZh ? v.notes['zh-TW'] : v.notes.en) : '—'}
+                        </td>
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
         {/* Technical Description */}
         {product.technicalDescription && (
           <section className="mb-8">
@@ -265,6 +340,29 @@ export default async function ProductPage({
                     {isZh ? item.a['zh-TW'] : item.a.en}
                   </p>
                 </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Products */}
+        {relatedProducts.length > 0 && (
+          <section className="mb-8">
+            <h2 className="mb-4 text-xl font-bold text-steel-800">
+              {isZh ? '相關產品' : 'Related Products'}
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedProducts.map((rel) => (
+                <Link
+                  key={rel.sku}
+                  href={`/products/${rel.family}/${rel.sku.toLowerCase()}`}
+                  className="rounded-lg border border-metal-200 p-4 transition-shadow hover:shadow-md"
+                >
+                  <div className="mb-1 font-mono text-xs text-steel-600">{rel.sku}</div>
+                  <div className="text-sm font-semibold text-steel-800">
+                    {isZh ? rel.name['zh-TW'] : rel.name.en}
+                  </div>
+                </Link>
               ))}
             </div>
           </section>

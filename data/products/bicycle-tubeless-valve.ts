@@ -143,6 +143,15 @@ export const bicycleTubelessValves: ProductData[] = [
     standards: ['NSS 336'],
     application: 'bicycle',
     vehicleTypes: ['mountain bike', 'enduro', 'downhill', 'gravel bike'],
+    variants: [
+      { partNo: 'FVTH-40 AL', length: '40mm' },
+      { partNo: 'FVTH-50 AL', length: '50mm' },
+      { partNo: 'FVTH-60 AL', length: '60mm' },
+      { partNo: 'FVTH-70 AL', length: '70mm' },
+      { partNo: 'FVTH-80 AL', length: '80mm' },
+      { partNo: 'FVTH-90 AL', length: '90mm' },
+      { partNo: 'FVTH-100 AL', length: '100mm' },
+    ],
     description: {
       en: 'Tubeless Presta valve specifically designed for tire insert compatibility. Features patented T-shaped 3-hole high flow air passageway and 2-stairs surrounded gap for enhanced sealant flow with tire inserts. Patented 4mm hex key slot for easy installation.',
       'zh-TW': '專為防刺內襯（tire insert）相容性設計的無內胎法式氣嘴閥。採用專利 T 形三孔高流量氣道及雙階環繞間隙設計，搭配防刺內襯時補胎液流動性更佳。專利 4mm 六角孔方便安裝。',
