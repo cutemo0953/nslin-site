@@ -1,6 +1,6 @@
 import { getAllGuides } from '@/lib/guides';
 
-const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
+const BASE_URL = 'https://nslin.com';
 
 export async function GET() {
   // Dynamic guide listing (excludes drafts)

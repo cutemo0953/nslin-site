@@ -1,5 +1,5 @@
-// TODO: Replace with actual domain once registered
-const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
+// Canonical host; www + workers.dev 301 here via middleware.
+const BASE_URL = 'https://nslin.com';
 
 /**
  * Generate canonical + hreflang alternates (including x-default)

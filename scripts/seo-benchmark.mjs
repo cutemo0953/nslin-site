@@ -22,7 +22,7 @@ import http from 'http';
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
-const BASE_URL = args.find(a => a.startsWith('--url='))?.split('=')[1] || 'https://nslin-site.tom-e31.workers.dev';
+const BASE_URL = args.find(a => a.startsWith('--url='))?.split('=')[1] || 'https://nslin.com';
 const APPEND = args.includes('--append');
 const PSI_API_KEY = process.env.PSI_API_KEY || '';
 const RESULTS_FILE = join(ROOT, 'seo-results.tsv');

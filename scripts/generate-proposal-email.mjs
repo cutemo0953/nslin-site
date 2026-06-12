@@ -260,7 +260,7 @@ if (fs.existsSync(mpFile)) {
 
     // Link to report page
     h += `<div style="margin-top:8px;text-align:right;">`;
-    h += `<a href="https://nslin-site.tom-e31.workers.dev/zh-TW/reports/competitive-landscape#material-prices"`;
+    h += `<a href="https://nslin.com/zh-TW/reports/competitive-landscape#material-prices"`;
     h += ` style="font-size:11px;color:${S.steel};text-decoration:none;">`;
     h += `查看完整報告 →</a>`;
     h += `</div>`;
@@ -358,7 +358,7 @@ h += `<div style="font-size:13px;color:${S.slate500};margin-bottom:12px;">`;
 h += `如需接受或拒絕提案，請回覆此信或通知 Tom。<br>`;
 h += `下次自動收集：每週一 06:00`;
 h += `</div>`;
-h += `<a href="https://nslin-site.tom-e31.workers.dev/zh-TW/reports/competitive-landscape" style="display:inline-block;padding:10px 24px;background:${S.steel};color:white;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600;">`;
+h += `<a href="https://nslin.com/zh-TW/reports/competitive-landscape" style="display:inline-block;padding:10px 24px;background:${S.steel};color:white;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600;">`;
 h += `查看完整報告`;
 h += `</a>`;
 h += `</div>`;

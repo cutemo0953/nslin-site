@@ -4,7 +4,7 @@ import { getAllProductSlugs } from '@/data/products';
 import { getAllSlugs as getAllBlogSlugs } from '@/lib/blog';
 import { getAllGuideSlugs } from '@/lib/guides';
 
-const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
+const BASE_URL = 'https://nslin.com';
 
 const staticRoutes = [
   '/',

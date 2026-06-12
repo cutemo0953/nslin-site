@@ -3,7 +3,7 @@ import { getProductsByCategory } from '@/data/products';
 import { getAllGuides } from '@/lib/guides';
 import { getAllPosts } from '@/lib/blog';
 
-const BASE_URL = 'https://nslin-site.tom-e31.workers.dev';
+const BASE_URL = 'https://nslin.com';
 
 export async function GET() {
   const guides = getAllGuides('en');

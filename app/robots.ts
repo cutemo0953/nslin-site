@@ -19,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Meta-ExternalAgent', allow: '/' },
       { userAgent: 'Bytespider', allow: '/' },
     ],
-    sitemap: 'https://nslin-site.tom-e31.workers.dev/sitemap.xml',
+    sitemap: 'https://nslin.com/sitemap.xml',
   };
 }
