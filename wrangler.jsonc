@@ -13,6 +13,12 @@
   // Keep the legacy workers.dev URL alive so middleware can 301 it to nslin.com
   // (defining routes otherwise disables the subdomain → dead links).
   "workers_dev": true,
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "nslin-site-inc-cache"
+    }
+  ],
   "vars": {
     // Optional BCC for contact-form inquiries (site owner's archive copy).
     "INQUIRY_BCC": "tom@denovortho.com"

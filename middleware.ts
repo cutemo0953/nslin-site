@@ -8,6 +8,17 @@ const CANONICAL_HOST = 'nslin.com';
 // Legacy/alias hosts 301 to the canonical apex.
 const REDIRECT_HOSTS = new Set(['www.nslin.com', 'nslin-site.tom-e31.workers.dev']);
 
+// Baseline security headers (Workers path — next.config headers don't apply).
+// Full CSP deliberately deferred pending a report-only observation pass.
+function withSecurityHeaders(response: NextResponse): NextResponse {
+  response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  return response;
+}
+
 export default function middleware(request: NextRequest) {
   const host = request.headers.get('host');
   if (host && REDIRECT_HOSTS.has(host)) {
@@ -17,7 +28,7 @@ export default function middleware(request: NextRequest) {
     url.port = '';
     return NextResponse.redirect(url, 301);
   }
-  return intlMiddleware(request);
+  return withSecurityHeaders(intlMiddleware(request));
 }
 
 export const config = {

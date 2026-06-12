@@ -58,7 +58,7 @@ export default async function ProductsPage({
       </p>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {categories.map((cat) => (
+        {categories.map((cat, index) => (
           <Link
             key={cat.slug}
             href={`/products/${cat.slug}`}
@@ -71,6 +71,8 @@ export default async function ProductsPage({
                   alt={isZh ? cat.name['zh-TW'] : cat.name.en}
                   width={400}
                   height={300}
+                  // First row is the LCP candidate — load eagerly.
+                  priority={index < 3}
                   className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
