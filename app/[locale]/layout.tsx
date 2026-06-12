@@ -144,6 +144,12 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} ${notoSansTC.variable}`}>
       <head>
         <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
+        {/* Cloudflare Web Analytics — cookieless, no consent banner needed */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "cb8eabff05df44dfb0d28af841c4e12e"}'
+        />
       </head>
       <body className="min-h-screen bg-white font-sans text-metal-900">
         <script
