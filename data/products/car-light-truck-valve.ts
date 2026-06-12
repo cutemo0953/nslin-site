@@ -287,6 +287,19 @@ export const carLightTruckValves: ProductData[] = [
     standards: [],
     application: 'car',
     vehicleTypes: ['passenger car', 'light truck', 'SUV'],
+    variants: [
+      { partNo: 'SE461-32', length: '32mm', notes: { en: 'α: 88°', 'zh-TW': 'α: 88°' } },
+      { partNo: 'SE461-38', length: '38mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-41', length: '41mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-41L-45', length: '41mm', notes: { en: 'α: 45°', 'zh-TW': 'α: 45°' } },
+      { partNo: 'SE461-46', length: '46mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-51', length: '51mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-56', length: '56mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-61', length: '61mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-66', length: '66mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-71', length: '71mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+      { partNo: 'SE461-82', length: '82mm', notes: { en: 'α: 90°', 'zh-TW': 'α: 90°' } },
+    ],
     description: {
       en: 'Bent valve stem series for tubeless tires with 12 length and angle variants. Includes double-bent SE-461B (21+90 degree) and single-bent models from 26.5mm to 82mm in 45-90 degree angles. Chrome-plated brass construction.',
       'zh-TW': '無內胎彎角氣嘴閥系列，提供 12 種長度及角度變體。包含雙彎角 SE-461B（21+90度）及 26.5mm 至 82mm 單彎角型號，角度 45-90度。鍍鉻黃銅結構。',
@@ -430,6 +443,13 @@ export const carLightTruckValves: ProductData[] = [
     standards: [],
     application: 'car',
     vehicleTypes: ['passenger car', 'light truck'],
+    variants: [
+      { partNo: 'SV-03', notes: { en: 'A: 21mm, B: 40mm, α: 55°', 'zh-TW': 'A: 21mm, B: 40mm, α: 55°' } },
+      { partNo: 'SV-04', notes: { en: 'A: 26mm, B: 55.5mm, α: 90°', 'zh-TW': 'A: 26mm, B: 55.5mm, α: 90°' } },
+      { partNo: 'SV-05', notes: { en: 'A: 30mm, B: 36mm, α: 75°', 'zh-TW': 'A: 30mm, B: 36mm, α: 75°' } },
+      { partNo: 'SV-06', notes: { en: 'A: 27mm, B: 23mm, α: 75°', 'zh-TW': 'A: 27mm, B: 23mm, α: 75°' } },
+      { partNo: 'SV-07', notes: { en: 'A: 21mm, B: 59mm, α: 60°', 'zh-TW': 'A: 21mm, B: 59mm, α: 60°' } },
+    ],
     description: {
       en: 'Bent valve stem series with 5 variants covering 55-90 degree angles. Designed for tubeless tires where straight valve access is obstructed. Chrome-plated brass construction.',
       'zh-TW': '彎角氣嘴閥系列，提供 5 種變體涵蓋 55-90度角度。適用於直立式氣嘴無法使用的無內胎輪胎。鍍鉻黃銅結構。',

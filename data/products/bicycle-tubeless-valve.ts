@@ -17,6 +17,11 @@ export const bicycleTubelessValves: ProductData[] = [
     standards: ['OE replacement'],
     application: 'bicycle',
     vehicleTypes: ['road bike', 'mountain bike', 'gravel bike'],
+    variants: [
+      { partNo: 'FVRa-40 Cu', length: '40mm', finish: 'Original (Bronze)' },
+      { partNo: 'FVRa-40 Ni', length: '40mm', finish: 'Nickel (Silver)' },
+      { partNo: 'FVRa-40 Cr', length: '40mm', finish: 'Chrome (Black)' },
+    ],
     description: {
       en: '40mm tubeless Presta valve designed as OEM replacement for tubeless-ready rims. Fixed oblong rubber base prevents valve rotation during installation and provides better sealing than conical bases due to larger surface contact area.',
       'zh-TW': '40mm 無內胎法式氣嘴閥，專為 OEM 替換設計。固定橢圓形膠座可防止安裝時氣嘴旋轉，且比錐形膠座有更大接觸面積，密封性更佳。',
@@ -60,6 +65,18 @@ export const bicycleTubelessValves: ProductData[] = [
     standards: ['NSS 336'],
     application: 'bicycle',
     vehicleTypes: ['road bike', 'mountain bike', 'gravel bike', 'e-bike'],
+    variants: [
+      { partNo: 'FVRb-40CU', length: '40mm', finish: 'Original (Bronze)' },
+      { partNo: 'FVRb-40NI', length: '40mm', finish: 'Nickel (Silver)' },
+      { partNo: 'FVRb-40CR', length: '40mm', finish: 'Chrome (Black)' },
+      { partNo: 'FVRb-40AL', length: '40mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-50AL', length: '50mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-60AL', length: '60mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-70AL', length: '70mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-80AL', length: '80mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-90AL', length: '90mm', material: 'Anodized Aluminum' },
+      { partNo: 'FVRb-100AL', length: '100mm', material: 'Anodized Aluminum' },
+    ],
     description: {
       en: 'Advanced tubeless Presta valve with improved flow and enhanced sealing. Solid extruded rod stem construction is 50-200% stronger than hollow tube competitors. Available in 40-100mm lengths in both brass and aluminum.',
       'zh-TW': '進階版無內胎法式氣嘴閥，提升流量與密封性能。實心擠壓桿體比競品空心管強 50-200%。提供 40-100mm 銅及鋁兩種材質。',
@@ -103,6 +120,16 @@ export const bicycleTubelessValves: ProductData[] = [
     standards: ['NSS 336'],
     application: 'bicycle',
     vehicleTypes: ['road bike', 'mountain bike', 'gravel bike', 'e-bike'],
+    variants: [
+      { partNo: 'FV-40AL', length: '40mm' },
+      { partNo: 'FV-50AL', length: '50mm' },
+      { partNo: 'FV-60AL', length: '60mm' },
+      { partNo: 'FV-70AL', length: '70mm' },
+      { partNo: 'FV-80AL', length: '80mm' },
+      { partNo: 'FV-90AL', length: '90mm' },
+      { partNo: 'FV-100AL', length: '100mm' },
+      { partNo: 'FV-120AL', length: '120mm' },
+    ],
     description: {
       en: 'Universal tubeless Presta valve with patented double tapered round rubber base design. Compatible with both tubeless-ready and conversion rims. Solid extruded rod stem is 50-200% stronger than competitors.',
       'zh-TW': '通用型無內胎法式氣嘴閥，採用專利雙錐圓形膠座設計。同時相容無內胎專用及改裝輪圈。實心擠壓桿比競品強 50-200%。',
@@ -191,6 +218,12 @@ export const bicycleTubelessValves: ProductData[] = [
     standards: ['TRA', 'ETRTO'],
     application: 'bicycle',
     vehicleTypes: ['mountain bike', 'e-bike', 'city bike'],
+    variants: [
+      { partNo: 'VA-43 Cu', length: '43mm', finish: 'Original (Bronze)' },
+      { partNo: 'VA-43 Ni', length: '43mm', finish: 'Nickel (Silver)' },
+      { partNo: 'VA-43 Cr', length: '43mm', finish: 'Chrome (Black)' },
+      { partNo: 'VA-43 Al', length: '43mm', material: 'Anodized Aluminum', finish: 'Anodized (multiple colors)' },
+    ],
     description: {
       en: 'Tubeless Schrader valve with removable round conical rubber base design. Universal compatibility with tubeless-ready and conversion rims. Available in brass and aluminum with multiple finish options.',
       'zh-TW': '無內胎美式氣嘴閥，採用可拆式圓錐膠座設計。通用相容無內胎專用及改裝輪圈。提供銅及鋁材質多種表面處理。',
