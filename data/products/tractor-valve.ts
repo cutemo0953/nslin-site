@@ -164,7 +164,7 @@ export const tractorValves: ProductData[] = [
         },
       },
     ],
-    images: [],
+    images: ['/images/products/tractor/J-650.jpg'],
     relatedProducts: ['TR-618A', 'TR-622A'],
     manufacturingCapabilities: ['CNC', 'plating'],
     status: 'active',

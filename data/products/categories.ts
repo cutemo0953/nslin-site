@@ -8,7 +8,7 @@ export const categories: CategoryData[] = [
       en: 'Presta & Schrader tubeless valves, valve caps, extenders, adapters, wrenches, and reducers for bicycle rims.',
       'zh-TW': '法式與美式無內胎氣嘴閥、氣嘴帽、延長管、轉接頭、拆卸工具，適用於自行車輪圈。',
     },
-    productCount: 6,
+    productCount: 13,
     featuredProducts: [],
     image: '/images/products/categories/bicycle_FVT.jpg',
     pillarPageLink: '/guides/tubeless-basics',
