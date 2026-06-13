@@ -13,6 +13,17 @@ const INQUIRY_TYPES = ['rfq', 'sample', 'custom'];
 const COUNTRY_CODES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP', 'other'];
 const VOLUMES = ['', 'lt1k', '1k-10k', '10k-50k', 'gt50k'];
 const MAX_LEN = { company: 200, name: 200, email: 254, message: 5000 } as const;
+// Part numbers from the RFQ cart (own catalog only); cap to bound the email.
+const SKU_RE = /^[A-Za-z0-9()/. -]{1,40}$/;
+const MAX_SKUS = 40;
+
+function parseSkus(raw: string): string[] {
+  return raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s) => SKU_RE.test(s))
+    .slice(0, MAX_SKUS);
+}
 
 interface RateLimiter {
   limit(options: { key: string }): Promise<{ success: boolean }>;
@@ -69,6 +80,7 @@ export async function submitInquiry(
   const inquiryType = field('inquiryType');
   const volume = field('volume');
   const message = cleanMultiline(field('message'));
+  const skus = parseSkus(field('skus'));
 
   if (
     !company ||
@@ -115,6 +127,7 @@ export async function submitInquiry(
     `Country: ${country}`,
     `Inquiry type: ${inquiryType}`,
     `Estimated annual volume: ${volume || '-'}`,
+    ...(skus.length > 0 ? ['', `Quote list (${skus.length}): ${skus.join(', ')}`] : []),
     '',
     message || '(no message)',
   ].join('\n');
@@ -131,7 +144,7 @@ export async function submitInquiry(
         to: [SALES_EMAIL],
         ...(bcc && { bcc }),
         reply_to: email,
-        subject: `[${inquiryType.toUpperCase()}] ${company} (${country})`,
+        subject: `[${inquiryType.toUpperCase()}] ${company} (${country})${skus.length > 0 ? ` — ${skus.length} parts` : ''}`,
         text: body,
       }),
     });

@@ -95,5 +95,10 @@
     "learn_more": "Learn More",
     "back": "Back",
     "language": "Language"
+  },
+  "quote": {
+    "add": "Add to quote",
+    "added": "Added",
+    "badge": "Quote list"
   }
 }

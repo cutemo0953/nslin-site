@@ -131,6 +131,8 @@ export default async function CrossReferencePage({
               ? '目錄中沒有直接對應的項目——但多數規格我們都能生產。'
               : 'No direct match in our catalog — but we can likely still make it.',
             noResultsCta: isZh ? '寄料號給我們對照' : 'Send us the part number',
+            add: isZh ? '加入詢價' : 'Add to quote',
+            added: isZh ? '已加入' : 'Added',
           }}
         />
       </div>

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { Link } from '@/i18n/navigation';
+import AddToQuoteButton from '@/components/rfq/AddToQuoteButton';
 
 export interface SpecRow {
   sku: string;
@@ -33,6 +34,8 @@ export interface SpecFinderLabels {
   resultCount: string; // contains {count}
   noResults: string;
   noResultsCta: string;
+  add: string;
+  added: string;
 }
 
 // Normalize for part-number matching: "tr 413c" / "TR-413C" / "tr413c" all equal.
@@ -142,13 +145,17 @@ export default function SpecFinder({
                 [labels.material, r.material],
               ].filter(([, v]) => v) as [string, string][];
               return (
-                <Link
+                <div
                   key={r.sku}
-                  href={`/products/${r.family}/${r.sku.toLowerCase()}`}
-                  className="block rounded-lg border border-metal-200 p-4 transition-colors hover:border-steel-300"
+                  className="rounded-lg border border-metal-200 p-4"
                 >
                   <div className="flex items-baseline justify-between gap-2">
-                    <span className="font-mono font-semibold text-steel-700">{r.sku}</span>
+                    <Link
+                      href={`/products/${r.family}/${r.sku.toLowerCase()}`}
+                      className="font-mono font-semibold text-steel-700 hover:underline"
+                    >
+                      {r.sku}
+                    </Link>
                     {ref && <span className="font-mono text-xs text-steel-800">{ref}</span>}
                   </div>
                   <div className="mt-0.5 text-xs text-metal-500">{r.name}</div>
@@ -162,7 +169,10 @@ export default function SpecFinder({
                       ))}
                     </dl>
                   )}
-                </Link>
+                  <div className="mt-3">
+                    <AddToQuoteButton sku={r.sku} variant="compact" labels={{ add: labels.add, added: labels.added }} />
+                  </div>
+                </div>
               );
             })}
           </div>
@@ -178,6 +188,7 @@ export default function SpecFinder({
                   <th className="px-3 py-2.5">{labels.rimHole}</th>
                   <th className="px-3 py-2.5">{labels.length}</th>
                   <th className="px-3 py-2.5">{labels.material}</th>
+                  <th className="px-3 py-2.5"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-metal-100">
@@ -199,6 +210,9 @@ export default function SpecFinder({
                     <td className="px-3 py-2.5">{r.rimHoleDiameter || '—'}</td>
                     <td className="px-3 py-2.5">{r.effectiveLength || '—'}</td>
                     <td className="px-3 py-2.5">{r.material || '—'}</td>
+                    <td className="px-3 py-2.5 text-right">
+                      <AddToQuoteButton sku={r.sku} variant="compact" labels={{ add: labels.add, added: labels.added }} />
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -1,9 +1,10 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import LocaleToggle from '@/components/LocaleToggle';
 import MobileNav from '@/components/MobileNav';
+import QuoteBadge from '@/components/rfq/QuoteBadge';
 
 function Header() {
   const t = useTranslations('nav');
@@ -137,12 +138,14 @@ export default async function SiteLayout({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('quote');
 
   return (
     <>
       <Header />
       <main>{children}</main>
       <Footer />
+      <QuoteBadge label={t('badge')} />
     </>
   );
 }

@@ -95,5 +95,10 @@
     "learn_more": "了解更多",
     "back": "返回",
     "language": "語言"
+  },
+  "quote": {
+    "add": "加入詢價",
+    "added": "已加入",
+    "badge": "詢價清單"
   }
 }

@@ -6,6 +6,7 @@ import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { getProductBySku, getAllProductSlugs, getProductsByCategory } from '@/data/products';
 import { categories } from '@/data/products/categories';
 import { routing } from '@/i18n/routing';
+import AddToQuoteButton from '@/components/rfq/AddToQuoteButton';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -373,12 +374,18 @@ export default async function ProductPage({
           <h3 className="text-lg font-semibold text-steel-800 mb-2">
             {isZh ? '對此產品有興趣？' : 'Interested in this product?'}
           </h3>
-          <Link
-            href={`/contact?sku=${encodeURIComponent(product.sku)}`}
-            className="inline-block rounded-lg bg-steel-600 px-6 py-3 font-semibold text-white hover:bg-steel-700 transition-colors"
-          >
-            {isZh ? '索取報價' : 'Request a Quote'}
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <AddToQuoteButton
+              sku={product.sku}
+              labels={{ add: isZh ? '加入詢價' : 'Add to quote', added: isZh ? '已加入' : 'Added' }}
+            />
+            <Link
+              href={`/contact?sku=${encodeURIComponent(product.sku)}`}
+              className="inline-block rounded-lg bg-steel-600 px-6 py-3 font-semibold text-white hover:bg-steel-700 transition-colors"
+            >
+              {isZh ? '索取報價' : 'Request a Quote'}
+            </Link>
+          </div>
         </div>
       </div>
     </>

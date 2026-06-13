@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
@@ -41,13 +41,24 @@ const initialState: InquiryState = { status: 'idle' };
 const inputClass =
   'w-full rounded-lg border border-metal-300 px-3 py-2 text-base focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none';
 
-export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
+export default function ContactForm({
+  labels,
+  skus,
+  onSubmitted,
+}: {
+  labels: ContactFormLabels;
+  skus?: string[];
+  onSubmitted?: () => void;
+}) {
   const locale = useLocale();
   const isZh = locale === 'zh-TW';
   const regionNames = new Intl.DisplayNames([locale], { type: 'region' });
   const [state, formAction, pending] = useActionState(submitInquiry, initialState);
   const rawSku = useSearchParams().get('sku') ?? '';
-  const sku = SKU_RE.test(rawSku) ? rawSku : '';
+  const urlSku = SKU_RE.test(rawSku) ? rawSku : '';
+  const cartSkus = skus ?? [];
+  // single-part prefill (from /contact?sku=) only when NOT in RFQ-cart mode.
+  const sku = cartSkus.length === 0 ? urlSku : '';
   const [values, setValues] = useState({
     company: '',
     name: '',
@@ -57,6 +68,11 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
     volume: '',
     message: sku ? (isZh ? `詢價料號：${sku}\n` : `RFQ for part no.: ${sku}\n`) : '',
   });
+
+  // Clear the RFQ cart (or any parent state) once the inquiry is sent.
+  useEffect(() => {
+    if (state.status === 'sent') onSubmitted?.();
+  }, [state.status, onSubmitted]);
 
   const set =
     (key: keyof typeof values) =>
@@ -78,7 +94,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
   }
 
   const mailtoHref = `mailto:${SALES_EMAIL}?subject=${encodeURIComponent(
-    `[${values.inquiryType.toUpperCase()}] ${values.company}`,
+    `[${values.inquiryType.toUpperCase()}] ${values.company}${cartSkus.length ? ` — ${cartSkus.length} parts` : ''}`,
   )}&body=${encodeURIComponent(
     [
       `Company: ${values.company}`,
@@ -86,6 +102,9 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
       `Email: ${values.email}`,
       `Country: ${values.country}`,
       `Estimated annual volume: ${values.volume || '-'}`,
+      // Keep the cart parts in the manual-email fallback too (else a send
+      // failure would lose the user's selected RFQ items).
+      ...(cartSkus.length ? ['', `Quote list (${cartSkus.length}): ${cartSkus.join(', ')}`] : []),
       '',
       values.message,
     ].join('\n'),
@@ -98,6 +117,18 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
           <span className="text-metal-600">{isZh ? '詢價產品' : 'Quoting part'}:</span>
           <span className="font-mono font-semibold text-steel-800">{sku}</span>
         </div>
+      )}
+      {cartSkus.length > 0 && (
+        <>
+          {/* Always-current cart list — the email includes these regardless of the note. */}
+          <input type="hidden" name="skus" value={cartSkus.join(',')} />
+          <div className="rounded-lg border border-steel-200 bg-steel-50 px-4 py-3 text-sm">
+            <span className="text-metal-600">
+              {isZh ? '詢價清單' : 'Quote list'} ({cartSkus.length}):
+            </span>{' '}
+            <span className="font-mono font-semibold text-steel-800">{cartSkus.join(', ')}</span>
+          </div>
+        </>
       )}
       {state.status === 'error' && (
         <div role="alert" className="rounded-lg border border-brass-400/60 bg-brass-400/10 p-4">
