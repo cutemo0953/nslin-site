@@ -2,7 +2,19 @@
 // purpose: nothing here may be exposed as a client-callable action — leaking
 // getExpectedDigest would let a visitor mint their own auth cookie.
 
+import { cookies } from 'next/headers';
+
 export const REPORTS_COOKIE = 'nslin_reports_auth';
+
+// MUST be called from each report page (not only the layout): App Router
+// renders pages in parallel with layouts, so a layout-only gate still ships
+// the page's data in the RSC flight payload.
+export async function reportsAuthorized(): Promise<boolean> {
+  const expected = await getExpectedDigest();
+  if (!expected) return false; // fail closed: no PIN configured → locked
+  const cookie = (await cookies()).get(REPORTS_COOKIE)?.value;
+  return cookie === expected;
+}
 
 // REPORTS_PIN is a Worker secret (wrangler secret put REPORTS_PIN);
 // process.env covers local dev.

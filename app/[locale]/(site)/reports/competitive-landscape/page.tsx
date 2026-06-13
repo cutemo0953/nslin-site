@@ -5,6 +5,8 @@ import {
   reportLastUpdated,
   reportEvidenceCollected,
 } from '@/data/reports/content.generated';
+import { reportsAuthorized } from '../auth';
+import ReportsPinForm from '../ReportsPinForm';
 
 export async function generateStaticParams() {
   return [{ locale: 'zh-TW' }, { locale: 'en' }];
@@ -70,6 +72,8 @@ export default async function CompetitiveLandscapePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (!(await reportsAuthorized())) return <ReportsPinForm isZh={locale === 'zh-TW'} />;
 
   const html = reportHtmlContent['competitive-landscape'];
   if (!html) {

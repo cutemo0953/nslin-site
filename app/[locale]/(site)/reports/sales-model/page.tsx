@@ -4,6 +4,8 @@ import salesModelConfig from '@/data/dashboards/sales-model-config.json';
 import salesModelNodes from '@/data/dashboards/sales-model-nodes.json';
 import DashboardContent from './dashboard-content';
 import type { SalesModelConfig, SalesModelNodes } from '@/lib/sales-model/types';
+import { reportsAuthorized } from '../auth';
+import ReportsPinForm from '../ReportsPinForm';
 
 export async function generateStaticParams() {
   return [{ locale: 'zh-TW' }, { locale: 'en' }];
@@ -29,6 +31,8 @@ export default async function SalesModelPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (!(await reportsAuthorized())) return <ReportsPinForm isZh={locale === 'zh-TW'} />;
 
   return (
     <DashboardContent

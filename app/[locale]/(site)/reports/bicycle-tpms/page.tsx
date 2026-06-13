@@ -5,6 +5,8 @@ import {
   reportLastUpdated,
   reportEvidenceCollected,
 } from '@/data/reports/content.generated';
+import { reportsAuthorized } from '../auth';
+import ReportsPinForm from '../ReportsPinForm';
 
 export async function generateStaticParams() {
   return [{ locale: 'zh-TW' }, { locale: 'en' }];
@@ -66,6 +68,8 @@ export default async function BicycleTpmsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (!(await reportsAuthorized())) return <ReportsPinForm isZh={locale === 'zh-TW'} />;
 
   const html = reportHtmlContent['bicycle-tpms'];
   if (!html) {
