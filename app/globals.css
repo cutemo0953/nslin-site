@@ -89,13 +89,15 @@ body {
   @apply prose prose-lg max-w-none;
 }
 
+/* Editorial surfaces (blog/guides) use the 明體 serif for headings — the
+   expressive-vs-functional split (technical pages stay sans). */
 .article-content h2 {
-  @apply text-2xl md:text-3xl font-bold mt-12 mb-5;
+  @apply font-serif text-2xl md:text-3xl font-semibold mt-12 mb-5;
   color: var(--color-steel-900);
 }
 
 .article-content h3 {
-  @apply text-xl md:text-2xl font-semibold mt-8 mb-3;
+  @apply font-serif text-xl md:text-2xl font-semibold mt-8 mb-3;
   color: var(--color-steel-900);
 }
 

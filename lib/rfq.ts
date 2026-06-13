@@ -1,31 +1,52 @@
 'use client';
 
-// RFQ "cart": collect part numbers to quote, submit one email. Client-only,
-// persisted to localStorage, synced across components/tabs via a window event.
-// Uses useSyncExternalStore (the idiomatic React API for an external store).
+// RFQ "cart": collect part numbers + quantities to quote, submit one email.
+// Client-only, persisted to localStorage, synced across components/tabs via a
+// window event. Uses useSyncExternalStore (the idiomatic external-store API).
 import { useCallback, useSyncExternalStore } from 'react';
+
+export interface RfqItem {
+  sku: string;
+  qty: number;
+}
 
 const KEY = 'nslin_rfq';
 const EVENT = 'nslin-rfq-change';
-const MAX = 40;
+const MAX_ITEMS = 40;
+const MAX_QTY = 9_999_999;
 // Part numbers from our own catalog only; reject anything else from storage.
 const SKU_RE = /^[A-Za-z0-9()/. -]{1,40}$/;
 
-const EMPTY: string[] = [];
+const EMPTY: RfqItem[] = [];
 
-function read(): string[] {
+function clampQty(n: unknown): number {
+  const q = Math.floor(Number(n));
+  if (!Number.isFinite(q) || q < 1) return 1;
+  return Math.min(q, MAX_QTY);
+}
+
+function read(): RfqItem[] {
   if (typeof window === 'undefined') return EMPTY;
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) || '[]');
     if (!Array.isArray(raw)) return EMPTY;
-    return raw.filter((s) => typeof s === 'string' && SKU_RE.test(s)).slice(0, MAX);
+    const out: RfqItem[] = [];
+    for (const el of raw) {
+      // Accept both the legacy string[] shape and the {sku, qty} shape.
+      const sku = typeof el === 'string' ? el : el?.sku;
+      if (typeof sku !== 'string' || !SKU_RE.test(sku)) continue;
+      if (out.some((x) => x.sku === sku)) continue;
+      out.push({ sku, qty: typeof el === 'string' ? 1 : clampQty(el?.qty) });
+      if (out.length >= MAX_ITEMS) break;
+    }
+    return out;
   } catch {
     return EMPTY;
   }
 }
 
-function write(skus: string[]) {
-  localStorage.setItem(KEY, JSON.stringify(skus));
+function write(items: RfqItem[]) {
+  localStorage.setItem(KEY, JSON.stringify(items));
   window.dispatchEvent(new Event(EVENT));
 }
 
@@ -38,41 +59,48 @@ function subscribe(cb: () => void): () => void {
   };
 }
 
-// getSnapshot must return a STABLE reference when the data is unchanged, or
-// useSyncExternalStore loops. Cache against the raw stored string.
+// getSnapshot must return a STABLE reference when unchanged, or useSyncExternalStore
+// loops. Cache against the raw stored string.
 let cachedRaw = '';
-let cachedSkus: string[] = EMPTY;
-function getSnapshot(): string[] {
+let cachedItems: RfqItem[] = EMPTY;
+function getSnapshot(): RfqItem[] {
   const raw = typeof window === 'undefined' ? '[]' : localStorage.getItem(KEY) || '[]';
   if (raw !== cachedRaw) {
     cachedRaw = raw;
-    cachedSkus = read();
+    cachedItems = read();
   }
-  return cachedSkus;
+  return cachedItems;
 }
 
-function getServerSnapshot(): string[] {
+function getServerSnapshot(): RfqItem[] {
   return EMPTY;
 }
 
 export function useRfq() {
-  const skus = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const items = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const add = useCallback((sku: string) => {
     if (!SKU_RE.test(sku)) return;
     const cur = read();
-    if (cur.includes(sku) || cur.length >= MAX) return;
-    write([...cur, sku]);
+    if (cur.some((x) => x.sku === sku) || cur.length >= MAX_ITEMS) return;
+    write([...cur, { sku, qty: 1 }]);
   }, []);
 
-  const remove = useCallback((sku: string) => write(read().filter((s) => s !== sku)), []);
+  const setQty = useCallback((sku: string, qty: number) => {
+    const cur = read();
+    if (!cur.some((x) => x.sku === sku)) return;
+    write(cur.map((x) => (x.sku === sku ? { ...x, qty: clampQty(qty) } : x)));
+  }, []);
+
+  const remove = useCallback((sku: string) => write(read().filter((x) => x.sku !== sku)), []);
   const clear = useCallback(() => write([]), []);
 
   return {
-    skus,
-    count: skus.length,
-    has: (s: string) => skus.includes(s),
+    items,
+    count: items.length,
+    has: (s: string) => items.some((x) => x.sku === s),
     add,
+    setQty,
     remove,
     clear,
   };

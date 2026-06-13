@@ -13,16 +13,23 @@ const INQUIRY_TYPES = ['rfq', 'sample', 'custom'];
 const COUNTRY_CODES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP', 'other'];
 const VOLUMES = ['', 'lt1k', '1k-10k', '10k-50k', 'gt50k'];
 const MAX_LEN = { company: 200, name: 200, email: 254, message: 5000 } as const;
-// Part numbers from the RFQ cart (own catalog only); cap to bound the email.
+// RFQ cart items "sku:qty,sku:qty" (own catalog only); cap to bound the email.
 const SKU_RE = /^[A-Za-z0-9()/. -]{1,40}$/;
 const MAX_SKUS = 40;
+const MAX_QTY = 9_999_999;
 
-function parseSkus(raw: string): string[] {
-  return raw
-    .split(',')
-    .map((s) => s.trim())
-    .filter((s) => SKU_RE.test(s))
-    .slice(0, MAX_SKUS);
+function parseQuoteItems(raw: string): Array<{ sku: string; qty: number }> {
+  const out: Array<{ sku: string; qty: number }> = [];
+  for (const part of raw.split(',')) {
+    const [skuRaw, qtyRaw] = part.split(':');
+    const sku = (skuRaw ?? '').trim();
+    if (!SKU_RE.test(sku) || out.some((x) => x.sku === sku)) continue;
+    let qty = Math.floor(Number(qtyRaw));
+    if (!Number.isFinite(qty) || qty < 1) qty = 1;
+    out.push({ sku, qty: Math.min(qty, MAX_QTY) });
+    if (out.length >= MAX_SKUS) break;
+  }
+  return out;
 }
 
 interface RateLimiter {
@@ -80,7 +87,7 @@ export async function submitInquiry(
   const inquiryType = field('inquiryType');
   const volume = field('volume');
   const message = cleanMultiline(field('message'));
-  const skus = parseSkus(field('skus'));
+  const quoteItems = parseQuoteItems(field('skus'));
 
   if (
     !company ||
@@ -127,7 +134,9 @@ export async function submitInquiry(
     `Country: ${country}`,
     `Inquiry type: ${inquiryType}`,
     `Estimated annual volume: ${volume || '-'}`,
-    ...(skus.length > 0 ? ['', `Quote list (${skus.length}): ${skus.join(', ')}`] : []),
+    ...(quoteItems.length > 0
+      ? ['', `Quote list (${quoteItems.length}):`, ...quoteItems.map((i) => `  - ${i.sku} x ${i.qty}`)]
+      : []),
     '',
     message || '(no message)',
   ].join('\n');
@@ -144,7 +153,7 @@ export async function submitInquiry(
         to: [SALES_EMAIL],
         ...(bcc && { bcc }),
         reply_to: email,
-        subject: `[${inquiryType.toUpperCase()}] ${company} (${country})${skus.length > 0 ? ` — ${skus.length} parts` : ''}`,
+        subject: `[${inquiryType.toUpperCase()}] ${company} (${country})${quoteItems.length > 0 ? ` — ${quoteItems.length} parts` : ''}`,
         text: body,
       }),
     });

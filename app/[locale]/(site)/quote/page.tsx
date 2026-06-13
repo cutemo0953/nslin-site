@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getAllProducts } from '@/data/products';
 import { seoAlternates } from '@/lib/seo';
 import type { Metadata } from 'next';
-import QuoteList, { type QuoteItem } from '@/components/rfq/QuoteList';
+import QuoteList, { type QuoteItem, type SpecKey } from '@/components/rfq/QuoteList';
 
 export async function generateMetadata({
   params,
@@ -38,11 +38,28 @@ export default async function QuotePage({
       sku: p.sku,
       family: p.family,
       name: isZh ? p.name['zh-TW'] : p.name.en,
+      material: p.material ?? '',
+      finish: p.finish ?? '',
       valveType: p.valveType ?? '',
       rimHoleDiameter: p.rimHoleDiameter ?? '',
       effectiveLength: p.effectiveLength ?? '',
-      material: p.material,
+      installationType: p.installationType ?? '',
+      valveCore: p.valveCore ?? '',
+      standards: (p.standards ?? []).join(', '),
+      application: p.application ?? '',
     }));
+
+  const specRows: { key: SpecKey; label: string }[] = [
+    { key: 'material', label: isZh ? '材質' : 'Material' },
+    { key: 'finish', label: isZh ? '表面處理' : 'Finish' },
+    { key: 'valveType', label: isZh ? '氣嘴型式' : 'Valve type' },
+    { key: 'rimHoleDiameter', label: isZh ? '輪圈孔徑' : 'Rim hole' },
+    { key: 'effectiveLength', label: isZh ? '有效長度' : 'Eff. length' },
+    { key: 'installationType', label: isZh ? '安裝方式' : 'Installation' },
+    { key: 'valveCore', label: isZh ? '氣嘴芯' : 'Valve core' },
+    { key: 'standards', label: isZh ? '適用標準' : 'Standards' },
+    { key: 'application', label: isZh ? '應用' : 'Application' },
+  ];
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
@@ -56,12 +73,14 @@ export default async function QuotePage({
       <Suspense>
         <QuoteList
           catalog={catalog}
+          specRows={specRows}
           labels={{
             empty: isZh ? '詢價清單是空的。' : 'Your quote list is empty.',
             emptyCta: isZh ? '瀏覽規格對照表' : 'Browse the spec finder',
             count: isZh ? '共 {count} 項' : '{count} parts',
             clear: isZh ? '清空' : 'Clear all',
             remove: isZh ? '移除' : 'Remove',
+            qty: isZh ? '數量' : 'Qty',
             formHeading: isZh ? '送出詢價' : 'Submit your RFQ',
           }}
           formLabels={{

@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { submitInquiry, type InquiryState } from './actions';
+import type { RfqItem } from '@/lib/rfq';
 
 const SALES_EMAIL = 'nslin@nslin.com.tw';
 
@@ -43,11 +44,11 @@ const inputClass =
 
 export default function ContactForm({
   labels,
-  skus,
+  items,
   onSubmitted,
 }: {
   labels: ContactFormLabels;
-  skus?: string[];
+  items?: RfqItem[];
   onSubmitted?: () => void;
 }) {
   const locale = useLocale();
@@ -56,9 +57,9 @@ export default function ContactForm({
   const [state, formAction, pending] = useActionState(submitInquiry, initialState);
   const rawSku = useSearchParams().get('sku') ?? '';
   const urlSku = SKU_RE.test(rawSku) ? rawSku : '';
-  const cartSkus = skus ?? [];
+  const cartItems = items ?? [];
   // single-part prefill (from /contact?sku=) only when NOT in RFQ-cart mode.
-  const sku = cartSkus.length === 0 ? urlSku : '';
+  const sku = cartItems.length === 0 ? urlSku : '';
   const [values, setValues] = useState({
     company: '',
     name: '',
@@ -94,7 +95,7 @@ export default function ContactForm({
   }
 
   const mailtoHref = `mailto:${SALES_EMAIL}?subject=${encodeURIComponent(
-    `[${values.inquiryType.toUpperCase()}] ${values.company}${cartSkus.length ? ` — ${cartSkus.length} parts` : ''}`,
+    `[${values.inquiryType.toUpperCase()}] ${values.company}${cartItems.length ? ` — ${cartItems.length} parts` : ''}`,
   )}&body=${encodeURIComponent(
     [
       `Company: ${values.company}`,
@@ -102,9 +103,11 @@ export default function ContactForm({
       `Email: ${values.email}`,
       `Country: ${values.country}`,
       `Estimated annual volume: ${values.volume || '-'}`,
-      // Keep the cart parts in the manual-email fallback too (else a send
-      // failure would lose the user's selected RFQ items).
-      ...(cartSkus.length ? ['', `Quote list (${cartSkus.length}): ${cartSkus.join(', ')}`] : []),
+      // Keep the cart parts (with quantities) in the manual-email fallback too,
+      // else a send failure would lose the user's selected RFQ items.
+      ...(cartItems.length
+        ? ['', `Quote list (${cartItems.length}): ${cartItems.map((i) => `${i.sku} x${i.qty}`).join(', ')}`]
+        : []),
       '',
       values.message,
     ].join('\n'),
@@ -118,15 +121,21 @@ export default function ContactForm({
           <span className="font-mono font-semibold text-steel-800">{sku}</span>
         </div>
       )}
-      {cartSkus.length > 0 && (
+      {cartItems.length > 0 && (
         <>
-          {/* Always-current cart list — the email includes these regardless of the note. */}
-          <input type="hidden" name="skus" value={cartSkus.join(',')} />
+          {/* Always-current cart (sku:qty) — the email includes these regardless of the note. */}
+          <input
+            type="hidden"
+            name="skus"
+            value={cartItems.map((i) => `${i.sku}:${i.qty}`).join(',')}
+          />
           <div className="rounded-lg border border-steel-200 bg-steel-50 px-4 py-3 text-sm">
             <span className="text-metal-600">
-              {isZh ? '詢價清單' : 'Quote list'} ({cartSkus.length}):
+              {isZh ? '詢價清單' : 'Quote list'} ({cartItems.length}):
             </span>{' '}
-            <span className="font-mono font-semibold text-steel-800">{cartSkus.join(', ')}</span>
+            <span className="font-mono font-semibold text-steel-800">
+              {cartItems.map((i) => `${i.sku}×${i.qty}`).join(', ')}
+            </span>
           </div>
         </>
       )}

@@ -139,7 +139,7 @@ export default async function BlogArticlePage({
                   {isZh ? '技術文章' : 'Blog'}
                 </Link>
               </nav>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-tight">
                 {frontmatter.title}
               </h1>
             </div>
@@ -157,7 +157,7 @@ export default async function BlogArticlePage({
                 {isZh ? '技術文章' : 'Blog'}
               </Link>
             </nav>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-tight mb-4">
               {frontmatter.title}
             </h1>
             <p className="text-base md:text-lg text-white/80 leading-relaxed">
