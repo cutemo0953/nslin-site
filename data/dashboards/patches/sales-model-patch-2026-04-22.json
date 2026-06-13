@@ -1,0 +1,147 @@
+{
+  "date": "2026-04-22",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 0,
+    "unchanged": 3,
+    "failed": 9,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 18,
+      "code": "no_relevant_result",
+      "query": "\"Wolf Tooth\" OR \"Lezyne\" OR \"SKS\" OR \"Topeak\" Clik valve accessory"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 36,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve accessories ecosystem pump adapter"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps?srsltid=AfmBOoo5gfl-KX7DIqEhaUYy6XyDdiHqBUFW-q9igX-luoRmRg0tujqe",
+      "sourceTitle": "CoreCap Valve Cap Set - BBB Cycling",
+      "evidenceText": "Product information Features Size guide Specifications Spare parts Find a dealer.",
+      "extractionRationale": "While the source page mentions a \"Spare parts\" section, the actual content listing specific SKUs for valve cores, seals, o-rings, and replacement kits is not provided in the evidence. The page content appears to be truncated and does not include the detailed spare parts inventory needed to count distinct SKUs.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "",
+      "evidenceText": "All DT Swiss wheelsets are tubeless compatible and the ASM versions come tubeless ready, equipped with tubeless tape and valves. The DT Swiss tubeless valve perfectly matches DT Swiss rims, to ensure a perfect seal for long, hassle-free rides.",
+      "extractionRationale": "Evidence shows DT Swiss uses its own proprietary tubeless valve system, not Clik valve. No sources mention Clik adoption by DT Swiss or any of the other five major brands (Mavic, Hunt, Zipp, ENVE, Roval). No sources provide information about 2026 or 2027 product lines with Clik valve adoption. Therefore, 0 out of 6 major brands have adopted Clik valve as standard = 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993580.html",
+      "sourceTitle": "",
+      "evidenceText": "BBB Cycling CoreCap BTI-165 Valve Core product listings on bike24.com show no explicit stock status, back in stock dates, or restock timeline information.",
+      "extractionRationale": "The evidence consists of product listing pages for CoreCap valve cores without any mention of availability status, out-of-stock indicators, back-in-stock dates, or restocking timelines. Cannot determine if product is currently available or has a specific restock turnaround time.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
