@@ -130,42 +130,81 @@ export default function SpecFinder({
           </Link>
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-metal-200">
-          <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-steel-50 text-xs uppercase tracking-wide text-metal-600">
-              <tr>
-                <th className="px-3 py-2.5">{labels.partNo}</th>
-                <th className="px-3 py-2.5">{labels.industryRef}</th>
-                <th className="px-3 py-2.5">{labels.type}</th>
-                <th className="px-3 py-2.5">{labels.rimHole}</th>
-                <th className="px-3 py-2.5">{labels.length}</th>
-                <th className="px-3 py-2.5">{labels.material}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-metal-100">
-              {filtered.map((r) => (
-                <tr key={r.sku} className="hover:bg-steel-50/60">
-                  <td className="px-3 py-2.5">
-                    <Link
-                      href={`/products/${r.family}/${r.sku.toLowerCase()}`}
-                      className="font-mono font-semibold text-steel-700 hover:underline"
-                    >
-                      {r.sku}
-                    </Link>
-                    <div className="mt-0.5 max-w-[260px] truncate text-xs text-metal-500">{r.name}</div>
-                  </td>
-                  <td className="px-3 py-2.5 font-mono text-steel-800">
-                    {r.industryRef || (r.oeCrossReference.length > 0 ? r.oeCrossReference.join(', ') : '—')}
-                  </td>
-                  <td className="px-3 py-2.5">{r.valveType || '—'}</td>
-                  <td className="px-3 py-2.5">{r.rimHoleDiameter || '—'}</td>
-                  <td className="px-3 py-2.5">{r.effectiveLength || '—'}</td>
-                  <td className="px-3 py-2.5">{r.material || '—'}</td>
+        <>
+          {/* Mobile (<768px): stacked cards — no horizontal scroll */}
+          <div className="space-y-3 md:hidden">
+            {filtered.map((r) => {
+              const ref = r.industryRef || (r.oeCrossReference.length > 0 ? r.oeCrossReference.join(', ') : '');
+              const specs: [string, string][] = [
+                [labels.type, r.valveType],
+                [labels.rimHole, r.rimHoleDiameter],
+                [labels.length, r.effectiveLength],
+                [labels.material, r.material],
+              ].filter(([, v]) => v) as [string, string][];
+              return (
+                <Link
+                  key={r.sku}
+                  href={`/products/${r.family}/${r.sku.toLowerCase()}`}
+                  className="block rounded-lg border border-metal-200 p-4 transition-colors hover:border-steel-300"
+                >
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-mono font-semibold text-steel-700">{r.sku}</span>
+                    {ref && <span className="font-mono text-xs text-steel-800">{ref}</span>}
+                  </div>
+                  <div className="mt-0.5 text-xs text-metal-500">{r.name}</div>
+                  {specs.length > 0 && (
+                    <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
+                      {specs.map(([k, v]) => (
+                        <div key={k}>
+                          <dt className="text-metal-400">{k}</dt>
+                          <dd className="text-metal-700">{v}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Desktop (≥768px): full table */}
+          <div className="hidden overflow-x-auto rounded-lg border border-metal-200 md:block">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-steel-50 text-xs uppercase tracking-wide text-metal-600">
+                <tr>
+                  <th className="px-3 py-2.5">{labels.partNo}</th>
+                  <th className="px-3 py-2.5">{labels.industryRef}</th>
+                  <th className="px-3 py-2.5">{labels.type}</th>
+                  <th className="px-3 py-2.5">{labels.rimHole}</th>
+                  <th className="px-3 py-2.5">{labels.length}</th>
+                  <th className="px-3 py-2.5">{labels.material}</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody className="divide-y divide-metal-100">
+                {filtered.map((r) => (
+                  <tr key={r.sku} className="hover:bg-steel-50/60">
+                    <td className="px-3 py-2.5">
+                      <Link
+                        href={`/products/${r.family}/${r.sku.toLowerCase()}`}
+                        className="font-mono font-semibold text-steel-700 hover:underline"
+                      >
+                        {r.sku}
+                      </Link>
+                      <div className="mt-0.5 max-w-[260px] truncate text-xs text-metal-500">{r.name}</div>
+                    </td>
+                    <td className="px-3 py-2.5 font-mono text-steel-800">
+                      {r.industryRef || (r.oeCrossReference.length > 0 ? r.oeCrossReference.join(', ') : '—')}
+                    </td>
+                    <td className="px-3 py-2.5">{r.valveType || '—'}</td>
+                    <td className="px-3 py-2.5">{r.rimHoleDiameter || '—'}</td>
+                    <td className="px-3 py-2.5">{r.effectiveLength || '—'}</td>
+                    <td className="px-3 py-2.5">{r.material || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
     </div>
   );
