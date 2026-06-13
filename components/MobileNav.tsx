@@ -8,6 +8,7 @@ import LocaleToggle from '@/components/LocaleToggle';
 interface MobileNavProps {
   labels: {
     products: string;
+    crossref: string;
     guides: string;
     blog: string;
     about: string;
@@ -40,6 +41,7 @@ export default function MobileNav({ labels }: MobileNavProps) {
 
   const links = [
     { href: '/products', label: labels.products },
+    { href: '/cross-reference', label: labels.crossref },
     { href: '/guides', label: labels.guides },
     { href: '/blog', label: labels.blog },
     { href: '/about', label: labels.about },

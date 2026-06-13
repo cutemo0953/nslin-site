@@ -374,7 +374,7 @@ export default async function ProductPage({
             {isZh ? '對此產品有興趣？' : 'Interested in this product?'}
           </h3>
           <Link
-            href="/contact"
+            href={`/contact?sku=${encodeURIComponent(product.sku)}`}
             className="inline-block rounded-lg bg-steel-600 px-6 py-3 font-semibold text-white hover:bg-steel-700 transition-colors"
           >
             {isZh ? '索取報價' : 'Request a Quote'}

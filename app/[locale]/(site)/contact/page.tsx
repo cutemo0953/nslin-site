@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { ClockIcon } from '@heroicons/react/24/outline';
 import { seoAlternates } from '@/lib/seo';
 import ContactForm from './ContactForm';
 import {
@@ -38,10 +40,16 @@ export default async function ContactPage({
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
       <h1 className="mb-4 text-3xl font-bold text-steel-900">{t('title')}</h1>
-      <p className="mb-8 text-lg text-metal-600">
+      <p className="mb-4 text-lg text-metal-600">
         {isZh
           ? '請填寫以下表單，我們的業務團隊會盡速回覆。'
           : 'Fill out the form below and our sales team will respond promptly.'}
+      </p>
+      <p className="mb-8 inline-flex items-center gap-2 rounded-full bg-cert-500/10 border border-cert-500/30 px-4 py-1.5 text-sm font-medium text-cert-600">
+        <ClockIcon className="h-4 w-4" aria-hidden="true" />
+        {isZh
+          ? '所有詢問將於 2 個工作天內回覆'
+          : 'Every inquiry answered within 2 business days'}
       </p>
 
       <div className="grid gap-8 md:grid-cols-3">
@@ -61,7 +69,8 @@ export default async function ContactPage({
           ))}
         </div>
 
-        {/* Contact Form */}
+        {/* Contact Form — Suspense required: useSearchParams (sku prefill) in a static page */}
+        <Suspense>
         <ContactForm
           labels={{
             company: t('form.company'),
@@ -86,6 +95,7 @@ export default async function ContactPage({
             custom: t('custom'),
           }}
         />
+        </Suspense>
       </div>
 
       {/* Direct Contact */}

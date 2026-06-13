@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { submitInquiry, type InquiryState } from './actions';
@@ -8,6 +9,9 @@ import { submitInquiry, type InquiryState } from './actions';
 const SALES_EMAIL = 'nslin@nslin.com.tw';
 
 const COUNTRIES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP'] as const;
+
+// Part numbers from our catalog links only; reject anything else from the URL.
+const SKU_RE = /^[A-Za-z0-9()\/. -]{1,40}$/;
 
 export interface ContactFormLabels {
   company: string;
@@ -39,8 +43,11 @@ const inputClass =
 
 export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
   const locale = useLocale();
+  const isZh = locale === 'zh-TW';
   const regionNames = new Intl.DisplayNames([locale], { type: 'region' });
   const [state, formAction, pending] = useActionState(submitInquiry, initialState);
+  const rawSku = useSearchParams().get('sku') ?? '';
+  const sku = SKU_RE.test(rawSku) ? rawSku : '';
   const [values, setValues] = useState({
     company: '',
     name: '',
@@ -48,7 +55,7 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
     country: '',
     inquiryType: 'rfq',
     volume: '',
-    message: '',
+    message: sku ? (isZh ? `詢價料號：${sku}\n` : `RFQ for part no.: ${sku}\n`) : '',
   });
 
   const set =
@@ -86,6 +93,12 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
 
   return (
     <form action={formAction} className="md:col-span-2 space-y-4">
+      {sku && (
+        <div className="inline-flex items-center gap-2 rounded-full bg-steel-50 border border-steel-200 px-4 py-1.5 text-sm">
+          <span className="text-metal-600">{isZh ? '詢價產品' : 'Quoting part'}:</span>
+          <span className="font-mono font-semibold text-steel-800">{sku}</span>
+        </div>
+      )}
       {state.status === 'error' && (
         <div role="alert" className="rounded-lg border border-brass-400/60 bg-brass-400/10 p-4">
           <div className="flex items-start gap-3">

@@ -37,6 +37,9 @@ function Header() {
           <Link href="/products" className="hover:text-white transition-colors">
             {t('products')}
           </Link>
+          <Link href="/cross-reference" className="hover:text-white transition-colors">
+            {t('crossref')}
+          </Link>
           <Link href="/guides" className="hover:text-white transition-colors">
             {t('guides')}
           </Link>
@@ -58,6 +61,7 @@ function Header() {
         <MobileNav
           labels={{
             products: t('products'),
+            crossref: t('crossref'),
             guides: t('guides'),
             blog: t('blog'),
             about: t('about'),

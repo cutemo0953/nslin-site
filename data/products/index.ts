@@ -35,6 +35,11 @@ export function getProductsByCategory(category: string): ProductData[] {
   return productsByFamily[category] || [];
 }
 
+// Get every product across all families (spec finder / cross-reference)
+export function getAllProducts(): ProductData[] {
+  return Object.values(productsByFamily).flat();
+}
+
 // Get a single product by SKU
 export function getProductBySku(sku: string): ProductData | undefined {
   for (const products of Object.values(productsByFamily)) {

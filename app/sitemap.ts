@@ -11,6 +11,7 @@ const staticRoutes = [
   '/about',
   '/contact',
   '/products',
+  '/cross-reference',
   '/blog',
   '/guides',
 ];

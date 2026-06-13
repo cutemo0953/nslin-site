@@ -1,6 +1,58 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
 import type { Metadata } from 'next';
+
+const FACTORY_PHOTOS = [
+  {
+    src: '/images/factory/design-engineering.jpg',
+    caption: { en: 'Product Design & Engineering', 'zh-TW': '產品設計與開發' },
+    desc: {
+      en: 'In-house CAD design from customer specifications to production drawings.',
+      'zh-TW': '從客戶規格到生產圖面，自有 CAD 設計能量。',
+    },
+  },
+  {
+    src: '/images/factory/cnc-machining.jpg',
+    caption: { en: 'CNC Precision Machining', 'zh-TW': 'CNC 精密加工' },
+    desc: {
+      en: 'High-precision turning of brass and aluminum valve components.',
+      'zh-TW': '銅與鋁合金氣嘴元件的高精度車削。',
+    },
+  },
+  {
+    src: '/images/factory/rubber-vulcanization.jpg',
+    caption: { en: 'Rubber Vulcanization Molding', 'zh-TW': '橡膠硫化成型' },
+    desc: {
+      en: 'EPDM rubber vulcanization press lines for snap-in valve bodies.',
+      'zh-TW': 'EPDM 橡膠硫化成型產線，生產 snap-in 氣嘴本體。',
+    },
+  },
+  {
+    src: '/images/factory/finishing-station.jpg',
+    caption: { en: 'Trimming & Finishing', 'zh-TW': '修邊與後處理' },
+    desc: {
+      en: 'Post-molding trimming and finishing of vulcanized valve trays.',
+      'zh-TW': '硫化成型後的整盤修邊與後處理工站。',
+    },
+  },
+  {
+    src: '/images/factory/optical-inspection.jpg',
+    caption: { en: 'Optical Measurement Inspection', 'zh-TW': '光學量測檢驗' },
+    desc: {
+      en: 'Video measuring systems verify dimensional accuracy against drawings.',
+      'zh-TW': '光學影像量測儀比對圖面，驗證尺寸精度。',
+    },
+  },
+  {
+    src: '/images/factory/production-output.jpg',
+    caption: { en: 'Mass Production Output', 'zh-TW': '量產產出' },
+    desc: {
+      en: 'TR-series snap-in valves coming off the production line.',
+      'zh-TW': 'TR 系列 snap-in 氣嘴閥量產出料。',
+    },
+  },
+] as const;
 
 export async function generateMetadata({
   params,
@@ -88,6 +140,39 @@ export default async function AboutPage({
               <div className="font-semibold text-steel-800">{cap.title}</div>
               <div className="text-sm text-metal-600 mt-1">{cap.desc}</div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Factory & Process */}
+      <section className="mb-12">
+        <h2 className="mb-2 text-2xl font-bold text-steel-800">
+          {isZh ? '工廠與製程' : 'Inside Our Factory'}
+        </h2>
+        <p className="mb-6 text-metal-600">
+          {isZh
+            ? '台南自有工廠，從設計、加工、成型到檢驗一站完成。'
+            : 'Our own factory in Tainan, Taiwan — design, machining, molding, and inspection under one roof.'}
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {FACTORY_PHOTOS.map((photo) => (
+            <figure key={photo.src} className="overflow-hidden rounded-lg border border-metal-200">
+              <Image
+                src={photo.src}
+                alt={isZh ? photo.caption['zh-TW'] : photo.caption.en}
+                width={800}
+                height={600}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <figcaption className="p-3">
+                <div className="font-semibold text-steel-800 text-sm">
+                  {isZh ? photo.caption['zh-TW'] : photo.caption.en}
+                </div>
+                <div className="mt-0.5 text-xs text-metal-600">
+                  {isZh ? photo.desc['zh-TW'] : photo.desc.en}
+                </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>
