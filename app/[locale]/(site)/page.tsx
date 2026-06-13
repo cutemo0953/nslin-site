@@ -64,7 +64,7 @@ export default async function HomePage({
         <p className="mb-2 text-sm font-medium uppercase tracking-widest text-brass-300">
           {t('hero.subtitle')}
         </p>
-        <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
+        <h1 className="mb-6 font-serif text-4xl font-semibold text-white md:text-6xl">
           {t('hero.title')}
         </h1>
         <p className="mb-8 max-w-2xl text-lg text-steel-200">

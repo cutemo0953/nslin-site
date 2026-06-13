@@ -97,12 +97,18 @@ export default async function AboutPage({
           },
         }) }}
       />
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
+    <div className="wabi-ind font-sans">
+    <div className="mx-auto max-w-3xl px-6 py-20 leading-[1.8]">
+      <h1
+        className="mb-10 border-b pb-6 font-serif text-[1.9rem] font-semibold sm:text-3xl"
+        style={{ color: 'var(--w-ink)', borderColor: 'var(--w-line)' }}
+      >
+        {t('title')}
+      </h1>
 
       {/* Company Overview */}
-      <section className="mb-12">
-        <p className="text-lg text-metal-700 leading-relaxed">
+      <section className="mb-16">
+        <p className="text-lg leading-[1.9]" style={{ color: 'var(--w-ink-soft)' }}>
           {isZh
             ? 'N.S.-LIN 奕道實業有限公司成立於台南市安南區，擁有超過四十年的輪胎氣嘴閥研發與製造經驗。我們的產品行銷全球，符合TRA（美國）、ETRTO（歐洲）及JATMA（日本）國際標準，並通過ISO 9001:2015品質管理系統認證。'
             : 'N.S.-LIN Industrial Co., Ltd., headquartered in Tainan, Taiwan, brings over four decades of tire valve R&D and manufacturing expertise. Our products serve global markets and comply with TRA (US), ETRTO (EU), and JATMA (Japan) international standards, backed by ISO 9001:2015 quality management certification.'}
@@ -110,53 +116,53 @@ export default async function AboutPage({
       </section>
 
       {/* Certifications */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-2xl font-bold text-steel-800">{t('certifications')}</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+      <section className="mb-16">
+        <h2 className="mb-6 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>{t('certifications')}</h2>
+        <div className="grid gap-px overflow-hidden rounded-lg border sm:grid-cols-3" style={{ borderColor: 'var(--w-line)' }}>
           {[
             { name: 'ISO 9001:2015', desc: isZh ? '品質管理系統' : 'Quality Management System' },
             { name: 'AFAQ 9001', desc: isZh ? '法國品質認證' : 'French Quality Certification' },
             { name: 'DUNS Certified', desc: isZh ? '鄧白氏認證' : 'Dun & Bradstreet Certified' },
           ].map((cert) => (
-            <div key={cert.name} className="rounded-lg border border-cert-500/20 bg-cert-500/5 p-4">
-              <div className="font-semibold text-cert-600">{cert.name}</div>
-              <div className="text-sm text-metal-600">{cert.desc}</div>
+            <div key={cert.name} className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
+              <div className="font-serif font-semibold" style={{ color: 'var(--w-accent)' }}>{cert.name}</div>
+              <div className="mt-1 text-sm" style={{ color: 'var(--w-muted)' }}>{cert.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Manufacturing Capabilities */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-2xl font-bold text-steel-800">{t('capabilities')}</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+      <section className="mb-16">
+        <h2 className="mb-6 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>{t('capabilities')}</h2>
+        <div className="grid gap-px overflow-hidden rounded-lg border sm:grid-cols-2" style={{ borderColor: 'var(--w-line)' }}>
           {[
             { title: isZh ? 'CNC 精密加工' : 'CNC Precision Machining', desc: isZh ? '高精度數控加工，確保每一個氣嘴閥的尺寸精準。' : 'High-precision CNC machining ensures dimensional accuracy for every valve.' },
             { title: isZh ? '橡膠硫化製程' : 'Rubber Vulcanization', desc: isZh ? 'EPDM 橡膠硫化成型，Shore A 70±5 硬度控制。' : 'EPDM rubber vulcanization molding with Shore A 70+/-5 hardness control.' },
             { title: isZh ? '鋁合金陽極處理' : 'Aluminum Anodizing', desc: isZh ? '多色陽極處理，兼顧美觀與防腐蝕。' : 'Multi-color anodizing for aesthetics and corrosion resistance.' },
             { title: isZh ? 'OEM/ODM 客製' : 'OEM/ODM Custom Design', desc: isZh ? '依客戶規格設計製造，從打樣到量產。' : 'Design and manufacture to customer specifications, from prototype to mass production.' },
           ].map((cap) => (
-            <div key={cap.title} className="rounded-lg border border-metal-200 p-4">
-              <div className="font-semibold text-steel-800">{cap.title}</div>
-              <div className="text-sm text-metal-600 mt-1">{cap.desc}</div>
+            <div key={cap.title} className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
+              <div className="font-semibold" style={{ color: 'var(--w-ink)' }}>{cap.title}</div>
+              <div className="mt-1 text-sm" style={{ color: 'var(--w-ink-soft)' }}>{cap.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Factory & Process */}
-      <section className="mb-12">
-        <h2 className="mb-2 text-2xl font-bold text-steel-800">
+      <section className="mb-16">
+        <h2 className="mb-2 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>
           {isZh ? '工廠與製程' : 'Inside Our Factory'}
         </h2>
-        <p className="mb-6 text-metal-600">
+        <p className="mb-6" style={{ color: 'var(--w-muted)' }}>
           {isZh
             ? '台南自有工廠，從設計、加工、成型到檢驗一站完成。'
             : 'Our own factory in Tainan, Taiwan — design, machining, molding, and inspection under one roof.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FACTORY_PHOTOS.map((photo) => (
-            <figure key={photo.src} className="overflow-hidden rounded-lg border border-metal-200">
+            <figure key={photo.src} className="overflow-hidden rounded-lg border" style={{ borderColor: 'var(--w-line)', backgroundColor: 'var(--w-surface)' }}>
               <Image
                 src={photo.src}
                 alt={isZh ? photo.caption['zh-TW'] : photo.caption.en}
@@ -165,10 +171,10 @@ export default async function AboutPage({
                 className="aspect-[4/3] w-full object-cover"
               />
               <figcaption className="p-3">
-                <div className="font-semibold text-steel-800 text-sm">
+                <div className="text-sm font-semibold" style={{ color: 'var(--w-ink)' }}>
                   {isZh ? photo.caption['zh-TW'] : photo.caption.en}
                 </div>
-                <div className="mt-0.5 text-xs text-metal-600">
+                <div className="mt-0.5 text-xs" style={{ color: 'var(--w-muted)' }}>
                   {isZh ? photo.desc['zh-TW'] : photo.desc.en}
                 </div>
               </figcaption>
@@ -178,17 +184,18 @@ export default async function AboutPage({
       </section>
 
       {/* Contact Info */}
-      <section className="rounded-xl bg-steel-50 p-8">
-        <h2 className="mb-4 text-xl font-bold text-steel-800">
+      <section className="rounded-lg border-l-2 py-1 pl-6" style={{ borderColor: 'var(--w-accent-line)' }}>
+        <h2 className="mb-4 mt-5 font-serif text-lg font-semibold" style={{ color: 'var(--w-accent)' }}>
           {isZh ? '聯繫資訊' : 'Contact Information'}
         </h2>
-        <div className="space-y-2 text-metal-700">
-          <p><strong>{isZh ? '地址' : 'Address'}:</strong> NO.65, Sec.4, Changhe Rd., Annan Dist., Tainan City 709-47, Taiwan</p>
-          <p><strong>{isZh ? '電話' : 'Phone'}:</strong> +886-6-256-2097</p>
-          <p><strong>{isZh ? '傳真' : 'Fax'}:</strong> +886-6-256-2075</p>
-          <p><strong>Email:</strong> nslin@nslin.com.tw</p>
+        <div className="mb-5 space-y-2" style={{ color: 'var(--w-ink-soft)' }}>
+          <p><strong style={{ color: 'var(--w-ink)' }}>{isZh ? '地址' : 'Address'}:</strong> NO.65, Sec.4, Changhe Rd., Annan Dist., Tainan City 709-47, Taiwan</p>
+          <p><strong style={{ color: 'var(--w-ink)' }}>{isZh ? '電話' : 'Phone'}:</strong> +886-6-256-2097</p>
+          <p><strong style={{ color: 'var(--w-ink)' }}>{isZh ? '傳真' : 'Fax'}:</strong> +886-6-256-2075</p>
+          <p><strong style={{ color: 'var(--w-ink)' }}>Email:</strong> nslin@nslin.com.tw</p>
         </div>
       </section>
+    </div>
     </div>
     </>
   );

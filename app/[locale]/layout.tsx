@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_TC } from 'next/font/google';
+import { Inter, Noto_Sans_TC, Noto_Serif_TC } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -19,6 +19,16 @@ const notoSansTC = Noto_Sans_TC({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-noto-sans-tc',
+});
+
+// 明體 serif for headings — industrial-wabi dialect. preload:false so it only
+// loads on pages that apply font-serif (currently the About wabi pilot).
+const notoSerifTC = Noto_Serif_TC({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-noto-serif-tc',
 });
 
 export async function generateMetadata({
@@ -141,7 +151,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${notoSansTC.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${notoSansTC.variable} ${notoSerifTC.variable}`}>
       <head>
         <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt" />
         {/* Cloudflare Web Analytics — cookieless, no consent banner needed */}

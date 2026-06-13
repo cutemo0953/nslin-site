@@ -54,11 +54,34 @@
 
   /* Fonts */
   --font-sans: var(--font-inter), var(--font-noto-sans-tc), system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif-tc), 'Songti TC', serif;
 }
 
 body {
   background: #ffffff;
   color: var(--color-metal-900);
+}
+
+/* ============================================================
+ * 侘寂 Wabi-sabi tokens — "industrial" dialect (冷金屬 + brass 包漿).
+ * Shared warm-paper neutrals (lightened, per Tom's note); accent = the
+ * existing brass patina ramp; structure = steel/metal. Scope to .wabi-ind.
+ * Design language: ~/Downloads/handoffs/wabi-tokens/WABI_DESIGN_LANGUAGE_20260613.md
+ * ============================================================ */
+.wabi-ind {
+  --w-ink: #21242a;          /* steel-ink — warm-cool near-black, body */
+  --w-ink-soft: #474f5b;     /* metal-700 — secondary */
+  --w-muted: #6d7887;        /* metal-500 — labels */
+  --w-faint: #8b95a2;        /* metal-400 — meta */
+  --w-line: #e6e2d9;         /* warm hairline */
+  --w-paper: #f7f5f0;        /* 生成り — page base (lightened) */
+  --w-surface: #fdfdfb;      /* near-white card */
+  --w-accent: #835a34;       /* brass-700 — patina accent (text on paper, AA) */
+  --w-accent-soft: #faf8f0;  /* brass-50 */
+  --w-accent-line: #e4d9ae;  /* brass-200 hairline */
+  --w-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: var(--w-paper);
+  color: var(--w-ink);
 }
 
 /* Article content — blog & reports */
