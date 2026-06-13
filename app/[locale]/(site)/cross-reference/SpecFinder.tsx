@@ -61,11 +61,14 @@ export default function SpecFinder({
   );
 
   const filtered = useMemo(() => {
-    const q = norm(query);
+    // Split on whitespace and require EVERY term to match. norm() strips spaces,
+    // so a single normalized query ("tr413 valve" → "tr413valve") would fail to
+    // match non-adjacent fields; per-term matching fixes multi-word search.
+    const terms = query.split(/\s+/).map(norm).filter(Boolean);
     return rows.filter((r) => {
       if (application && r.application !== application) return false;
       if (valveType && r.valveType !== valveType) return false;
-      if (q && !r.searchText.includes(q)) return false;
+      if (terms.length && !terms.every((t) => r.searchText.includes(t))) return false;
       return true;
     });
   }, [rows, query, application, valveType]);

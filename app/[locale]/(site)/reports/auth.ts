@@ -6,6 +6,16 @@ import { cookies } from 'next/headers';
 
 export const REPORTS_COOKIE = 'nslin_reports_auth';
 
+// Constant-time compare of the auth token (both sides are fixed-length 64-char
+// SHA-256 hex, so length is not secret). Avoids the short-circuit timing leak of
+// `===` on a secret-bearing token.
+export function timingSafeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < a.length; i++) mismatch |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return mismatch === 0;
+}
+
 // MUST be called from each report page (not only the layout): App Router
 // renders pages in parallel with layouts, so a layout-only gate still ships
 // the page's data in the RSC flight payload.
@@ -13,7 +23,7 @@ export async function reportsAuthorized(): Promise<boolean> {
   const expected = await getExpectedDigest();
   if (!expected) return false; // fail closed: no PIN configured → locked
   const cookie = (await cookies()).get(REPORTS_COOKIE)?.value;
-  return cookie === expected;
+  return cookie != null && timingSafeEqual(cookie, expected);
 }
 
 // REPORTS_PIN is a Worker secret (wrangler secret put REPORTS_PIN);

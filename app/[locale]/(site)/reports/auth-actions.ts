@@ -1,7 +1,7 @@
 'use server';
 
 import { cookies, headers } from 'next/headers';
-import { REPORTS_COOKIE, pinDigest, getExpectedDigest, getReportsEnv } from './auth';
+import { REPORTS_COOKIE, pinDigest, getExpectedDigest, getReportsEnv, timingSafeEqual } from './auth';
 
 export interface ReportsAuthState {
   status: 'idle' | 'ok' | 'wrong' | 'unconfigured' | 'rate_limited';
@@ -28,14 +28,18 @@ export async function verifyReportsPin(
       const { success } = await limiter.limit({ key: `reports-pin:${ip}` });
       if (!success) return { status: 'rate_limited' };
     } catch (e) {
+      // Fail CLOSED: an auth rate limiter that errors must reject the attempt,
+      // not fall through to PIN verification (else forcing the limiter to throw
+      // grants unlimited brute-force tries). Low-stakes outage = re-try later.
       console.error('verifyReportsPin: rate limiter failed', e);
+      return { status: 'rate_limited' };
     }
   }
 
   const pin = String(formData.get('pin') ?? '');
   if (!pin || pin.length > 100) return { status: 'wrong' };
 
-  if ((await pinDigest(pin)) !== expected) return { status: 'wrong' };
+  if (!timingSafeEqual(await pinDigest(pin), expected)) return { status: 'wrong' };
 
   (await cookies()).set(REPORTS_COOKIE, expected, {
     httpOnly: true,

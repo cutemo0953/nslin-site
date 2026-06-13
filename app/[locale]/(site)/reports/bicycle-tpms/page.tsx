@@ -8,24 +8,13 @@ import {
 import { reportsAuthorized } from '../auth';
 import ReportsPinForm from '../ReportsPinForm';
 
-export async function generateStaticParams() {
-  return [{ locale: 'zh-TW' }, { locale: 'en' }];
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const isZh = locale === 'zh-TW';
-  return {
-    title: isZh
-      ? '自行車 TPMS 市場研究'
-      : 'Bicycle TPMS Market Research',
-    robots: { index: false, follow: false },
-  };
-}
+// Generic metadata only — do NOT leak the report topic in <title>/metadata to
+// unauthenticated visitors (body is gated, but metadata renders pre-auth).
+// generateStaticParams removed: reportsAuthorized() reads cookies() → dynamic.
+export const metadata: Metadata = {
+  title: '內部報告 · Internal Reports',
+  robots: { index: false, follow: false },
+};
 
 function ReportFooter({ slug, locale }: { slug: string; locale: string }) {
   const isZh = locale === 'zh-TW';

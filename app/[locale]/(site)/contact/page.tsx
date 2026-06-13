@@ -69,8 +69,9 @@ export default async function ContactPage({
           ))}
         </div>
 
-        {/* Contact Form — Suspense required: useSearchParams (sku prefill) in a static page */}
-        <Suspense>
+        {/* Contact Form — Suspense required: useSearchParams (sku prefill) in a static
+            page. Fallback reserves the form's height so it doesn't pop in (CLS). */}
+        <Suspense fallback={<div className="md:col-span-2 min-h-[34rem] rounded-lg" aria-hidden="true" />}>
         <ContactForm
           labels={{
             company: t('form.company'),
