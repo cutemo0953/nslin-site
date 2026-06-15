@@ -81,7 +81,12 @@
     "rim_hole": "Rim Hole",
     "standard": "Standards",
     "related": "Related Products",
-    "request_quote": "Request Quote for This Product"
+    "request_quote": "Request Quote for This Product",
+    "search_placeholder": "Search by part number or name…",
+    "search_aria": "Search products",
+    "result_count": "{count} products",
+    "no_results": "No matching products. Try a different part number or name.",
+    "browse_categories": "Browse all categories"
   },
   "footer": {
     "company": "N.S.-LIN Industrial Co., Ltd.",

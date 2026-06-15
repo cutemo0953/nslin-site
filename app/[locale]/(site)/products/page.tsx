@@ -3,7 +3,14 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { categories } from '@/data/products/categories';
+import { getAllProducts } from '@/data/products';
+import ProductSearch, { type ProductRow } from '@/components/products/ProductSearch';
 import type { Metadata } from 'next';
+
+// Normalize for matching: lower-case, strip whitespace/dashes/dots.
+function norm(s: string): string {
+  return s.toLowerCase().replace(/[\s\-_.]/g, '');
+}
 
 export async function generateMetadata({
   params,
@@ -31,6 +38,42 @@ export default async function ProductsPage({
   const t = await getTranslations('products');
   const isZh = locale === 'zh-TW';
 
+  // Category-slug → localized category name, so search can match by category.
+  const categoryNameBySlug = new Map(
+    categories.map((c) => [c.slug, isZh ? c.name['zh-TW'] : c.name.en] as const),
+  );
+
+  // Flatten the catalog once, server-side, into plain rows the client island
+  // filters in memory (no refetch). Both locale names + category go into the
+  // haystack so SKU / zh / en / category search all work case-insensitively.
+  const productRows: ProductRow[] = getAllProducts()
+    .filter((p) => p.status === 'active')
+    .map((p) => {
+      const categoryName = categoryNameBySlug.get(p.family) ?? '';
+      return {
+        sku: p.sku,
+        family: p.family,
+        name: isZh ? p.name['zh-TW'] : p.name.en,
+        description: isZh ? p.description['zh-TW'] : p.description.en,
+        material: p.material,
+        image: p.images?.[0] ?? '',
+        categoryName,
+        searchText: norm(
+          [
+            p.sku,
+            ...(p.variants ?? []).map((v) => v.partNo),
+            p.name.en,
+            p.name['zh-TW'],
+            p.family,
+            categoryNameBySlug.get(p.family) ?? '',
+            categories.find((c) => c.slug === p.family)?.name.en ?? '',
+            p.material,
+          ].join(' '),
+        ),
+      };
+    })
+    .sort((a, b) => a.sku.localeCompare(b.sku));
+
   return (
     <>
       <script
@@ -51,12 +94,27 @@ export default async function ProductsPage({
       />
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
-      <p className="mb-12 text-lg text-metal-600">
+      <p className="mb-8 text-lg text-metal-600">
         {isZh
           ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
           : '13 product categories, 70+ models. Compliant with TRA, ETRTO, and JATMA international standards.'}
       </p>
 
+      {/* Live search across all SKUs (by part number, name, or category) */}
+      <ProductSearch
+        products={productRows}
+        labels={{
+          searchPlaceholder: t('search_placeholder'),
+          searchAria: t('search_aria'),
+          resultCount: t('result_count'),
+          noResults: t('no_results'),
+          browseCategories: t('browse_categories'),
+        }}
+      />
+
+      <h2 className="mb-6 mt-16 text-2xl font-bold text-steel-900">
+        {isZh ? '依類別瀏覽' : 'Browse by Category'}
+      </h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, index) => (
           <Link

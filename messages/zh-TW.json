@@ -81,7 +81,12 @@
     "rim_hole": "輪圈孔徑",
     "standard": "適用標準",
     "related": "相關產品",
-    "request_quote": "詢問此產品報價"
+    "request_quote": "詢問此產品報價",
+    "search_placeholder": "搜尋料號或品名…",
+    "search_aria": "搜尋產品",
+    "result_count": "{count} 項產品",
+    "no_results": "找不到符合的產品。試試其他料號或品名關鍵字。",
+    "browse_categories": "瀏覽全部類別"
   },
   "footer": {
     "company": "奕道實業有限公司",
