@@ -106,6 +106,30 @@ export async function submitInquiry(
 
   const env = await getEnv();
 
+  // Turnstile bot challenge — verified only when the secret is configured
+  // (skipped gracefully in local dev / before the key is provisioned, mirroring
+  // the rate-limiter pattern below).
+  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
+  if (typeof turnstileSecret === 'string' && turnstileSecret) {
+    const token = field('cf-turnstile-response');
+    if (!token) return { status: 'invalid' };
+    try {
+      const ip = (await headers()).get('cf-connecting-ip') ?? '';
+      const verifyBody = new URLSearchParams({ secret: turnstileSecret, response: token });
+      if (ip) verifyBody.set('remoteip', ip);
+      const vr = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: verifyBody,
+      });
+      const data = (await vr.json()) as { success?: boolean };
+      if (!data.success) return { status: 'invalid' };
+    } catch (e) {
+      console.error('submitInquiry: turnstile verify failed', e);
+      return { status: 'error' };
+    }
+  }
+
   // Per-IP rate limit (Cloudflare ratelimit binding); honeypot alone is not
   // abuse control. Skipped gracefully when the binding is absent (local dev).
   const limiter = env.INQUIRY_RATE_LIMITER as RateLimiter | undefined;

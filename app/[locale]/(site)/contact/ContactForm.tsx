@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
+import Script from 'next/script';
 import { CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { submitInquiry, type InquiryState } from './actions';
 import type { RfqItem } from '@/lib/rfq';
@@ -13,6 +14,10 @@ const COUNTRIES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP'] as cons
 
 // Part numbers from our catalog links only; reject anything else from the URL.
 const SKU_RE = /^[A-Za-z0-9()\/. -]{1,40}$/;
+
+// Cloudflare Turnstile site key (public, inlined at build). When unset — before
+// the widget is provisioned — no challenge renders and the form is unchanged.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export interface ContactFormLabels {
   company: string;
@@ -307,6 +312,17 @@ export default function ContactForm({
         />
       </div>
 
+      {TURNSTILE_SITE_KEY && (
+        <>
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="afterInteractive"
+            async
+            defer
+          />
+          <div className="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY} data-theme="light" />
+        </>
+      )}
       <button
         type="submit"
         disabled={pending}
