@@ -15,9 +15,9 @@ const COUNTRIES = ['DE', 'FR', 'IT', 'ES', 'NL', 'GB', 'US', 'TW', 'JP'] as cons
 // Part numbers from our catalog links only; reject anything else from the URL.
 const SKU_RE = /^[A-Za-z0-9()\/. -]{1,40}$/;
 
-// Cloudflare Turnstile site key (public, inlined at build). When unset — before
-// the widget is provisioned — no challenge renders and the form is unchanged.
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+// Cloudflare Turnstile site key — PUBLIC (rendered in the page as data-sitekey),
+// so safe to commit. Durable default; env override allowed for other environments.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAADlkytdAwpUddKaE';
 
 export interface ContactFormLabels {
   company: string;
