@@ -1,0 +1,173 @@
+{
+  "date": "2026-06-18",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 7.9,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit",
+      "sourceTitle": "Schwalbe Clik Valve retrofit kit, SV / DV valves become SCV",
+      "evidenceText": "Source 1: Sale price: €7.90 Regular price: €9.95. Sale price: €4.90 Regular price: €5.99. Source 2: EUR 12,60 €. All prices: €4.90, €5.99, €7.90, €9.95, €12.60",
+      "extractionRationale": "Multiple retail prices found across three sources. Source 1 lists four prices (€7.90, €9.95, €4.90, €5.99 for different Clik products/variants), Source 2 lists €12.60 for a 40mm tubeless valve set. Median of all five prices (€4.90, €5.99, €7.90, €9.95, €12.60) is €7.90.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859949.html",
+      "sourceTitle": "",
+      "evidenceText": "Four distinct product URLs identified: p1859949.html (Clik Valve 60mm), p1859948.html (Clik Valve 40mm), p1960182.html (Tube No. 19 with Clik Valve), p1960181.html (Tube No. 17 with Clik Valve). Category page and accessories (pump heads) excluded.",
+      "extractionRationale": "Counted unique product page URLs with individual product IDs (p-numbers). Excluded the category filter page (marken/schwalbe/f.serie) and pump head accessories. Tubes with Clik Valve are counted as distinct products, not accessories.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "All 5 sources examined contain only product descriptions and titles. No stock status indicators ('out of stock', 'currently unavailable', 'nicht verfügbar', 'ausverkauft') found in any listing.",
+      "extractionRationale": "Stock status cannot be determined from the provided text. Sources 3 and 4 have empty content, and sources 1, 2, and 5 contain only product descriptions without any availability or stock information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 9,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "",
+      "extractionRationale": "",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -10,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "fail",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "",
+      "evidenceText": "the LME Official Price is the global benchmark price for aluminium, 25 tonnes Price quotation: US$ per tonne. Price graphs Shown in US$ view historical prices",
+      "extractionRationale": "The provided evidence sources do not contain the actual current LME aluminum spot price value. Source 1 describes that prices are quoted in US$/tonne but provides no specific number. Source 2 contains aluminium alloy prices (not spot), and Source 3 contains premium prices (not the base spot price).",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 3284,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
