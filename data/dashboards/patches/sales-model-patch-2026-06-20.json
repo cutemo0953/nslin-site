@@ -1,0 +1,168 @@
+{
+  "date": "2026-06-20",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 8.4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve - Shop Online - BIKE24",
+      "evidenceText": "Clik Valve - Conversion Kit - SV-SCV - 2 Valves & Pump Head Adapter. 8,40 €*",
+      "extractionRationale": "Only one retail price found in the sources: 8,40 EUR from BIKE24 for the Schwalbe Clik Valve Conversion Kit (SV-SCV). Source 2 did not include a specific price. The median of a single price is the price itself: 8.40 EUR.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859949.html",
+      "sourceTitle": "",
+      "evidenceText": "Distinct product URLs identified: p1859949.html (60mm set), p1859948.html (40mm set), p1960182.html (No. 19 tube), p1960181.html (No. 17 tube). Source 1 is a category page, not counted.",
+      "extractionRationale": "Counted unique product page URLs (p-numbers) for Clik valve products. Excluded the category/filter page (marken/schwalbe URL). Excluded accessories like pump head adapters. Total: 4 distinct product listings.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper | 2 Pieces | BIKE24",
+      "evidenceText": "No stock status indicators found in any of the 4 product listings. Sources contain only product descriptions without availability information.",
+      "extractionRationale": "Stock status cannot be determined from the provided sources. While 2 sources have content (Sources 1-2), they only contain product descriptions. Sources 3-4 have no content provided. None mention stock-related keywords.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 7,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1960182.html",
+      "sourceTitle": "Schwalbe Schlauch - No. 19 | 27.5/28/29 Zoll | Clik Valve (SCV)",
+      "evidenceText": "From the 5 sources: No. 19 (27.5/28/29\"), No. 14 (27.5\"/650B), No. 19-EL Extra Light (27.5\"/28\"/29\"), No. 19L (27.5\"/28\"/29\"), No. 19-AE+ (29\"), Nr. 6 (20\"), Nr. 3 (16\") - all with Clik Valve (SCV)",
+      "extractionRationale": "Counted all distinct Schwalbe inner tube models/SKUs that explicitly use Clik Valve interface across all 5 sources. Each unique model designation (No. 19, No. 14, No. 19-EL, No. 19L, No. 19-AE+, No. 6, No. 3) represents a separate SKU/model. Excluded valves, kits, and accessories as instructed. Only counted actual inner tube products.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": -30,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3510,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Closing Prices ; 3510.00 · 3510.00 · 3510.00 · 3510.00",
+      "extractionRationale": "Extracted the LME Aluminium Alloy closing price of 3510.00 USD per metric ton from the official London Metal Exchange source. This is the current spot price in the required format.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 6.88,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
