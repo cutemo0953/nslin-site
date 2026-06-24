@@ -1,0 +1,178 @@
+{
+  "date": "2026-06-24",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The only price found is 11,08 € from bike24.com, but this refers to a bundle product (Airmax Pro Digital Air Pressure Checker + Clik Valve Adapter), not a standalone Clik Valve retail price.",
+      "extractionRationale": "No clear standalone Clik Valve retail price could be extracted. The only price mentioned (11,08 €) is for a bundle product including other items, not the Clik Valve product alone. The other two sources do not contain pricing information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859948.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless-Ventil - 2er Set - 40 mm | BIKE24",
+      "evidenceText": "Five sources analyzed: One standalone Clik Valve product (p1859948.html), two inner tube products with Clik Valve (p1960182.html, p1960181.html - accessories), one conversion kit with pump head adapter (p1859953.html - accessory), and one category page (marken/schwalbe/f.serie.schwalbe-clik-valve - not a product listing).",
+      "extractionRationale": "Only https://www.bike24.de/p1859948.html represents a distinct standalone Clik Valve product listing. The other URLs are either inner tubes (accessories in different product category), conversion kits (accessories), or category pages. Following the instruction to exclude duplicate listings and accessories, only 1 distinct Clik Valve product listing was found.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "",
+      "evidenceText": "No content provided in source materials to determine stock status",
+      "extractionRationale": "All four product listing sources (bike24.com) have empty content sections with no text available to assess stock status. Stock status cannot be determined from the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/tubes/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The provided evidence includes references to Schwalbe tubes with Clik valve compatibility (Source 3 mentions \"TUBE, AEROTHAN, Schwalbe, 20 Zoll, CARGO/BMX\") but the content is incomplete/truncated and does not provide a comprehensive listing of distinct inner tube models/SKUs.",
+      "extractionRationale": "The sources describe the Clik Valve technology and mention some tube references, but do not provide a complete, countable list of distinct Schwalbe inner tube models/SKUs using the Clik valve interface. Source 3 (the most relevant URL for tube products) has truncated content. Sources 1, 2, and 5 discuss valve technology generally. Source 4 lists valve accessories and parts, which are explicitly excluded from this count.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "LME Aluminium - Metals",
+      "evidenceText": "the LME Official Price is the global benchmark price for aluminium, 25 tonnes Price quotation: US$ per tonne",
+      "extractionRationale": "Source 2 confirms that LME aluminum prices are quoted in US$ per tonne (the correct unit), but no specific current price value is provided in the evidence excerpt. Source 1 shows prices for aluminium alloy (not standard aluminum) with a future date (24 Jun 2026), which is not reliable for current spot price extraction.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
