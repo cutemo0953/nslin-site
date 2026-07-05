@@ -21,8 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Static routes (both locales)
   staticRoutes.forEach((route) => {
-    const enUrl = `${BASE_URL}${route}`;
-    const zhUrl = `${BASE_URL}/zh-TW${route}`;
+    // Home '/' would yield a trailing slash (/ and /zh-TW/) that 308-redirects;
+    // emit the served, slash-free form to match the page canonical.
+    const enUrl = route === '/' ? BASE_URL : `${BASE_URL}${route}`;
+    const zhUrl = route === '/' ? `${BASE_URL}/zh-TW` : `${BASE_URL}/zh-TW${route}`;
 
     entries.push({
       url: enUrl,
