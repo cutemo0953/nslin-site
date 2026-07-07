@@ -20,7 +20,7 @@ export function FadeInSection({ children, className = '', delay = 0 }: Props) {
     }
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -12% 0px' }
     );
     obs.observe(el);
     return () => obs.disconnect();
