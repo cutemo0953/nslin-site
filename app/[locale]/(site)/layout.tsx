@@ -90,6 +90,9 @@ function Footer() {
             <p className="text-sm text-steel-300">
               Tel: {t('phone')} | {t('email')}
             </p>
+            <p className="text-sm text-steel-300 mt-1">
+              {t('taxId')}
+            </p>
           </div>
 
           {/* Certifications */}
