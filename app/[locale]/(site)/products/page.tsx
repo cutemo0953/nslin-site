@@ -5,6 +5,7 @@ import { seoAlternates, BASE_URL } from '@/lib/seo';
 import { categories } from '@/data/products/categories';
 import { getAllProducts } from '@/data/products';
 import ProductSearch, { type ProductRow } from '@/components/products/ProductSearch';
+import { FadeInSection } from '@/components/FadeInSection';
 import type { Metadata } from 'next';
 
 // Normalize for matching: lower-case, strip whitespace/dashes/dots.
@@ -93,32 +94,40 @@ export default async function ProductsPage({
         }) }}
       />
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
-      <p className="mb-8 text-lg text-metal-600">
-        {isZh
-          ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
-          : '13 product categories, 70+ models. Compliant with TRA, ETRTO, and JATMA international standards.'}
-      </p>
+      <FadeInSection delay={0}>
+        <h1 className="mb-8 text-3xl font-bold text-steel-900">{t('title')}</h1>
+      </FadeInSection>
+      <FadeInSection delay={100}>
+        <p className="mb-8 text-lg text-metal-600">
+          {isZh
+            ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
+            : '13 product categories, 70+ models. Compliant with TRA, ETRTO, and JATMA international standards.'}
+        </p>
+      </FadeInSection>
 
       {/* Live search across all SKUs (by part number, name, or category) */}
-      <ProductSearch
-        products={productRows}
-        labels={{
-          searchPlaceholder: t('search_placeholder'),
-          searchAria: t('search_aria'),
-          resultCount: t('result_count'),
-          noResults: t('no_results'),
-          browseCategories: t('browse_categories'),
-        }}
-      />
+      <FadeInSection delay={200}>
+        <ProductSearch
+          products={productRows}
+          labels={{
+            searchPlaceholder: t('search_placeholder'),
+            searchAria: t('search_aria'),
+            resultCount: t('result_count'),
+            noResults: t('no_results'),
+            browseCategories: t('browse_categories'),
+          }}
+        />
+      </FadeInSection>
 
-      <h2 className="mb-6 mt-16 text-2xl font-bold text-steel-900">
-        {isZh ? '依類別瀏覽' : 'Browse by Category'}
-      </h2>
+      <FadeInSection delay={0}>
+        <h2 className="mb-6 mt-16 text-2xl font-bold text-steel-900">
+          {isZh ? '依類別瀏覽' : 'Browse by Category'}
+        </h2>
+      </FadeInSection>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, index) => (
+          <FadeInSection key={cat.slug} delay={(index % 3) * 100} className="grid">
           <Link
-            key={cat.slug}
             href={`/products/${cat.slug}`}
             className="group overflow-hidden rounded-xl border border-metal-200 hover:border-steel-300 hover:shadow-lg transition-all"
           >
@@ -147,6 +156,7 @@ export default async function ProductsPage({
               </span>
             </div>
           </Link>
+          </FadeInSection>
         ))}
       </div>
     </div>
