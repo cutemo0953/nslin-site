@@ -62,37 +62,29 @@ export default async function HomePage({
     <>
       {/* Hero Banner Carousel */}
       <BannerCarousel>
-        <FadeInSection delay={0}>
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-brass-300">
-            {t('hero.subtitle')}
-          </p>
-        </FadeInSection>
-        <FadeInSection delay={100}>
-          <h1 className="mb-6 font-serif text-4xl font-semibold text-white md:text-6xl">
-            {t('hero.title')}
-          </h1>
-        </FadeInSection>
-        <FadeInSection delay={200}>
-          <p className="mb-8 max-w-2xl text-lg text-steel-200">
-            {t('hero.description')}
-          </p>
-        </FadeInSection>
-        <FadeInSection delay={300}>
-          <div className="flex gap-4">
-            <Link
-              href="/products"
-              className="rounded-lg bg-white px-6 py-3 font-semibold text-steel-900 hover:bg-steel-50 transition-colors"
-            >
-              {t('hero.cta_products')}
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-lg border-2 border-brass-400 px-6 py-3 font-semibold text-brass-300 hover:bg-brass-400/10 transition-colors"
-            >
-              {t('hero.cta_rfq')}
-            </Link>
-          </div>
-        </FadeInSection>
+        <p className="mb-2 text-sm font-medium uppercase tracking-widest text-brass-300">
+          {t('hero.subtitle')}
+        </p>
+        <h1 className="mb-6 font-serif text-4xl font-semibold text-white md:text-6xl">
+          {t('hero.title')}
+        </h1>
+        <p className="mb-8 max-w-2xl text-lg text-steel-200">
+          {t('hero.description')}
+        </p>
+        <div className="flex gap-4">
+          <Link
+            href="/products"
+            className="rounded-lg bg-white px-6 py-3 font-semibold text-steel-900 hover:bg-steel-50 transition-colors"
+          >
+            {t('hero.cta_products')}
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-lg border-2 border-brass-400 px-6 py-3 font-semibold text-brass-300 hover:bg-brass-400/10 transition-colors"
+          >
+            {t('hero.cta_rfq')}
+          </Link>
+        </div>
       </BannerCarousel>
 
       {/* Features / Why N.S.-LIN */}
