@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { seoAlternates, BASE_URL } from '@/lib/seo';
+import { FadeInSection } from '@/components/FadeInSection';
 import type { Metadata } from 'next';
 
 const FACTORY_PHOTOS = [
@@ -99,14 +100,17 @@ export default async function AboutPage({
       />
     <div className="wabi-ind font-sans">
     <div className="mx-auto max-w-3xl px-6 py-20 leading-[1.8]">
-      <h1
-        className="mb-10 border-b pb-6 font-serif text-[1.9rem] font-semibold sm:text-3xl"
-        style={{ color: 'var(--w-ink)', borderColor: 'var(--w-line)' }}
-      >
-        {t('title')}
-      </h1>
+      <FadeInSection delay={0}>
+        <h1
+          className="mb-10 border-b pb-6 font-serif text-[1.9rem] font-semibold sm:text-3xl"
+          style={{ color: 'var(--w-ink)', borderColor: 'var(--w-line)' }}
+        >
+          {t('title')}
+        </h1>
+      </FadeInSection>
 
       {/* Company Overview */}
+      <FadeInSection delay={100}>
       <section className="mb-16">
         <p className="text-lg leading-[1.9]" style={{ color: 'var(--w-ink-soft)' }}>
           {isZh
@@ -114,8 +118,10 @@ export default async function AboutPage({
             : 'N.S.-LIN Industrial Co., Ltd., headquartered in Tainan, Taiwan, brings over four decades of tire valve R&D and manufacturing expertise. Our products serve global markets and comply with TRA (US), ETRTO (EU), and JATMA (Japan) international standards, backed by ISO 9001:2015 quality management certification.'}
         </p>
       </section>
+      </FadeInSection>
 
       {/* Certifications */}
+      <FadeInSection delay={200}>
       <section className="mb-16">
         <h2 className="mb-6 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>{t('certifications')}</h2>
         <div className="grid gap-px overflow-hidden rounded-lg border sm:grid-cols-3" style={{ borderColor: 'var(--w-line)' }}>
@@ -123,16 +129,20 @@ export default async function AboutPage({
             { name: 'ISO 9001:2015', desc: isZh ? '品質管理系統' : 'Quality Management System' },
             { name: 'AFAQ 9001', desc: isZh ? '法國品質認證' : 'French Quality Certification' },
             { name: 'DUNS Certified', desc: isZh ? '鄧白氏認證' : 'Dun & Bradstreet Certified' },
-          ].map((cert) => (
-            <div key={cert.name} className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
+          ].map((cert, i) => (
+            <FadeInSection key={cert.name} delay={(i % 3) * 100} className="grid">
+            <div className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
               <div className="font-serif font-semibold" style={{ color: 'var(--w-accent)' }}>{cert.name}</div>
               <div className="mt-1 text-sm" style={{ color: 'var(--w-muted)' }}>{cert.desc}</div>
             </div>
+            </FadeInSection>
           ))}
         </div>
       </section>
+      </FadeInSection>
 
       {/* Manufacturing Capabilities */}
+      <FadeInSection delay={300}>
       <section className="mb-16">
         <h2 className="mb-6 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>{t('capabilities')}</h2>
         <div className="grid gap-px overflow-hidden rounded-lg border sm:grid-cols-2" style={{ borderColor: 'var(--w-line)' }}>
@@ -141,16 +151,20 @@ export default async function AboutPage({
             { title: isZh ? '橡膠硫化製程' : 'Rubber Vulcanization', desc: isZh ? 'EPDM 橡膠硫化成型，Shore A 70±5 硬度控制。' : 'EPDM rubber vulcanization molding with Shore A 70+/-5 hardness control.' },
             { title: isZh ? '鋁合金陽極處理' : 'Aluminum Anodizing', desc: isZh ? '多色陽極處理，兼顧美觀與防腐蝕。' : 'Multi-color anodizing for aesthetics and corrosion resistance.' },
             { title: isZh ? 'OEM/ODM 客製' : 'OEM/ODM Custom Design', desc: isZh ? '依客戶規格設計製造，從打樣到量產。' : 'Design and manufacture to customer specifications, from prototype to mass production.' },
-          ].map((cap) => (
-            <div key={cap.title} className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
+          ].map((cap, i) => (
+            <FadeInSection key={cap.title} delay={(i % 3) * 100} className="grid">
+            <div className="p-5" style={{ backgroundColor: 'var(--w-surface)' }}>
               <div className="font-semibold" style={{ color: 'var(--w-ink)' }}>{cap.title}</div>
               <div className="mt-1 text-sm" style={{ color: 'var(--w-ink-soft)' }}>{cap.desc}</div>
             </div>
+            </FadeInSection>
           ))}
         </div>
       </section>
+      </FadeInSection>
 
       {/* Factory & Process */}
+      <FadeInSection delay={400}>
       <section className="mb-16">
         <h2 className="mb-2 font-serif text-xl font-semibold" style={{ color: 'var(--w-ink)' }}>
           {isZh ? '工廠與製程' : 'Inside Our Factory'}
@@ -161,8 +175,9 @@ export default async function AboutPage({
             : 'Our own factory in Tainan, Taiwan — design, machining, molding, and inspection under one roof.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FACTORY_PHOTOS.map((photo) => (
-            <figure key={photo.src} className="overflow-hidden rounded-lg border" style={{ borderColor: 'var(--w-line)', backgroundColor: 'var(--w-surface)' }}>
+          {FACTORY_PHOTOS.map((photo, i) => (
+            <FadeInSection key={photo.src} delay={(i % 3) * 100} className="grid">
+            <figure className="overflow-hidden rounded-lg border" style={{ borderColor: 'var(--w-line)', backgroundColor: 'var(--w-surface)' }}>
               <Image
                 src={photo.src}
                 alt={isZh ? photo.caption['zh-TW'] : photo.caption.en}
@@ -179,11 +194,14 @@ export default async function AboutPage({
                 </div>
               </figcaption>
             </figure>
+            </FadeInSection>
           ))}
         </div>
       </section>
+      </FadeInSection>
 
       {/* Contact Info */}
+      <FadeInSection delay={500}>
       <section className="rounded-lg border-l-2 py-1 pl-6" style={{ borderColor: 'var(--w-accent-line)' }}>
         <h2 className="mb-4 mt-5 font-serif text-lg font-semibold" style={{ color: 'var(--w-accent)' }}>
           {isZh ? '聯繫資訊' : 'Contact Information'}
@@ -195,6 +213,7 @@ export default async function AboutPage({
           <p><strong style={{ color: 'var(--w-ink)' }}>Email:</strong> nslin@nslin.com.tw</p>
         </div>
       </section>
+      </FadeInSection>
     </div>
     </div>
     </>

@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { seoAlternates } from '@/lib/seo';
 import { getAllGuides } from '@/lib/guides';
+import { FadeInSection } from '@/components/FadeInSection';
 import {
   BookOpenIcon,
   CalendarDaysIcon,
@@ -47,32 +48,34 @@ export default async function GuidesListPage({
         <span className="text-metal-700">{isZh ? '知識中心' : 'Knowledge Hub'}</span>
       </nav>
 
-      <div className="mb-8">
-        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-steel-100 px-3 py-1 text-xs text-steel-600">
-          <BookOpenIcon className="h-3.5 w-3.5" />
-          {isZh ? '長青知識指南' : 'Evergreen Knowledge Guides'}
+      <FadeInSection delay={0}>
+        <div className="mb-8">
+          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-steel-100 px-3 py-1 text-xs text-steel-600">
+            <BookOpenIcon className="h-3.5 w-3.5" />
+            {isZh ? '長青知識指南' : 'Evergreen Knowledge Guides'}
+          </div>
+          <h1 className="mb-4 text-3xl font-bold text-steel-900">
+            {isZh ? '知識中心' : 'Knowledge Hub'}
+          </h1>
+          <p className="text-lg text-metal-600 max-w-2xl">
+            {isZh
+              ? '深入了解氣嘴閥技術 — 從國際標準、材質科學到無內胎系統，每篇指南都是經過驗證的長青參考資料。'
+              : 'Deep-dive into tire valve technology — from international standards and material science to tubeless systems. Each guide is a verified, evergreen reference.'}
+          </p>
         </div>
-        <h1 className="mb-4 text-3xl font-bold text-steel-900">
-          {isZh ? '知識中心' : 'Knowledge Hub'}
-        </h1>
-        <p className="text-lg text-metal-600 max-w-2xl">
-          {isZh
-            ? '深入了解氣嘴閥技術 — 從國際標準、材質科學到無內胎系統，每篇指南都是經過驗證的長青參考資料。'
-            : 'Deep-dive into tire valve technology — from international standards and material science to tubeless systems. Each guide is a verified, evergreen reference.'}
-        </p>
-      </div>
+      </FadeInSection>
 
       {/* Guide Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {guides.map((guide) => {
+        {guides.map((guide, i) => {
           const updatedDate = new Date(guide.frontmatter.lastUpdated).toLocaleDateString(
             isZh ? 'zh-TW' : 'en-US',
             { year: 'numeric', month: 'long', day: 'numeric' },
           );
 
           return (
+            <FadeInSection key={guide.slug} delay={(i % 3) * 100} className="grid">
             <Link
-              key={guide.slug}
               href={`/guides/${guide.slug}`}
               className="group rounded-xl border border-metal-200 p-6 hover:border-steel-400 hover:shadow-md transition-all"
             >
@@ -106,6 +109,7 @@ export default async function GuidesListPage({
                 </span>
               </div>
             </Link>
+            </FadeInSection>
           );
         })}
       </div>
