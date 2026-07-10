@@ -56,7 +56,7 @@ export async function generateMetadata({
     metadataBase: new URL(BASE_URL),
     openGraph: {
       type: 'website',
-      siteName: isZh ? '奕道工業' : 'N.S.-LIN Industrial',
+      siteName: isZh ? '奕道實業' : 'N.S.-LIN Industrial',
       locale: isZh ? 'zh_TW' : 'en_US',
       images: [
         {
@@ -96,7 +96,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'N.S.-LIN Industrial Co., Ltd.',
-  alternateName: '奕道工業股份有限公司',
+  alternateName: '奕道實業有限公司',
   url: BASE_URL,
   description:
     'Taiwan-based tire valve manufacturer with 40+ years expertise. ISO 9001:2015 certified.',

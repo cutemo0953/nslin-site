@@ -19,9 +19,9 @@ export async function GET() {
 
 - [Bicycle Tubeless Valves](${BASE_URL}/llms/bicycle-tubeless-valve.txt): Presta & Schrader, valve caps, extenders, adapters, wrenches, reducers
 - [Motorcycle Valves](${BASE_URL}/llms/motorcycle-valve.txt): 7 models for motorcycle applications
-- [Car & Light Truck Valves](${BASE_URL}/llms/car-light-truck-valve.txt): 13 models, snap-in & clamp-in
+- [Car & Light Truck Valves](${BASE_URL}/llms/car-light-truck-valve.txt): 16 models, snap-in & clamp-in
 - [Truck & Bus Valves](${BASE_URL}/llms/truck-bus-valve.txt): Heavy-duty valve solutions
-- [TPMS Sensor Valves](${BASE_URL}/llms/tpms-sensor-valve.txt): 15 aftermarket TPMS sensor valve models
+- [TPMS Sensor Valves](${BASE_URL}/llms/tpms-sensor-valve.txt): 13 aftermarket TPMS sensor valve models
 - [Invisible Valves](${BASE_URL}/llms/invisible-valve.txt): Aesthetic hidden-stem valve designs
 - [Large Bore Tractor Valves](${BASE_URL}/llms/tractor-valve.txt): Agricultural and industrial equipment
 - [Truck Valve Extensions](${BASE_URL}/llms/truck-valve-extension.txt): Extension solutions for dual wheels

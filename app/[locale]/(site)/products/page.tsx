@@ -85,8 +85,8 @@ export default async function ProductsPage({
           name: isZh ? '產品目錄' : 'Product Catalog',
           url: `${BASE_URL}/${isZh ? 'zh-TW/' : ''}products`,
           description: isZh
-            ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
-            : '13 product categories, 70+ SKUs. TRA, ETRTO, JATMA compliant.',
+            ? `涵蓋 ${categories.length} 大產品類別，共 ${productRows.length} 種型號。符合 TRA、ETRTO、JATMA 國際標準。`
+            : `${categories.length} product categories, ${productRows.length} SKUs. TRA, ETRTO, JATMA compliant.`,
           mainEntity: {
             '@type': 'ItemList',
             numberOfItems: categories.length,
@@ -100,8 +100,8 @@ export default async function ProductsPage({
       <FadeInSection delay={100}>
         <p className="mb-8 text-lg text-metal-600">
           {isZh
-            ? '涵蓋 13 大產品類別，超過 70 種型號。符合 TRA、ETRTO、JATMA 國際標準。'
-            : '13 product categories, 70+ models. Compliant with TRA, ETRTO, and JATMA international standards.'}
+            ? `涵蓋 ${categories.length} 大產品類別，共 ${productRows.length} 種型號。符合 TRA、ETRTO、JATMA 國際標準。`
+            : `${categories.length} product categories, ${productRows.length} models. Compliant with TRA, ETRTO, and JATMA international standards.`}
         </p>
       </FadeInSection>
 

@@ -65,7 +65,7 @@ export async function generateMetadata({
   return {
     title: isZh ? '關於奕道' : 'About N.S.-LIN',
     description: isZh
-      ? '奕道工業 — 超過40年氣嘴閥製造經驗，ISO 9001:2015認證，台南工廠，CNC精密加工、硫化製程、鋁合金陽極處理。'
+      ? '奕道實業 — 超過40年氣嘴閥製造經驗，ISO 9001:2015認證，台南工廠，CNC精密加工、硫化製程、鋁合金陽極處理。'
       : 'N.S.-LIN Industrial — 40+ years of tire valve manufacturing. ISO 9001:2015 certified. CNC precision machining, rubber vulcanization, aluminum anodizing.',
     alternates: seoAlternates('/about', locale),
   };
