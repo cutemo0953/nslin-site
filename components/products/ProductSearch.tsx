@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 
@@ -41,6 +41,15 @@ export default function ProductSearch({
   labels: ProductSearchLabels;
 }) {
   const [query, setQuery] = useState('');
+
+  // Pre-fill from the hero search (?q=…) after mount. Read via window.location
+  // (not useSearchParams) so /products stays statically rendered — the full
+  // product list ships in the static HTML for SEO, then the query filters
+  // client-side. No Suspense boundary / CSR bailout.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('q');
+    if (q) setQuery(q.trim());
+  }, []);
 
   const filtered = useMemo(() => {
     // Per-term AND match: every whitespace-separated term must be present.

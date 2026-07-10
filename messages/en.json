@@ -15,6 +15,12 @@
       "title": "Precision Tire Valves",
       "subtitle": "40+ Years of Manufacturing Excellence",
       "description": "ISO 9001:2015 certified. Meeting TRA, ETRTO, and JATMA standards for global markets.",
+      "search_placeholder": "Search product part numbers (TR standards such as TR-413)",
+      "search_aria": "Search product part numbers",
+      "search_submit": "Search part numbers",
+      "entry_search": "Search by part number",
+      "entry_browse": "Browse by application size",
+      "entry_oem": "Send OEM-ODM request",
       "cta_products": "View Products",
       "cta_rfq": "Request a Quote"
     },
