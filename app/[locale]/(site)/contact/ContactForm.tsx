@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useEffect, useState } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import Script from 'next/script';
@@ -80,6 +80,32 @@ export default function ContactForm({
     if (state.status === 'sent') onSubmitted?.();
   }, [state.status, onSubmitted]);
 
+  // Turnstile: explicit render so the widget also mounts on client-side (soft)
+  // navigation — api.js's implicit auto-render only scans on initial page load,
+  // so it would miss the widget when /contact is reached via a <Link>.
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+    let cancelled = false;
+    let tries = 0;
+    const render = () => {
+      if (cancelled) return;
+      const ts = (window as unknown as {
+        turnstile?: { render: (el: HTMLElement, o: Record<string, unknown>) => void };
+      }).turnstile;
+      const el = turnstileRef.current;
+      if (ts && el && el.childElementCount === 0) {
+        ts.render(el, { sitekey: TURNSTILE_SITE_KEY, theme: 'light' });
+      } else if (tries++ < 50) {
+        setTimeout(render, 200); // wait for the async api.js to define window.turnstile
+      }
+    };
+    render();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const set =
     (key: keyof typeof values) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -114,7 +140,11 @@ export default function ContactForm({
         ? ['', `Quote list (${cartItems.length}): ${cartItems.map((i) => `${i.sku} x${i.qty}`).join(', ')}`]
         : []),
       '',
-      values.message,
+      // Keep the mailto: URL under OS/browser length limits (~2KB) — long
+      // messages get truncated in the fallback link only (the form itself sends full).
+      values.message.length > 1000
+        ? values.message.slice(0, 1000) + '\n\n…(truncated — see the form for the full message)'
+        : values.message,
     ].join('\n'),
   )}`;
 
@@ -315,12 +345,12 @@ export default function ContactForm({
       {TURNSTILE_SITE_KEY && (
         <>
           <Script
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
             strategy="afterInteractive"
-            async
-            defer
           />
-          <div className="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY} data-theme="light" />
+          {/* Explicitly rendered into this ref by the effect above (no implicit
+              .cf-turnstile class, so it works on soft navigation too). */}
+          <div ref={turnstileRef} />
         </>
       )}
       <button

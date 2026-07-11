@@ -25,10 +25,21 @@ function clampQty(n: unknown): number {
   return Math.min(q, MAX_QTY);
 }
 
-function read(): RfqItem[] {
-  if (typeof window === 'undefined') return EMPTY;
+// localStorage access can THROW (SecurityError in private mode / restricted
+// iframes, etc.). QuoteBadge mounts this in the root layout, so an unguarded
+// throw during render would take down every page — always go through here.
+function safeGetRaw(): string {
+  if (typeof window === 'undefined') return '[]';
   try {
-    const raw = JSON.parse(localStorage.getItem(KEY) || '[]');
+    return localStorage.getItem(KEY) || '[]';
+  } catch {
+    return '[]';
+  }
+}
+
+function read(): RfqItem[] {
+  try {
+    const raw = JSON.parse(safeGetRaw());
     if (!Array.isArray(raw)) return EMPTY;
     const out: RfqItem[] = [];
     for (const el of raw) {
@@ -46,7 +57,12 @@ function read(): RfqItem[] {
 }
 
 function write(items: RfqItem[]) {
-  localStorage.setItem(KEY, JSON.stringify(items));
+  try {
+    localStorage.setItem(KEY, JSON.stringify(items));
+  } catch {
+    // Storage blocked / quota exceeded — don't crash the click; the cart is
+    // simply non-persistent this session.
+  }
   window.dispatchEvent(new Event(EVENT));
 }
 
@@ -64,7 +80,7 @@ function subscribe(cb: () => void): () => void {
 let cachedRaw = '';
 let cachedItems: RfqItem[] = EMPTY;
 function getSnapshot(): RfqItem[] {
-  const raw = typeof window === 'undefined' ? '[]' : localStorage.getItem(KEY) || '[]';
+  const raw = safeGetRaw();
   if (raw !== cachedRaw) {
     cachedRaw = raw;
     cachedItems = read();
@@ -95,6 +111,20 @@ export function useRfq() {
   const remove = useCallback((sku: string) => write(read().filter((x) => x.sku !== sku)), []);
   const clear = useCallback(() => write([]), []);
 
+  // Replace the whole cart with a sanitized list (e.g. pruning stale SKUs that
+  // are no longer in the catalog so the badge count can't desync from /quote).
+  const replace = useCallback((next: RfqItem[]) => {
+    const seen = new Set<string>();
+    const out: RfqItem[] = [];
+    for (const it of next) {
+      if (!it || typeof it.sku !== 'string' || !SKU_RE.test(it.sku) || seen.has(it.sku)) continue;
+      seen.add(it.sku);
+      out.push({ sku: it.sku, qty: clampQty(it.qty) });
+      if (out.length >= MAX_ITEMS) break;
+    }
+    write(out);
+  }, []);
+
   return {
     items,
     count: items.length,
@@ -103,5 +133,6 @@ export function useRfq() {
     setQty,
     remove,
     clear,
+    replace,
   };
 }

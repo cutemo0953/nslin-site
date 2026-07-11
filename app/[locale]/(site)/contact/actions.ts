@@ -20,7 +20,9 @@ const MAX_QTY = 9_999_999;
 
 function parseQuoteItems(raw: string): Array<{ sku: string; qty: number }> {
   const out: Array<{ sku: string; qty: number }> = [];
-  for (const part of raw.split(',')) {
+  // Bound the work BEFORE split() — a malicious oversized `skus` POST must not
+  // force a huge array allocation on the Worker. MAX_SKUS items × ~50 chars.
+  for (const part of raw.slice(0, MAX_SKUS * 50).split(',')) {
     const [skuRaw, qtyRaw] = part.split(':');
     const sku = (skuRaw ?? '').trim();
     if (!SKU_RE.test(sku) || out.some((x) => x.sku === sku)) continue;
