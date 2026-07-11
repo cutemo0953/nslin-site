@@ -15,6 +15,12 @@
       "title": "精密輪胎氣嘴閥",
       "subtitle": "超過 40 年的製造專業",
       "description": "ISO 9001:2015 認證。符合 TRA、ETRTO 及 JATMA 國際標準，行銷全球。",
+      "search_placeholder": "搜尋產品料號（含 TR 標準編號如 TR-413）",
+      "search_aria": "搜尋產品料號",
+      "search_submit": "搜尋產品料號",
+      "entry_search": "依料號搜尋",
+      "entry_browse": "依應用尺寸瀏覽",
+      "entry_oem": "提出 OEM-ODM 需求",
       "cta_products": "瀏覽產品",
       "cta_rfq": "索取報價"
     },

@@ -57,6 +57,7 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations('home');
   const nav = await getTranslations('nav');
+  const productsHref = locale === 'zh-TW' ? '/zh-TW/products' : '/products';
 
   return (
     <>
@@ -71,7 +72,38 @@ export default async function HomePage({
         <p className="mb-8 max-w-2xl text-lg text-steel-200">
           {t('hero.description')}
         </p>
-        <div className="flex gap-4">
+        <form
+          action={productsHref}
+          method="get"
+          className="mb-4 flex max-w-2xl flex-col gap-3 sm:flex-row"
+        >
+          <input
+            id="product-search"
+            type="search"
+            name="q"
+            placeholder={t('hero.search_placeholder')}
+            aria-label={t('hero.search_aria')}
+            className="min-h-12 flex-1 rounded-lg border border-white/25 bg-white px-4 text-base text-steel-900 outline-none transition focus:border-brass-300 focus:ring-2 focus:ring-brass-300/50"
+          />
+          <button
+            type="submit"
+            className="min-h-12 rounded-lg bg-white px-6 font-semibold text-steel-900 transition-colors hover:bg-steel-50"
+          >
+            {t('hero.search_submit')}
+          </button>
+        </form>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-steel-100">
+          <a href="#product-search" className="hover:text-white">
+            {t('hero.entry_search')}
+          </a>
+          <Link href="/products" className="hover:text-white">
+            {t('hero.entry_browse')}
+          </Link>
+          <Link href="/contact" className="hover:text-white">
+            {t('hero.entry_oem')}
+          </Link>
+        </div>
+        <div className="mt-6 flex gap-4">
           <Link
             href="/products"
             className="rounded-lg bg-white px-6 py-3 font-semibold text-steel-900 hover:bg-steel-50 transition-colors"
