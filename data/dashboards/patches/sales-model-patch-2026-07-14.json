@@ -1,0 +1,168 @@
+{
+  "date": "2026-07-14",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 10.92,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve - Shop Online",
+      "evidenceText": "Valve Adapter 10,92 €* Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 80 mm",
+      "extractionRationale": "Price of 10,92 € extracted from bike24.com for the Schwalbe Clik Valve Tubeless Valve Set of 2. This is the only explicit retail price found in the three sources provided. Source 2 and 3 contain product information but no pricing data.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993551.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Ventil",
+      "evidenceText": "Two distinct CoreCap valve product listings identified: https://www.bike24.de/p1993551.html (BBB Cycling CoreCap AL Valve BTI-166) and https://www.bike24.de/p1993550.html (same product, different URL). Sources 2, 4, and 5 excluded as they are either pedal listings or accessory components (valve cores).",
+      "extractionRationale": "Counted unique product page URLs for CoreCap main valve listings on bike24.de (DE). Excluded pedal listings (Source 2) and accessory valve cores (Sources 4-5) per instructions. Two distinct URLs identified for CoreCap AL Valve BTI-166.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTB-165 Valve Core - copper",
+      "evidenceText": "No product content provided in the evidence - unable to determine stock status",
+      "extractionRationale": "The evidence contains only product URLs and titles but no actual page content. Stock status indicators such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft' cannot be evaluated without the full product page text.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962278.html",
+      "sourceTitle": "Schwalbe Clik Valve Produkte auf Bike24",
+      "evidenceText": "Four distinct Schwalbe inner tube models with Clik Valve identified: Nr. 15 (28\"/700C), Nr. 6 (20\"), Nr. 13 (26\"), and Nr. 3 (16\"). Source 1 contains only valve accessories, not tubes.",
+      "extractionRationale": "Counted distinct inner tube SKUs from Sources 2-5 that explicitly mention Schwalbe Schlauch (tubes) with Clik Valve (SCV). Each tube size/model (Nr. 15, Nr. 6, Nr. 13, Nr. 3) represents one distinct SKU. Source 1 was excluded as it references only valve products and accessories, not inner tubes.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3190,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Closing Prices. Cash: 3190.00",
+      "extractionRationale": "Extracted the LME Aluminium Alloy Cash closing price of 3190.00 from the official LME website. LME prices are quoted in USD per metric ton by default. Used the lower end of the cash price range (3190.00-3200.00).",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -2.86,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
