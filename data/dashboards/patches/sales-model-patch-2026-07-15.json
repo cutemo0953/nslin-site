@@ -1,0 +1,178 @@
+{
+  "date": "2026-07-15",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "extraction_failed",
+      "query": "BBB CoreCap valve bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 13.44,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859949.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 60 mm",
+      "evidenceText": "40 mm - 12,60 EUR, 60 mm, 80 mm - 15,12 EUR. 13,44 €. Add to cart. 13,44 €.",
+      "extractionRationale": "Three retail prices found for different valve sizes on bike24.com: 12,60 EUR (40mm), 13,44 EUR (60mm), and 15,12 EUR (80mm). The median price is 13,44 EUR, which is the price displayed for the 60mm tubeless valve set.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993551.html",
+      "sourceTitle": "",
+      "evidenceText": "Source 1: https://www.bike24.de/p1993551.html - BBB Cycling CoreCap AL Valve BTI-166. Source 2: https://www.bike24.de/p1993550.html - BBB Cycling CoreCap AL Valve BTI-166 (different URL/product ID). Source 3 is a valve core accessory and excluded.",
+      "extractionRationale": "Two distinct product page URLs identified for CoreCap valves (p1993551 and p1993550), each counting as 1 listing. Source 3 (p1993584) is a valve core component accessory and not counted per instructions.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859953.html",
+      "sourceTitle": "",
+      "evidenceText": "No content provided in either source to determine stock status",
+      "extractionRationale": "The provided sources contain no visible content/text that would indicate stock availability status. Without actual page content mentioning stock information, the percentage of out-of-stock listings cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve kaufen - Top Auswahl",
+      "evidenceText": "Found 4 distinct Schwalbe inner tubes with Clik Valve: Nr. 6 (20\", 28/40-406), Nr. 13 (26\", 40/62-559), Nr. 3 (16\", 47/62-305), and No. 17 (28\", 28-47/622-635). Source 1 contains only valves/conversion kits which were excluded.",
+      "extractionRationale": "Counted distinct inner tube models from sources 2-5, each with unique tire sizes and ETRTO designations featuring Clik Valve interface. Excluded Source 1 as it lists valve accessory sets, not inner tubes.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3149.5,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News",
+      "evidenceText": "Aluminum fell to 3,148.10 USD/T on July 15, 2026... Aluminum | 3,149.50 | -26.10 | -0.82% | -7.20% | 22.17% | Jul/15",
+      "extractionRationale": "Extracted the current aluminum spot price of 3,149.50 USD/T directly from the Trading Economics source table showing the most recent trading data dated Jul/15. This is already in USD per metric ton format, matching the required output unit.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -4.1,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
