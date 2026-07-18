@@ -1,0 +1,168 @@
+{
+  "date": "2026-07-18",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "no_relevant_result",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 21.42,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993551.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves - copper | 80mm",
+      "evidenceText": "copper | 60mm | 2 Pieces - 21,00 EUR, copper | 80mm| 2 Pieces. 21,84 €",
+      "extractionRationale": "Two retail prices found for CoreCap tubeless valves on bike24.com: 21,00 EUR (60mm variant) and 21,84 EUR (80mm variant). Median price calculated as (21,00 + 21,84) / 2 = 21,42 EUR",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de",
+      "sourceTitle": "",
+      "evidenceText": "Four distinct CoreCap product URLs identified: p1993581.html (BTI-165 blue), p1993551.html (BTI-166), p1993550.html (BTI-166), p1993585.html (BTI-165 red). Source 4 (p1993640.html) is a pedal product, not a CoreCap listing.",
+      "extractionRationale": "Counted unique product page URLs for CoreCap only. Source 4 was excluded as it is a pedal (SteadyRest 2.0) listing that only mentions CoreCap as a related product, not a CoreCap product page itself. Each distinct URL represents one product listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859951.html",
+      "sourceTitle": "",
+      "evidenceText": "No content provided in sources to determine stock status",
+      "extractionRationale": "The three product listing sources provided contain only URLs and titles, with no actual page content. Without access to the product description, availability indicators, or stock status text, it is impossible to determine whether items are in stock or out of stock. Therefore, stock status cannot be determined from the provided text.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962278.html",
+      "sourceTitle": "Schwalbe Schlauch - Nr. 15 | 28\"/700C - 23/30-622/630",
+      "evidenceText": "Nr. 15 (28\"/700C - 23/30-622/630), No. 17 (28\"/700C - 28-47/622-635), Nr. 6 (20\" - 28/40-406), Nr. 13 (26\" - 40/62-559) - all with Clik Valve (SCV)",
+      "extractionRationale": "Counted 4 distinct Schwalbe inner tube models with Clik Valve interface: Nr. 15, No. 17, Nr. 6, and Nr. 13. Source 1 was excluded as it only lists valve accessories (2er Sets), not inner tubes. Each model represents a unique size/SKU.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "The Aluminium Premium Duty paid US Midwest price today is 1,793.99",
+      "extractionRationale": "The source states a price of 1,793.99 but does not explicitly specify the unit (cents/lb, USD/lb, or other denomination). Without clear unit confirmation, the conversion to USD/lb cannot be reliably determined. The value appears inconsistent with typical aluminum premium ranges.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 1,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
