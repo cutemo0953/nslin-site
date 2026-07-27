@@ -1,0 +1,178 @@
+{
+  "date": "2026-07-27",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No retail price information found in any of the three sources provided",
+      "extractionRationale": "All three sources (bike-discount.de, schwalbe.com, and bike24.com) describe the Schwalbe Clik Valve product but do not include pricing information in the provided content excerpts.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993642.html",
+      "sourceTitle": "",
+      "evidenceText": "Five distinct product URLs identified: p1993642 (CoreCap products), p1993548 (CoreCap AL Valve BTI-166), p1993551 (CoreCap AL Valve BTI-166), p1993547 (CoreCap AL Valve BTI-166), p1993585 (CoreCap BTI-165 Ventilkern)",
+      "extractionRationale": "Counted each unique product page URL as a separate listing. The five sources provide five distinct URLs on bike24.de for CoreCap products: three variations of the CoreCap AL Valve BTI-166 (p1993548, p1993551, p1993547), one listing containing multiple CoreCap products (p1993642), and one CoreCap BTI-165 valve core product (p1993585).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "",
+      "evidenceText": "Three product pages provided contain navigation, branding, and review information but no stock status indicators (out of stock, unavailable, nicht verfügbar, ausverkauft) are visible in the extracted content.",
+      "extractionRationale": "Cannot determine stock status from provided text - no explicit stock status language found in any of the three sources. The content provided appears to be incomplete page fragments that lack inventory or availability information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/tubes/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The sources describe the Clik Valve technology and mention the Aerothan tube, but do not provide a comprehensive enumeration of distinct inner tube models or SKUs using the Clik valve interface.",
+      "extractionRationale": "The provided sources focus on describing the Clik Valve technology, features, and compatibility, but do not contain a specific count or detailed list of distinct Schwalbe inner tube models/SKUs using this interface. Without explicit enumeration in the evidence, the count cannot be reliably determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3171,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News",
+      "evidenceText": "Aluminum rose to 3,171 USD/T on July 27, 2026, up 0.19% from the previous day.",
+      "extractionRationale": "Direct extraction from Trading Economics showing the current LME aluminum spot price of 3,171 USD per metric ton as of July 27, 2026.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -3.44,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
