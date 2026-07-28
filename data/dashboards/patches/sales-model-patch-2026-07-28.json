@@ -1,0 +1,183 @@
+{
+  "date": "2026-07-28",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "",
+      "evidenceText": "LEZYNE Replacement Clik Valve Chuck Tip | Lightweight Aluminum Construction, Secure Valve Connection, Smooth Airflow, Compatible With Floor Pump Setups and Wolf Tooth Tubeless Valve Stem Kits for Clik Valve",
+      "extractionRationale": "Two distinct third-party accessory products are mentioned in the Amazon page content: (1) LEZYNE Replacement Clik Valve Chuck Tip - a pump head adapter for floor pumps, and (2) Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - a valve stem kit. Both are explicitly designed for or compatible with Clik Valve.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.amazon.com/Schwalbe-Clik-Valve-Conversion-Set/dp/B0D8LJJTNN",
+      "sourceTitle": "Schwalbe Clik Valve Conversion Set - Presta/SV Valve Conversion Kit",
+      "evidenceText": "Valve Conversion Kit with Pump Head Adapter. Conversion kits for all standard bicycle valves and an adapter for car valves are available.",
+      "extractionRationale": "Only one Clik valve product page provided in evidence. Cannot calculate attach rate ratio without knowing: (1) total number of Clik valve product pages examined, and (2) how many show related accessories. Single data point is insufficient to derive the fraction of pages displaying accessory attachments.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/clik-valve-ventil",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "The sources reference \"Umrüstsets\" (conversion kits) for three valve types and mention dust caps and pump adapters, but do not provide specific SKU counts or lists for replacement parts such as valve cores, seals, o-rings, or individual replacement kit SKUs.",
+      "extractionRationale": "The provided sources contain product information and FAQs about the Schwalbe Clik Valve but do not include a catalog or inventory list with specific SKU numbers for replacement/spare parts. Without direct evidence of distinct SKU counts, a null value is appropriate.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.bikeradar.com/reviews/components/wheels/wheel-sets/mavic-ksyrium-s-disc-wheelset-review",
+      "sourceTitle": "",
+      "evidenceText": "The Ksyrium S Disc tipped my scales at 1,711g, complete with tubeless valves. The rim is tubeless-ready – Mavic calls its design 'UST', or Universal Standard Tubeless.",
+      "extractionRationale": "The provided evidence mentions only generic \"tubeless valves\" and Mavic's UST technology, with no specific reference to Clik valve adoption. No evidence confirms that any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) have adopted Clik as standard in 2026/2027 product lines. Therefore, the percentage of brands converted is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993580.html",
+      "sourceTitle": "",
+      "evidenceText": "Multiple BIKE24 product pages show CoreCap variants (black, gold, copper) with pricing and availability information, but no \"back in stock\" dates, restock timelines, or stock status change history is mentioned in any source.",
+      "extractionRationale": "No explicit restock turnaround time data found. Sources show current product availability on BIKE24 but contain no date-based evidence of stock gaps or restock delays. Without \"back in stock\" messaging with timestamps or explicit restock timeline information, the value cannot be determined from available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
