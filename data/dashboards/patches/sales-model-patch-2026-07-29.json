@@ -1,0 +1,186 @@
+{
+  "date": "2026-07-29",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 4,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 10.66,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper",
+      "evidenceText": "CoreCap BTI-165 Valve Core - blue: 10,58 €; purple: 10,50 €; gold: 10,75 €; red: 10,75 €",
+      "extractionRationale": "Found four CoreCap BTI-165 Valve Core product listings with prices: blue (10,58 €), purple (10,50 €), gold (10,75 €), and red (10,75 €). Median of these four prices is 10.66 EUR.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993551.html",
+      "sourceTitle": "",
+      "evidenceText": "Five distinct CoreCap product page URLs identified: p1993551.html, p1993548.html, p1993550.html, p1993581.html, p1993585.html",
+      "extractionRationale": "Counted each unique product page URL as specified in the task instructions. All 5 sources represent distinct product listings on bike24.de, despite being color variants of BBB Cycling CoreCap valves (BTI-166 and BTI-165 models).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859948.html",
+      "sourceTitle": "",
+      "evidenceText": "All 5 product pages provided show incomplete content snippets without stock status indicators, availability information, or out-of-stock messages.",
+      "extractionRationale": "The evidence provided does not contain sufficient information to determine stock status. The content snippets are truncated and do not include typical stock availability indicators or messages that would contain keywords like 'out of stock', 'ausverkauft', 'nicht verfügbar', or 'currently unavailable'.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve kaufen - Top Auswahl",
+      "evidenceText": "Four distinct Schwalbe inner tube models with Clik Valve identified: (1) No. 17 | 28 Zoll | 28-47/622-635 (SWA739181), (2) Nr. 10 | 24\" - 40/62-507 (SWA740225), (3) Nr. 13 | 26\" - 40/62-559, (4) No. 19 | 27.5/28/29 Zoll | 40-62/622-",
+      "extractionRationale": "Counted all distinct Schwalbe inner tube models/SKUs featuring Clik Valve interface across the provided sources. Excluded valve sets and accessories (2er Set mentioned in Source 4). Each unique tube size/model designation counts as 1 distinct SKU.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3171,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.investing.com/commodities/aluminum",
+      "sourceTitle": "Aluminium Price Today - Investing.com",
+      "evidenceText": "Prev. Close: 3,171 USD per tonne. Currency in USD: 3,171.00",
+      "extractionRationale": "The current LME aluminum spot price is directly stated in the Investing.com source as 3,171 USD per tonne (shown in the \"Prev. Close\" field and confirmed in the currency section). The contract specification confirms pricing is in US$ per tonne, and the unit is 1 tonne. No conversion was needed as the price is already in USD/ton format.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -3.44,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "Aluminium Premium Duty paid US Midwest - 1,793.99 (Currency in USD)",
+      "extractionRationale": "The source displays 1,793.99 for the US Midwest aluminum premium. Based on industry standard practice, aluminum premiums are quoted in cents per pound. Converting 1,793.99 cents/lb to USD/lb: 1,793.99 ÷ 100 = $17.94/lb",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
