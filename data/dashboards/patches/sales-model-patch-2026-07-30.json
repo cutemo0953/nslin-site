@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-30",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 9.49,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit",
+      "sourceTitle": "Schwalbe Clik Valve retrofit kit, SV / DV valves become SCV",
+      "evidenceText": "Multiple prices extracted: ebike24 €9.99 & €13.90 & €7.90; bike-discount €3.99 & €8.99; bike24 €12.60. Median of [€3.99, €7.90, €8.99, €9.99, €12.60, €13.90] = €9.49",
+      "extractionRationale": "Extracted 6 distinct retail prices for different Schwalbe Clik Valve products across the three German retailers. Calculated median as requested for multiple prices: (€8.99 + €9.99) / 2 = €9.49",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve kaufen - Top Auswahl",
+      "evidenceText": "Two distinct Clik Valve inner tube product listings found: (1) https://www.bike24.de/p1960181.html - Schwalbe Schlauch - No. 17 | 28 Zoll | Clik Valve (SCV), and (2) https://www.bike24.de/p1962379.html - Schwalbe Schlauch - Nr. 10 | 24\" | Clik Valve (SCV) 40mm. Accessories (pressure gauge adapter, conversion kit) and category pages excluded.",
+      "extractionRationale": "Counted only distinct product page URLs for actual Clik Valve products (inner tubes). Excluded Source 3 (pressure gauge accessory with adapter), Source 4 (conversion kit accessory), and Source 5 (category/filter page). Sources 1 and 2 represent two unique product SKUs with different URLs.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "",
+      "evidenceText": "4 product listings examined (red, copper, gold CoreCap variants and black AL Valve). None of the provided content snippets contain stock status information such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft'.",
+      "extractionRationale": "Stock status indicators cannot be determined from the provided evidence. While 4 product listings are available, the text content provided does not include stock availability statements. To accurately determine the percentage of out-of-stock listings, the full product page content including inventory/availability sections would be needed.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Source 1: No. 17 | 28 Zoll | 28-47/622-635 | Clik Valve (SCV); Source 2: Nr. 10 | 24\" - 40/62-507 | Clik Valve (SCV); Source 4: No. 19 | 27.5/28/29 Zoll; Source 5: No. 19-EL (Extra Light) | 27.5\"/28\"/29\" - 40/62-584/635 | SCV",
+      "extractionRationale": "Identified 4 distinct Schwalbe inner tube models with Clik Valve interface from the sources: No. 17 (28\"), No. 10 (24\"), No. 19 (27.5/28/29\"), and No. 19-EL Extra Light variant. Source 3 (pressure gauge) and any valves/accessories were excluded as they are not inner tubes.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3180,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "LME Aluminium - Metals",
+      "evidenceText": "3180.00 1.03% 3-month - displayed as the current LME Official Price for aluminium in US$ per tonne",
+      "extractionRationale": "The LME official website displays the current spot price for LME Aluminium (3-month contract) as 3180.00, which is quoted in US$ per tonne as stated in the contract specifications on the same page.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -3.17,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "",
+      "evidenceText": "The page shows \"1,793.99\" as a price value but does not clearly state this as the US Midwest aluminum premium in USD per pound. The displayed value appears to be a futures index or benchmark price rather than a premium quote.",
+      "extractionRationale": "While the source page is titled \"Aluminium Premium Duty paid US Midwest,\" the numerical value shown (1,793.99) is not explicitly identified as a premium in USD/lb. This value appears to be a futures price index that cannot be directly converted to the requested premium metric without additional context.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 1,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
