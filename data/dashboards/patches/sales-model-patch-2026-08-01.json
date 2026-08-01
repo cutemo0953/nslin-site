@@ -1,0 +1,183 @@
+{
+  "date": "2026-08-01",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 0,
+    "unchanged": 5,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve ($19.29) and Wolf Tooth Aluminum Schrader Pump Head Adapter for Clik Valve ($21.52) - two distinct products from Wolf Tooth Components for Clik Valve compatibility",
+      "extractionRationale": "Two distinct third-party accessory products are listed in the source: (1) Wolf Tooth Tubeless Valve Stem Kit for Clik Valve and (2) Wolf Tooth Aluminum Schrader Pump Head Adapter for Clik Valve. Both are explicitly stated as compatible with or designed for Clik Valve. These represent unique product offerings from Wolf Tooth Components.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.amazon.com/Schwalbe-Clik-Valve-Conversion-Set/dp/B0D8LJJTNN",
+      "sourceTitle": "",
+      "evidenceText": "The provided sources contain product information but do not show explicit \"frequently bought together\" or \"related products\" sections that would allow calculation of an accessory attach rate.",
+      "extractionRationale": "The evidence provided does not contain data about what fraction of Clik valve product pages display accessories in \"frequently bought together\" or \"related products\" sections. While the sources mention accessory compatibility, they do not provide the necessary metrics to calculate an attach rate across multiple product pages.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The source describes conversion kits for three valve types (Presta, Dunlop, Schrader), replaceable valve cores, tubeless conversion options, and adapter components, but does not provide an explicit count of distinct replacement/spare part SKUs.",
+      "extractionRationale": "The evidence discusses various replacement and conversion components available for the Clik Valve system, but does not provide a specific, enumerated count of distinct SKUs for replacement parts, valve cores, seals, o-rings, or replacement kits. Without explicit SKU enumeration in the source, an accurate count cannot be extracted.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "Tubeless Technology | DT Swiss",
+      "evidenceText": "DT Swiss describes its own tubeless valve system with \"lightweight alloy valve,\" \"integrated valve tool,\" and \"conical valve base\" - no mention of Clik valve adoption. Sources provided contain no information about Clik adoption by any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval).",
+      "extractionRationale": "Evidence shows DT Swiss promotes its proprietary valve technology, not Clik. No sources provide information confirming adoption of Clik valve by any major brand in 2026/2027 product lines. Therefore, 0% of major brands have converted to Clik as standard.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993580.html",
+      "sourceTitle": "",
+      "evidenceText": "CoreCap products displayed with pricing (€10.50-€12.43) on BIKE24 product pages and brand catalog, indicating current availability without stock-out indicators",
+      "extractionRationale": "Products appear to be currently available on BIKE24 retailer with active pricing. No \"back in stock\" dates, stock-out indicators, or restock turnaround times are mentioned in any of the 4 sources. Per task instructions, if product is currently available, return 0.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
