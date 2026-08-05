@@ -1,0 +1,186 @@
+{
+  "date": "2026-08-05",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 19.32,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993548.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves",
+      "evidenceText": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves - black | 40mm | 2 Pieces 19,32 €",
+      "extractionRationale": "Single retail price found for CoreCap product on German retailer Bike24. Price extracted directly from product listing: \"19,32 €\" for BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves. This is the median (and only) price found.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993551.html",
+      "sourceTitle": "",
+      "evidenceText": "5 product URLs found: 3 distinct CoreCap AL Valve BTI-166 listings (sources 1-3) and 2 BTI-165 valve core accessories (sources 4-5). Main CoreCap valve products: https://www.bike24.de/p1993551.html, https://www.bike24.de/p1993548.html, https://www.bike24.de/p1993547.html",
+      "extractionRationale": "Identified 3 distinct CoreCap AL Valve BTI-166 product listings across different color variants. Excluded the 2 BTI-165 valve core listings (sources 4-5) as they are accessories, not complete valve products. Each unique product page URL counts as 1 distinct listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "",
+      "evidenceText": "No stock status information found in any of the 4 product listing excerpts. The content shown includes product titles, ratings, and navigation elements but does not contain stock availability indicators such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft'.",
+      "extractionRationale": "Stock status cannot be determined from the provided text excerpts as none of them contain explicit availability or stock information. Without visibility into the actual stock status section of the product pages, the percentage cannot be calculated.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Source 1: No. 17 | 28 Zoll | Clik Valve (SCV) SKU SWA739181. Source 2: Nr. 14L-EL (Extra Light) | 27.5\" | Clik Valve SKU SWA740149. Source 3: Nr. 12 | 26\" | Clik Valve (SCV) SKU SWA740226. Accessories like valve sets excluded.",
+      "extractionRationale": "Counted only distinct inner tube models with Clik valve interface across the evidence. Source 1 provides No. 17 (28\"), Source 2 provides Nr. 14L-EL (27.5\"), Source 3 provides Nr. 12 (26\"). Source 5 references No. 19 but content is incomplete. Source 4 lists valve accessories which are explicitly excluded per task instructions. Total: 3 distinct models.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3221,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News",
+      "evidenceText": "Aluminum fell to 3,221 USD/T on August 4, 2026, down 0.15% from the previous day.",
+      "extractionRationale": "The most recent specific price point found is from Trading Economics which states \"Aluminum fell to 3,221 USD/T on August 4, 2026\". This is already in USD/metric ton format as required. Source 1 shows 3200.00 but lacks the specific date context and appears to be a 3-month closing price. Source 2 provides the more recent spot price of 3221 USD/T.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -1.92,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 0.6,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "Premiums for consumers buying aluminium on the physical market in the United States hit a record 60 cents a lb",
+      "extractionRationale": "Extracted 60 cents per pound from the Reuters report and converted to USD per pound format (0.60). The text explicitly states the premium reached 60 cents per pound for the US market.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": -40,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
