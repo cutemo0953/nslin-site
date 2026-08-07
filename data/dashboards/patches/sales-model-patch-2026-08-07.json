@@ -1,0 +1,183 @@
+{
+  "date": "2026-08-07",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 0,
+    "unchanged": 5,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Amazon.com: Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black | automotive-valve-stems : Automotive",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black",
+      "extractionRationale": "The source explicitly mentions \"Wolf Tooth Tubeless Valve Stem Kit for Clik Valve\" in the title and product information. This is one distinct third-party accessory product designed for the Clik valve. Other products listed (pedals) are unrelated to valve systems and thus not counted.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve",
+      "evidenceText": "The page mentions adapters and pump heads in product instructions but does not explicitly show a \"frequently bought together\" or \"related products\" section with accessory cross-sells.",
+      "extractionRationale": "The provided evidence only shows accessories (adapters, pump heads) mentioned in instructional text about how to use the valve, not in a dedicated \"frequently bought together\" or \"related products\" section. Cannot determine the actual attach rate percentage from available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve",
+      "evidenceText": "The provided source contains only marketing content about the CLIK VALVE features. No information about replacement/spare part SKUs, valve cores, seals, o-rings, or replacement kits is present in the available content.",
+      "extractionRationale": "The source material does not contain any data about replacement or spare part SKUs. The page focuses on product marketing and features rather than parts availability or documentation.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels",
+      "sourceTitle": "",
+      "evidenceText": "DT Swiss wheels page shows Gravel and Hybrid MTB categories with no mention of Clik valve adoption or 2026/2027 product specifications",
+      "extractionRationale": "The provided sources from DT Swiss do not contain evidence of Clik valve adoption in 2026/2027 product lines. No information about other major brands (Mavic, Hunt, Zipp, ENVE, Roval) is provided. Based on available evidence, no major wheelset brands have documented adoption of Clik valve as standard.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993581.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - blue | 2 Pieces | BIKE24",
+      "evidenceText": "BBB Cycling CoreCap BTI-165 Valve Core - blue | 2 Pieces [...] 5,87 € 1-3 working days",
+      "extractionRationale": "Multiple sources (blue and copper variants) show \"1-3 working days\" delivery time without \"out of stock\" messages, indicating product is currently available in German market. No specific restock dates mentioned. Standard shipping timeframe represents current availability, not restock delay.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
