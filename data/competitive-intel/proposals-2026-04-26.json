@@ -1,0 +1,223 @@
+[
+  {
+    "entity_id": "mucoff-big-bore",
+    "change_type": "spec_update",
+    "field": "airflow_claim",
+    "old_value": "230% (Lite) / 254% (Hybrid) vs Presta",
+    "new_value": "264% vs Presta",
+    "evidence": {
+      "source_url": "https://muc-off.com/collections/big-bore-tubeless-valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:35:25.944Z",
+      "snippet": "The revolutionary 'straight through' coreless design delivers up to 264% more airflow than traditional Presta valves. Featuring a lever-operated ball valve",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "legion-vmax",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"55mm\", \"65mm\", \"70mm\", \"80mm\"]",
+    "new_value": "[\"40mm\", \"44mm\", \"55mm\", \"65mm\", \"70mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.ubuy.cr/en/product/1AQ0H0VGA-legion-vmax-high-volume-aluminium-valves-40-mm-pair-tubeless-adult-unisex-black?srsltid=AfmBOor4itOxAotW-9514B2kTeEHXt0laTzHwvKv6P8wxDjMIGS0y7mG",
+      "source_type": "retail",
+      "retrieved_at": "2026-04-26T22:35:37.809Z",
+      "snippet": "Shop Legion VMax High Volume Aluminium Valves 40 mm Pair Tubeless Adult Unisex, Black online at a best price in Costa Rica. B0857V1DJ6.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "stans-exo-core",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "54.99",
+    "new_value": "59.00",
+    "evidence": {
+      "source_url": "https://notubes.com/",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:35:51.756Z",
+      "snippet": "Stan's Tubeless Exo-Core Valves. from $59.00 ; Stan's Original DART Tool. $27.00 ; Stan's ForkBoost. $13.00 ; Stan's Incredible DART Tubeless Repair Tool. $75.00.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "29",
+    "new_value": "3.50",
+    "evidence": {
+      "source_url": "https://us.76projects.com/collections/all",
+      "source_type": "retail",
+      "retrieved_at": "2026-04-26T22:36:09.373Z",
+      "snippet": "HI FLOW 'NO CLOG' TUBELESS VALVES. 4.17 / 5.0. (41) 41 total reviews. Regular Price: from $3.50. Sale Price: from $3.50; Regular Price: $0.00.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "76-projects-hi-flow",
+    "change_type": "spec_update",
+    "field": "product_name",
+    "old_value": "Hi Flow Valve",
+    "new_value": "HI FLOW 'NO CLOG' TUBELESS VALVES",
+    "evidence": {
+      "source_url": "https://us.76projects.com/products/hi-flow-no-clog-tubeless-valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:36:06.623Z",
+      "snippet": "HI FLOW 'NO CLOG' TUBELESS VALVES. HI FLOW 'NO CLOG' TUBELESS VALVES. HI FLOW 'NO CLOG' TUBELESS VALVES.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "28",
+    "new_value": "29.87",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/clik-valve/?srsltid=AfmBOorZoT141ZWVB1CT4WWagyFu_zUhA9hnIqF5PBJWKFVEepzmZw5_",
+      "source_type": "retail",
+      "retrieved_at": "2026-04-26T22:36:25.771Z",
+      "snippet": "Contents: 2x Schwalbe Clik Valve tubeless valve. from US$29.87* RRP. THIS IS CLIK VALVE. The principle of the SCHWALBE CLIK VALVE, winner of the Eurobike Award",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "24.95",
+    "evidence": {
+      "source_url": "https://www.wtb.com/products/max-flow-tubeless-valves?srsltid=AfmBOoplAJB81BEAVho1FzEuoHSukn8YXQDUzjU8WLZbn-CUP7SHn1Bv",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:05.641Z",
+      "snippet": "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOoprwukM1iapb0s_Nntrb-KKzIADD9PdPPfbq6ktOMn-l9xQNA2h",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:13.600Z",
+      "snippet": "HI-FLO Valves $30.00",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "spec_update",
+    "field": "material",
+    "old_value": "aluminum",
+    "new_value": "6061 T-6 aluminum",
+    "evidence": {
+      "source_url": "https://ridebicycles.com/products/cushcore-tubeless-presta-valve-sets",
+      "source_type": "retail",
+      "retrieved_at": "2026-04-26T22:37:15.334Z",
+      "snippet": "Made from CNC machined from 6061 T-6",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "spec_update",
+    "field": "color_options",
+    "old_value": null,
+    "new_value": "13 color options",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves?srsltid=AfmBOoprwukM1iapb0s_Nntrb-KKzIADD9PdPPfbq6ktOMn-l9xQNA2h",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:13.600Z",
+      "snippet": "Now with 13 color options! Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"40mm\", \"52mm\", \"67mm\"]",
+    "new_value": "[\"40mm\", \"52mm\", \"57mm\", \"67mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.ap.industrynine.com/parts/valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:30.021Z",
+      "snippet": "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves). TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum Valve Kit - 57mm - Black (2 Valves). TKVABLK67 Small Parts - Tubeless Aluminum Valve Kit - 67mm - Black (2 Valves). TKVABLK80_ Small Parts - Tubeless Aluminum Valve Kit - 80mm - Black (2 Valves).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"60mm\", \"80mm\"]",
+    "new_value": "[\"32mm\", \"44mm\", \"60mm\", \"80mm\"]",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=W0E1900BEIXSA18815",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:56.915Z",
+      "snippet": "Tubeless valve brass silver for 18 - 25 mm profile height MTB; Material number TVVXA32S25873S. Short name TUBELESS VALVE 32MM MTB 1PC; Amount 1 PC.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "material",
+    "old_value": "aluminum",
+    "new_value": "aluminum, brass",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=W0E1900BEIXSA18815",
+      "source_type": "official_site",
+      "retrieved_at": "2026-04-26T22:37:56.915Z",
+      "snippet": "Tubeless valve brass silver for 18 - 25 mm profile height MTB; Material number TVVXA32S25873S. Short name TUBELESS VALVE 32MM MTB 1PC; Amount 1 PC.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  }
+]
