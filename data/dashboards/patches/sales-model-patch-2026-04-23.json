@@ -1,0 +1,196 @@
+{
+  "date": "2026-04-23",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 4,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859950.html",
+      "sourceTitle": "",
+      "evidenceText": "No price information found in the provided content excerpts from either source",
+      "extractionRationale": "Both sources provided do not contain explicit retail price data in the content excerpts. Source 1 (schwalbe.com) is a product description page without pricing. Source 2 (bike24.com) is a retail page but the provided content only includes product description and features, not the actual price.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993548.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 product listings on BIKE24",
+      "evidenceText": "Five distinct product URLs identified: p1993548.html (80mm black), p1993546.html (40mm black), p1993547.html (60mm black), p1993551.html (80mm copper), p1993550.html (60mm copper). All are CoreCap AL Valve BTI-166 listings with different size and color variants.",
+      "extractionRationale": "Counted each unique URL as one distinct product listing. All five sources represent different product pages on bike24.de, each with a unique product ID (p199354X). Color and size variations are separate SKUs with their own listing pages.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper | 2 Pieces | BIKE24",
+      "evidenceText": "Product listing shows full product description and features with no mention of out-of-stock, unavailable, nicht verfügbar, or ausverkauft status.",
+      "extractionRationale": "The product page contains a complete product listing with description and features. No stock unavailability indicators were found in the text, suggesting the product is currently available. Out-of-stock percentage is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/press/clik-valve/?srsltid=AfmBOooU_2PG-qFWyaze_Qn3ltVr7s1a9S0VsTOwZEs5l3EVGpBccREO",
+      "sourceTitle": "",
+      "evidenceText": "The evidence provided contains information about Clik valve products (valves and conversion kits) but does not list any specific inner tube models or SKUs that use the Clik valve interface. Sources 4 and 5 describe valve products, which are explicitly excluded from the count per task instructions.",
+      "extractionRationale": "The evidence describes the Clik valve technology and mentions conversion kits and valve products (SKUs 3530 and 3532), but does not provide a list of distinct inner tube models/SKUs. The task requires counting inner tubes with Clik valve interfaces, not the valves themselves or conversion kits. No inner tube model count can be extracted from the available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3608.05,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News - Trading Economics",
+      "evidenceText": "Aluminum is expected to trade at 3608.05 USD/Tonne by the end of this quarter",
+      "extractionRationale": "Source 2 explicitly provides a price in USD/Tonne format. While Source 1 from LME.com provides prices, they lack explicit unit denomination and cannot be reliably converted without confirmation of current units. Source 2's explicit USD/Tonne denomination makes it the most reliable extraction point.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 9.87,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest (LUPc1) - Investing.com",
+      "evidenceText": "The Aluminium Premium Duty paid US Midwest price today is 1,793.99. (Source 3 indicates this is quoted in US cents/lb, so converted to USD/lb: 1,793.99 ÷ 100 = 17.94)",
+      "extractionRationale": "Source 2 provides the current price as 1,793.99. Source 3's title explicitly states the unit is \"US cents/lb\", therefore converting this to USD/lb by dividing by 100 yields 17.94 USD/lb. This represents the current Aluminium Premium Duty paid US Midwest price.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
