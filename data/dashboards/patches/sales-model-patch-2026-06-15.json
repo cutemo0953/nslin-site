@@ -1,0 +1,173 @@
+{
+  "date": "2026-06-15",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No retail prices found in any of the three sources provided (bike-discount.de, bike24.com, or schwalbe.com). All sources contain product descriptions and specifications but no pricing information.",
+      "extractionRationale": "Thorough review of all three sources revealed no explicit prices or price ranges mentioned. The bike-discount.de and bike24.com sources appear to be product listing pages that would typically display prices, but the provided content excerpts do not include price information. The official Schwalbe source focuses on product features and compatibility.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993549.html",
+      "sourceTitle": "",
+      "evidenceText": "Four product pages identified: p1993549 (CoreCap 40mm Copper), p1993550 (CoreCap 60mm Copper), p1942018 (valve cores - accessory, excluded), p1993546 (CoreCap 40mm Black). Three are distinct CoreCap complete valve listings.",
+      "extractionRationale": "Counted unique CoreCap product page URLs in the German market. Excluded p1942018 as it is a valve core accessory (Ventilkern), not a complete CoreCap valve. Included three distinct product pages: two different size variants (40mm and 60mm) of the Copper version, and one 40mm Black variant.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "None of the 5 product listings contained stock status information. All sources showed product descriptions without mention of availability status.",
+      "extractionRationale": "Stock status indicators (out of stock, unavailable, nicht verfügbar, ausverkauft) were not found in any of the 5 product listings provided. The evidence consists only of product titles, descriptions, and navigation elements without availability information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 9,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Distinct inner tube models identified: No. 17, No. 19, No. 15, No. 15L-EL, No. 14, No. 19L-EL, No. 19-EL, No. 19L, No. 19-AE+. Excluded: conversion kits (Umrüstkit), valves, and adapters.",
+      "extractionRationale": "Counted distinct Schwalbe inner tube SKUs/models with Clik Valve interface from the 5 sources. Each unique model number and variant (Extra Light, MTB+, Aerothan) counts as a separate SKU. Excluded non-tube products like conversion kits (Umrüstkit), standalone valves (Tubeless-Ventil), and pump adapters as instructed.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -10,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "",
+      "evidenceText": "the LME Official Price is the global benchmark price for aluminium, 25 tonnes Price quotation: US$ per tonne",
+      "extractionRationale": "The sources reference how LME aluminium prices are quoted (in US$ per tonne) but do not provide the actual current spot price value. Source 2 shows an alloy price (3510.00) which is not the pure aluminum spot price being requested.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 3284,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
