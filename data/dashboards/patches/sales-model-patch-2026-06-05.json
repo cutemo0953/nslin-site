@@ -1,0 +1,168 @@
+{
+  "date": "2026-06-05",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No price information found in any of the three provided sources.",
+      "extractionRationale": "All three sources (bike-discount.de, bike24.com, and schwalbe.com) contain only product descriptions, features, and listings. No retail prices in EUR or any other currency are mentioned in the provided content excerpts.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993550.html",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct CoreCap product URLs identified: p1993550.html (Kupfer 60mm), p1993546.html (schwarz 40mm), p1993548.html (CoreCap valve). Source 5 (p1942018.html) is excluded as it lists valve cores/accessories, not complete CoreCap valves.",
+      "extractionRationale": "Counted unique product page URLs for CoreCap valve products only. Excluded the brand category page (marken/bbb) and the valve core accessory listing (p1942018.html). Found three distinct CoreCap AL Valve product pages with different specifications.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993583.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - gold | 2 Pieces | BIKE24",
+      "evidenceText": "No stock status indicators found in the provided product listing excerpts. Content shows product description and features only.",
+      "extractionRationale": "The provided text excerpts from both product listings (gold and red variants) contain only product descriptions and features. No stock status information such as 'out of stock', 'unavailable', 'nicht verfügbar', or 'ausverkauft' is present in the provided content. Stock status cannot be determined from the available text.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 7,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No. 17 (28-47/622-635), No. 19 (40-62/622-635), No. 15L-EL (28/32-622/630), No. 19L MTB+ (54/75-584/622), No. 17-EL (28/44-622), No. 7 (40/62-406), No. 15-EL (23/28-622/630) - all with Clik Valve (SCV)",
+      "extractionRationale": "Counted all distinct inner tube models/SKUs with Clik Valve designation across all sources. Excluded conversion kits (Umrüstkit) and adapters which are accessories, not tubes. Each model number with unique size/dimensions counted once.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -30,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 2601,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-premiums/lme-aluminium-premium-duty-paid-us-midwest-platts",
+      "sourceTitle": "LME Aluminium Premium Duty Paid US Midwest (Platts)",
+      "evidenceText": "LME Aluminium Premium Duty Paid US Midwest (Platts) Closing Prices ; 2579.41 · 2608.00 · 2604.00 · 2601.00",
+      "extractionRationale": "Extracted the most recent closing price (2601.00) from Source 2. However, confidence is LOW because this source shows an aluminium premium product, not the base LME Aluminium spot price. The actual spot price is not clearly provided in either source.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 3284,
+      "deltaPct": -20.8,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
