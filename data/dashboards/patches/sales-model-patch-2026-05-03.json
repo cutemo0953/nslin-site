@@ -1,0 +1,465 @@
+{
+  "date": "2026-05-03",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 22,
+    "collected": 7,
+    "unchanged": 7,
+    "failed": 14,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 36,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve accessories ecosystem pump adapter"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "overwrite_blocked",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    },
+    {
+      "nodeId": 25,
+      "code": "no_relevant_result",
+      "query": "tubeless valve bicycle Google Ads CPC average cost per click 2026"
+    },
+    {
+      "nodeId": 26,
+      "code": "overwrite_blocked",
+      "query": "Clik valve e-bike 2026 2027 specification electric bicycle"
+    },
+    {
+      "nodeId": 49,
+      "code": "overwrite_blocked",
+      "query": "Clik valve site:99spokes.com"
+    },
+    {
+      "nodeId": 50,
+      "code": "overwrite_blocked",
+      "query": "site:schwalbe.com Clik valve installation guide technical manual"
+    },
+    {
+      "nodeId": 53,
+      "code": "no_relevant_result",
+      "query": "Clik valve 3D model CAD download GrabCAD Thingiverse"
+    },
+    {
+      "nodeId": 11,
+      "code": "no_relevant_result",
+      "query": "\"CoreCap\" vs \"Clik valve\" Google Trends bicycle 2026"
+    },
+    {
+      "nodeId": 59,
+      "code": "no_relevant_result",
+      "query": "tubeless valve bicycle Icecat product catalog"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "no_relevant_result",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859950.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 80 mm | BIKE24",
+      "evidenceText": "No pricing information was found in any of the three provided sources. The sources contain product descriptions and features but no EUR prices.",
+      "extractionRationale": "Despite reviewing all three sources (official Schwalbe website and two BIKE24 product listings), no retail prices in EUR were mentioned in the provided content excerpts. The evidence does not contain the necessary pricing data to extract a value.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - Amazon.com",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve; Utilizes Clik Valves for best-in-class performance",
+      "extractionRationale": "Only one distinct third-party accessory product is explicitly mentioned in the provided evidence: the Wolf Tooth Tubeless Valve Stem Kit. Color variants (9 colors available) do not constitute separate products. No other pump heads, adapters, or tools are mentioned.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "26": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://road.cc/content/tech-news/bbb-cycling-launches-corecap-317493",
+      "sourceTitle": "",
+      "evidenceText": "With Clik you get a smaller pump head that's push on/pull off without the need for the lever arm on a schrader pump head.",
+      "extractionRationale": "The source describes Clik valve features but contains no data about 2026/2027 e-bike model adoption or percentage of models including Clik valve specifications. No quantitative adoption metrics were found in the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de",
+      "sourceTitle": "BIKE24 - Clik Valve Product Listings",
+      "evidenceText": "Three distinct Clik Valve product URLs identified: (1) p1859954 - Umrüstkit, (2) p1859950 - Tubeless 80mm, (3) p1859949 - Tubeless 60mm. Excluded p1962326 (pressure gauge accessory) and p1962295 (inner tube, not valve).",
+      "extractionRationale": "Counted only distinct Clik valve product pages, excluding accessories (pressure gauge) and related products (inner tubes). Three unique product listing URLs for actual Clik valve products were identified.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993581.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Ventilkern - blau | 2 Stück | BIKE24",
+      "evidenceText": "No stock status information found in the provided content. The listing shows product description and features only.",
+      "extractionRationale": "The provided product page content does not contain any explicit stock status indicators (such as \"out of stock\", \"nicht verfügbar\", \"ausverkauft\", etc.). Without explicit stock information in the text, the stock status cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps?srsltid=AfmBOooFrRRB_S5FBjmmZmDBRgxdPcNeW-1FPX1uAGQRDFkt7MuHvC9Y",
+      "sourceTitle": "CoreCap Valve Cap Set - BBB Cycling",
+      "evidenceText": "Product information Features Size guide Specifications Spare parts Find a dealer.",
+      "extractionRationale": "The source page references a \"Spare parts\" section but the provided content excerpt does not include the actual list of distinct replacement/spare part SKUs (valve cores, seals, o-rings, replacement kits). The text is incomplete and does not provide specific SKU counts.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "41": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://road.cc/feature/lezynes-clik-valve-compatible-pumps-make-tyre-inflation-easier-than-ever",
+      "sourceTitle": "",
+      "evidenceText": "The provided source discusses Lezyne's CLIK Valve-compatible pumps and conversion technology but does not contain information about which bicycle/wheelset brands adopted CLIK valves in 2026 or their specifications for 2027.",
+      "extractionRationale": "The evidence does not provide data on bicycle/wheelset brand adoption of CLIK valves in 2026 or retention rates for 2027. The source focuses on Lezyne pump technology rather than OEM brand adoption metrics. No basis exists to calculate the requested percentage.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 100,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "",
+      "evidenceText": "The DT Swiss tubeless valve perfectly matches DT Swiss rims, to ensure a perfect seal for long, hassle-free [operation]. All DT Swiss wheelsets are tubeless compatible and the ASM versions come tubeless ready, equipped with tubeless tape and valves.",
+      "extractionRationale": "DT Swiss (the only brand with detailed evidence) explicitly uses their own proprietary \"DT Swiss tubeless valve\" system, not Clik valve. No evidence shows any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) adopting Clik as standard. Therefore, 0 out of 6 major brands have converted to Clik valve.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "49": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://99spokes.com/bikes/bergamont/2025/grandurance-ltd",
+      "sourceTitle": "",
+      "evidenceText": "Source 1: \"Clik valve, Rear: Schwalbe G-One Bite Comp\" and \"Tube: Schwalbe SCV17, Clik valve\" (2025 Bergamont Grandurance LTD). Source 3: Same specifications for 2026 Bergamont Grandurance LTD. Other sources mention \"Herrmans Clik\" grips, not Clik valves.",
+      "extractionRationale": "Two bicycle models explicitly list \"Clik valve\" in their specifications: 2025 Bergamont Grandurance LTD and 2026 Bergamont Grandurance LTD. Other sources mention Herrmans Clik components which are grips, not valves. Trek District models in sources 2, 4, and 5 use Presta valves and Herrmans Clik grips, not Clik valves.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "50": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/technology-faq/valve/",
+      "sourceTitle": "",
+      "evidenceText": "Two distinct Clik valve pages identified: (1) https://www.schwalbe.com/en/technology-faq/valve/ - FAQ page with detailed Clik Valve technical information; (2) https://www.schwalbe.com/en/clik-valve/ - dedicated Clik Valve product page. Sources 3 and 4 merely reference Clik Valve among other products without dedicated technical content.",
+      "extractionRationale": "Counted unique URLs that contain technical documents, installation guides, or FAQ content specifically about Clik Valve. Source 1 is a FAQ page dedicated to valve technology including Clik Valve. Source 2 is a dedicated Clik Valve product page. Sources 3 and 4 are general product pages that mention Clik Valve but are not dedicated technical resources.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Schlauch - No. 17 (28 Zoll), Schlauch - Nr. 15 (28\"/700C), Schlauch - No. 17-EL (Extra Light) (28\"), Schlauch - Nr. 3 (16\"), Schlauch - No. 19 (27.5/28/29 Zoll) - all with Clik Valve (SCV)",
+      "extractionRationale": "Counted all distinct inner tube models listed across the sources that feature Clik Valve (SCV) interface. Excluded conversion kits and accessories (Umrüstkit, pump head adapters). Each model/size combination was counted as 1 distinct SKU.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993585.html",
+      "sourceTitle": "",
+      "evidenceText": "No stock status or restock dates found in any of the four sources provided. Sources show current product listings without indicating availability status or restock information.",
+      "extractionRationale": "The sources provided are product listing pages from BIKE24 but contain no information about stock status, \"back in stock\" dates, or restock turnaround times. Without explicit evidence of outages or restock dates, the turnaround time cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3170,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Official Prices; 3165.00 · 3165.00 · 3165.00; 3175.00 · 3175.00 · 3175.00",
+      "extractionRationale": "Extracted from official LME source showing Aluminium Alloy prices ranging from 3165.00 to 3175.00 USD/tonne. Used midpoint value (3170) as the most representative current price from the official exchange.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -3.47,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures-historical-data",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Historical Prices",
+      "evidenceText": "Oct 29, 2025, 1,793.99, 1,793.99",
+      "extractionRationale": "The most recent price shown in the historical data is 1,793.99 for Oct 29, 2025. This value is in cents per pound (standard format for aluminum premiums). Converted to USD/lb: 1,793.99 ÷ 100 = 17.9399, rounded to 17.94 USD/lb.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
