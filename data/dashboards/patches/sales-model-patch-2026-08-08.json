@@ -1,0 +1,191 @@
+{
+  "date": "2026-08-08",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 4,
+    "unchanged": 2,
+    "failed": 1,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 19.32,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993548.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves | 2 Pieces",
+      "evidenceText": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Valves - black | 40mm | 2 Pieces 19,32 €",
+      "extractionRationale": "Single retail price found for CoreCap product on bike24.com: 19,32 € (converted to decimal: 19.32). This is the median and only price for this product in the evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/",
+      "sourceTitle": "Bike24 - CoreCap Valve Listings",
+      "evidenceText": "Three distinct product URLs for BBB Cycling CoreCap AL Valve BTI-166: p1993548, p1993551, p1993547. Sources 4-5 are valve cores (BTI-165 Ventilkern), which are accessories and excluded.",
+      "extractionRationale": "Counted unique product page URLs for CoreCap valves only. Excluded valve cores (BTI-165 Ventilkern) as accessories. The three BTI-166 valve listings at different URLs represent distinct product listings even though they appear to be variants of the same model.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com",
+      "sourceTitle": "",
+      "evidenceText": "Multiple product listings reviewed (40mm, 60mm, 80mm Schwalbe Clik Valves and Wolf Tooth Valve Stem Kit) contain no stock status indicators such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft'.",
+      "extractionRationale": "Stock status information is not present in any of the 5 provided sources. The product listing excerpts do not contain explicit stock availability status, making it impossible to determine the percentage of out-of-stock items.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/tubes/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct inner tube models with SCV (Schwalbe Clik Valve): 12-EL (26\"), 14-EL (27.5\"), and 7-AP (20\"). Each listing explicitly states \"Valve: SCV\"",
+      "extractionRationale": "Source 1 explicitly lists three inner tube SKUs with SCV valve designation: 12-EL (EXTRA LIGHT for 26\"), 14-EL (EXTRA LIGHT for 27.5\"), and 7-AP (AIR PLUS for 20\"). These are the only specific inner tube models with Clik valve interface identified in the provided evidence. Sources 2-5 discuss the Clik Valve technology but do not list additional specific tube models.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "fail",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3200,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "LME Aluminium | London Metal Exchange",
+      "evidenceText": "3200.00 3-month Closing Price (day-delayed). Price quotation: US$ per tonne. Data valid for 07 Aug 2026 / 08 Aug 2026",
+      "extractionRationale": "The LME Aluminium page shows a 3-month closing price of 3200.00 USD per tonne, which is the standard LME aluminum spot price benchmark. This is confirmed by the contract specification showing prices are quoted in US$ per tonne.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -2.56,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 0.6,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "Premiums for consumers buying aluminium on the physical market in the United States hit a record 60 cents a lb",
+      "extractionRationale": "The evidence directly states \"60 cents a lb\" for US aluminum premiums. Converted from cents to USD per pound: 60 cents = $0.60/lb",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": -40,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
