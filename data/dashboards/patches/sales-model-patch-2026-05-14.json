@@ -1,0 +1,150 @@
+{
+  "date": "2026-05-14",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 3,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "extraction_failed",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "No retail price information found in either source. Source 1 contains only product description. Source 2 lists product variants but no prices.",
+      "extractionRationale": "Despite reviewing both sources thoroughly, no explicit retail prices in EUR were mentioned for any Schwalbe Clik Valve products. The sources contain product descriptions and variant information but lack pricing data.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct Clik valve product pages identified: (1) p1960182.html - Schlauch No. 19, (2) p1859950.html - Tubeless-Ventil 2er Set, (3) p1962278.html - Schlauch Nr. 15. Excluded p1859952.html as it is an Umrüstkit (accessory kit with Pumpenkopf/pump head adapter).",
+      "extractionRationale": "Counted unique product page URLs from the five sources. Identified three distinct Clik valve product listings (tubes and tubeless valve sets). Excluded the conversion kit (Umrüstkit) from source 4 as it is an accessory containing a pump head adapter, not a standalone Clik valve product listing. Source 1 is a category filter page, not a unique product listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap Product Listings - BIKE24",
+      "evidenceText": "All 5 product listings reviewed contain product descriptions and features only. No stock status information (out of stock, unavailable, nicht verfügbar, ausverkauft) is present in any of the provided content snippets.",
+      "extractionRationale": "Stock status cannot be determined from the provided text evidence. The content shown for all 5 listings (copper, red, black, copper 80mm, and blue variants) contains only product descriptions and features, with no visible stock availability indicators.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Schlauch - No. 17 | 28 Zoll | 28-47/622-635 | Clik Valve (SCV); Schlauch - Nr. 15 | 28\"/700C - 23/30-622/630 | Clik Valve (SCV); Schlauch - No. 17-EL (Extra Light) | 28\" - 28/44-622 | SCV (Clik Valve); Schlauch - Nr. 7 | 20\" - 40/62-406 | Clik Valve (SCV) 40mm",
+      "extractionRationale": "Identified 4 distinct Schwalbe inner tube models with Clik Valve interface from the evidence: (1) No. 17 28\" tube, (2) No. 17-EL Extra Light 28\" tube, (3) Nr. 15 28\"/700C tube, and (4) Nr. 7 20\" tube. Excluded conversion kits (SV-SCV valve sets and adapter kits) as per instructions to count only inner tubes, not valves or accessories.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    }
+  },
+  "derived": {}
+}
