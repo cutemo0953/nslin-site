@@ -1,0 +1,173 @@
+{
+  "date": "2026-04-27",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859949.html",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct Clik Valve product listings identified: (1) https://www.bike24.de/p1859949.html - 60mm 2er Set, (2) https://www.bike24.de/p1859948.html - 40mm 2er Set, (3) https://www.bike24.de/p1859950.html - 80mm 2er Set. Source 1 is a category page, Source 3 is a tube accessory, not counted.",
+      "extractionRationale": "Counted only unique product page URLs for standalone Clik Valve tubeless valve products. Excluded the brand/category page (Source 1) and tube/accessory product (Source 3). Three distinct Schwalbe Clik Valve 2er Set products found in different sizes (40mm, 60mm, 80mm).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859949.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 60 mm | BIKE24",
+      "evidenceText": "All 4 product listings (60mm, 40mm, 80mm valves and conversion kit) contain only product descriptions without any stock status information or availability indicators.",
+      "extractionRationale": "The provided content from all 4 BIKE24 product pages contains only product descriptions and does not include any stock status indicators (out of stock, available, unavailable, etc.). Stock status cannot be determined from the given evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 11,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962295.html",
+      "sourceTitle": "",
+      "evidenceText": "Identified distinct models: No. 19, No. 19-EL, Nr. 13, Nr. 12, No. 17, Nr. 3, Nr. 4, Nr. 6, Nr. 7, Nr. 15, Nr. 10 - all with Clik Valve (SCV) designation across multiple tire sizes (16\", 20\", 24\", 26\", 27.5\", 28\", 29\")",
+      "extractionRationale": "Counted all distinct Schwalbe inner tube model numbers with Clik Valve (SCV) interface from the product listings. Each unique model number represents a distinct SKU/product, regardless of tire size variations. Excluded conversion kits, valves, and accessories per instructions. The count includes: No. 19, No. 19-EL (Extra Light), Nr. 3, Nr. 4, Nr. 6, Nr. 7, Nr. 10, Nr. 12, Nr. 13, Nr. 15, and No. 17.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": 10,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3643.69,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News - Trading Economics",
+      "evidenceText": "Aluminum is expected to trade at 3643.69 USD/Tonne by the end of this quarter",
+      "extractionRationale": "Extracted the aluminum price value of 3643.69 USD/Tonne directly from the source text. The value is already in USD per metric ton format as required.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 10.95,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest (LUPc1) - Investing.com",
+      "evidenceText": "The Aluminium Premium Duty paid US Midwest price today is 1,793.99. (Source indicates price is in cents/lb per Fastmarkets specification)",
+      "extractionRationale": "The most recent data point from investing.com shows 1,793.99 for the Aluminium Premium Duty paid US Midwest as of Oct 29, 2025. Per Source 1's specification that Fastmarkets publishes this premium in \"US cents/lb\", the value 1,793.99 cents/lb converts to 17.94 USD/lb.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
