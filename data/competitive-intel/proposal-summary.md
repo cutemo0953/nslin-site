@@ -1,97 +1,126 @@
 ## Competitive Intelligence Proposals
 
-Source file: `proposals-2026-03-22.json`
-Date: 2026-03-22
-Total proposals: 12
+Source file: `proposals-2026-04-12.json`
+Date: 2026-04-12
+Total proposals: 17
 
 ### Summary
 
 | Class | Count | Action |
 |-------|-------|--------|
-| Factual (2) | 11 | Review & merge |
-| Noisy (4) | 1 | Appended to signals |
+| Factual (2) | 14 | Review & merge |
+| Noisy (4) | 3 | Appended to signals |
 
 ---
 
-### Stan's NoTubes Exo-Core Valve
+### Muc-Off Big Bore Tubeless Valve
 
-- **lengths** (Noisy, 40% confidence)
-  - Change: `["35mm", "44mm", "55mm", "70mm"]` -> `["37mm", "43mm", "53mm", "63mm"]`
-  - Source: [retail](https://www.performancebike.com/stans-exocore-tubeless-valve-stems-black-pair-43mm-as0240/p1596277?v=1581700&srsltid=AfmBOorhFukgZ5FF6DDu91xW6_-SPhHMp9Tpe8LN-xQuQKBeWecA33xL)
-  - Evidence: "Price: $55.00. Valve Length: · 37mm · 43mm · 53mm · 63mm. 1; 2; 3; 4; 5; 6; 7; 8; 9 ... Stan's NoTubes 35mm Tubeless Valve Shop Pack (25-Pack)."
+- **retail_price_range** (Noisy, 30% confidence)
+  - Change: `null` -> `$29.99-$37.50 (retail)`
+  - Source: [retail](https://racycles.com/products/muc-off-big-bore-hybrid-tubeless-valve?srsltid=AfmBOoryKH3aYAvzVXeuZtcjPVm2aKrt0dSita_0H6ANfpHX-agBhrEG)
+  - Evidence: "On sale now — special pricing for a limited time. Sale price $2999 Regular price $5000."
+
+### 76 Projects Hi Flow Valve
+
+- **price** (Noisy, 30% confidence)
+  - Change: `29` -> `3.50`
+  - Source: [official_site](https://us.76projects.com/collections/road)
+  - Evidence: "PAIR OF SIZE 0 - RIMS 9-20mm · HI FLOW 'NO CLOG' TUBELESS VALVES. 4.17 / 5.0. (41) 41 total reviews. Regular Price: from $3.50. Sale Price: from $3.50"
+
+### Prime Tubeless Valve
+
+- **availability_status** (Noisy, 40% confidence)
+  - Change: `null` -> `potentially_discontinued`
+  - Source: [official_site](https://www.wiggle.com/us/p/nukeproof-universal-presta-tubeless-valves-pair)
+  - Evidence: "No information is available for this page. · Learn why"
+
+### DT Swiss Tubeless Valve (Aluminum)
+
+- **price** (Factual, 60% confidence)
+  - Change: `22.5` -> `21.13`
+  - Source: [retail](https://shop.unlimitedbiking.com/products/dt-swiss-aluminum-tubeless-valve-mtb-or-road-49-65mm-black-single-1?srsltid=AfmBOoouGG80fTSRFr_bpRP8RWs5VYZ7-Qi05I2on-VM4sFVKT0bCQu7)
+  - Evidence: "Regular price $21.13"
+
+- **lengths** (Factual, 70% confidence)
+  - Change: `["44mm", "60mm", "80mm"]` -> `["44mm", "60mm", "80mm", "49-65mm", "18-25mm"]`
+  - Source: [retail](https://shop.unlimitedbiking.com/products/dt-swiss-aluminum-tubeless-valve-mtb-or-road-49-65mm-black-single-1?srsltid=AfmBOoouGG80fTSRFr_bpRP8RWs5VYZ7-Qi05I2on-VM4sFVKT0bCQu7)
+  - Evidence: "DT Swiss Aluminum Tubeless Valve - MTB or Road, 49-65mm, Black, Single"
 
 ### Industry Nine Tubeless Valve
 
-- **price** (Factual, 75% confidence)
-  - Change: `27.5` -> `21.99`
-  - Source: [retail](https://worldwidecyclery.com/products/industry-nine-no-clog-aluminum-tubeless-valve-stems-39mm-lime-pair?srsltid=AfmBOoqX7MrrrZEQYs-nSaFwIjkanRtg1hpC6XWAToJW6izSr83TXCCK)
-  - Evidence: "Industry Nine Tubeless Valves - 40mm, Lime, Pair ; List Price · $21.99 ; Sale Price · $21.99 ; Savings · $-21.99 (0%)"
+- **price** (Factual, 70% confidence)
+  - Change: `27.5` -> `21.0`
+  - Source: [retail](https://365cycles.com/products/industry-nine-tubeless-valve-kit-tubeless-valves-tu0610?srsltid=AfmBOoqm2LUA0gH955SqoWIvxAehzK2yNwOz8qSydVa5cBdQwy4M7spC)
+  - Evidence: "Regular price $23.25. $21.00 Sale price $23.25 Regular price. Sale Sold out. Unit price. /per. No reviews. Free Shipping Over $75; 30 Day Returns; Satisfaction"
 
-- **lengths** (Factual, 95% confidence)
+- **lengths** (Factual, 90% confidence)
   - Change: `["40mm", "52mm", "67mm"]` -> `["40mm", "52mm", "57mm", "67mm", "80mm"]`
   - Source: [official_site](https://www.ap.industrynine.com/parts/valves)
   - Evidence: "TKVABLK_ Small Parts - Tubeless Aluminum Valve Kit - 40mm - Black (2 Valves). TKVABLK52 Small Parts - Tubeless Aluminum Valve Kit - 52mm - Black (2 Valves). TKVABLK57 Small Parts - Tubeless Aluminum V..."
 
-### 76 Projects Hi Flow Valve
-
-- **price** (Factual, 80% confidence)
-  - Change: `29` -> `28`
-  - Source: [retail](https://www.bikeperfect.com/reviews/76-projects-hi-flow-no-clog-valves-review)
-  - Evidence: "Price: $28.00 / £24.50 / €29.90; Sizes: 15-35mm, 30-50mm, 45-65mm; Color: Anodized black or pink. Shop for tubeless valves. Peaty's x Chris King"
-
-### WTB Max-Flow Valve
-
-- **price** (Factual, 80% confidence)
-  - Change: `27.5` -> `24.95`
-  - Source: [retail](https://www.wtb.com/products/max-flow-tubeless-valves?srsltid=AfmBOop38RHrf_zbzOAqjLly6C0lQ7v2qdcYbzbkzZju_AHJ2nltr5hx)
-  - Evidence: "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95."
-
 ### Peaty's x Chris King MK2 Tubeless Valve
+
+- **weight_per_valve_g** (Factual, 70% confidence)
+  - Change: `null` -> `49.9g`
+  - Source: [retail](https://www.walmart.com/ip/Peaty-s-x-Chris-King-Tubeless-MK2-Valves-80mm-Black/11898806422)
+  - Evidence: "Specs ; Brand. Peaty's ; Material. Aluminium Gummi ; Bicycle type. Road Bikes ; Weight. 0.11 lb."
 
 - **material** (Factual, 80% confidence)
   - Change: `aluminum (Chris King collab)` -> `7075 aluminum (Chris King collab)`
   - Source: [retail](https://www.ebay.com/itm/116962097603)
   - Evidence: "Made from premium lightweight, high strength 7075 aluminium, Peaty's MK2 Tubeless Valves fit most tubeless setups from MTB to road and cyclocross, including"
 
-### DT Swiss Tubeless Valve (Aluminum)
+### Legion VMAX / TROJAN Vmax
 
-- **material** (Factual, 85% confidence)
-  - Change: `aluminum` -> `aluminum and brass`
-  - Source: [official_site](https://www.dtswiss.com/en/components/wheel-accessories/valve)
-  - Evidence: "### Tubeless valve brass silver for 26 - 35 mm profile height Road. ### Tubeless valve brass silver for 36 - 48 mm profile height Road. ### Tubeless valve brass silver for 49 - 65 mm profile"
+- **price** (Factual, 75% confidence)
+  - Change: `27.5` -> `17.49`
+  - Source: [retail](https://www.tradeinn.com/bikeinn/en/legion-v-max-tubeless-presta-21-29-mm-valves-2-units/139881837/p)
+  - Evidence: "Legion V-Max Tubeless Presta 21-29 mm valves 2 units. 17.49 €. Price without code 17.49. RRP: 25.99 €. You save:"
 
-- **lengths** (Factual, 90% confidence)
-  - Change: `["44mm", "60mm", "80mm"]` -> `["18-25mm", "26-35mm", "36-48mm", "49-65mm", "66-80mm"]`
-  - Source: [official_site](https://www.dtswiss.com/en/components/wheel-accessories/valve)
-  - Evidence: "### Tubeless valve alloy black for 18 - 25 mm profile height. ### Tubeless valve alloy black for 26 - 35 mm profile height. ### Tubeless valve alloy black for 36 - 48 mm profile height. ### Tubeless v..."
+- **weight_per_valve_g** (Factual, 85% confidence)
+  - Change: `null` -> `4.5`
+  - Source: [retail](https://www.amazon.com.be/-/en/LEGION-Aluminium-Valves-Tubeless-Unisex/dp/B0857V1DJ6)
+  - Evidence: "Only 9 g per pair with nuts and caps."
 
-### Muc-Off Big Bore Tubeless Valve
+### Stan's NoTubes Exo-Core Valve
 
-- **price** (Factual, 90% confidence)
-  - Change: `48.99` -> `50.00`
-  - Source: [retail](https://www.performancebike.com/mucoff-big-bore-lite-tubeless-valves-black-pair-small-30mm-21117/p1573095?v=1560227&srsltid=AfmBOorqGY_0aZXdYthvwF-KhM8le6MxCyEdr4DIKXQRiHTYJEX3o-eL)
-  - Evidence: "Part#: 21117 ; Price: $50.00 ; Muc-Off Big Bore Lite Tubeless Valves Description: Engineered with precision and leading technology, the Big Bore"
+- **price** (Factual, 80% confidence)
+  - Change: `54.99` -> `13.93`
+  - Source: [retail](https://www.trekbikes.com/us/en_US/equipment/cycling-components/bike-tubes-tubeless-bike-tire-accessories/bike-valves-accessories/stans-notubes-exo-core-tubeless-valves/p/5334018/)
+  - Evidence: "Stan's NoTubes EXO-Core Tubeless Valves. $13.93 $55.00 Comp. Value Original price. Model 5334018."
 
 ### Schwalbe Clik Valve System
 
-- **airflow_claim** (Factual, 90% confidence)
-  - Change: `1.5x` -> `50% higher / 1.5x`
-  - Source: [retail](https://www.timsbikeshop.com/products/schwalbe-scv-tubeless-clik-valve-clik-80mm-pair?srsltid=AfmBOopfdfCBz-O2Ex718ZOgXyBg6SJ-4_0w-niK8skA2gg2Y0-pNAeR)
-  - Evidence: "Offers 50% higher air flow than standard tubeless valves, improving inflation efficiency."
+- **price** (Factual, 80% confidence)
+  - Change: `28` -> `35.89`
+  - Source: [retail](https://www.schwalbetires.com/SCHWALBE-CLIK-VALVE-TUBELESS-VENTIL-3532?srsltid=AfmBOopDBG1d5JD5bn_0R3ARqQga73w5ue8lAMxJxZcy_eNnNdb9Ykfd)
+  - Evidence: "The tubeless valve Clik Valve even has an additional advantage: a 50 ... EAN, PRICE. sold out. 80 mm, 16 g, 3532, 4026495951982, US$35.89. Buy. 60 mm, 13 g"
+
+### WTB Max-Flow Valve
+
+- **price** (Factual, 80% confidence)
+  - Change: `27.5` -> `21.95`
+  - Source: [retail](https://www.benscycle.com/wtb-tcs-max-flow-tubeless-valves---44mm--black--pair-c1234-wtb-j2591-tu0012/p?srsltid=AfmBOor6yz_qT0dDrjkoChLpU2AhPaXqScXHIZhYGvoomb4qq_ormaM7)
+  - Evidence: "WTB TCS Max-Flow Tubeless Valves - 44mm, Black, Pair. SKU: TU0012. Price:$21.95. Quantity. 10+ Available."
+
+### CushCore Hi-Flo Valve
+
+- **color_options** (Factual, 85% confidence)
+  - Change: `null` -> `13 color options`
+  - Source: [official_site](https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopkJJhSM2IEkZbS5EbG_UfgeNBJ6QPfG0WpDvNfLyHhRNNfIJnW)
+  - Evidence: "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design."
+
+- **price** (Factual, 90% confidence)
+  - Change: `24.99` -> `30.00`
+  - Source: [official_site](https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopkJJhSM2IEkZbS5EbG_UfgeNBJ6QPfG0WpDvNfLyHhRNNfIJnW)
+  - Evidence: "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design."
 
 ### Topeak TurboFlow Valve
 
 - **in_stock** (Factual, 90% confidence)
   - Change: `true` -> `false`
-  - Source: [retail](https://www.topeak.com/us/en/product/1818-TURBOFLOW-VALVE-ADAPTER)
+  - Source: [official_site](https://www.topeak.com/us/en/product/1818-TURBOFLOW-VALVE-ADAPTER)
   - Evidence: "High-flow valve adapter for tubeless tires, sold as a pair. • Boosts airflow ... Regular price $34.95. Out of stock. find a store. Proposition 65 WARNING"
-
-### CushCore Hi-Flo Valve
-
-- **price** (Factual, 90% confidence)
-  - Change: `24.99` -> `30.00`
-  - Source: [official_site](https://cushcore.com/products/cushcore-valves?srsltid=AfmBOopaFFqUccwfMidFLimbtLtNU5e10w-FvClgVTYbxQgCMqnoigvd)
-  - Evidence: "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design."
 
 ---
 
@@ -102,5 +131,5 @@ Total proposals: 12
 - [ ] Verify price changes against source URLs
 - [ ] Confirm no Class 4 (noisy) items leaked into main data
 
-After merge, run: `node scripts/apply-competitive-intel.mjs data/competitive-intel/proposals-2026-03-22.json && npm run prebuild`
+After merge, run: `node scripts/apply-competitive-intel.mjs data/competitive-intel/proposals-2026-04-12.json && npm run prebuild`
 Then deploy via `/cf-deploy nslin-site`
