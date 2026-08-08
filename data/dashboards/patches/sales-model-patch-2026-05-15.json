@@ -1,0 +1,127 @@
+{
+  "date": "2026-05-15",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 2,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "extraction_failed",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993548.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Product Listings",
+      "evidenceText": "Five distinct product page URLs identified: p1993548.html (80mm schwarz), p1993546.html (40mm schwarz), p1993547.html (60mm schwarz), p1993551.html (80mm Kupfer), p1993550.html (60mm Kupfer)",
+      "extractionRationale": "Counted each unique product page URL as a separate listing. All 5 sources represent distinct CoreCap product pages with different sizes and/or colors. No duplicates or accessories were counted.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993581.html",
+      "sourceTitle": "",
+      "evidenceText": "5 product listings examined: No stock status information (out of stock, unavailable, nicht verfügbar, ausverkauft) found in any of the provided content snippets from BIKE24",
+      "extractionRationale": "Stock status cannot be determined from the provided evidence. The 5 sources only contain product descriptions and features without any mention of availability or stock status. The provided content appears to be truncated product pages lacking critical stock information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 9,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Distinct Schwalbe inner tube models with Clik Valve identified: No. 17 (28\"), No. 15 (28\"/700C), No. 17-EL (28\"), No. 15L (28\"), No. 14 (27.5\"/650B), No. 19L (27.5\"/28\"/29\"), No. 19-EL (27.5\"/28\"/29\"), No. 7 (20\"), No. 10 (24\")",
+      "extractionRationale": "Counted all distinct Schwalbe inner tube models/SKUs with Clik Valve (SCV) designation from the five sources. Each unique tube number and size combination represents one SKU. Excluded conversion kits (Umrüstkit), valves, and pump adapters as instructed.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -10,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    }
+  },
+  "derived": {}
+}
