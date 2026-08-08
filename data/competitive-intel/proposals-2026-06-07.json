@@ -1,0 +1,189 @@
+[
+  {
+    "entity_id": "reserve-fillmore",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "49.99",
+    "new_value": "25.00",
+    "evidence": {
+      "source_url": "https://reservewheels.com/products/fillmore-tubeless-valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:02:08.178Z",
+      "snippet": "... $25.00 with. Learn more. Add to cart. Notify me when available. Buy with. More payment options. Fillmore Valves. Regular price$49.99 USD. Unit price/ per. Buy",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  },
+  {
+    "entity_id": "stans-exo-core",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "54.99",
+    "new_value": "59.00",
+    "evidence": {
+      "source_url": "https://www.notubes.com",
+      "source_type": "official_site",
+      "retrieved_at": "2026-06-07T23:02:54.801Z",
+      "snippet": "Stan's Tubeless Exo-Core Valves. from $59.00 ; Stan's Original DART Tool. $27.00 ; Stan's ForkBoost. $13.00 ; Stan's Incredible DART Tubeless Repair Tool. $75.00.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "schwalbe-clik",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "28",
+    "new_value": "29.87",
+    "evidence": {
+      "source_url": "https://www.schwalbetires.com/accessories/valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:03:29.456Z",
+      "snippet": "Contents: 2x Schwalbe Clik Valve tubeless valve. Variants from US$29.87*. from US$35.89* RRP. TUBELESS VALVE. Valve length: 40 mm. The Schwalbe",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "wtb-max-flow",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "24.95",
+    "evidence": {
+      "source_url": "https://www.wtb.com/products/max-flow-tubeless-valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:04:06.553Z",
+      "snippet": "Perfect for quick installation and a tight seal. Get the most out of your tubeless setup. Buy today! Sale price$24.95.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "cushcore-hi-flo",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "24.99",
+    "new_value": "30.00",
+    "evidence": {
+      "source_url": "https://cushcore.com/products/cushcore-valves",
+      "source_type": "official_site",
+      "retrieved_at": "2026-06-07T23:04:19.627Z",
+      "snippet": "HI-FLO Valves $30.00. # HI-FLO Valves. **Now with 13 color options!**. Tubeless Presta Valves with CushCore's pateneted Hi-FLo 3 hole design.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.9,
+    "change_class": 2
+  },
+  {
+    "entity_id": "industry-nine",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "27.5",
+    "new_value": "23.25",
+    "evidence": {
+      "source_url": "https://industrynine.com/products/tubeless-aluminum-valve-kit",
+      "source_type": "official_site",
+      "retrieved_at": "2026-06-07T23:04:31.609Z",
+      "snippet": "Tubeless Aluminum Valve Kit. SKU: TKVARED_. Regular price $23.25 USD.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.95,
+    "change_class": 2
+  },
+  {
+    "entity_id": "peatys-mk2",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "36",
+    "new_value": "35.99",
+    "evidence": {
+      "source_url": "https://peatys.com/products/peatys-x-chris-king-mk2-tubeless-valves",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:04:47.694Z",
+      "snippet": "Peaty's x Chris King MK2 Tubeless Valves. The dependable everyday valve. $35.99. Unit price ... purchase, photo of your damaged valve and a",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.85,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "price",
+    "old_value": "22.5",
+    "new_value": "14.99",
+    "evidence": {
+      "source_url": "https://www.twowheelerskidealer.com/product/dt-swiss-aluminum-tubeless-valve-393138-1.htm",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:05:05.698Z",
+      "snippet": "DT Swiss Aluminum Tubeless Valve. 0.0. No RatingsWrite the First Review. DT Swiss Aluminum Tubeless Valve Black. Black. $14.99. Color: Black.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "price_update",
+    "field": "normalized_per_unit",
+    "old_value": "11.25",
+    "new_value": "14.99",
+    "evidence": {
+      "source_url": "https://www.twowheelerskidealer.com/product/dt-swiss-aluminum-tubeless-valve-393138-1.htm",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:05:05.698Z",
+      "snippet": "DT Swiss Aluminum Tubeless Valve. 0.0. No RatingsWrite the First Review. DT Swiss Aluminum Tubeless Valve Black. Black. $14.99. Color: Black.",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.7,
+    "change_class": 2
+  },
+  {
+    "entity_id": "dt-swiss",
+    "change_type": "spec_update",
+    "field": "lengths",
+    "old_value": "[\"44mm\", \"60mm\", \"80mm\"]",
+    "new_value": "[\"18-25mm\"]",
+    "evidence": {
+      "source_url": "https://www.dtswiss.com/en/support/product-support?matnr=WEX1700TFD2SA27973",
+      "source_type": "official_site",
+      "retrieved_at": "2026-06-07T23:05:00.905Z",
+      "snippet": "Tubeless valve alloy black for asymetric 18 - 25 mm profile height; Material number TVVXA32S25867S. Short name TUBELESS VALVE ALU BL ASYM 18-25MM 1PC",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.8,
+    "change_class": 2
+  },
+  {
+    "entity_id": "prime-tubeless",
+    "change_type": "source_append",
+    "field": "official_url",
+    "old_value": "https://www.wiggle.com",
+    "new_value": "https://primebikecomponents.com/products/presta-tubeless-valves-pair",
+    "evidence": {
+      "source_url": "https://primebikecomponents.com/products/presta-tubeless-valves-pair",
+      "source_type": "retail",
+      "retrieved_at": "2026-06-07T23:05:24.804Z",
+      "snippet": "Prime Bike Components Prime Bike Components. Exclusively from Evans Cycles, Wiggle and Chain Reaction. Prime Presta Tubeless Valves (Pair).",
+      "url_status": "unchecked",
+      "url_check_method": "none"
+    },
+    "confidence": 0.4,
+    "change_class": 4
+  }
+]
