@@ -1,0 +1,206 @@
+{
+  "date": "2026-08-13",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "overwrite_blocked",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Amazon.com: Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black | automotive-valve-stems : Automotive",
+      "evidenceText": "1) LEZYNE Replacement Clik Valve Chuck Tip | Lightweight Aluminum Construction, Secure Valve Connection, 2) Wolf Tooth Aluminum Schrader Pump Head Adapter for Clik Valve - Quick-Conne, 3) Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black",
+      "extractionRationale": "Three distinct third-party accessory products for Clik valve are explicitly mentioned in the Amazon product page: (1) LEZYNE chuck tip compatible with Clik valve floor pump setups, (2) Wolf Tooth pump head adapter specifically for Clik valve, and (3) Wolf Tooth tubeless valve stem kit for Clik valve. Each represents a unique product category (pump chuck, pump adapter, valve stem).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "20": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebay.de/str/wetterladen/Fahrradreifen-und-schlauche/_i.html?store_cat=515325017",
+      "sourceTitle": "Wetterladen | eBay.de Shops",
+      "evidenceText": "SCHWALBE Clik Valve Conversion Set 3540 Sclaverand-Ventil Umrüstset. SCHWALBE Clik Valve Conversion Kit 3543 Dunlop-Ventil Umrüstset Ventileinsätze.",
+      "extractionRationale": "Only Source 1 contains direct mentions of SCHWALBE Clik Valve products. Sources 2 and 3 mention \"Clik 25\" but these refer to RC airplane models, not the valve product. Therefore, 1 distinct listing URL mentions the target valve product.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "The page mentions adapters and pump heads as related to Clik Valve installation, but does not explicitly show a \"frequently bought together\" or \"related products\" section in the provided content excerpt.",
+      "extractionRationale": "The evidence describes Clik Valve accessories (adapters, pump heads) in the context of installation instructions but does not provide data about whether these are displayed in dedicated \"frequently bought together\" or \"related products\" sections on product pages. Cannot determine attach rate from a single source or verify what fraction of Clik pages display such sections.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps",
+      "sourceTitle": "",
+      "evidenceText": "Product information Features Size guide Specifications Spare parts Find a dealer - The page references a \"Spare parts\" section but the actual list of SKUs is not included in the provided content.",
+      "extractionRationale": "The source page mentions a \"Spare parts\" section exists but does not provide the actual count or list of distinct replacement SKUs. The specific spare parts inventory data needed to answer this question is not present in the evidence provided.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "",
+      "evidenceText": "DT Swiss uses their own lightweight alloy valve system, not Clik valve. No evidence of Clik valve adoption found in available sources.",
+      "extractionRationale": "The provided evidence mentions only DT Swiss proprietary valves (\"lightweight alloy valve,\" \"DT Swiss tubeless valve\"). No mention of Clik valve adoption appears in either source. No 2026/2027 product line information confirms Clik adoption by any of the six major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993580.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - black | 2 Pieces | BIKE24",
+      "evidenceText": "47 in stock now / 1 in stock now - Product is currently available in inventory on primary DE retailer",
+      "extractionRationale": "Multiple CoreCap product variants show current stock availability (47 units and 1 unit respectively) on bike24.com, indicating no restock delay. Since product is currently in stock, restock turnaround time is 0 days.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
