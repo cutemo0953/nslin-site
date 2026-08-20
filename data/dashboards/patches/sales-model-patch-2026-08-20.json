@@ -1,0 +1,186 @@
+{
+  "date": "2026-08-20",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 1,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 8.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Multiple retail prices found: Clik Valve Conversion Kit SV-SCV: 9,99 €; Clik Valve Conversion Kit DV-SCV: 3,79 €; Clik Valve Conversion Kit DV-SCV incl. SKS CLIK TEC Pump Head: 9,99 €; Clik Valve Conversion Kit DV-SCV incl. SKS CLIK TEC Pump Head Adapter: 8,99 €; CLIK TEC Pump Head Adapter: 6,99 €",
+      "extractionRationale": "Five distinct prices extracted from bike-discount.de: 9,99 €, 3,79 €, 9,99 €, 8,99 €, 6,99 €. When sorted (3,79, 6,99, 8,99, 9,99, 9,99), the median is 8,99 € (middle value).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct product URLs identified: p1859951.html (SV-SCV 2 Ventile), p1859953.html (SV-SCV 2 Ventile & Pumpenkopfadapter), and p1936253.html (AV-SCV Ventiladapter). Sources 4 and 5 are duplicates of the same product.",
+      "extractionRationale": "Counted unique product page URLs from the five sources. Excluded the category page (source 3) and the duplicate URL (source 5 is identical to source 4). This yields 3 distinct product listings.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859953.html",
+      "sourceTitle": "Schwalbe Clik Valve - Conversion Kit - SV-SCV - 2 Valves & Pump Head Adapter | BIKE24",
+      "evidenceText": "No stock status information found in provided product listing excerpts",
+      "extractionRationale": "The provided text snippets from all three BIKE24 product listings contain only navigation, header, and promotional content. No stock availability information (such as \"out of stock,\" \"currently unavailable,\" \"nicht verfügbar,\" or \"ausverkauft\") appears in any of the excerpts provided. Stock status cannot be determined from the available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962296.html",
+      "sourceTitle": "",
+      "evidenceText": "Five distinct Schwalbe inner tube models identified: Nr. 4 (16\"/18\"), Nr. 7 (20\"), No. 17 (28\"), Nr. 13 (26\"), and No. 19 (27.5\"/28\"/29\") - all with Clik Valve (SCV) interface",
+      "extractionRationale": "Counted unique Schwalbe inner tube model numbers (Nr. 4, Nr. 7, No. 17, Nr. 13, No. 19) across sources 1-3 and 5 that explicitly feature Clik Valve interface. Source 4 mentions only valve components and adapters, not tube models. Each numbered model is a distinct SKU.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3191,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/market-data/reports-and-data/lme-official-prices",
+      "sourceTitle": "LME Official Prices",
+      "evidenceText": "Aluminium Cash Bid: 3191.00 USD per tonne. The LME Official Prices are the London Metal Exchange's daily global reference prices for physically delivered metals.",
+      "extractionRationale": "Extracted the Cash Bid price for Aluminium from the LME Official Prices table, which is the authoritative source for LME's daily global reference price. The price is already quoted in USD per tonne as confirmed in Source 1 contract specifications.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -2.83,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today",
+      "evidenceText": "Currency in USD 1,793.99. Prev. Close: 1,793.99. Open: 1,793.99",
+      "extractionRationale": "The source lists an aluminum premium value of 1,793.99 in USD currency. As aluminum premiums are standardly quoted in cents per pound, this was converted from 1,793.99 cents/lb to $17.94 USD/lb by dividing by 100.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
