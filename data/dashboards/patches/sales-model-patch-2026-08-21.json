@@ -1,0 +1,191 @@
+{
+  "date": "2026-08-21",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 9.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit-with-pump-head",
+      "sourceTitle": "Schwalbe Clik Valve retrofit set with pump head, SV/DV to SCV",
+      "evidenceText": "Multiple prices found: €13.90 (ebike24), €16.99 (ebike24 RRP), €9.99 (bike-discount, 2x), €3.79, €8.99, €6.99. Median of sorted prices: €3.79, €6.99, €8.99, €9.99, €9.99, €13.90, €16.99 = €9.99",
+      "extractionRationale": "Extracted median retail price from all identified prices across both sources. Source 1 shows sale price €13.90 and regular price €16.99. Source 2 shows multiple product variants with prices €9.99, €3.79, €9.99, €8.99, €6.99. Median of 7 prices is €9.99 (4th position in sorted list).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/",
+      "sourceTitle": "",
+      "evidenceText": "5 distinct URLs found: p1993551.html (CoreCap AL Valve BTI-166), p1993547.html (CoreCap AL Valve BTI-166), p1942018.html (CoreCap BTI-165 category page), p1993580.html (CoreCap BTI-165 schwarz), p1993581.html (CoreCap BTI-165 blau)",
+      "extractionRationale": "Counted each unique product page URL as a distinct listing. All 5 sources provide different URLs on bike24.de, each representing a separate CoreCap product listing or category page.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859949.html",
+      "sourceTitle": "",
+      "evidenceText": "The provided excerpt contains navigation, policy information, and branding elements but does not include stock status information such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft'.",
+      "extractionRationale": "Stock status cannot be determined from the provided content. The text excerpt does not contain any availability or stock-related information, only retailer details and navigation elements.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962296.html",
+      "sourceTitle": "",
+      "evidenceText": "Identified 5 distinct Schwalbe inner tube models with Clik Valve: Nr. 4 (16\"/18\"), Nr. 7 (20\"), No. 17 (28\"), Nr. 12 (26\"), No. 19 (27.5\"/28\"/29\")",
+      "extractionRationale": "Counted unique Schwalbe inner tube model numbers found across sources 1-3 and 5 that explicitly feature Clik Valve (SCV). Each distinct model/size combination was counted once. Source 4 reference to valves and adapters were excluded as these are accessories, not inner tubes.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3200,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Official Prices - Cash: 3200.00 US$/t (Offer price as of 21 Aug 2026)",
+      "extractionRationale": "Extracted the LME Aluminium Alloy Cash Offer price of 3200.00 USD/t directly from the official LME pricing table. This is the standard spot price reference point for LME aluminum. The price is already in USD per metric ton as required.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -2.56,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.fastmarkets.com/commodity-prices/aluminium-p1020a-premium-ddp-midwest-us-us-cents-lb-mb-al-0020",
+      "sourceTitle": "Aluminium P1020A premium, ddp Midwest US, US cents/lb",
+      "evidenceText": "The page is a landing page for the Fastmarkets commodity price inquiry with no actual price data visible in the provided content.",
+      "extractionRationale": "The provided content from the Fastmarkets URL does not contain the actual numerical price value for the aluminum premium. The page appears to be a pricing inquiry landing page rather than a data page with the current price displayed.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
