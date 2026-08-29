@@ -1,0 +1,145 @@
+{
+  "date": "2026-08-29",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 3,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "no_relevant_result",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 7.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | H&S Bike-Discount GmbH",
+      "evidenceText": "Multiple prices found: €4.90 (ebike24), €5.99 (ebike24), €3.79, €6.99, €8.99, €9.99 (bike-discount). Median of all current retail prices: €7.99",
+      "extractionRationale": "Extracted all current retail prices from two German retailers: €4.90, €5.99, €3.79, €6.99, €8.99, and €9.99 (appearing twice). Calculated median as the average of the 3rd and 4th values when sorted: (€6.99 + €8.99) / 2 = €7.99",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993550.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Ventil",
+      "evidenceText": "Five sources total: p1993550 and p1993549 are duplicate listings of the same BTI-166 valve product. Sources p1993585, p1993580, and p1993582 are valve cores (Ventilkern - accessories), not main valve products.",
+      "extractionRationale": "Counted only distinct CoreCap valve products (not cores/accessories). The BTI-166 Al Valve appears as duplicate listings (p1993550 and p1993549), counting as 1 distinct product. The three BTI-165 Ventilkern items (valve cores in different colors) are accessories and excluded per instructions.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper | 2 Pieces | BIKE24",
+      "evidenceText": "Product listing content does not contain explicit stock status indicators (out of stock, nicht verfügbar, ausverkauft, etc.)",
+      "extractionRationale": "Neither of the two provided sources contains explicit stock status language. The text from Source 1 shows product details and rating information but no availability indicators. Source 2 content is empty/incomplete. Stock status cannot be determined from the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Five distinct Schwalbe inner tube models identified: No. 17 (28\"), Nr. 13 (26\"), Nr. 3 (16\"), No. 19-EL (27.5/28/29\"), Nr. 19 (27.5/28/29\"). All explicitly list Clik Valve (SCV) in their specifications.",
+      "extractionRationale": "Counted unique Schwalbe tube models explicitly mentioning Clik Valve (SCV) interface across all 5 sources. No. 19 and No. 19-EL are counted as separate models despite same tire size, as they represent distinct product variants (standard vs. Extra Light). Valves, conversion kits, and accessories were excluded.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    }
+  },
+  "derived": {}
+}
