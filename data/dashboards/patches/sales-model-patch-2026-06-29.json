@@ -1,0 +1,83 @@
+{
+  "date": "2026-06-29",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 0,
+    "unchanged": 0,
+    "failed": 6,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "search_failed",
+      "query": "BBB CoreCap tubeless valve site:bike24.de",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 27,
+      "code": "search_failed",
+      "query": "Schwalbe Clik valve site:bike24.de",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 27,
+      "code": "search_failed",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 30,
+      "code": "search_failed",
+      "query": "BBB CoreCap valve bike24.de",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 30,
+      "code": "search_failed",
+      "query": "Schwalbe Clik valve bike24.de",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 56,
+      "code": "search_failed",
+      "query": "Schwalbe Clik valve inner tube site:bike24.de",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 56,
+      "code": "search_failed",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 10,
+      "code": "search_failed",
+      "query": "BBB CoreCap tubeless valve price EUR buy",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 10,
+      "code": "search_failed",
+      "query": "Schwalbe Clik valve price EUR buy",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 61,
+      "code": "search_failed",
+      "query": "LME aluminum price USD per ton today",
+      "error": "tavily_403"
+    },
+    {
+      "nodeId": 62,
+      "code": "search_failed",
+      "query": "US Midwest aluminum premium USD per pound today 2026",
+      "error": "tavily_403"
+    }
+  ],
+  "nodes": {},
+  "derived": {}
+}
