@@ -1,0 +1,168 @@
+{
+  "date": "2026-07-09",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "10,92 €* price mentioned but appears to be for \"Airmax Pro Digital Air Pressur Checker\" bundle, not Clik Valve product itself. Bike-Discount source excerpt contains no price information.",
+      "extractionRationale": "The only price found (10,92 €) is associated with an air pressure checker bundle product, not the Clik Valve itself. The Bike-Discount source provided no price information in the excerpt. Without a clear direct retail price for the Clik Valve product, returning null.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de",
+      "sourceTitle": "",
+      "evidenceText": "Found 4 distinct product listing URLs: p1993551 (CoreCap AL Valve BTI-166), p1993550 (CoreCap AL Valve BTI-166), p1993546 (CoreCap AL Valve BTI-166), and p1993581 (CoreCap BTI-165 Ventilkern). Source 2 (p1993640) is a pedal, not a CoreCap product.",
+      "extractionRationale": "Counted unique product page URLs from the 5 sources. Each unique URL is counted once as requested. Three URLs are for BTI-166 model and one for BTI-165 model, totaling 4 distinct CoreCap product listings on BIKE24 DE. Excluded the pedal listing (p1993640) as it is not a CoreCap product.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper | 2 Pieces",
+      "evidenceText": "No page content provided to determine stock status",
+      "extractionRationale": "The page content was not provided in the evidence, making it impossible to determine stock availability. Without access to the actual product page text, I cannot identify out-of-stock indicators.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Schwalbe Schlauch - No. 17 | 28 Zoll | 28-47/622-635 | Clik Valve (SCV); Schwalbe Schlauch - Nr. 12 - 30/47-559/597 | Clik Valve (SCV) 40mm; Schwalbe Schlauch - Nr. 13 | 26\" - 40/62-559 | Clik Valve (SCV) 40mm",
+      "extractionRationale": "Counted distinct Schwalbe inner tube models with Clik Valve interface from the evidence. Three unique tube models were identified: No. 17 (28\"), Nr. 12 (26\"), and Nr. 13 (26\"). Excluded conversion kits (Umrüstkit), valves, and sensors as per instructions. Each model represents a distinct SKU/size combination.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3151.8,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News",
+      "evidenceText": "Aluminum | 3,151.80 | | 10.80 | 0.34% | -9.31% | 20.79% | Jul/09",
+      "extractionRationale": "The most recent and specific LME aluminum spot price found in the sources is 3,151.80 USD/T from Trading Economics, dated July 9, 2026. This is the current spot price directly stated in USD per metric ton.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -4.03,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
