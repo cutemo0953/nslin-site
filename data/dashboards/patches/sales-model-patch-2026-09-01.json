@@ -1,0 +1,188 @@
+{
+  "date": "2026-09-01",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 4,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 18,
+      "code": "no_relevant_result",
+      "query": "\"Wolf Tooth\" OR \"Lezyne\" OR \"SKS\" OR \"Topeak\" Clik valve accessory"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "overwrite_blocked",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "20": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebay.de/str/wetterladen/Fahrradreifen-und-schlauche/_i.html?store_cat=515325017",
+      "sourceTitle": "Wetterladen | eBay.de Shops",
+      "evidenceText": "SCHWALBE Clik Valve Conversion Set 3540 Sclaverand-Ventil Umrüstset. SCHWALBE Clik Valve Conversion Kit 3543 Dunlop-Ventil Umrüstset Ventileinsätze.",
+      "extractionRationale": "Two distinct CLIK valve product listings found on the eBay shop page: the Conversion Set 3540 and the Conversion Kit 3543. Source 2 mentions \"Clik\" but refers to RC airplane models, not the valve product. The count represents unique listings mentioning the target valve product.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve",
+      "evidenceText": "The content describes Clik Valve adapters, pump head adapters, and accessories but does not explicitly mention 'frequently bought together' or 'related products' sections on the product page.",
+      "extractionRationale": "Cannot determine accessory attach rate from provided evidence. While the page mentions pump heads, adapters, and related products in the product description, there is no explicit indication of whether these are displayed in dedicated 'frequently bought together' or 'related products' sections. Only a single source URL was provided, insufficient to calculate a ratio across multiple Clik valve product pages.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps",
+      "sourceTitle": "CoreCap Valve Cap Set - BBB Cycling",
+      "evidenceText": "The source page describes the CoreCap Valve Cap Set product features and benefits but does not contain any information about replacement/spare part SKUs, valve cores, seals, o-rings, or replacement kits inventory.",
+      "extractionRationale": "No count of distinct replacement/spare part SKUs is provided in the source. The page focuses on product description and features, not spare parts inventory.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-technology/tubeless-technology",
+      "sourceTitle": "",
+      "evidenceText": "DT Swiss uses proprietary tubeless valves and tubeless tape. No mention of Clik valve adoption found across any evidence. DT Swiss states they have their own \"DT Swiss tubeless valve\" that \"perfectly matches DT Swiss rims.\" No evidence provided for other major brands (Mavic, Hunt, Zipp, ENVE, Roval).",
+      "extractionRationale": "The evidence shows DT Swiss uses its own proprietary valve system, not Clik. No sources mention Clik valve adoption by any major wheelset brands. No information is available about Mavic, Hunt, Zipp, ENVE, or Roval. Without direct evidence of Clik adoption by any of the 6 major brands, the percentage is 0%.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993551.html",
+      "sourceTitle": "",
+      "evidenceText": "For items not in stock, [incomplete text]",
+      "extractionRationale": "None of the three sources provide specific B2B restock turnaround time information. Source 1 mentions \"For items not in stock\" but the sentence is incomplete and does not contain dates or turnaround days. Sources 2 and 3 contain no stock/restock timing information.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
