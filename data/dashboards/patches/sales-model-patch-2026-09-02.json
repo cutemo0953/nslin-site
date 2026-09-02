@@ -1,0 +1,186 @@
+{
+  "date": "2026-09-02",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 1,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 6.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Multiple prices found: €4.90 (ebike24), €5.99 (ebike24), €9.99 (bike-discount SV-SCV kit), €3.79 (bike-discount DV-SCV kit), €9.99 (bike-discount DV-SCV with pump head), €8.99 (bike-discount with adapter), €6.99 (bike-discount pump head adapter)",
+      "extractionRationale": "Extracted median price from 7 retail prices found across sources. Prices range from €3.79 to €9.99 for various Clik Valve products and components on German retail sites. Median value of sorted prices [€3.79, €4.90, €5.99, €6.99, €8.99, €9.99, €9.99] is €6.99.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993546.html?sku=3336653",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Ventil - schwarz | 40 mm | 2 Stück",
+      "evidenceText": "Single product listing URL: https://www.bike24.de/p1993546.html?sku=3336653 for BBB Cycling CoreCap AL Valve BTI-166",
+      "extractionRationale": "Counted 1 distinct product page URL from the provided evidence. The source contains one unique bike24.de product page for a CoreCap valve listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859948.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 40 mm",
+      "evidenceText": "No content provided in sources to assess stock status",
+      "extractionRationale": "Both provided sources contain no visible text content, making it impossible to determine stock availability status. Stock status cannot be determined from the available evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/merken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve kaufen - Top Auswahl | BIKE24",
+      "evidenceText": "Schwalbe · Schlauch - Nr. 15 | 28\"/700C - 23/30-622/630 | Clik Valve (SCV) 9,90 € UVP · ab 5,99 €*",
+      "extractionRationale": "Only one inner tube model with Clik valve interface is explicitly mentioned in the evidence: Schlauch Nr. 15 for 28\"/700C. Other products listed are valve sets and conversion kits, which are excluded per instructions.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -90,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3222,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/market-data/reports-and-data/lme-official-prices",
+      "sourceTitle": "LME Official Prices",
+      "evidenceText": "Aluminium | 3221.50 | 3222.00 | 3240.00 | 3241.00 - Cash Bid/Ask prices for Aluminium showing 3222.00 as the Ask price in USD per tonne",
+      "extractionRationale": "Extracted the Cash Ask price for Aluminium (3222.00) from the LME Official Prices table, which represents the current spot price in USD per metric tonne as quoted by LME.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -1.89,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 0.6,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "Premiums for consumers buying aluminium on the physical market in the United States hit a record 60 cents a lb",
+      "extractionRationale": "The source directly states that US aluminum premiums reached \"a record 60 cents a lb\". This was converted from cents to USD per pound (60 cents = $0.60/lb)",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": -40,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
