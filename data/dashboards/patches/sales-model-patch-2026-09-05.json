@@ -1,0 +1,168 @@
+{
+  "date": "2026-09-05",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 9.49,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit",
+      "sourceTitle": "Schwalbe Clik Valve retrofit kit, SV / DV valves become SCV",
+      "evidenceText": "Multiple prices found: €4.50, €5.99, €4.90, €5.99, €9.99, €11.99 (ebike24.com) and €23.90, €16.99, €5.95, €3.79, €16.95, €9.99, €13.95, €8.99 (bike-discount.de). Sorted prices: €3.79, €4.50, €4.90, €5.95, €5.99, €5.99, €8.99, €9.99, €9.99, €11.99, €13.95, €16.95, €16.99, €23.90. Median of 14 values = (€8.99 + €9.99) / 2 = €9.49",
+      "extractionRationale": "Extracted all retail prices from both sources for Schwalbe Clik Valve products (various models and configurations). Calculated median from all 14 price points found across both retailers in German market. This represents the central tendency of all available pricing for the target product.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct Clik valve product listings found: (1) p1859950.html - Clik Valve Tubeless-Ventil 2er Set 80mm, (2) p1859953.html - Clik Valve SV-SCV 2 Ventile & Pumpenkopfadapter, (3) p1859951.html - Clik Valve Umrüstkit SV-SCV 2 Ventile. Source p1962299 is a tube product (accessory). Source marken/schwalbe is a category page.",
+      "extractionRationale": "Counted unique Clik valve product page URLs: https://www.bike24.de/p1859950.html, https://www.bike24.de/p1859953.html, and https://www.bike24.de/p1859951.html. Excluded p1962299.html as it's an inner tube accessory, not a Clik valve product. Excluded the category page. Total: 3 distinct product listings.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/brands/schwalbe/f.series.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve - Shop Online - BIKE24",
+      "evidenceText": "No page content provided to analyze stock status",
+      "extractionRationale": "The evidence source provided no actual page content to analyze for stock status indicators. Without the HTML/text content of the product listing, stock availability cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct inner tube models identified: (1) Schwalbe Schlauch - Nr. 7 | 20\" - 40/62-406 | Clik Valve (SCV) 40mm (SWA740145), (2) No. 17 | 28 Zoll | 28-47/622-635 | Clik Valve (SCV), (3) No. 19 | 27.5/28/29 Zoll | 40-62/622-. Excluded: conversion kits (AV-SCV, SV-SCV) and valve accessories from Sources 3-4.",
+      "extractionRationale": "Counted only inner tube products (Schlauch) with Clik Valve interface across the five sources. Excluded conversion kits and valve adapters as per instructions. Three distinct tube models/SKUs were identified by their model numbers (Nr. 7, No. 17, No. 19) and tire sizes.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3311.5,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium",
+      "sourceTitle": "LME Aluminium",
+      "evidenceText": "LME Aluminium 3311.50 0.85% 3-month",
+      "extractionRationale": "Extracted the official LME spot price for aluminum from the official LME website, which shows 3311.50 USD per tonne for the 3-month contract. This is the authoritative global benchmark price for aluminum as stated on the source page.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 0.84,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
