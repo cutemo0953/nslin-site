@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-09",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 5,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 9.95,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit-with-pump-head",
+      "sourceTitle": "Schwalbe Clik Valve retrofit set with pump head, SV/DV to SCV",
+      "evidenceText": "Regular prices found: Clik Valve retrofit set incl. pump head €13.95, pump head adapter €7.99, valve adapter AV to SCV €9.95",
+      "extractionRationale": "Three Schwalbe Clik Valve products with regular prices extracted from ebike24.com: €13.95, €7.99, and €9.95. The median of these three prices is €9.95.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993547.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 Tubeless Ventil - schwarz",
+      "evidenceText": "5 distinct product URLs identified: p1993547, p1993551, p1993549 (CoreCap AL Valve variants) and p1993585, p1993582 (CoreCap BTI-165 Ventilkern spare parts)",
+      "extractionRationale": "Counted all unique product page URLs from the bike24.de domain. Each distinct p-number (product ID) represents a separate product listing, including both main valve products and valve core accessories.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - red | 2 Pieces - BIKE24",
+      "evidenceText": "No content provided in sources to analyze stock status",
+      "extractionRationale": "Both source contents are empty, making it impossible to detect stock status indicators such as 'out of stock', 'currently unavailable', 'nicht verfügbar', or 'ausverkauft'. Cannot determine stock availability from the provided evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962299.html",
+      "sourceTitle": "",
+      "evidenceText": "Distinct Schwalbe inner tube models with Clik Valve: Nr. 7 (20\" 40/62-406), Nr. 12 (26\" 30/47-559/597), Nr. 6 (20\" 28/40-406), No. 19 (27.5/28/29\"), No. 17 (28\" 28-47/622/635)",
+      "extractionRationale": "Counted all distinct inner tube SKUs explicitly listed with Clik Valve (SCV) designation across sources 1, 4, and 5. Excluded Source 2 (conversion kit/accessory) and Source 3 (category page). Each unique model number and size combination counts as 1 distinct SKU.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3337.23,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://tradingeconomics.com/commodity/aluminum",
+      "sourceTitle": "Aluminum - Price - Chart - Historical Data - News - Trading Economics",
+      "evidenceText": "Aluminum rose to 3,337.23 USD/T on September 8, 2026, up 0.78% from the previous day.",
+      "extractionRationale": "Extracted the direct price quote from Trading Economics which states aluminum reached 3,337.23 USD/T (metric ton). This is the current LME aluminum spot price as of September 8, 2026, already expressed in the requested USD/metric ton format.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 1.62,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "The source mentions \"local U.S. premiums reached a historical peak above...\" but the specific numerical value is not provided in the available content.",
+      "extractionRationale": "The content does not contain a specific, complete numerical value for the current US Midwest aluminum premium. While historical context is mentioned, the actual premium price in USD/lb is not stated in the evidence provided.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": 1,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
