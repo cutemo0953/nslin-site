@@ -1,8 +1,30 @@
 ## Competitive Intelligence Proposals
 
 Source file: `proposals-2026-03-22.json`
-Date: 2026-03-22
+Date: 2026-10-25
 Total proposals: 12
+
+### Staleness Alert
+
+The following competitors have fields not updated in over 30 days. Manual check may be needed.
+
+| Competitor | Stale Fields |
+|-----------|-------------|
+| Reserve Fillmore Valve | specs (225 days), awards (225 days), pricing (225 days) |
+| Muc-Off Big Bore Tubeless Valve | specs (225 days), awards (225 days), pricing (225 days), price (225 days), lengths (225 days) |
+| Legion VMAX / TROJAN Vmax | specs (225 days), pricing (225 days), lengths (225 days) |
+| Stan's NoTubes Exo-Core Valve | specs (225 days), pricing (225 days), price (225 days) |
+| 76 Projects Hi Flow Valve | specs (225 days), pricing (225 days), price (225 days) |
+| Schwalbe Clik Valve System | specs (225 days), awards (225 days), pricing (225 days), lengths (225 days), weight_per_valve_g (225 days), price (225 days) |
+| Topeak TurboFlow Valve | specs (225 days), pricing (225 days), lengths (225 days), weight_per_valve_g (225 days) |
+| WTB Max-Flow Valve | specs (225 days), pricing (225 days), price (225 days), lengths (225 days) |
+| CushCore Hi-Flo Valve | specs (225 days), pricing (225 days), lengths (225 days), price (225 days) |
+| Industry Nine Tubeless Valve | specs (225 days), pricing (225 days), lengths (225 days), price (225 days) |
+| Peaty's x Chris King MK2 Tubeless Valve | specs (225 days), pricing (225 days), price (225 days) |
+| DT Swiss Tubeless Valve (Aluminum) | specs (225 days), pricing (225 days), price (225 days) |
+| Prime Tubeless Valve | specs (225 days), pricing (225 days), lengths (225 days) |
+
+---
 
 ### Summary
 
