@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-26",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 6.49,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | H&S Bike-Discount GmbH",
+      "evidenceText": "Multiple retail prices found: €3.78 (ebike24), €3.79, €3.99, €8.99, €9.99, €11.99 (bike-discount.de) for various Clik Valve products and retrofit kits",
+      "extractionRationale": "Extracted all distinct retail prices from two German retailers selling Clik Valve products. Prices vary by product variant (valve alone vs. retrofit kits with different components). Calculated median of 6 prices: €3.78, €3.79, €3.99, €8.99, €9.99, €11.99 = €6.49",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859950.html",
+      "sourceTitle": "Schwalbe Clik Valve Products on Bike24 DE",
+      "evidenceText": "Four distinct product URLs identified: p1859950 (80mm), p1859948 (40mm), p1859951 (Umrüstkit), p1859953 (Umrüstkit variant). Source 5 is a category page, not a product listing.",
+      "extractionRationale": "Counted unique product page URLs only. Sources 1-4 represent distinct product listings with different product IDs on bike24.de. Source 5 is a category/filter page and was excluded as it is not an individual product listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "",
+      "evidenceText": "No content provided in the source materials to determine stock status",
+      "extractionRationale": "All three product listings have empty content fields, making it impossible to assess stock status. Cannot determine if products are listed as 'out of stock', 'ausverkauft', 'nicht verfügbar', or similar terms.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 5,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1962296.html",
+      "sourceTitle": "",
+      "evidenceText": "Distinct Schwalbe inner tube models identified: Nr. 4 (16\"/18\"), Nr. 13 (26\"), Nr. 15 (28\"/700C), Nr. 17 (28\"/700C), Nr. 19 (27.5/28/29) - all with Clik Valve (SCV)",
+      "extractionRationale": "Counted unique Schwalbe inner tube model numbers that explicitly feature Clik Valve (SCV) interface across all sources. Excluded Source 5 as it contains only valves and accessories, not inner tubes. Each numbered model (Nr. 4, 13, 15, 17, 19) represents a distinct SKU/model.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -50,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3571,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.investing.com/analysis/aluminum-at-a-4year-high-as-hormuz-disruption-reprices-the-supply-chain-200678325",
+      "sourceTitle": "Aluminum at a 4-Year High as Hormuz Disruption Reprices the Supply Chain | Investing.com",
+      "evidenceText": "Three-month LME aluminum futures rose 1.7% to $3,571 per metric ton in mid-morning European trading on April 13, their highest level since March 2022.",
+      "extractionRationale": "The LME 3-month aluminum spot price is directly stated as $3,571 USD/t in both sources. This is the current price quoted on April 13 and is already in the requested USD per metric ton format.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 8.74,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 17.94,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/commodities/aluminium-premium-duty-paid-us-midw-futures",
+      "sourceTitle": "Aluminium Premium Duty paid US Midwest Price Today - Investing.com",
+      "evidenceText": "Prev. Close: 1,793.99 (for Aluminium Premium Duty paid US Midwest, symbol LUPc1)",
+      "extractionRationale": "The source shows 1,793.99 as the previous close price for the Aluminium Premium Duty paid US Midwest (LUPc1). Commodity premiums on Investing.com are typically quoted in cents per pound. Converting 1,793.99 cents/lb to USD/lb: 1,793.99 ÷ 100 = 17.94 USD/lb. Note: The page indicates this is closed/historical data, not real-time.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 1694,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
