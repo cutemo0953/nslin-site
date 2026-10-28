@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-28",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 0,
+    "unchanged": 4,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Amazon.com: Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kits are fitted with Clik Valve cores. Clik Valve is an alternative tubeless valve core option to Presta. Tubeless Valve Stems for Clik Valve are compatible with tubeless rims that are drilled for Presta valves. They are available in 44 and 60 mm lengths, and in nine colors.",
+      "extractionRationale": "One distinct third-party accessory product identified: Wolf Tooth Tubeless Valve Stem Kit explicitly designed for Clik Valve compatibility. Multiple size and color variants exist but represent variations of a single product line.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "The source discusses Clik valve pump head adapters and related accessories (pumps, pump heads) but does not provide any quantitative data about what percentage or fraction of product pages display these as 'frequently bought together' or 'related products' sections.",
+      "extractionRationale": "The evidence does not contain explicit information about the attach rate or fraction of product pages showing accessories in recommended sections. While accessories are mentioned, no quantitative metric about their prevalence across product pages is provided.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "The provided content discusses the Clik Valve pump adapter, dust cap removal, and mentions conversion kits, but does not list or count specific replacement/spare part SKUs for valve cores, seals, o-rings, or replacement kits.",
+      "extractionRationale": "The source page content does not contain a specific count or enumeration of replacement/spare part SKUs. While conversion kits are mentioned, no specific SKU count is provided in the evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": 0,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.dtswiss.com/en/wheels/wheels-road/gravel/grc-1400-dicut",
+      "sourceTitle": "",
+      "evidenceText": "DT Swiss GRC 1400 DICUT specifications show \"TL valve alu black 49-65 mm\" - traditional aluminum tubeless valve, not Clik. Hunt Wheels article discusses tubeless-ready technology but does not mention Clik valve adoption.",
+      "extractionRationale": "The available evidence shows DT Swiss using traditional aluminum tubeless valves in their current gravel wheel line. Hunt Wheels information does not reference Clik valves. No evidence from any of the 6 major brands (DT Swiss, Mavic, Hunt, Zipp, ENVE, Roval) demonstrates Clik valve adoption in 2026/2027 product lines. Therefore, 0% of brands shown have converted to Clik as standard.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
