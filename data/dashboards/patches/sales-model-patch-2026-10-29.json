@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-29",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 8.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | H&S Bike-Discount GmbH",
+      "evidenceText": "Multiple retail prices found: €4.50, €5.99, €13.90, €16.99, €11.99, €3.79, €9.99, €8.99, €3.99. Median price calculated from 11 sale/regular prices across sources.",
+      "extractionRationale": "Extracted all retail prices from three sources. Source 1 (ebike24.com) lists sale prices €4.50, €13.90 and regular prices €5.99, €16.99. Source 2 (bike-discount.de) shows multiple conversion kits with sale prices €11.99, €3.79, €9.99, €8.99, €3.99 and various RRPs. Median of 11 distinct prices = €8.99 (the middle value when sorted).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859950.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless-Ventil - 2er Set - 80 mm",
+      "evidenceText": "Four distinct product pages identified: (1) p1859950.html (80mm variant), (2) p1859948.html (40mm variant), (3) p1859954.html (DV-SCV upgrade kit), (4) p1859953.html (SV-SCV upgrade kit). Source 5 is a category page, not a product listing.",
+      "extractionRationale": "Counted unique product page URLs (p1859950, p1859948, p1859954, p1859953) representing distinct Clik valve offerings. The brand/category page was excluded as it is not a product listing. Each unique URL represents a separate product with different specifications (length variants and different upgrade kit types).",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993582.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - copper",
+      "evidenceText": "No content provided in source listings to determine stock status",
+      "extractionRationale": "The three product listings from bike24.com were provided but contained no actual page content. Without access to the actual product page text, stock status indicators (out of stock, unavailable, nicht verfügbar, ausverkauft, etc.) cannot be identified or evaluated.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/navigation/01905313451873a288363d0fd01efb7f",
+      "sourceTitle": "",
+      "evidenceText": "The provided sources discuss Clik Valve conversion kits, pump head adapters, and valve compatibility, but contain no specific information about distinct inner tube models or SKUs using the Clik valve interface.",
+      "extractionRationale": "None of the 5 sources provided list or reference any specific Schwalbe inner tube models/SKUs with Clik valve. The sources focus on the Clik Valve component itself, conversion kits, and adapters - not inner tube products. No count of tube models can be extracted from this evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3190,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Official Prices - Cash Bid: 3190.00 US$/t (Data valid for 28 Oct 2026)",
+      "extractionRationale": "Extracted the LME Aluminium Alloy official cash price bid of 3190.00 USD/t from the authoritative LME.com source, which represents the current spot price as of October 28, 2026. The cash price is the immediate/spot price for physical delivery.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 3284,
+      "deltaPct": -2.86,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
