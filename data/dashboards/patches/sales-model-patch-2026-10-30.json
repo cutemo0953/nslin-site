@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-30",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 2,
+    "unchanged": 3,
+    "failed": 4,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "The content describes product features and tube options but contains no retail price information.",
+      "extractionRationale": "No retail prices are mentioned in the provided source material. The page describes the Clik Valve product, its awards, and available tube options, but does not include any pricing data.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993547.html",
+      "sourceTitle": "BBB Cycling CoreCap AL Valve BTI-166 product listings",
+      "evidenceText": "Four distinct product URLs identified: p1993547.html, p1993546.html, p1993548.html, p1993550.html. Source 5 (BTI-165 Ventilkern) is an accessory/spare part and excluded from count.",
+      "extractionRationale": "Counted unique product page URLs for CoreCap valve (BTI-166). Sources 1-4 represent 4 distinct product listings with different SKUs (p1993547, p1993546, p1993548, p1993550). Source 5 is a valve core replacement part (accessory), not the main product, so excluded per task instructions.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993585.html",
+      "sourceTitle": "BBB Cycling CoreCap BTI-165 Valve Core - red | 2 Pieces",
+      "evidenceText": "Product listing content not provided - stock status cannot be determined from available text",
+      "extractionRationale": "The evidence provided contains only the URL and title of the product listing, but no actual content text describing stock status. Without text mentioning 'out of stock', 'currently unavailable', 'nicht verfugbar', 'ausverkauft', or similar terms, stock status cannot be determined. Therefore, null is returned as the value.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1960181.html",
+      "sourceTitle": "",
+      "evidenceText": "Source 1: No. 17 | 28 Zoll | 28-47/622-635 | Clik Valve. Source 2: No. 15-EL (Extra Light) | 28\" | 23/28-622/630 | SCV (Clik Valve). Source 4: Nr. 6 | 20\" - 28/40-406 | Clik Valve",
+      "extractionRationale": "Counted only distinct inner tube models with Clik valve interface from the evidence. Excluded Source 3 (valves and accessories) and Source 5 (conversion kit). Three unique Schwalbe inner tube models identified: No. 17, No. 15-EL, and Nr. 6.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3071.25,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.investing.com/commodities/aluminum",
+      "sourceTitle": "Aluminium Price Today - Investing.com",
+      "evidenceText": "Prev. Close: 3,071.25; Open: 3,066.8; Day's Range: 3,047-3,089; Contract Size: 25 Tonnes; Price quotation in US$ per tonne",
+      "extractionRationale": "Source 4 shows the current/most recent LME aluminum price. The 'Prev. Close' value of 3,071.25 USD/t represents the most current closing price for LME aluminum (25 tonne contract). This is already in USD per metric ton as required.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -6.48,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
