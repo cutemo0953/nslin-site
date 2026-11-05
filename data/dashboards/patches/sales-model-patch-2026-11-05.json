@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-05",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 1,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap valve bike24.de"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "no_relevant_result",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 10.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit",
+      "sourceTitle": "Schwalbe Clik Valve retrofit kit, SV / DV valves become SCV",
+      "evidenceText": "Source 1 prices: €4.50, €5.99, €13.90, €16.99. Source 2 prices: €49.99/€33.99, €16.95/€11.99, €5.95/€3.79, €16.95/€9.99. Median of all 12 prices: (9.99 + 11.99) / 2 = €10.99",
+      "extractionRationale": "Extracted all retail prices from both sources. Source 1 lists sale and regular prices for retrofit kits. Source 2 lists RRP and current prices. Calculated median from 12 individual price points: 3.79, 4.50, 5.95, 5.99, 9.99, 11.99, 13.90, 16.95, 16.95, 16.99, 33.99, 49.99. The median of this even-numbered dataset is the average of the 6th and 7th values.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859950.html",
+      "sourceTitle": "",
+      "evidenceText": "Three distinct product listing URLs identified: (1) p1859950.html - 80mm Tubeless-Ventil Set, (2) p1859948.html - 40mm Tubeless-Ventil Set, (3) p1859954.html - Umrüstkit DV-SCV conversion kit",
+      "extractionRationale": "Counted unique product page URLs for Clik Valve products on bike24.de (DE market). Excluded the category page (Source 5) and the tire listing (Source 4) as these are not standalone Clik Valve product listings. Three distinct product URLs were identified representing different product variants.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve kaufen - Top Auswahl",
+      "evidenceText": "No. 17 (28-47/622-635), Nr. 7 (40/62-406), No. 19 (40-62/622), Nr. 12 (30/47-559/597) - all listed as Schwalbe inner tubes with Clik Valve interface",
+      "extractionRationale": "Counted distinct inner tube models from Sources 1-4 that explicitly mention Clik Valve (SCV). Excluded Source 5 items as they are conversion kits and valve sets (accessories), not inner tubes. Each numbered model represents a unique SKU/size combination.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -60,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3000,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Closing Prices: 3-month | 3000.00 | US$/t (Data valid for 05 Nov 2026)",
+      "extractionRationale": "Extracted from LME's official closing price for 3-month aluminum contract dated 05 Nov 2026. The 3-month contract price is the standard reference for LME aluminum spot pricing and is directly stated as 3000.00 US$/t in the official LME data table.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 3284,
+      "deltaPct": -8.65,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    }
+  },
+  "derived": {}
+}
