@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-09",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 2,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap valve bike24.de"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve bike24.de"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 10.99,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebike24.com/schwalbe-clik-valve-retrofit-kit",
+      "sourceTitle": "Schwalbe Clik Valve retrofit kit, SV / DV valves become SCV",
+      "evidenceText": "Multiple prices found: €4.50, €5.99, €13.90, €16.99 (ebike24.com) and €49.99/€33.99, €16.95/€11.99, €5.95/€3.79, €16.95/€9.99 (bike-discount.de). Current/sale prices: €4.50, €13.90, €33.99, €11.99, €3.79, €9.99. Median = €10.99",
+      "extractionRationale": "Extracted all retail prices from both sources. For ebike24.com: took sale prices (€4.50, €13.90) and regular prices (€5.99, €16.99). For bike-discount.de: took current prices (€33.99, €11.99, €3.79, €9.99) as these represent actual retail prices. Calculated median of 6 current/sale price points: (€9.99 + €11.99) / 2 = €10.99",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1993547.html",
+      "sourceTitle": "",
+      "evidenceText": "4 distinct product URLs for CoreCap AL Valve BTI-166: p1993547.html, p1993546.html, p1993548.html, p1993550.html. Source p1993580.html is a valve core accessory (BTI-165 Ventilkern) and excluded from count.",
+      "extractionRationale": "Counted each unique product page URL for the main CoreCap valve product. Excluded p1993580.html as it is a valve core accessory (Ventilkern), not the main valve listing. Sources 1-4 represent 4 distinct product listings for CoreCap valves.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 3,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/marken/schwalbe/f.serie.schwalbe-clik-valve",
+      "sourceTitle": "",
+      "evidenceText": "Schwalbe Schlauch - No. 17-EL (Extra Light) | 28\" - 28/44-622 | SCV (Clik Valve); Schwalbe Schlauch - No. 19 | 27.5/28/29 Zoll | 40-62/622-635 | Clik Valve (SCV); Schwalbe Schlauch - Nr. 15 | 28\"/700C - 23/30-622/630 | Clik Valve (SCV)",
+      "extractionRationale": "Identified three distinct Schwalbe inner tube models with Clik valve interface: No. 17-EL, No. 19, and No. 15. Excluded conversion kits, valve adapters, tubeless valves, and pump accessories as these are not inner tubes. These three tubes represent distinct models/SKUs based on their model numbers and size specifications.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 10,
+      "deltaPct": -70,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3571,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://au.investing.com/analysis/aluminum-at-a-4year-high-as-hormuz-disruption-reprices-the-supply-chain-200613101",
+      "sourceTitle": "Aluminum at a 4-Year High as Hormuz Disruption Reprices the Supply Chain | Investing.com AU",
+      "evidenceText": "Three-month LME aluminum futures rose 1.7% to $3,571 per metric ton in mid-morning European trading on April 13, their highest level since March 2022.",
+      "extractionRationale": "Extracted the explicitly stated LME 3-month aluminum price of $3,571 USD/ton from recent market data dated April 13. This is already in the requested format (USD per metric ton), representing the current spot price reference.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": 8.74,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 1.1325,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/news/stock-market-news/rio-tinto-century-aluminum-raise-us-aluminum-premiums-12-93CH-4603482",
+      "sourceTitle": "Rio Tinto, Century Aluminum raise US aluminum premiums 12%",
+      "evidenceText": "The US Midwest premium, which is added to global benchmarks for aluminum delivery to that region, reached a record $1.1325 per pound.",
+      "extractionRationale": "Direct quote from Source 1 explicitly stating the US Midwest aluminum premium as $1.1325 per pound. This is the current reported value in the article discussing recent premium increases.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 13.25,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
