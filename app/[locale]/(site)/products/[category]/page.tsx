@@ -46,12 +46,12 @@ export default async function CategoryPage({
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumb */}
-      <nav className="mb-6 text-sm text-metal-500">
+      <nav className="mb-6 text-sm text-metal-600">
         <Link href="/" className="hover:text-steel-600">{isZh ? '首頁' : 'Home'}</Link>
         <span className="mx-2">/</span>
         <Link href="/products" className="hover:text-steel-600">{isZh ? '產品' : 'Products'}</Link>
         <span className="mx-2">/</span>
-        <span className="text-metal-700">{isZh ? cat.name['zh-TW'] : cat.name.en}</span>
+        <span aria-current="page" className="text-metal-700">{isZh ? cat.name['zh-TW'] : cat.name.en}</span>
       </nav>
 
       <h1 className="mb-4 text-3xl font-bold text-steel-900">
@@ -81,7 +81,7 @@ export default async function CategoryPage({
                 </div>
               )}
               <div className="p-6">
-                <div className="mb-2 text-xs font-mono text-metal-400">{product.sku}</div>
+                <div className="mb-2 text-xs font-mono text-metal-600">{product.sku}</div>
                 <h2 className="mb-2 font-semibold text-steel-800 group-hover:text-steel-600">
                   {isZh ? product.name['zh-TW'] : product.name.en}
                 </h2>
@@ -89,7 +89,7 @@ export default async function CategoryPage({
                   {isZh ? product.description['zh-TW'] : product.description.en}
                 </p>
                 {product.material && (
-                  <div className="mt-3 text-xs text-metal-400">
+                  <div className="mt-3 text-xs text-metal-600">
                     {product.material}
                   </div>
                 )}

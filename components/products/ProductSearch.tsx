@@ -67,9 +67,9 @@ export default function ProductSearch({
           onChange={(e) => setQuery(e.target.value)}
           placeholder={labels.searchPlaceholder}
           aria-label={labels.searchAria}
-          className="w-full max-w-md rounded-lg border border-metal-300 px-4 py-2.5 text-base focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none"
+          className="w-full max-w-md rounded-lg border border-metal-500 px-4 py-2.5 text-base focus:border-steel-500 focus:ring-1 focus:ring-steel-500 outline-none"
         />
-        <p className="mt-2 text-sm text-metal-500">
+        <p role="status" className="mt-2 text-sm text-metal-600">
           {labels.resultCount.replace('{count}', String(filtered.length))}
         </p>
       </div>
@@ -104,13 +104,13 @@ export default function ProductSearch({
                 </div>
               )}
               <div className="p-6">
-                <div className="mb-2 text-xs font-mono text-metal-400">{p.sku}</div>
+                <div className="mb-2 text-xs font-mono text-metal-600">{p.sku}</div>
                 <h2 className="mb-2 font-semibold text-steel-800 group-hover:text-steel-600">
                   {p.name}
                 </h2>
                 <p className="text-sm text-metal-600 line-clamp-3">{p.description}</p>
                 {p.material && (
-                  <div className="mt-3 text-xs text-metal-400">{p.material}</div>
+                  <div className="mt-3 text-xs text-metal-600">{p.material}</div>
                 )}
               </div>
             </Link>
