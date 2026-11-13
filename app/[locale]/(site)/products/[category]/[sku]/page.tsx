@@ -134,7 +134,7 @@ export default async function ProductPage({
 
       <div className="mx-auto max-w-4xl px-4 py-12">
         {/* Breadcrumb */}
-        <nav className="mb-6 text-sm text-metal-500">
+        <nav className="mb-6 text-sm text-metal-600">
           <Link href="/" className="hover:text-steel-600">{isZh ? '首頁' : 'Home'}</Link>
           <span className="mx-2">/</span>
           <Link href="/products" className="hover:text-steel-600">{isZh ? '產品' : 'Products'}</Link>
@@ -143,7 +143,7 @@ export default async function ProductPage({
             {categoryData ? (isZh ? categoryData.name['zh-TW'] : categoryData.name.en) : category}
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-metal-700">{product.sku}</span>
+          <span aria-current="page" className="text-metal-700">{product.sku}</span>
         </nav>
 
         {/* Product Header */}
@@ -185,65 +185,65 @@ export default async function ProductPage({
               <tbody>
                 {product.valveType && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700 w-1/3">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700 w-1/3">
                       {isZh ? '氣嘴類型' : 'Valve Type'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800 capitalize">{product.valveType}</td>
                   </tr>
                 )}
                 {product.material && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '材質' : 'Material'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800">{product.material}</td>
                   </tr>
                 )}
                 {product.rimHoleDiameter && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '輪圈孔徑' : 'Rim Hole Diameter'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800">{product.rimHoleDiameter}</td>
                   </tr>
                 )}
                 {product.effectiveLength && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '有效長度' : 'Effective Length'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800">{product.effectiveLength}</td>
                   </tr>
                 )}
                 {product.finish && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '表面處理' : 'Finish'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800">{product.finish}</td>
                   </tr>
                 )}
                 {product.installationType && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '安裝方式' : 'Installation'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800 capitalize">{product.installationType}</td>
                   </tr>
                 )}
                 {product.valveCore && (
                   <tr className="border-b border-metal-100">
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '氣嘴芯' : 'Valve Core'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800 capitalize">{product.valveCore}</td>
                   </tr>
                 )}
                 {product.standards && product.standards.length > 0 && (
                   <tr>
-                    <td className="bg-metal-50 px-4 py-3 font-medium text-metal-700">
+                    <th scope="row" className="bg-metal-50 px-4 py-3 text-left font-medium text-metal-700">
                       {isZh ? '適用標準' : 'Standards'}
-                    </td>
+                    </th>
                     <td className="px-4 py-3 text-metal-800">{product.standards.join(', ')}</td>
                   </tr>
                 )}
@@ -330,7 +330,7 @@ export default async function ProductPage({
         {/* FAQ */}
         {product.faq && product.faq.length > 0 && (
           <section className="mb-8">
-            <h2 className="mb-4 text-xl font-bold text-steel-800">FAQ</h2>
+            <h2 className="mb-4 text-xl font-bold text-steel-800">{isZh ? '常見問題' : 'FAQ'}</h2>
             <div className="space-y-4">
               {product.faq.map((item, i) => (
                 <div key={i} className="rounded-lg border border-metal-200 p-4">

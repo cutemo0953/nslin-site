@@ -145,13 +145,13 @@ export default async function ProductsPage({
               </div>
             )}
             <div className="p-6">
-              <h2 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
+              <h3 className="mb-2 text-lg font-semibold text-steel-800 group-hover:text-steel-600">
                 {isZh ? cat.name['zh-TW'] : cat.name.en}
-              </h2>
+              </h3>
               <p className="mb-4 text-sm text-metal-600">
                 {isZh ? cat.description['zh-TW'] : cat.description.en}
               </p>
-              <span className="text-xs text-metal-400">
+              <span className="text-xs text-metal-600">
                 {cat.productCount} {isZh ? '款產品' : 'products'} →
               </span>
             </div>

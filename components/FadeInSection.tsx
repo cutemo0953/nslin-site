@@ -29,6 +29,7 @@ export function FadeInSection({ children, className = '', delay = 0 }: Props) {
   return (
     <div
       ref={ref}
+      data-fade-in=""
       style={{ transitionProperty: 'opacity, transform', transitionDuration: '600ms', transitionTimingFunction: 'var(--w-ease, cubic-bezier(0.22, 1, 0.36, 1))', transitionDelay: `${delay}ms` }}
       className={`${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} ${className}`}
     >
