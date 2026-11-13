@@ -124,7 +124,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-steel-800 pt-6 text-center text-xs text-steel-400">
+        <div className="mt-8 border-t border-steel-800 pt-6 text-center text-xs text-steel-300">
           &copy; {new Date().getFullYear()} N.S.-LIN Industrial Co., Ltd. {t('copyright')}
         </div>
       </div>
