@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-17",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 6,
+    "collected": 3,
+    "unchanged": 3,
+    "failed": 3,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap tubeless valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve site:bike24.de"
+    },
+    {
+      "nodeId": 27,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve site:wiggle.com OR site:chainreactioncycles.com"
+    },
+    {
+      "nodeId": 30,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap valve bike24.de"
+    },
+    {
+      "nodeId": 56,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe inner tube Clik valve site:schwalbe.com"
+    },
+    {
+      "nodeId": 10,
+      "code": "no_relevant_result",
+      "query": "BBB CoreCap tubeless valve price EUR buy"
+    },
+    {
+      "nodeId": 10,
+      "code": "overwrite_blocked",
+      "query": "Schwalbe Clik valve price EUR buy"
+    },
+    {
+      "nodeId": 61,
+      "code": "overwrite_blocked",
+      "query": "LME aluminum price USD per ton today"
+    },
+    {
+      "nodeId": 62,
+      "code": "overwrite_blocked",
+      "query": "US Midwest aluminum premium USD per pound today 2026"
+    }
+  ],
+  "nodes": {
+    "10": {
+      "nodeType": "observed",
+      "rawValue": 12.95,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike-discount.de/en/schwalbe-clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | H&S Bike-Discount GmbH",
+      "evidenceText": "Multiple prices found across two sources: bike-discount.de lists prices 33,99€, 11,99€, 3,79€, 9,99€; ebike24.com lists 13,90€, 11,90€, 7,90€, 16,99€, 13,99€, 9,95€. Original RRP prices also documented: 49,99€, 16,95€, 5,95€. Median of all 14 prices is 12,95€.",
+      "extractionRationale": "Extracted all retail prices (both RRP and sale prices) from two German sources selling Schwalbe Clik Valve products. The 14 identified prices were sorted and the median calculated as the average of the 7th and 8th values: (11,99 + 13,90) / 2 = 12,95 EUR. This represents the central price point across all variants and both retailers.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "27": {
+      "nodeType": "observed",
+      "rawValue": 4,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.de/p1859948.html",
+      "sourceTitle": "Schwalbe Clik Valve Product Listings - bike24.de",
+      "evidenceText": "Four distinct product URLs identified: p1859948.html (40mm), p1859950.html (80mm), p1859953.html (SV-SCV kit), p1859954.html (DV-SCV kit). Category page excluded.",
+      "extractionRationale": "Counted unique product page URLs: 1) 40mm valve (p1859948), 2) 80mm valve (p1859950), 3) SV-SCV conversion kit with pump adapter (p1859953), 4) DV-SCV conversion kit (p1859954). The category page (source 5) was not counted as it's not a distinct product listing.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "30": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2859950.html",
+      "sourceTitle": "Schwalbe Clik Valve - Tubeless Valve - Set of 2 - 80 mm | BIKE24",
+      "evidenceText": "The page content only shows a JavaScript loading screen message: \"We run a quick check to keep bots out and confirm you're human. It needs JavaScript to finish, which is why this is taking a moment.\" Actual product and stock status information is not available in the extracted content.",
+      "extractionRationale": "Stock status cannot be determined from the provided text. The page content is not fully rendered - only a JavaScript loading screen is visible. No keywords indicating stock availability ('out of stock', 'currently unavailable', 'nicht verfügbar', 'ausverkauft', etc.) are present in the extracted content. Therefore, the stock status is indeterminate.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "56": {
+      "nodeType": "observed",
+      "rawValue": 10,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "The SCV butyl tubes No. 3, 4, 6, 7, 10, 12, 13, 15, 17, and 19 are equipped with the Schwalbe Clik Valve as standard",
+      "extractionRationale": "Source 3 explicitly lists all SCV butyl tube models equipped with Clik Valve as standard. Counting each numbered model (3, 4, 6, 7, 10, 12, 13, 15, 17, 19) yields 10 distinct inner tube models. These are inner tubes only, not valves, conversion kits, or accessories.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 10,
+      "deltaPct": 0,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "fail",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "61": {
+      "nodeType": "observed",
+      "rawValue": 3000,
+      "product": "corecap",
+      "market": "global",
+      "sourceUrl": "https://www.lme.com/metals/non-ferrous/lme-aluminium-alloy",
+      "sourceTitle": "LME Aluminium Alloy | London Metal Exchange",
+      "evidenceText": "LME Aluminium Alloy Official Prices: Cash 2990.00 / 3000.00 USD/t, 3-month 2990.00 / 3000.00 USD/t (Data valid for 12 Nov 2026)",
+      "extractionRationale": "Extracted from the most recent official LME pricing data (Nov 12, 2026). The offer price of $3,000/t represents the current spot price for LME Aluminum 3-month contract, which is the standard reference for aluminum pricing. This supersedes the earlier April data showing $3,571/t.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 3284,
+      "deltaPct": -8.65,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "auto-collected via api"
+    },
+    "62": {
+      "nodeType": "observed",
+      "rawValue": 1.1325,
+      "product": "corecap",
+      "market": "US",
+      "sourceUrl": "https://www.investing.com/news/stock-market-news/rio-tinto-century-aluminum-raise-us-aluminum-premiums-12-93CH-4603482",
+      "sourceTitle": "Rio Tinto, Century Aluminum raise US aluminum premiums 12%",
+      "evidenceText": "The US Midwest premium, which is added to global benchmarks for aluminum delivery to that region, reached a record $1.1325 per pound.",
+      "extractionRationale": "Source 1 explicitly states the US Midwest premium value as $1.1325 per pound, which is already in the requested USD/pound format. This is the most direct and clear statement of the metric.",
+      "collector": "api",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": 1,
+      "deltaPct": 13.25,
+      "validatorResults": {
+        "range": "fail",
+        "evidence": "pass",
+        "delta": "fail",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
