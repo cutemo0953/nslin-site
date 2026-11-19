@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-19",
+  "methodVersion": "1.0.0",
+  "extractorVersion": "1.0.0",
+  "queryRegistryHash": "sha256:858c49c36c11",
+  "stats": {
+    "eligible": 9,
+    "collected": 1,
+    "unchanged": 5,
+    "failed": 7,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "nodeId": 17,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2026 2027 bicycle bike spec pre-installed OEM"
+    },
+    {
+      "nodeId": 20,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 20,
+      "code": "overwrite_blocked",
+      "query": "Clik valve site:ebay.de OR site:bikemarkt.mtb-news.de"
+    },
+    {
+      "nodeId": 37,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap replacement valve core spare part buy"
+    },
+    {
+      "nodeId": 37,
+      "code": "no_relevant_result",
+      "query": "Schwalbe Clik valve replacement spare part buy"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "CoreCap valve used bike specification listing"
+    },
+    {
+      "nodeId": 38,
+      "code": "no_relevant_result",
+      "query": "Clik valve used bike specification listing"
+    },
+    {
+      "nodeId": 41,
+      "code": "no_relevant_result",
+      "query": "Clik valve 2027 model year wheelset bicycle specification"
+    },
+    {
+      "nodeId": 45,
+      "code": "overwrite_blocked",
+      "query": "DT Swiss Mavic Hunt wheelset 2026 2027 valve specification Clik tubeless"
+    },
+    {
+      "nodeId": 57,
+      "code": "overwrite_blocked",
+      "query": "BBB CoreCap \"back in stock\" OR \"wieder verfugbar\" OR \"lieferbar\" bike24"
+    }
+  ],
+  "nodes": {
+    "18": {
+      "nodeType": "observed",
+      "rawValue": 1,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.amazon.com/Wolf-Tooth-Tubeless-Valve-Stem/dp/B0F8RHLFYS",
+      "sourceTitle": "Amazon.com: Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - 44mm Black",
+      "evidenceText": "Wolf Tooth Tubeless Valve Stem Kit for Clik Valve - Utilizes Clik Valves for best-in-class performance. Available in 9 colors, 44mm and 60mm, three bases included.",
+      "extractionRationale": "Only one distinct third-party accessory product is identified in the provided evidence: the Wolf Tooth Tubeless Valve Stem Kit specifically designed for Clik valves. While it comes in multiple color and size variants, these represent variations of a single product line, not distinct products.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "medium",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "auto-collected via tavily"
+    },
+    "20": {
+      "nodeType": "observed",
+      "rawValue": 2,
+      "product": "clik",
+      "market": "DE",
+      "sourceUrl": "https://www.ebay.com/itm/377626760307",
+      "sourceTitle": "TubelessValve Set, 60mm Clik, Pair, Black",
+      "evidenceText": "Two distinct eBay listings: (1) https://www.ebay.com/itm/377626760307 - TubelessValve Set, 60mm Clik, Pair, Black; (2) https://www.ebay.com/itm/377626818771 - TubelessValve Set, 80mm Clik, Pair, Black. Both mention Clik valves as the target product.",
+      "extractionRationale": "Counted two distinct second-hand listings (different URLs) that mention the Clik valve product. Each URL represents a unique listing on eBay.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "36": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://www.schwalbe.com/en/clik-valve",
+      "sourceTitle": "Schwalbe Clik Valve | Schwalbe",
+      "evidenceText": "Sources mention pump head adapters, conversion kits, and accessories but do not explicitly state what fraction or percentage of Clik valve product pages display these as 'frequently bought together' or 'related products' sections.",
+      "extractionRationale": "The evidence discusses the existence of Clik valve accessories (pump heads, adapters, tubes) and their integration with the product, but does not provide quantitative data on the attach rate or percentage of product pages that display accessories in structured \"frequently bought together\" or \"related products\" sections. Without explicit data on the number of Clik valve product pages examined and how many show such accessory sections, the attach rate cannot be determined.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": false,
+      "proposedChangeReason": "no change detected"
+    },
+    "37": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://bbbcycling.com/en_en/bti-165-corecap-valve-caps",
+      "sourceTitle": "",
+      "evidenceText": "Spare parts section is referenced in navigation menu but specific SKU details are not included in the provided content excerpt",
+      "extractionRationale": "The source page mentions a \"Spare parts\" section in its navigation, but the actual spare parts list with SKU counts for valve cores, seals, o-rings, and replacement kits is not visible in the provided content. The excerpt does not contain any specific SKU numbers or counts that could be extracted.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "low",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "45": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "clik",
+      "market": "global",
+      "sourceUrl": "https://road.cc/buyers-guide/best-road-bike-wheels",
+      "sourceTitle": "Best road bike wheels 2027 — transform your road bike with some shiny new hoops - Cycling News | Bike Reviews | road.cc",
+      "evidenceText": "The article discusses 2027 road bike wheels from Hunt, Mavic, and other brands but contains no information about Clik valve adoption or valve types for any wheelset brand.",
+      "extractionRationale": "The provided evidence from a 2027 wheelset buyers guide does not contain any mention of Clik valve adoption by any major wheelset brand (DT Swiss, Mavic, Hunt, Zipp, ENVE, or Roval). Without direct evidence of adoption, no percentage can be extracted.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": 0,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    },
+    "57": {
+      "nodeType": "observed",
+      "rawValue": null,
+      "product": "corecap",
+      "market": "DE",
+      "sourceUrl": "https://www.bike24.com/p2993583.html",
+      "sourceTitle": "",
+      "evidenceText": "JavaScript error pages with no product availability or stock status information",
+      "extractionRationale": "The source content only contains bot-detection and JavaScript error messages. No actual product data, availability status, or dates related to stock status are present in the evidence.",
+      "collector": "tavily",
+      "model": "claude-haiku-4-5-20251001",
+      "confidence": "high",
+      "previousValue": null,
+      "deltaPct": null,
+      "validatorResults": {
+        "range": "pass",
+        "evidence": "pass",
+        "delta": "pass",
+        "crossNode": "pass"
+      },
+      "requiresReview": true,
+      "proposedChangeReason": "no change detected"
+    }
+  },
+  "derived": {}
+}
